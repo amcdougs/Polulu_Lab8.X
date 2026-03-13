@@ -4,7 +4,6 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
-      <itemPath>../Common/LCD_Cmds.h</itemPath>
       <itemPath>../Common/adcc.h</itemPath>
       <itemPath>../Common/device_config.h</itemPath>
       <itemPath>../Common/i2c1_master.h</itemPath>
