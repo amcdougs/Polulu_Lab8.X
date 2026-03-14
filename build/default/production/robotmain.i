@@ -27936,6 +27936,7 @@ void main(void)
     unsigned int sum, battery;
     unsigned int* sensor_value;
     _Bool white, black;
+    unsigned int turn;
 
 
     if (PORTBbits.RB5 == 0)
@@ -28094,6 +28095,14 @@ void main(void)
                     length = sprintf(msg, " %u ", speed);
                     LCD_Position(0,1);
                     LCD_Print(msg, length);
+                    while(!UART1_is_tx_ready()) continue;
+                    UART1_Write(0xC2);
+                    while(!UART1_is_tx_ready()) continue;
+                    UART1_Write(speed);
+                    while(!UART1_is_tx_ready()) continue;
+                    UART1_Write(0xC6);
+                    while(!UART1_is_tx_ready()) continue;
+                    UART1_Write(speed);
                     break;
                 case 'L':
                     LCD_Clear();
@@ -28104,10 +28113,19 @@ void main(void)
                     speed = Get_Number();
                     printf("\t Please enter the turning differential: speed + differential < 127 \r\n");
                     differential = Get_Number();
+                    turn = speed + differential;
                     Left_Turn(speed, differential);
                     length = sprintf(msg, "%u %u", speed, differential);
                     LCD_Position(0,1);
                     LCD_Print(msg, length);
+                    while(!UART1_is_tx_ready()) continue;
+                    UART1_Write(0xC1);
+                    while(!UART1_is_tx_ready()) continue;
+                    UART1_Write(turn);
+                    while(!UART1_is_tx_ready()) continue;
+                    UART1_Write(0xC5);
+                    while(!UART1_is_tx_ready()) continue;
+                    UART1_Write(speed);
                     break;
                 case 'R':
                     LCD_Clear();
@@ -28118,10 +28136,19 @@ void main(void)
                     speed = Get_Number();
                     printf("\t Please enter the turning differential: speed + differential < 127 \r\n");
                     differential = Get_Number();
+                    turn = speed + differential;
                     Right_Turn(speed, differential);
                     length = sprintf(msg, "%u %u", speed, differential);
                     LCD_Position(0,1);
                     LCD_Print(msg, length);
+                    while(!UART1_is_tx_ready()) continue;
+                    UART1_Write(0xC1);
+                    while(!UART1_is_tx_ready()) continue;
+                    UART1_Write(speed);
+                    while(!UART1_is_tx_ready()) continue;
+                    UART1_Write(0xC5);
+                    while(!UART1_is_tx_ready()) continue;
+                    UART1_Write(turn);
                     break;
                 case 'S':
                     LCD_Clear();
@@ -28129,6 +28156,15 @@ void main(void)
                     LCD_Print("  Stop  ", 8);
                     printf("\n\r");
                     Stop();
+                    while(!UART1_is_tx_ready()) continue;
+                    UART1_Write(0xC1);
+                    while(!UART1_is_tx_ready()) continue;
+                    UART1_Write(0);
+                    while(!UART1_is_tx_ready()) continue;
+                    UART1_Write(0xC5);
+                    while(!UART1_is_tx_ready()) continue;
+                    UART1_Write(0);
+
                     break;
                 case 'm':
                     LCD_Clear();
@@ -28169,38 +28205,14 @@ void main(void)
 
 
         while(!UART1_is_tx_ready()) continue;
-        UART1_Write(0xBB);
-        while(!UART1_is_tx_ready()) continue;
-        UART1_Write(50);
-        while(!UART1_is_tx_ready()) continue;
-        UART1_Write(1);
-        while(!UART1_is_tx_ready()) continue;
-        UART1_Write(20);
-        while(!UART1_is_tx_ready()) continue;
-        UART1_Write(3);
-        while(!UART1_is_tx_ready()) continue;
-        UART1_Write(2);
-        while(1)
-        {
-            sensor_value = Read_Calibrated_Sensors();
-            sum = sensor_value[1]+sensor_value[2]+sensor_value[3];
-            length = sprintf(msg, " %u ", sum);
-            LCD_Position(0,1);
-            LCD_Print(msg, length);
-            if(sum < 2000 && sensor_value[4] > 0)
-            {
-                while(!UART1_is_tx_ready()) continue;
-                UART1_Write(0xC1);
-                while(!UART1_is_tx_ready()) continue;
-                UART1_Write(80);
+                    UART1_Write(0xC1);
+                    while(!UART1_is_tx_ready()) continue;
+                    UART1_Write(25);
+                    while(!UART1_is_tx_ready()) continue;
+                    UART1_Write(0xC5);
+                    while(!UART1_is_tx_ready()) continue;
+                    UART1_Write(25);
 
-            }else if(sum > 2500){
-                while(!UART1_is_tx_ready()) continue;
-                UART1_Write(0xC1);
-                while(!UART1_is_tx_ready()) continue;
-                UART1_Write(50);
-            }
-        }
     }
 }
 
