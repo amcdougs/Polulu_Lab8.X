@@ -127,6 +127,10 @@ void main(void)
 
                     break;
                 case 'd':
+                    uint8_t lowerbyte[5];
+                    uint8_t upperbyte[5];
+                    
+                    uint16_t sensor_data[5];
                     LCD_Clear();
                     LCD_Position(0,0);
                     LCD_Print("Sensor ", 7);
@@ -144,6 +148,20 @@ void main(void)
 
                     //  Add code to get sensor value of selected sensor and
                     //  display to second line of LCD as well as CoolTerm/PuTTY
+                    
+                    while(!UART1_is_tx_ready()) continue; //found this code in the slides lmao 
+                    UART1_Write(0x87); //this gets you two bits so you gotta read the first and second 
+                    for(int i = 0; i < 5; i++){
+                        while(!UART1_is_rx_ready()) continue;
+                        lowerbyte[i] = UART1_Read(); //first 
+                        while(!UART1_is_rx_ready()) continue;
+                        upperbyte[i] = UART1_Read(); //second
+                        sensor_data[i] = upperbyte[i]*256 + lowerbyte[i]; //combine 
+                    }
+                    
+                    key = sensor - '1'; //this converts the key press to correct ascii 
+                        printf("Sensor %d: %u\n", key, sensor_data[key]); 
+                    
 
                     break;
                 case 'v':
@@ -168,6 +186,14 @@ void main(void)
                     length = sprintf(msg, " %u ", speed);
                     LCD_Position(0,1);
                     LCD_Print(msg, length);
+                    while(!UART1_is_tx_ready()) continue;
+                    UART1_Write(FORWARD_LEFT);
+                    while(!UART1_is_tx_ready()) continue;
+                    UART1_Write(speed);
+                    while(!UART1_is_tx_ready()) continue;
+                    UART1_Write(FORWARD_RIGHT);
+                    while(!UART1_is_tx_ready()) continue;
+                    UART1_Write(speed);
                     break;
                 case 'B':
                     LCD_Clear();
@@ -226,6 +252,10 @@ void main(void)
                     LCD_Print(msg, length);
                     Diagnostic_Menu();
                     break;
+               
+                    
+                    
+                    
             }
         }
     }
@@ -269,10 +299,18 @@ void main(void)
             length = sprintf(msg, " %u ", sum);
             LCD_Position(0,1);
             LCD_Print(msg, length);
-            if(sum < 100)           //  Robot stops when all three middle sensors see white
+            if(sum < 2000 && sensor_value[4] > 0) //makes NS5 turn one way maybe
             {
                 while(!UART1_is_tx_ready()) continue;
-                UART1_Write(0xBC);
+                UART1_Write(FORWARD_LEFT);
+                while(!UART1_is_tx_ready()) continue;
+                UART1_Write(80);
+                
+            }else if(sum > 2500){
+                while(!UART1_is_tx_ready()) continue;
+                UART1_Write(FORWARD_LEFT);
+                while(!UART1_is_tx_ready()) continue;
+                UART1_Write(50);
             }
         }
     }
