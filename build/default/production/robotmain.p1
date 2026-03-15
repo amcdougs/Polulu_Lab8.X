@@ -115,9 +115,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "31 robotmain.c
 [; ;robotmain.c: 31: void Countdown(char time);
 [v _Countdown `(v ~T0 @X0 0 ef1`uc ]
-"32 ./../Common/pololu_robot.h
-[; ;./../Common/pololu_robot.h: 32: unsigned int* Read_Calibrated_Sensors(void);
-[v _Read_Calibrated_Sensors `(*ui ~T0 @X0 0 ef ]
 "73 ./../Common/uart2.h
 [; ;./../Common/uart2.h: 73: _Bool UART2_is_rx_ready(void);
 [v _UART2_is_rx_ready `(a ~T0 @X0 0 ef ]
@@ -2456,325 +2453,328 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;robotmain.c: 50:     _Bool white, black;
 [v _white `a ~T0 @X0 1 a ]
 [v _black `a ~T0 @X0 1 a ]
-"53
-[; ;robotmain.c: 53:     if (PORTBbits.RB5 == 0)
-[e $ ! == -> . . _PORTBbits 0 5 `i -> 0 `i 2275  ]
+"51
+[; ;robotmain.c: 51:     unsigned int turn;
+[v _turn `ui ~T0 @X0 1 a ]
 "54
-[; ;robotmain.c: 54:     {
-{
+[; ;robotmain.c: 54:     if (PORTBbits.RB5 == 0)
+[e $ ! == -> . . _PORTBbits 0 5 `i -> 0 `i 2275  ]
 "55
-[; ;robotmain.c: 55:         Diagnostic_Menu();
-[e ( _Diagnostic_Menu ..  ]
+[; ;robotmain.c: 55:     {
+{
 "56
-[; ;robotmain.c: 56:         LCD_Clear();
-[e ( _LCD_Clear ..  ]
+[; ;robotmain.c: 56:         Diagnostic_Menu();
+[e ( _Diagnostic_Menu ..  ]
 "57
-[; ;robotmain.c: 57:         LCD_Position(0,0);
-[e ( _LCD_Position (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
-"58
-[; ;robotmain.c: 58:         LCD_Print("Diagnose", 8);
-[e ( _LCD_Print (2 , :s 1C -> -> 8 `i `uc ]
-"59
-[; ;robotmain.c: 59:         battery = Read_Battery_Voltage();
-[e = _battery ( _Read_Battery_Voltage ..  ]
-"60
-[; ;robotmain.c: 60:         length = sprintf(msg, "%u mV", battery);
-[e = _length -> ( _sprintf (1 , (. , &U _msg :s 2C _battery `uc ]
-"61
-[; ;robotmain.c: 61:         LCD_Position(0,1);
-[e ( _LCD_Position (2 , -> -> 0 `i `uc -> -> 1 `i `uc ]
-"62
-[; ;robotmain.c: 62:         LCD_Print(msg, length);
-[e ( _LCD_Print (2 , &U _msg _length ]
-"63
-[; ;robotmain.c: 63:         while(1)
-[e :U 2277 ]
-"64
-[; ;robotmain.c: 64:         {
-{
-"65
-[; ;robotmain.c: 65:             key = Get_Key();
-[e = _key ( _Get_Key ..  ]
-"66
-[; ;robotmain.c: 66:             switch (key)
-[e $U 2280  ]
-"67
-[; ;robotmain.c: 67:             {
-{
-"68
-[; ;robotmain.c: 68:                 case 'c':
-[e :U 2281 ]
-"69
-[; ;robotmain.c: 69:                     LCD_Clear();
+[; ;robotmain.c: 57:         LCD_Clear();
 [e ( _LCD_Clear ..  ]
-"70
-[; ;robotmain.c: 70:                     LCD_Position(0,0);
+"58
+[; ;robotmain.c: 58:         LCD_Position(0,0);
 [e ( _LCD_Position (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
-"71
-[; ;robotmain.c: 71:                     LCD_Print("Calibrat", 8);
-[e ( _LCD_Print (2 , :s 3C -> -> 8 `i `uc ]
-"72
-[; ;robotmain.c: 72:                     LCD_Position(0,1);
+"59
+[; ;robotmain.c: 59:         LCD_Print("Diagnose", 8);
+[e ( _LCD_Print (2 , :s 1C -> -> 8 `i `uc ]
+"60
+[; ;robotmain.c: 60:         battery = Read_Battery_Voltage();
+[e = _battery ( _Read_Battery_Voltage ..  ]
+"61
+[; ;robotmain.c: 61:         length = sprintf(msg, "%u mV", battery);
+[e = _length -> ( _sprintf (1 , (. , &U _msg :s 2C _battery `uc ]
+"62
+[; ;robotmain.c: 62:         LCD_Position(0,1);
 [e ( _LCD_Position (2 , -> -> 0 `i `uc -> -> 1 `i `uc ]
+"63
+[; ;robotmain.c: 63:         LCD_Print(msg, length);
+[e ( _LCD_Print (2 , &U _msg _length ]
+"64
+[; ;robotmain.c: 64:         while(1)
+[e :U 2277 ]
+"65
+[; ;robotmain.c: 65:         {
+{
+"66
+[; ;robotmain.c: 66:             key = Get_Key();
+[e = _key ( _Get_Key ..  ]
+"67
+[; ;robotmain.c: 67:             switch (key)
+[e $U 2280  ]
+"68
+[; ;robotmain.c: 68:             {
+{
+"69
+[; ;robotmain.c: 69:                 case 'c':
+[e :U 2281 ]
+"70
+[; ;robotmain.c: 70:                     LCD_Clear();
+[e ( _LCD_Clear ..  ]
+"71
+[; ;robotmain.c: 71:                     LCD_Position(0,0);
+[e ( _LCD_Position (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
+"72
+[; ;robotmain.c: 72:                     LCD_Print("Calibrat", 8);
+[e ( _LCD_Print (2 , :s 3C -> -> 8 `i `uc ]
 "73
-[; ;robotmain.c: 73:                     LCD_Print("Sensors ", 8);
-[e ( _LCD_Print (2 , :s 4C -> -> 8 `i `uc ]
+[; ;robotmain.c: 73:                     LCD_Position(0,1);
+[e ( _LCD_Position (2 , -> -> 0 `i `uc -> -> 1 `i `uc ]
 "74
-[; ;robotmain.c: 74:                     printf("\n\r");
-[e ( _printf :s 5C ]
+[; ;robotmain.c: 74:                     LCD_Print("Sensors ", 8);
+[e ( _LCD_Print (2 , :s 4C -> -> 8 `i `uc ]
 "75
-[; ;robotmain.c: 75:                     white = 0;
-[e = _white -> -> 0 `i `a ]
+[; ;robotmain.c: 75:                     printf("\n\r");
+[e ( _printf :s 5C ]
 "76
-[; ;robotmain.c: 76:                     while (!white)
+[; ;robotmain.c: 76:                     white = 0;
+[e = _white -> -> 0 `i `a ]
+"77
+[; ;robotmain.c: 77:                     while (!white)
 [e $U 2282  ]
 [e :U 2283 ]
-"77
-[; ;robotmain.c: 77:                     {
-{
 "78
-[; ;robotmain.c: 78:                         printf("Place all five sensors on a white surface \n\r");
-[e ( _printf :s 6C ]
+[; ;robotmain.c: 78:                     {
+{
 "79
-[; ;robotmain.c: 79:                         printf("Press any key to continue \n\r");
-[e ( _printf :s 7C ]
+[; ;robotmain.c: 79:                         printf("Place all five sensors on a white surface \n\r");
+[e ( _printf :s 6C ]
 "80
-[; ;robotmain.c: 80:                         any = Get_Key();
-[e = _any ( _Get_Key ..  ]
+[; ;robotmain.c: 80:                         printf("Press any key to continue \n\r");
+[e ( _printf :s 7C ]
 "81
-[; ;robotmain.c: 81:                         sensor_value = Calibrate_Sensors();
-[e = _sensor_value ( _Calibrate_Sensors ..  ]
+[; ;robotmain.c: 81:                         any = Get_Key();
+[e = _any ( _Get_Key ..  ]
 "82
-[; ;robotmain.c: 82:                         sum = 0;
-[e = _sum -> -> 0 `i `ui ]
+[; ;robotmain.c: 82:                         sensor_value = Calibrate_Sensors();
+[e = _sensor_value ( _Calibrate_Sensors ..  ]
 "83
-[; ;robotmain.c: 83:                         for (i=0; i<5; i++)
+[; ;robotmain.c: 83:                         sum = 0;
+[e = _sum -> -> 0 `i `ui ]
+"84
+[; ;robotmain.c: 84:                         for (i=0; i<5; i++)
 {
 [e = _i -> -> 0 `i `uc ]
 [e $ < -> _i `i -> 5 `i 2285  ]
 [e $U 2286  ]
 [e :U 2285 ]
-"84
-[; ;robotmain.c: 84:                         {
-{
 "85
-[; ;robotmain.c: 85:                             sum = sum + sensor_value[i];
-[e = _sum + _sum *U + _sensor_value * -> _i `ux -> -> # *U _sensor_value `ui `ux ]
+[; ;robotmain.c: 85:                         {
+{
 "86
-[; ;robotmain.c: 86:                             printf("Sensor %u = %u \n\r", i, sensor_value[i]);
-[e ( _printf , , (. :s 8C -> _i `i *U + _sensor_value * -> _i `ux -> -> # *U _sensor_value `ui `ux ]
+[; ;robotmain.c: 86:                             sum = sum + sensor_value[i];
+[e = _sum + _sum *U + _sensor_value * -> _i `ux -> -> # *U _sensor_value `ui `ux ]
 "87
-[; ;robotmain.c: 87:                         }
+[; ;robotmain.c: 87:                             printf("Sensor %u = %u \n\r", i, sensor_value[i]);
+[e ( _printf , , (. :s 8C -> _i `i *U + _sensor_value * -> _i `ux -> -> # *U _sensor_value `ui `ux ]
+"88
+[; ;robotmain.c: 88:                         }
 }
 [e ++ _i -> -> 1 `i `uc ]
 [e $ < -> _i `i -> 5 `i 2285  ]
 [e :U 2286 ]
 }
-"88
-[; ;robotmain.c: 88:                         if (sum == 0)
-[e $ ! == _sum -> -> 0 `i `ui 2288  ]
 "89
-[; ;robotmain.c: 89:                         {
-{
+[; ;robotmain.c: 89:                         if (sum == 0)
+[e $ ! == _sum -> -> 0 `i `ui 2288  ]
 "90
-[; ;robotmain.c: 90:                             white = 1;
-[e = _white -> -> 1 `i `a ]
+[; ;robotmain.c: 90:                         {
+{
 "91
-[; ;robotmain.c: 91:                             printf("White calibration complete \n\r");
-[e ( _printf :s 9C ]
+[; ;robotmain.c: 91:                             white = 1;
+[e = _white -> -> 1 `i `a ]
 "92
-[; ;robotmain.c: 92:                         }
+[; ;robotmain.c: 92:                             printf("White calibration complete \n\r");
+[e ( _printf :s 9C ]
+"93
+[; ;robotmain.c: 93:                         }
 }
 [e :U 2288 ]
-"93
-[; ;robotmain.c: 93:                     }
+"94
+[; ;robotmain.c: 94:                     }
 }
 [e :U 2282 ]
-"76
-[; ;robotmain.c: 76:                     while (!white)
+"77
+[; ;robotmain.c: 77:                     while (!white)
 [e $ ! != -> _white `i -> 0 `i 2283  ]
 [e :U 2284 ]
-"94
-[; ;robotmain.c: 94:                     black = 0;
-[e = _black -> -> 0 `i `a ]
 "95
-[; ;robotmain.c: 95:                     while (!black)
+[; ;robotmain.c: 95:                     black = 0;
+[e = _black -> -> 0 `i `a ]
+"96
+[; ;robotmain.c: 96:                     while (!black)
 [e $U 2289  ]
 [e :U 2290 ]
-"96
-[; ;robotmain.c: 96:                     {
-{
 "97
-[; ;robotmain.c: 97:                         printf("Place all five sensors on a black surface \n\r");
-[e ( _printf :s 10C ]
+[; ;robotmain.c: 97:                     {
+{
 "98
-[; ;robotmain.c: 98:                         printf("Press any key to continue \n\r");
-[e ( _printf :s 11C ]
+[; ;robotmain.c: 98:                         printf("Place all five sensors on a black surface \n\r");
+[e ( _printf :s 10C ]
 "99
-[; ;robotmain.c: 99:                         any = Get_Key();
-[e = _any ( _Get_Key ..  ]
+[; ;robotmain.c: 99:                         printf("Press any key to continue \n\r");
+[e ( _printf :s 11C ]
 "100
-[; ;robotmain.c: 100:                         sensor_value = Calibrate_Sensors();
-[e = _sensor_value ( _Calibrate_Sensors ..  ]
+[; ;robotmain.c: 100:                         any = Get_Key();
+[e = _any ( _Get_Key ..  ]
 "101
-[; ;robotmain.c: 101:                         sum = 0;
-[e = _sum -> -> 0 `i `ui ]
+[; ;robotmain.c: 101:                         sensor_value = Calibrate_Sensors();
+[e = _sensor_value ( _Calibrate_Sensors ..  ]
 "102
-[; ;robotmain.c: 102:                         for (i=0; i<5; i++)
+[; ;robotmain.c: 102:                         sum = 0;
+[e = _sum -> -> 0 `i `ui ]
+"103
+[; ;robotmain.c: 103:                         for (i=0; i<5; i++)
 {
 [e = _i -> -> 0 `i `uc ]
 [e $ < -> _i `i -> 5 `i 2292  ]
 [e $U 2293  ]
 [e :U 2292 ]
-"103
-[; ;robotmain.c: 103:                         {
-{
 "104
-[; ;robotmain.c: 104:                             sum = sum + sensor_value[i];
-[e = _sum + _sum *U + _sensor_value * -> _i `ux -> -> # *U _sensor_value `ui `ux ]
+[; ;robotmain.c: 104:                         {
+{
 "105
-[; ;robotmain.c: 105:                             printf("Sensor %u = %u \n\r", i, sensor_value[i]);
-[e ( _printf , , (. :s 12C -> _i `i *U + _sensor_value * -> _i `ux -> -> # *U _sensor_value `ui `ux ]
+[; ;robotmain.c: 105:                             sum = sum + sensor_value[i];
+[e = _sum + _sum *U + _sensor_value * -> _i `ux -> -> # *U _sensor_value `ui `ux ]
 "106
-[; ;robotmain.c: 106:                         }
+[; ;robotmain.c: 106:                             printf("Sensor %u = %u \n\r", i, sensor_value[i]);
+[e ( _printf , , (. :s 12C -> _i `i *U + _sensor_value * -> _i `ux -> -> # *U _sensor_value `ui `ux ]
+"107
+[; ;robotmain.c: 107:                         }
 }
 [e ++ _i -> -> 1 `i `uc ]
 [e $ < -> _i `i -> 5 `i 2292  ]
 [e :U 2293 ]
 }
-"107
-[; ;robotmain.c: 107:                         if (sum == 5000)
-[e $ ! == _sum -> -> 5000 `i `ui 2295  ]
 "108
-[; ;robotmain.c: 108:                         {
-{
+[; ;robotmain.c: 108:                         if (sum == 5000)
+[e $ ! == _sum -> -> 5000 `i `ui 2295  ]
 "109
-[; ;robotmain.c: 109:                             black = 1;
-[e = _black -> -> 1 `i `a ]
+[; ;robotmain.c: 109:                         {
+{
 "110
-[; ;robotmain.c: 110:                             printf("Black calibration complete \n\r");
-[e ( _printf :s 13C ]
+[; ;robotmain.c: 110:                             black = 1;
+[e = _black -> -> 1 `i `a ]
 "111
-[; ;robotmain.c: 111:                             printf("Calibration complete \n\r");
-[e ( _printf :s 14C ]
+[; ;robotmain.c: 111:                             printf("Black calibration complete \n\r");
+[e ( _printf :s 13C ]
 "112
-[; ;robotmain.c: 112:                             LCD_Position(0,1);
-[e ( _LCD_Position (2 , -> -> 0 `i `uc -> -> 1 `i `uc ]
+[; ;robotmain.c: 112:                             printf("Calibration complete \n\r");
+[e ( _printf :s 14C ]
 "113
-[; ;robotmain.c: 113:                             LCD_Print("Complete", 8);
-[e ( _LCD_Print (2 , :s 15C -> -> 8 `i `uc ]
+[; ;robotmain.c: 113:                             LCD_Position(0,1);
+[e ( _LCD_Position (2 , -> -> 0 `i `uc -> -> 1 `i `uc ]
 "114
-[; ;robotmain.c: 114:                         }
+[; ;robotmain.c: 114:                             LCD_Print("Complete", 8);
+[e ( _LCD_Print (2 , :s 15C -> -> 8 `i `uc ]
+"115
+[; ;robotmain.c: 115:                         }
 }
 [e :U 2295 ]
-"115
-[; ;robotmain.c: 115:                     }
+"116
+[; ;robotmain.c: 116:                     }
 }
 [e :U 2289 ]
-"95
-[; ;robotmain.c: 95:                     while (!black)
+"96
+[; ;robotmain.c: 96:                     while (!black)
 [e $ ! != -> _black `i -> 0 `i 2290  ]
 [e :U 2291 ]
-"116
-[; ;robotmain.c: 116:                     break;
-[e $U 2279  ]
 "117
-[; ;robotmain.c: 117:                 case 'r':
-[e :U 2296 ]
-"118
-[; ;robotmain.c: 118:                     LCD_Clear();
-[e ( _LCD_Clear ..  ]
-"119
-[; ;robotmain.c: 119:                     LCD_Position(0,0);
-[e ( _LCD_Position (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
-"120
-[; ;robotmain.c: 120:                     LCD_Print("  Read  ", 8);
-[e ( _LCD_Print (2 , :s 16C -> -> 8 `i `uc ]
-"121
-[; ;robotmain.c: 121:                     LCD_Position(0,1);
-[e ( _LCD_Position (2 , -> -> 0 `i `uc -> -> 1 `i `uc ]
-"122
-[; ;robotmain.c: 122:                     LCD_Print("Sensors", 8);
-[e ( _LCD_Print (2 , :s 17C -> -> 8 `i `uc ]
-"123
-[; ;robotmain.c: 123:                     printf("\n\r");
-[e ( _printf :s 18C ]
-"128
-[; ;robotmain.c: 128:                     break;
+[; ;robotmain.c: 117:                     break;
 [e $U 2279  ]
-"129
-[; ;robotmain.c: 129:                 case 'd':
-[e :U 2297 ]
-"130
-[; ;robotmain.c: 130:                     uint8_t lowerbyte[5];
-[v _lowerbyte `uc ~T0 @X0 -> 5 `i a ]
-"131
-[; ;robotmain.c: 131:                     uint8_t upperbyte[5];
-[v _upperbyte `uc ~T0 @X0 -> 5 `i a ]
-"133
-[; ;robotmain.c: 133:                     uint16_t sensor_data[5];
-[v _sensor_data `us ~T0 @X0 -> 5 `i a ]
-"134
-[; ;robotmain.c: 134:                     LCD_Clear();
+"118
+[; ;robotmain.c: 118:                 case 'r':
+[e :U 2296 ]
+"119
+[; ;robotmain.c: 119:                     LCD_Clear();
 [e ( _LCD_Clear ..  ]
-"135
-[; ;robotmain.c: 135:                     LCD_Position(0,0);
+"120
+[; ;robotmain.c: 120:                     LCD_Position(0,0);
 [e ( _LCD_Position (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
+"121
+[; ;robotmain.c: 121:                     LCD_Print("  Read  ", 8);
+[e ( _LCD_Print (2 , :s 16C -> -> 8 `i `uc ]
+"122
+[; ;robotmain.c: 122:                     LCD_Position(0,1);
+[e ( _LCD_Position (2 , -> -> 0 `i `uc -> -> 1 `i `uc ]
+"123
+[; ;robotmain.c: 123:                     LCD_Print("Sensors", 8);
+[e ( _LCD_Print (2 , :s 17C -> -> 8 `i `uc ]
+"124
+[; ;robotmain.c: 124:                     printf("\n\r");
+[e ( _printf :s 18C ]
+"129
+[; ;robotmain.c: 129:                     break;
+[e $U 2279  ]
+"130
+[; ;robotmain.c: 130:                 case 'd':
+[e :U 2297 ]
+"131
+[; ;robotmain.c: 131:                     uint8_t lowerbyte[5];
+[v _lowerbyte `uc ~T0 @X0 -> 5 `i a ]
+"132
+[; ;robotmain.c: 132:                     uint8_t upperbyte[5];
+[v _upperbyte `uc ~T0 @X0 -> 5 `i a ]
+"134
+[; ;robotmain.c: 134:                     uint16_t sensor_data[5];
+[v _sensor_data `us ~T0 @X0 -> 5 `i a ]
+"135
+[; ;robotmain.c: 135:                     LCD_Clear();
+[e ( _LCD_Clear ..  ]
 "136
-[; ;robotmain.c: 136:                     LCD_Print("Sensor ", 7);
-[e ( _LCD_Print (2 , :s 19C -> -> 7 `i `uc ]
+[; ;robotmain.c: 136:                     LCD_Position(0,0);
+[e ( _LCD_Position (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
 "137
-[; ;robotmain.c: 137:                     printf("\n\r");
-[e ( _printf :s 20C ]
+[; ;robotmain.c: 137:                     LCD_Print("Sensor ", 7);
+[e ( _LCD_Print (2 , :s 19C -> -> 7 `i `uc ]
 "138
-[; ;robotmain.c: 138:                     printf("Enter sensor number, 0-4 \n\r");
-[e ( _printf :s 21C ]
+[; ;robotmain.c: 138:                     printf("\n\r");
+[e ( _printf :s 20C ]
 "139
-[; ;robotmain.c: 139:                     sensor = Get_Key();
-[e = _sensor ( _Get_Key ..  ]
+[; ;robotmain.c: 139:                     printf("Enter sensor number, 0-4 \n\r");
+[e ( _printf :s 21C ]
 "140
-[; ;robotmain.c: 140:                     while (sensor < '0' || sensor > '4')
+[; ;robotmain.c: 140:                     sensor = Get_Key();
+[e = _sensor ( _Get_Key ..  ]
+"141
+[; ;robotmain.c: 141:                     while (sensor < '0' || sensor > '4')
 [e $U 2298  ]
 [e :U 2299 ]
-"141
-[; ;robotmain.c: 141:                     {
-{
 "142
-[; ;robotmain.c: 142:                         printf("\n\r");
-[e ( _printf :s 22C ]
+[; ;robotmain.c: 142:                     {
+{
 "143
-[; ;robotmain.c: 143:                         printf("Invalid entry.  Enter sensor number, 0-4 \n\r");
-[e ( _printf :s 23C ]
+[; ;robotmain.c: 143:                         printf("\n\r");
+[e ( _printf :s 22C ]
 "144
-[; ;robotmain.c: 144:                         sensor = Get_Key();
-[e = _sensor ( _Get_Key ..  ]
+[; ;robotmain.c: 144:                         printf("Invalid entry.  Enter sensor number, 0-4 \n\r");
+[e ( _printf :s 23C ]
 "145
-[; ;robotmain.c: 145:                     }
+[; ;robotmain.c: 145:                         sensor = Get_Key();
+[e = _sensor ( _Get_Key ..  ]
+"146
+[; ;robotmain.c: 146:                     }
 }
 [e :U 2298 ]
-"140
-[; ;robotmain.c: 140:                     while (sensor < '0' || sensor > '4')
+"141
+[; ;robotmain.c: 141:                     while (sensor < '0' || sensor > '4')
 [e $ || < -> _sensor `ui -> 48 `ui > -> _sensor `ui -> 52 `ui 2299  ]
 [e :U 2300 ]
-"146
-[; ;robotmain.c: 146:                     LCD_Position(7,0);
-[e ( _LCD_Position (2 , -> -> 7 `i `uc -> -> 0 `i `uc ]
 "147
-[; ;robotmain.c: 147:                     LCD_PrintCharacter(sensor);
+[; ;robotmain.c: 147:                     LCD_Position(7,0);
+[e ( _LCD_Position (2 , -> -> 7 `i `uc -> -> 0 `i `uc ]
+"148
+[; ;robotmain.c: 148:                     LCD_PrintCharacter(sensor);
 [e ( _LCD_PrintCharacter (1 _sensor ]
-"152
-[; ;robotmain.c: 152:                     while(!UART1_is_tx_ready()) continue;
+"153
+[; ;robotmain.c: 153:                     while(!UART1_is_tx_ready()) continue;
 [e $U 2301  ]
 [e :U 2302 ]
 [e $U 2301  ]
 [e :U 2301 ]
 [e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2302  ]
 [e :U 2303 ]
-"153
-[; ;robotmain.c: 153:                     UART1_Write(0x87);
-[e ( _UART1_Write (1 -> -> 135 `i `uc ]
 "154
-[; ;robotmain.c: 154:                     for(int i = 0; i < 5; i++){
+[; ;robotmain.c: 154:                     UART1_Write(0x87);
+[e ( _UART1_Write (1 -> -> 135 `i `uc ]
+"155
+[; ;robotmain.c: 155:                     for(int i = 0; i < 5; i++){
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
@@ -2782,333 +2782,515 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $U 2305  ]
 [e :U 2304 ]
 {
-"155
-[; ;robotmain.c: 155:                         while(!UART1_is_rx_ready()) continue;
+"156
+[; ;robotmain.c: 156:                         while(!UART1_is_rx_ready()) continue;
 [e $U 2307  ]
 [e :U 2308 ]
 [e $U 2307  ]
 [e :U 2307 ]
 [e $ ! != -> ( _UART1_is_rx_ready ..  `i -> 0 `i 2308  ]
 [e :U 2309 ]
-"156
-[; ;robotmain.c: 156:                         lowerbyte[i] = UART1_Read();
-[e = *U + &U _lowerbyte * -> -> _i `ui `ux -> -> # *U &U _lowerbyte `ui `ux ( _UART1_Read ..  ]
 "157
-[; ;robotmain.c: 157:                         while(!UART1_is_rx_ready()) continue;
+[; ;robotmain.c: 157:                         lowerbyte[i] = UART1_Read();
+[e = *U + &U _lowerbyte * -> -> _i `ui `ux -> -> # *U &U _lowerbyte `ui `ux ( _UART1_Read ..  ]
+"158
+[; ;robotmain.c: 158:                         while(!UART1_is_rx_ready()) continue;
 [e $U 2310  ]
 [e :U 2311 ]
 [e $U 2310  ]
 [e :U 2310 ]
 [e $ ! != -> ( _UART1_is_rx_ready ..  `i -> 0 `i 2311  ]
 [e :U 2312 ]
-"158
-[; ;robotmain.c: 158:                         upperbyte[i] = UART1_Read();
-[e = *U + &U _upperbyte * -> -> _i `ui `ux -> -> # *U &U _upperbyte `ui `ux ( _UART1_Read ..  ]
 "159
-[; ;robotmain.c: 159:                         sensor_data[i] = upperbyte[i]*256 + lowerbyte[i];
-[e = *U + &U _sensor_data * -> -> _i `ui `ux -> -> # *U &U _sensor_data `ui `ux -> + * -> *U + &U _upperbyte * -> -> _i `ui `ux -> -> # *U &U _upperbyte `ui `ux `i -> 256 `i -> *U + &U _lowerbyte * -> -> _i `ui `ux -> -> # *U &U _lowerbyte `ui `ux `i `us ]
+[; ;robotmain.c: 159:                         upperbyte[i] = UART1_Read();
+[e = *U + &U _upperbyte * -> -> _i `ui `ux -> -> # *U &U _upperbyte `ui `ux ( _UART1_Read ..  ]
 "160
-[; ;robotmain.c: 160:                     }
+[; ;robotmain.c: 160:                         sensor_data[i] = upperbyte[i]*256 + lowerbyte[i];
+[e = *U + &U _sensor_data * -> -> _i `ui `ux -> -> # *U &U _sensor_data `ui `ux -> + * -> *U + &U _upperbyte * -> -> _i `ui `ux -> -> # *U &U _upperbyte `ui `ux `i -> 256 `i -> *U + &U _lowerbyte * -> -> _i `ui `ux -> -> # *U &U _lowerbyte `ui `ux `i `us ]
+"161
+[; ;robotmain.c: 161:                     }
 }
 [e ++ _i -> 1 `i ]
 [e $ < _i -> 5 `i 2304  ]
 [e :U 2305 ]
 }
-"162
-[; ;robotmain.c: 162:                     key = sensor - '1';
-[e = _key -> - -> _sensor `ui -> 49 `ui `uc ]
 "163
-[; ;robotmain.c: 163:                         printf("Sensor %d: %u\n", key, sensor_data[key]);
+[; ;robotmain.c: 163:                     key = sensor - '1';
+[e = _key -> - -> _sensor `ui -> 49 `ui `uc ]
+"164
+[; ;robotmain.c: 164:                         printf("Sensor %d: %u\n", key, sensor_data[key]);
 [e ( _printf , , (. :s 24C -> _key `i -> *U + &U _sensor_data * -> _key `ux -> -> # *U &U _sensor_data `ui `ux `ui ]
-"166
-[; ;robotmain.c: 166:                     break;
-[e $U 2279  ]
 "167
-[; ;robotmain.c: 167:                 case 'v':
-[e :U 2313 ]
-"168
-[; ;robotmain.c: 168:                     LCD_Clear();
-[e ( _LCD_Clear ..  ]
-"169
-[; ;robotmain.c: 169:                     LCD_Position(0,0);
-[e ( _LCD_Position (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
-"170
-[; ;robotmain.c: 170:                     LCD_Print("Battery ", 8);
-[e ( _LCD_Print (2 , :s 25C -> -> 8 `i `uc ]
-"171
-[; ;robotmain.c: 171:                     printf("\n\r");
-[e ( _printf :s 26C ]
-"172
-[; ;robotmain.c: 172:                     battery = Read_Battery_Voltage();
-[e = _battery ( _Read_Battery_Voltage ..  ]
-"173
-[; ;robotmain.c: 173:                     length = sprintf(msg, "%u mV", battery);
-[e = _length -> ( _sprintf (1 , (. , &U _msg :s 27C _battery `uc ]
-"174
-[; ;robotmain.c: 174:                     LCD_Position(0,1);
-[e ( _LCD_Position (2 , -> -> 0 `i `uc -> -> 1 `i `uc ]
-"175
-[; ;robotmain.c: 175:                     LCD_Print(msg, length);
-[e ( _LCD_Print (2 , &U _msg _length ]
-"176
-[; ;robotmain.c: 176:                     printf("Battery voltage = %u \n\r", battery);
-[e ( _printf , (. :s 28C _battery ]
-"177
-[; ;robotmain.c: 177:                     break;
+[; ;robotmain.c: 167:                     break;
 [e $U 2279  ]
-"178
-[; ;robotmain.c: 178:                 case 'F':
-[e :U 2314 ]
-"179
-[; ;robotmain.c: 179:                     LCD_Clear();
+"168
+[; ;robotmain.c: 168:                 case 'v':
+[e :U 2313 ]
+"169
+[; ;robotmain.c: 169:                     LCD_Clear();
 [e ( _LCD_Clear ..  ]
-"180
-[; ;robotmain.c: 180:                     LCD_Position(0,0);
+"170
+[; ;robotmain.c: 170:                     LCD_Position(0,0);
 [e ( _LCD_Position (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
-"181
-[; ;robotmain.c: 181:                     LCD_Print("Forward ", 8);
-[e ( _LCD_Print (2 , :s 29C -> -> 8 `i `uc ]
-"182
-[; ;robotmain.c: 182:                     printf("\n\r");
-[e ( _printf :s 30C ]
-"183
-[; ;robotmain.c: 183:                     printf("\t Please enter the forward speed, 0 - 127 \r\n");
-[e ( _printf :s 31C ]
-"184
-[; ;robotmain.c: 184:                     speed = Get_Number();
-[e = _speed ( _Get_Number ..  ]
-"185
-[; ;robotmain.c: 185:                     Forward(speed);
-[e ( _Forward (1 _speed ]
-"186
-[; ;robotmain.c: 186:                     length = sprintf(msg, " %u ", speed);
-[e = _length -> ( _sprintf (1 , (. , &U _msg :s 32C -> _speed `i `uc ]
-"187
-[; ;robotmain.c: 187:                     LCD_Position(0,1);
+"171
+[; ;robotmain.c: 171:                     LCD_Print("Battery ", 8);
+[e ( _LCD_Print (2 , :s 25C -> -> 8 `i `uc ]
+"172
+[; ;robotmain.c: 172:                     printf("\n\r");
+[e ( _printf :s 26C ]
+"173
+[; ;robotmain.c: 173:                     battery = Read_Battery_Voltage();
+[e = _battery ( _Read_Battery_Voltage ..  ]
+"174
+[; ;robotmain.c: 174:                     length = sprintf(msg, "%u mV", battery);
+[e = _length -> ( _sprintf (1 , (. , &U _msg :s 27C _battery `uc ]
+"175
+[; ;robotmain.c: 175:                     LCD_Position(0,1);
 [e ( _LCD_Position (2 , -> -> 0 `i `uc -> -> 1 `i `uc ]
-"188
-[; ;robotmain.c: 188:                     LCD_Print(msg, length);
+"176
+[; ;robotmain.c: 176:                     LCD_Print(msg, length);
 [e ( _LCD_Print (2 , &U _msg _length ]
+"177
+[; ;robotmain.c: 177:                     printf("Battery voltage = %u \n\r", battery);
+[e ( _printf , (. :s 28C _battery ]
+"178
+[; ;robotmain.c: 178:                     break;
+[e $U 2279  ]
+"179
+[; ;robotmain.c: 179:                 case 'F':
+[e :U 2314 ]
+"180
+[; ;robotmain.c: 180:                     LCD_Clear();
+[e ( _LCD_Clear ..  ]
+"181
+[; ;robotmain.c: 181:                     LCD_Position(0,0);
+[e ( _LCD_Position (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
+"182
+[; ;robotmain.c: 182:                     LCD_Print("Forward ", 8);
+[e ( _LCD_Print (2 , :s 29C -> -> 8 `i `uc ]
+"183
+[; ;robotmain.c: 183:                     printf("\n\r");
+[e ( _printf :s 30C ]
+"184
+[; ;robotmain.c: 184:                     printf("\t Please enter the forward speed, 0 - 127 \r\n");
+[e ( _printf :s 31C ]
+"185
+[; ;robotmain.c: 185:                     speed = Get_Number();
+[e = _speed ( _Get_Number ..  ]
+"186
+[; ;robotmain.c: 186:                     Forward(speed);
+[e ( _Forward (1 _speed ]
+"187
+[; ;robotmain.c: 187:                     length = sprintf(msg, " %u ", speed);
+[e = _length -> ( _sprintf (1 , (. , &U _msg :s 32C -> _speed `i `uc ]
+"188
+[; ;robotmain.c: 188:                     LCD_Position(0,1);
+[e ( _LCD_Position (2 , -> -> 0 `i `uc -> -> 1 `i `uc ]
 "189
-[; ;robotmain.c: 189:                     while(!UART1_is_tx_ready()) continue;
+[; ;robotmain.c: 189:                     LCD_Print(msg, length);
+[e ( _LCD_Print (2 , &U _msg _length ]
+"190
+[; ;robotmain.c: 190:                     while(!UART1_is_tx_ready()) continue;
 [e $U 2315  ]
 [e :U 2316 ]
 [e $U 2315  ]
 [e :U 2315 ]
 [e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2316  ]
 [e :U 2317 ]
-"190
-[; ;robotmain.c: 190:                     UART1_Write(0xC1);
-[e ( _UART1_Write (1 -> -> 193 `i `uc ]
 "191
-[; ;robotmain.c: 191:                     while(!UART1_is_tx_ready()) continue;
+[; ;robotmain.c: 191:                     UART1_Write(0xC1);
+[e ( _UART1_Write (1 -> -> 193 `i `uc ]
+"192
+[; ;robotmain.c: 192:                     while(!UART1_is_tx_ready()) continue;
 [e $U 2318  ]
 [e :U 2319 ]
 [e $U 2318  ]
 [e :U 2318 ]
 [e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2319  ]
 [e :U 2320 ]
-"192
-[; ;robotmain.c: 192:                     UART1_Write(speed);
-[e ( _UART1_Write (1 -> _speed `uc ]
 "193
-[; ;robotmain.c: 193:                     while(!UART1_is_tx_ready()) continue;
+[; ;robotmain.c: 193:                     UART1_Write(speed);
+[e ( _UART1_Write (1 -> _speed `uc ]
+"194
+[; ;robotmain.c: 194:                     while(!UART1_is_tx_ready()) continue;
 [e $U 2321  ]
 [e :U 2322 ]
 [e $U 2321  ]
 [e :U 2321 ]
 [e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2322  ]
 [e :U 2323 ]
-"194
-[; ;robotmain.c: 194:                     UART1_Write(0xC5);
-[e ( _UART1_Write (1 -> -> 197 `i `uc ]
 "195
-[; ;robotmain.c: 195:                     while(!UART1_is_tx_ready()) continue;
+[; ;robotmain.c: 195:                     UART1_Write(0xC5);
+[e ( _UART1_Write (1 -> -> 197 `i `uc ]
+"196
+[; ;robotmain.c: 196:                     while(!UART1_is_tx_ready()) continue;
 [e $U 2324  ]
 [e :U 2325 ]
 [e $U 2324  ]
 [e :U 2324 ]
 [e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2325  ]
 [e :U 2326 ]
-"196
-[; ;robotmain.c: 196:                     UART1_Write(speed);
-[e ( _UART1_Write (1 -> _speed `uc ]
 "197
-[; ;robotmain.c: 197:                     break;
-[e $U 2279  ]
+[; ;robotmain.c: 197:                     UART1_Write(speed);
+[e ( _UART1_Write (1 -> _speed `uc ]
 "198
-[; ;robotmain.c: 198:                 case 'B':
-[e :U 2327 ]
+[; ;robotmain.c: 198:                     break;
+[e $U 2279  ]
 "199
-[; ;robotmain.c: 199:                     LCD_Clear();
-[e ( _LCD_Clear ..  ]
+[; ;robotmain.c: 199:                 case 'B':
+[e :U 2327 ]
 "200
-[; ;robotmain.c: 200:                     LCD_Position(0,0);
-[e ( _LCD_Position (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
+[; ;robotmain.c: 200:                     LCD_Clear();
+[e ( _LCD_Clear ..  ]
 "201
-[; ;robotmain.c: 201:                     LCD_Print("Backward", 8);
-[e ( _LCD_Print (2 , :s 33C -> -> 8 `i `uc ]
+[; ;robotmain.c: 201:                     LCD_Position(0,0);
+[e ( _LCD_Position (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
 "202
-[; ;robotmain.c: 202:                     printf("\n\r");
-[e ( _printf :s 34C ]
+[; ;robotmain.c: 202:                     LCD_Print("Backward", 8);
+[e ( _LCD_Print (2 , :s 33C -> -> 8 `i `uc ]
 "203
-[; ;robotmain.c: 203:                     printf("\t Please enter the backward speed, 0 - 127 \r\n");
-[e ( _printf :s 35C ]
+[; ;robotmain.c: 203:                     printf("\n\r");
+[e ( _printf :s 34C ]
 "204
-[; ;robotmain.c: 204:                     speed = Get_Number();
-[e = _speed ( _Get_Number ..  ]
+[; ;robotmain.c: 204:                     printf("\t Please enter the backward speed, 0 - 127 \r\n");
+[e ( _printf :s 35C ]
 "205
-[; ;robotmain.c: 205:                     Backward(speed);
-[e ( _Backward (1 _speed ]
+[; ;robotmain.c: 205:                     speed = Get_Number();
+[e = _speed ( _Get_Number ..  ]
 "206
-[; ;robotmain.c: 206:                     length = sprintf(msg, " %u ", speed);
-[e = _length -> ( _sprintf (1 , (. , &U _msg :s 36C -> _speed `i `uc ]
+[; ;robotmain.c: 206:                     Backward(speed);
+[e ( _Backward (1 _speed ]
 "207
-[; ;robotmain.c: 207:                     LCD_Position(0,1);
-[e ( _LCD_Position (2 , -> -> 0 `i `uc -> -> 1 `i `uc ]
+[; ;robotmain.c: 207:                     length = sprintf(msg, " %u ", speed);
+[e = _length -> ( _sprintf (1 , (. , &U _msg :s 36C -> _speed `i `uc ]
 "208
-[; ;robotmain.c: 208:                     LCD_Print(msg, length);
-[e ( _LCD_Print (2 , &U _msg _length ]
+[; ;robotmain.c: 208:                     LCD_Position(0,1);
+[e ( _LCD_Position (2 , -> -> 0 `i `uc -> -> 1 `i `uc ]
 "209
-[; ;robotmain.c: 209:                     break;
-[e $U 2279  ]
+[; ;robotmain.c: 209:                     LCD_Print(msg, length);
+[e ( _LCD_Print (2 , &U _msg _length ]
 "210
-[; ;robotmain.c: 210:                 case 'L':
-[e :U 2328 ]
-"211
-[; ;robotmain.c: 211:                     LCD_Clear();
-[e ( _LCD_Clear ..  ]
-"212
-[; ;robotmain.c: 212:                     LCD_Position(0,0);
-[e ( _LCD_Position (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
-"213
-[; ;robotmain.c: 213:                     LCD_Print("  Left  ", 8);
-[e ( _LCD_Print (2 , :s 37C -> -> 8 `i `uc ]
-"214
-[; ;robotmain.c: 214:                     printf("\n\r");
-[e ( _printf :s 38C ]
-"215
-[; ;robotmain.c: 215:                     printf("\t Please enter the forward speed, 0 - 127 \r\n");
-[e ( _printf :s 39C ]
-"216
-[; ;robotmain.c: 216:                     speed = Get_Number();
-[e = _speed ( _Get_Number ..  ]
-"217
-[; ;robotmain.c: 217:                     printf("\t Please enter the turning differential: speed + differential < 127 \r\n");
-[e ( _printf :s 40C ]
-"218
-[; ;robotmain.c: 218:                     differential = Get_Number();
-[e = _differential ( _Get_Number ..  ]
-"219
-[; ;robotmain.c: 219:                     Left_Turn(speed, differential);
-[e ( _Left_Turn (2 , _speed _differential ]
-"220
-[; ;robotmain.c: 220:                     length = sprintf(msg, "%u %u", speed, differential);
-[e = _length -> ( _sprintf (1 , , (. , &U _msg :s 41C -> _speed `i -> _differential `i `uc ]
-"221
-[; ;robotmain.c: 221:                     LCD_Position(0,1);
-[e ( _LCD_Position (2 , -> -> 0 `i `uc -> -> 1 `i `uc ]
-"222
-[; ;robotmain.c: 222:                     LCD_Print(msg, length);
-[e ( _LCD_Print (2 , &U _msg _length ]
-"223
-[; ;robotmain.c: 223:                     break;
-[e $U 2279  ]
-"224
-[; ;robotmain.c: 224:                 case 'R':
+[; ;robotmain.c: 210:                     while(!UART1_is_tx_ready()) continue;
+[e $U 2328  ]
 [e :U 2329 ]
-"225
-[; ;robotmain.c: 225:                     LCD_Clear();
-[e ( _LCD_Clear ..  ]
-"226
-[; ;robotmain.c: 226:                     LCD_Position(0,0);
-[e ( _LCD_Position (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
-"227
-[; ;robotmain.c: 227:                     LCD_Print(" Right  ", 8);
-[e ( _LCD_Print (2 , :s 42C -> -> 8 `i `uc ]
-"228
-[; ;robotmain.c: 228:                     printf("\n\r");
-[e ( _printf :s 43C ]
-"229
-[; ;robotmain.c: 229:                     printf("\t Please enter the forward speed, 0 - 127 \r\n");
-[e ( _printf :s 44C ]
-"230
-[; ;robotmain.c: 230:                     speed = Get_Number();
-[e = _speed ( _Get_Number ..  ]
-"231
-[; ;robotmain.c: 231:                     printf("\t Please enter the turning differential: speed + differential < 127 \r\n");
-[e ( _printf :s 45C ]
-"232
-[; ;robotmain.c: 232:                     differential = Get_Number();
-[e = _differential ( _Get_Number ..  ]
-"233
-[; ;robotmain.c: 233:                     Right_Turn(speed, differential);
-[e ( _Right_Turn (2 , _speed _differential ]
-"234
-[; ;robotmain.c: 234:                     length = sprintf(msg, "%u %u", speed, differential);
-[e = _length -> ( _sprintf (1 , , (. , &U _msg :s 46C -> _speed `i -> _differential `i `uc ]
-"235
-[; ;robotmain.c: 235:                     LCD_Position(0,1);
-[e ( _LCD_Position (2 , -> -> 0 `i `uc -> -> 1 `i `uc ]
-"236
-[; ;robotmain.c: 236:                     LCD_Print(msg, length);
-[e ( _LCD_Print (2 , &U _msg _length ]
-"237
-[; ;robotmain.c: 237:                     break;
-[e $U 2279  ]
-"238
-[; ;robotmain.c: 238:                 case 'S':
+[e $U 2328  ]
+[e :U 2328 ]
+[e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2329  ]
 [e :U 2330 ]
-"239
-[; ;robotmain.c: 239:                     LCD_Clear();
-[e ( _LCD_Clear ..  ]
-"240
-[; ;robotmain.c: 240:                     LCD_Position(0,0);
-[e ( _LCD_Position (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
-"241
-[; ;robotmain.c: 241:                     LCD_Print("  Stop  ", 8);
-[e ( _LCD_Print (2 , :s 47C -> -> 8 `i `uc ]
-"242
-[; ;robotmain.c: 242:                     printf("\n\r");
-[e ( _printf :s 48C ]
-"243
-[; ;robotmain.c: 243:                     Stop();
-[e ( _Stop ..  ]
-"244
-[; ;robotmain.c: 244:                     break;
-[e $U 2279  ]
-"245
-[; ;robotmain.c: 245:                 case 'm':
+"211
+[; ;robotmain.c: 211:                     UART1_Write(0xC2);
+[e ( _UART1_Write (1 -> -> 194 `i `uc ]
+"212
+[; ;robotmain.c: 212:                     while(!UART1_is_tx_ready()) continue;
+[e $U 2331  ]
+[e :U 2332 ]
+[e $U 2331  ]
 [e :U 2331 ]
-"246
-[; ;robotmain.c: 246:                     LCD_Clear();
-[e ( _LCD_Clear ..  ]
-"247
-[; ;robotmain.c: 247:                     LCD_Position(0,0);
-[e ( _LCD_Position (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
-"248
-[; ;robotmain.c: 248:                     LCD_Print("Diagnose", 8);
-[e ( _LCD_Print (2 , :s 49C -> -> 8 `i `uc ]
-"249
-[; ;robotmain.c: 249:                     battery = Read_Battery_Voltage();
-[e = _battery ( _Read_Battery_Voltage ..  ]
-"250
-[; ;robotmain.c: 250:                     length = sprintf(msg, "%u mV", battery);
-[e = _length -> ( _sprintf (1 , (. , &U _msg :s 50C _battery `uc ]
-"251
-[; ;robotmain.c: 251:                     LCD_Position(0,1);
-[e ( _LCD_Position (2 , -> -> 0 `i `uc -> -> 1 `i `uc ]
-"252
-[; ;robotmain.c: 252:                     LCD_Print(msg, length);
-[e ( _LCD_Print (2 , &U _msg _length ]
-"253
-[; ;robotmain.c: 253:                     Diagnostic_Menu();
-[e ( _Diagnostic_Menu ..  ]
-"254
-[; ;robotmain.c: 254:                     break;
+[e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2332  ]
+[e :U 2333 ]
+"213
+[; ;robotmain.c: 213:                     UART1_Write(speed);
+[e ( _UART1_Write (1 -> _speed `uc ]
+"214
+[; ;robotmain.c: 214:                     while(!UART1_is_tx_ready()) continue;
+[e $U 2334  ]
+[e :U 2335 ]
+[e $U 2334  ]
+[e :U 2334 ]
+[e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2335  ]
+[e :U 2336 ]
+"215
+[; ;robotmain.c: 215:                     UART1_Write(0xC6);
+[e ( _UART1_Write (1 -> -> 198 `i `uc ]
+"216
+[; ;robotmain.c: 216:                     while(!UART1_is_tx_ready()) continue;
+[e $U 2337  ]
+[e :U 2338 ]
+[e $U 2337  ]
+[e :U 2337 ]
+[e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2338  ]
+[e :U 2339 ]
+"217
+[; ;robotmain.c: 217:                     UART1_Write(speed);
+[e ( _UART1_Write (1 -> _speed `uc ]
+"218
+[; ;robotmain.c: 218:                     break;
 [e $U 2279  ]
+"219
+[; ;robotmain.c: 219:                 case 'L':
+[e :U 2340 ]
+"220
+[; ;robotmain.c: 220:                     LCD_Clear();
+[e ( _LCD_Clear ..  ]
+"221
+[; ;robotmain.c: 221:                     LCD_Position(0,0);
+[e ( _LCD_Position (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
+"222
+[; ;robotmain.c: 222:                     LCD_Print("  Left  ", 8);
+[e ( _LCD_Print (2 , :s 37C -> -> 8 `i `uc ]
+"223
+[; ;robotmain.c: 223:                     printf("\n\r");
+[e ( _printf :s 38C ]
+"224
+[; ;robotmain.c: 224:                     printf("\t Please enter the forward speed, 0 - 127 \r\n");
+[e ( _printf :s 39C ]
+"225
+[; ;robotmain.c: 225:                     speed = Get_Number();
+[e = _speed ( _Get_Number ..  ]
+"226
+[; ;robotmain.c: 226:                     printf("\t Please enter the turning differential: speed + differential < 127 \r\n");
+[e ( _printf :s 40C ]
+"227
+[; ;robotmain.c: 227:                     differential = Get_Number();
+[e = _differential ( _Get_Number ..  ]
+"228
+[; ;robotmain.c: 228:                     turn = speed + differential;
+[e = _turn -> + -> _speed `i -> _differential `i `ui ]
+"229
+[; ;robotmain.c: 229:                     Left_Turn(speed, differential);
+[e ( _Left_Turn (2 , _speed _differential ]
+"230
+[; ;robotmain.c: 230:                     length = sprintf(msg, "%u %u", speed, differential);
+[e = _length -> ( _sprintf (1 , , (. , &U _msg :s 41C -> _speed `i -> _differential `i `uc ]
+"231
+[; ;robotmain.c: 231:                     LCD_Position(0,1);
+[e ( _LCD_Position (2 , -> -> 0 `i `uc -> -> 1 `i `uc ]
+"232
+[; ;robotmain.c: 232:                     LCD_Print(msg, length);
+[e ( _LCD_Print (2 , &U _msg _length ]
+"233
+[; ;robotmain.c: 233:                     while(!UART1_is_tx_ready()) continue;
+[e $U 2341  ]
+[e :U 2342 ]
+[e $U 2341  ]
+[e :U 2341 ]
+[e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2342  ]
+[e :U 2343 ]
+"234
+[; ;robotmain.c: 234:                     UART1_Write(0xC1);
+[e ( _UART1_Write (1 -> -> 193 `i `uc ]
+"235
+[; ;robotmain.c: 235:                     while(!UART1_is_tx_ready()) continue;
+[e $U 2344  ]
+[e :U 2345 ]
+[e $U 2344  ]
+[e :U 2344 ]
+[e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2345  ]
+[e :U 2346 ]
+"236
+[; ;robotmain.c: 236:                     UART1_Write(turn);
+[e ( _UART1_Write (1 -> _turn `uc ]
+"237
+[; ;robotmain.c: 237:                     while(!UART1_is_tx_ready()) continue;
+[e $U 2347  ]
+[e :U 2348 ]
+[e $U 2347  ]
+[e :U 2347 ]
+[e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2348  ]
+[e :U 2349 ]
+"238
+[; ;robotmain.c: 238:                     UART1_Write(0xC5);
+[e ( _UART1_Write (1 -> -> 197 `i `uc ]
+"239
+[; ;robotmain.c: 239:                     while(!UART1_is_tx_ready()) continue;
+[e $U 2350  ]
+[e :U 2351 ]
+[e $U 2350  ]
+[e :U 2350 ]
+[e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2351  ]
+[e :U 2352 ]
+"240
+[; ;robotmain.c: 240:                     UART1_Write(speed);
+[e ( _UART1_Write (1 -> _speed `uc ]
+"241
+[; ;robotmain.c: 241:                     break;
+[e $U 2279  ]
+"242
+[; ;robotmain.c: 242:                 case 'R':
+[e :U 2353 ]
+"243
+[; ;robotmain.c: 243:                     LCD_Clear();
+[e ( _LCD_Clear ..  ]
+"244
+[; ;robotmain.c: 244:                     LCD_Position(0,0);
+[e ( _LCD_Position (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
+"245
+[; ;robotmain.c: 245:                     LCD_Print(" Right  ", 8);
+[e ( _LCD_Print (2 , :s 42C -> -> 8 `i `uc ]
+"246
+[; ;robotmain.c: 246:                     printf("\n\r");
+[e ( _printf :s 43C ]
+"247
+[; ;robotmain.c: 247:                     printf("\t Please enter the forward speed, 0 - 127 \r\n");
+[e ( _printf :s 44C ]
+"248
+[; ;robotmain.c: 248:                     speed = Get_Number();
+[e = _speed ( _Get_Number ..  ]
+"249
+[; ;robotmain.c: 249:                     printf("\t Please enter the turning differential: speed + differential < 127 \r\n");
+[e ( _printf :s 45C ]
+"250
+[; ;robotmain.c: 250:                     differential = Get_Number();
+[e = _differential ( _Get_Number ..  ]
+"251
+[; ;robotmain.c: 251:                     turn = speed + differential;
+[e = _turn -> + -> _speed `i -> _differential `i `ui ]
+"252
+[; ;robotmain.c: 252:                     Right_Turn(speed, differential);
+[e ( _Right_Turn (2 , _speed _differential ]
+"253
+[; ;robotmain.c: 253:                     length = sprintf(msg, "%u %u", speed, differential);
+[e = _length -> ( _sprintf (1 , , (. , &U _msg :s 46C -> _speed `i -> _differential `i `uc ]
+"254
+[; ;robotmain.c: 254:                     LCD_Position(0,1);
+[e ( _LCD_Position (2 , -> -> 0 `i `uc -> -> 1 `i `uc ]
+"255
+[; ;robotmain.c: 255:                     LCD_Print(msg, length);
+[e ( _LCD_Print (2 , &U _msg _length ]
+"256
+[; ;robotmain.c: 256:                     while(!UART1_is_tx_ready()) continue;
+[e $U 2354  ]
+[e :U 2355 ]
+[e $U 2354  ]
+[e :U 2354 ]
+[e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2355  ]
+[e :U 2356 ]
+"257
+[; ;robotmain.c: 257:                     UART1_Write(0xC1);
+[e ( _UART1_Write (1 -> -> 193 `i `uc ]
+"258
+[; ;robotmain.c: 258:                     while(!UART1_is_tx_ready()) continue;
+[e $U 2357  ]
+[e :U 2358 ]
+[e $U 2357  ]
+[e :U 2357 ]
+[e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2358  ]
+[e :U 2359 ]
 "259
-[; ;robotmain.c: 259:             }
+[; ;robotmain.c: 259:                     UART1_Write(speed);
+[e ( _UART1_Write (1 -> _speed `uc ]
+"260
+[; ;robotmain.c: 260:                     while(!UART1_is_tx_ready()) continue;
+[e $U 2360  ]
+[e :U 2361 ]
+[e $U 2360  ]
+[e :U 2360 ]
+[e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2361  ]
+[e :U 2362 ]
+"261
+[; ;robotmain.c: 261:                     UART1_Write(0xC5);
+[e ( _UART1_Write (1 -> -> 197 `i `uc ]
+"262
+[; ;robotmain.c: 262:                     while(!UART1_is_tx_ready()) continue;
+[e $U 2363  ]
+[e :U 2364 ]
+[e $U 2363  ]
+[e :U 2363 ]
+[e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2364  ]
+[e :U 2365 ]
+"263
+[; ;robotmain.c: 263:                     UART1_Write(turn);
+[e ( _UART1_Write (1 -> _turn `uc ]
+"264
+[; ;robotmain.c: 264:                     break;
+[e $U 2279  ]
+"265
+[; ;robotmain.c: 265:                 case 'S':
+[e :U 2366 ]
+"266
+[; ;robotmain.c: 266:                     LCD_Clear();
+[e ( _LCD_Clear ..  ]
+"267
+[; ;robotmain.c: 267:                     LCD_Position(0,0);
+[e ( _LCD_Position (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
+"268
+[; ;robotmain.c: 268:                     LCD_Print("  Stop  ", 8);
+[e ( _LCD_Print (2 , :s 47C -> -> 8 `i `uc ]
+"269
+[; ;robotmain.c: 269:                     printf("\n\r");
+[e ( _printf :s 48C ]
+"270
+[; ;robotmain.c: 270:                     Stop();
+[e ( _Stop ..  ]
+"271
+[; ;robotmain.c: 271:                     while(!UART1_is_tx_ready()) continue;
+[e $U 2367  ]
+[e :U 2368 ]
+[e $U 2367  ]
+[e :U 2367 ]
+[e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2368  ]
+[e :U 2369 ]
+"272
+[; ;robotmain.c: 272:                     UART1_Write(0xC1);
+[e ( _UART1_Write (1 -> -> 193 `i `uc ]
+"273
+[; ;robotmain.c: 273:                     while(!UART1_is_tx_ready()) continue;
+[e $U 2370  ]
+[e :U 2371 ]
+[e $U 2370  ]
+[e :U 2370 ]
+[e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2371  ]
+[e :U 2372 ]
+"274
+[; ;robotmain.c: 274:                     UART1_Write(0);
+[e ( _UART1_Write (1 -> -> 0 `i `uc ]
+"275
+[; ;robotmain.c: 275:                     while(!UART1_is_tx_ready()) continue;
+[e $U 2373  ]
+[e :U 2374 ]
+[e $U 2373  ]
+[e :U 2373 ]
+[e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2374  ]
+[e :U 2375 ]
+"276
+[; ;robotmain.c: 276:                     UART1_Write(0xC5);
+[e ( _UART1_Write (1 -> -> 197 `i `uc ]
+"277
+[; ;robotmain.c: 277:                     while(!UART1_is_tx_ready()) continue;
+[e $U 2376  ]
+[e :U 2377 ]
+[e $U 2376  ]
+[e :U 2376 ]
+[e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2377  ]
+[e :U 2378 ]
+"278
+[; ;robotmain.c: 278:                     UART1_Write(0);
+[e ( _UART1_Write (1 -> -> 0 `i `uc ]
+"280
+[; ;robotmain.c: 280:                     break;
+[e $U 2279  ]
+"281
+[; ;robotmain.c: 281:                 case 'm':
+[e :U 2379 ]
+"282
+[; ;robotmain.c: 282:                     LCD_Clear();
+[e ( _LCD_Clear ..  ]
+"283
+[; ;robotmain.c: 283:                     LCD_Position(0,0);
+[e ( _LCD_Position (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
+"284
+[; ;robotmain.c: 284:                     LCD_Print("Diagnose", 8);
+[e ( _LCD_Print (2 , :s 49C -> -> 8 `i `uc ]
+"285
+[; ;robotmain.c: 285:                     battery = Read_Battery_Voltage();
+[e = _battery ( _Read_Battery_Voltage ..  ]
+"286
+[; ;robotmain.c: 286:                     length = sprintf(msg, "%u mV", battery);
+[e = _length -> ( _sprintf (1 , (. , &U _msg :s 50C _battery `uc ]
+"287
+[; ;robotmain.c: 287:                     LCD_Position(0,1);
+[e ( _LCD_Position (2 , -> -> 0 `i `uc -> -> 1 `i `uc ]
+"288
+[; ;robotmain.c: 288:                     LCD_Print(msg, length);
+[e ( _LCD_Print (2 , &U _msg _length ]
+"289
+[; ;robotmain.c: 289:                     Diagnostic_Menu();
+[e ( _Diagnostic_Menu ..  ]
+"290
+[; ;robotmain.c: 290:                     break;
+[e $U 2279  ]
+"295
+[; ;robotmain.c: 295:             }
 }
 [e $U 2279  ]
 [e :U 2280 ]
@@ -3118,620 +3300,509 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> -> 118 `ui `i 2313
  , $ -> -> 70 `ui `i 2314
  , $ -> -> 66 `ui `i 2327
- , $ -> -> 76 `ui `i 2328
- , $ -> -> 82 `ui `i 2329
- , $ -> -> 83 `ui `i 2330
- , $ -> -> 109 `ui `i 2331
+ , $ -> -> 76 `ui `i 2340
+ , $ -> -> 82 `ui `i 2353
+ , $ -> -> 83 `ui `i 2366
+ , $ -> -> 109 `ui `i 2379
  2279 ]
 [e :U 2279 ]
-"260
-[; ;robotmain.c: 260:         }
+"296
+[; ;robotmain.c: 296:         }
 }
 [e :U 2276 ]
 [e $U 2277  ]
 [e :U 2278 ]
-"261
-[; ;robotmain.c: 261:     }
+"297
+[; ;robotmain.c: 297:     }
 }
 [e :U 2275 ]
-"263
-[; ;robotmain.c: 263:     if (PORTBbits.RB5 == 1)
-[e $ ! == -> . . _PORTBbits 0 5 `i -> 1 `i 2332  ]
-"264
-[; ;robotmain.c: 264:     {
-{
-"265
-[; ;robotmain.c: 265:         Diagnostic_Menu();
-[e ( _Diagnostic_Menu ..  ]
-"266
-[; ;robotmain.c: 266:         LCD_Clear();
-[e ( _LCD_Clear ..  ]
-"267
-[; ;robotmain.c: 267:         LCD_Position(0,0);
-[e ( _LCD_Position (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
-"268
-[; ;robotmain.c: 268:         LCD_Print("  Run   ", 8);
-[e ( _LCD_Print (2 , :s 51C -> -> 8 `i `uc ]
-"269
-[; ;robotmain.c: 269:         battery = Read_Battery_Voltage();
-[e = _battery ( _Read_Battery_Voltage ..  ]
-"270
-[; ;robotmain.c: 270:         length = sprintf(msg, "%u mV", battery);
-[e = _length -> ( _sprintf (1 , (. , &U _msg :s 52C _battery `uc ]
-"271
-[; ;robotmain.c: 271:         LCD_Position(0,1);
-[e ( _LCD_Position (2 , -> -> 0 `i `uc -> -> 1 `i `uc ]
-"272
-[; ;robotmain.c: 272:         LCD_Print(msg, length);
-[e ( _LCD_Print (2 , &U _msg _length ]
-"273
-[; ;robotmain.c: 273:         _delay((unsigned long)((1000)*(48000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 48000000 `l `d .4000.0 `ul ]
-"274
-[; ;robotmain.c: 274:         LCD_Position(0,0);
-[e ( _LCD_Position (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
-"275
-[; ;robotmain.c: 275:         LCD_Print("Auto Cal", 8);
-[e ( _LCD_Print (2 , :s 53C -> -> 8 `i `uc ]
-"276
-[; ;robotmain.c: 276:         Auto_Calibrate();
-[e ( _Auto_Calibrate ..  ]
-"277
-[; ;robotmain.c: 277:  LCD_Position(0,1);
-[e ( _LCD_Position (2 , -> -> 0 `i `uc -> -> 1 `i `uc ]
-"278
-[; ;robotmain.c: 278:      LCD_Print("  done  ", 8);
-[e ( _LCD_Print (2 , :s 54C -> -> 8 `i `uc ]
-"279
-[; ;robotmain.c: 279:         Countdown(6);
-[e ( _Countdown (1 -> -> 6 `i `uc ]
-"280
-[; ;robotmain.c: 280:         _delay((unsigned long)((1)*(48000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 48000000 `l `d .4000.0 `ul ]
-"283
-[; ;robotmain.c: 283:         while(!UART1_is_tx_ready()) continue;
-[e $U 2333  ]
-[e :U 2334 ]
-[e $U 2333  ]
-[e :U 2333 ]
-[e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2334  ]
-[e :U 2335 ]
-"284
-[; ;robotmain.c: 284:         UART1_Write(0xBB);
-[e ( _UART1_Write (1 -> -> 187 `i `uc ]
-"285
-[; ;robotmain.c: 285:         while(!UART1_is_tx_ready()) continue;
-[e $U 2336  ]
-[e :U 2337 ]
-[e $U 2336  ]
-[e :U 2336 ]
-[e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2337  ]
-[e :U 2338 ]
-"286
-[; ;robotmain.c: 286:         UART1_Write(50);
-[e ( _UART1_Write (1 -> -> 50 `i `uc ]
-"287
-[; ;robotmain.c: 287:         while(!UART1_is_tx_ready()) continue;
-[e $U 2339  ]
-[e :U 2340 ]
-[e $U 2339  ]
-[e :U 2339 ]
-[e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2340  ]
-[e :U 2341 ]
-"288
-[; ;robotmain.c: 288:         UART1_Write(1);
-[e ( _UART1_Write (1 -> -> 1 `i `uc ]
-"289
-[; ;robotmain.c: 289:         while(!UART1_is_tx_ready()) continue;
-[e $U 2342  ]
-[e :U 2343 ]
-[e $U 2342  ]
-[e :U 2342 ]
-[e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2343  ]
-[e :U 2344 ]
-"290
-[; ;robotmain.c: 290:         UART1_Write(20);
-[e ( _UART1_Write (1 -> -> 20 `i `uc ]
-"291
-[; ;robotmain.c: 291:         while(!UART1_is_tx_ready()) continue;
-[e $U 2345  ]
-[e :U 2346 ]
-[e $U 2345  ]
-[e :U 2345 ]
-[e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2346  ]
-[e :U 2347 ]
-"292
-[; ;robotmain.c: 292:         UART1_Write(3);
-[e ( _UART1_Write (1 -> -> 3 `i `uc ]
-"293
-[; ;robotmain.c: 293:         while(!UART1_is_tx_ready()) continue;
-[e $U 2348  ]
-[e :U 2349 ]
-[e $U 2348  ]
-[e :U 2348 ]
-[e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2349  ]
-[e :U 2350 ]
-"294
-[; ;robotmain.c: 294:         UART1_Write(2);
-[e ( _UART1_Write (1 -> -> 2 `i `uc ]
-"295
-[; ;robotmain.c: 295:         while(1)
-[e :U 2352 ]
-"296
-[; ;robotmain.c: 296:         {
-{
-"297
-[; ;robotmain.c: 297:             sensor_value = Read_Calibrated_Sensors();
-[e = _sensor_value ( _Read_Calibrated_Sensors ..  ]
-"298
-[; ;robotmain.c: 298:             sum = sensor_value[1]+sensor_value[2]+sensor_value[3];
-[e = _sum + + *U + _sensor_value * -> -> 1 `i `x -> -> # *U _sensor_value `i `x *U + _sensor_value * -> -> 2 `i `x -> -> # *U _sensor_value `i `x *U + _sensor_value * -> -> 3 `i `x -> -> # *U _sensor_value `i `x ]
 "299
-[; ;robotmain.c: 299:             length = sprintf(msg, " %u ", sum);
-[e = _length -> ( _sprintf (1 , (. , &U _msg :s 55C _sum `uc ]
+[; ;robotmain.c: 299:     if (PORTBbits.RB5 == 1)
+[e $ ! == -> . . _PORTBbits 0 5 `i -> 1 `i 2380  ]
 "300
-[; ;robotmain.c: 300:             LCD_Position(0,1);
-[e ( _LCD_Position (2 , -> -> 0 `i `uc -> -> 1 `i `uc ]
+[; ;robotmain.c: 300:     {
+{
 "301
-[; ;robotmain.c: 301:             LCD_Print(msg, length);
-[e ( _LCD_Print (2 , &U _msg _length ]
+[; ;robotmain.c: 301:         Diagnostic_Menu();
+[e ( _Diagnostic_Menu ..  ]
 "302
-[; ;robotmain.c: 302:             if(sum < 2000 && sensor_value[4] > 0)
-[e $ ! && < _sum -> -> 2000 `i `ui > *U + _sensor_value * -> -> 4 `i `x -> -> # *U _sensor_value `i `x -> -> 0 `i `ui 2354  ]
+[; ;robotmain.c: 302:         LCD_Clear();
+[e ( _LCD_Clear ..  ]
 "303
-[; ;robotmain.c: 303:             {
-{
+[; ;robotmain.c: 303:         LCD_Position(0,0);
+[e ( _LCD_Position (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
 "304
-[; ;robotmain.c: 304:                 while(!UART1_is_tx_ready()) continue;
-[e $U 2355  ]
-[e :U 2356 ]
-[e $U 2355  ]
-[e :U 2355 ]
-[e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2356  ]
-[e :U 2357 ]
+[; ;robotmain.c: 304:         LCD_Print("  Run   ", 8);
+[e ( _LCD_Print (2 , :s 51C -> -> 8 `i `uc ]
 "305
-[; ;robotmain.c: 305:                 UART1_Write(0xC1);
-[e ( _UART1_Write (1 -> -> 193 `i `uc ]
+[; ;robotmain.c: 305:         battery = Read_Battery_Voltage();
+[e = _battery ( _Read_Battery_Voltage ..  ]
 "306
-[; ;robotmain.c: 306:                 while(!UART1_is_tx_ready()) continue;
-[e $U 2358  ]
-[e :U 2359 ]
-[e $U 2358  ]
-[e :U 2358 ]
-[e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2359  ]
-[e :U 2360 ]
+[; ;robotmain.c: 306:         length = sprintf(msg, "%u mV", battery);
+[e = _length -> ( _sprintf (1 , (. , &U _msg :s 52C _battery `uc ]
 "307
-[; ;robotmain.c: 307:                 UART1_Write(80);
-[e ( _UART1_Write (1 -> -> 80 `i `uc ]
+[; ;robotmain.c: 307:         LCD_Position(0,1);
+[e ( _LCD_Position (2 , -> -> 0 `i `uc -> -> 1 `i `uc ]
+"308
+[; ;robotmain.c: 308:         LCD_Print(msg, length);
+[e ( _LCD_Print (2 , &U _msg _length ]
 "309
-[; ;robotmain.c: 309:             }else if(sum > 2500){
-}
-[e $U 2361  ]
-[e :U 2354 ]
-[e $ ! > _sum -> -> 2500 `i `ui 2362  ]
-{
+[; ;robotmain.c: 309:         _delay((unsigned long)((1000)*(48000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 48000000 `l `d .4000.0 `ul ]
 "310
-[; ;robotmain.c: 310:                 while(!UART1_is_tx_ready()) continue;
-[e $U 2363  ]
-[e :U 2364 ]
-[e $U 2363  ]
-[e :U 2363 ]
-[e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2364  ]
-[e :U 2365 ]
+[; ;robotmain.c: 310:         LCD_Position(0,0);
+[e ( _LCD_Position (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
 "311
-[; ;robotmain.c: 311:                 UART1_Write(0xC1);
-[e ( _UART1_Write (1 -> -> 193 `i `uc ]
+[; ;robotmain.c: 311:         LCD_Print("Auto Cal", 8);
+[e ( _LCD_Print (2 , :s 53C -> -> 8 `i `uc ]
 "312
-[; ;robotmain.c: 312:                 while(!UART1_is_tx_ready()) continue;
-[e $U 2366  ]
-[e :U 2367 ]
-[e $U 2366  ]
-[e :U 2366 ]
-[e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2367  ]
-[e :U 2368 ]
+[; ;robotmain.c: 312:         Auto_Calibrate();
+[e ( _Auto_Calibrate ..  ]
 "313
-[; ;robotmain.c: 313:                 UART1_Write(50);
-[e ( _UART1_Write (1 -> -> 50 `i `uc ]
+[; ;robotmain.c: 313:  LCD_Position(0,1);
+[e ( _LCD_Position (2 , -> -> 0 `i `uc -> -> 1 `i `uc ]
 "314
-[; ;robotmain.c: 314:             }
-}
-[e :U 2362 ]
-[e :U 2361 ]
+[; ;robotmain.c: 314:      LCD_Print("  done  ", 8);
+[e ( _LCD_Print (2 , :s 54C -> -> 8 `i `uc ]
 "315
-[; ;robotmain.c: 315:         }
-}
-[e :U 2351 ]
-[e $U 2352  ]
-[e :U 2353 ]
+[; ;robotmain.c: 315:         Countdown(6);
+[e ( _Countdown (1 -> -> 6 `i `uc ]
 "316
-[; ;robotmain.c: 316:     }
+[; ;robotmain.c: 316:         _delay((unsigned long)((1)*(48000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 48000000 `l `d .4000.0 `ul ]
+"319
+[; ;robotmain.c: 319:         while(!UART1_is_tx_ready()) continue;
+[e $U 2381  ]
+[e :U 2382 ]
+[e $U 2381  ]
+[e :U 2381 ]
+[e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2382  ]
+[e :U 2383 ]
+"320
+[; ;robotmain.c: 320:                     UART1_Write(0xC1);
+[e ( _UART1_Write (1 -> -> 193 `i `uc ]
+"321
+[; ;robotmain.c: 321:                     while(!UART1_is_tx_ready()) continue;
+[e $U 2384  ]
+[e :U 2385 ]
+[e $U 2384  ]
+[e :U 2384 ]
+[e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2385  ]
+[e :U 2386 ]
+"322
+[; ;robotmain.c: 322:                     UART1_Write(25);
+[e ( _UART1_Write (1 -> -> 25 `i `uc ]
+"323
+[; ;robotmain.c: 323:                     while(!UART1_is_tx_ready()) continue;
+[e $U 2387  ]
+[e :U 2388 ]
+[e $U 2387  ]
+[e :U 2387 ]
+[e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2388  ]
+[e :U 2389 ]
+"324
+[; ;robotmain.c: 324:                     UART1_Write(0xC5);
+[e ( _UART1_Write (1 -> -> 197 `i `uc ]
+"325
+[; ;robotmain.c: 325:                     while(!UART1_is_tx_ready()) continue;
+[e $U 2390  ]
+[e :U 2391 ]
+[e $U 2390  ]
+[e :U 2390 ]
+[e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2391  ]
+[e :U 2392 ]
+"326
+[; ;robotmain.c: 326:                     UART1_Write(25);
+[e ( _UART1_Write (1 -> -> 25 `i `uc ]
+"328
+[; ;robotmain.c: 328:     }
 }
-[e :U 2332 ]
-"317
-[; ;robotmain.c: 317: }
+[e :U 2380 ]
+"329
+[; ;robotmain.c: 329: }
 [e :UE 2274 ]
 }
-"319
-[; ;robotmain.c: 319: void Diagnostic_Menu (void)
+"331
+[; ;robotmain.c: 331: void Diagnostic_Menu (void)
 [v _Diagnostic_Menu `(v ~T0 @X0 1 ef ]
-"320
-[; ;robotmain.c: 320: {
+"332
+[; ;robotmain.c: 332: {
 {
 [e :U _Diagnostic_Menu ]
 [f ]
-"321
-[; ;robotmain.c: 321:     printf("\r\n");
-[e ( _printf :s 56C ]
-"322
-[; ;robotmain.c: 322:     printf("\t******************************\r\n");
-[e ( _printf :s 57C ]
-"323
-[; ;robotmain.c: 323:     printf("\t*                            *\r\n");
-[e ( _printf :s 58C ]
-"324
-[; ;robotmain.c: 324:     printf("\t*   APSC 1299 - Pololu 3pi   *\r\n");
-[e ( _printf :s 59C ]
-"325
-[; ;robotmain.c: 325:     printf("\t*      Diagnostic Menu       *\r\n");
-[e ( _printf :s 60C ]
-"326
-[; ;robotmain.c: 326:     printf("\t*                            *\r\n");
-[e ( _printf :s 61C ]
-"327
-[; ;robotmain.c: 327:     printf("\t******************************\r\n");
-[e ( _printf :s 62C ]
-"328
-[; ;robotmain.c: 328:     printf("\n\r");
-[e ( _printf :s 63C ]
-"329
-[; ;robotmain.c: 329:     printf("Command Key \t Description \r\n");
-[e ( _printf :s 64C ]
-"330
-[; ;robotmain.c: 330:     printf("  c \t\t (c)alibrate sensors \r\n");
-[e ( _printf :s 65C ]
-"331
-[; ;robotmain.c: 331:     printf("  r \t\t (r)ead calibrated sensors \r\n");
-[e ( _printf :s 66C ]
-"332
-[; ;robotmain.c: 332:     printf("  d \t\t (d)isplay sensor x value \r\n");
-[e ( _printf :s 67C ]
 "333
 [; ;robotmain.c: 333:     printf("\r\n");
-[e ( _printf :s 68C ]
+[e ( _printf :s 55C ]
 "334
-[; ;robotmain.c: 334:     printf("  v \t\t (v)oltage - Read and display battery voltage \r\n");
-[e ( _printf :s 69C ]
+[; ;robotmain.c: 334:     printf("\t******************************\r\n");
+[e ( _printf :s 56C ]
 "335
-[; ;robotmain.c: 335:     printf("\r\n");
-[e ( _printf :s 70C ]
+[; ;robotmain.c: 335:     printf("\t*                            *\r\n");
+[e ( _printf :s 57C ]
 "336
-[; ;robotmain.c: 336:     printf("  F \t\t Wheels rotate (F)orward \r\n");
-[e ( _printf :s 71C ]
+[; ;robotmain.c: 336:     printf("\t*   APSC 1299 - Pololu 3pi   *\r\n");
+[e ( _printf :s 58C ]
 "337
-[; ;robotmain.c: 337:     printf("  B \t\t Wheels rotate (B)ackward \r\n");
-[e ( _printf :s 72C ]
+[; ;robotmain.c: 337:     printf("\t*      Diagnostic Menu       *\r\n");
+[e ( _printf :s 59C ]
 "338
-[; ;robotmain.c: 338:     printf("  L \t\t (L)eft turn \r\n");
-[e ( _printf :s 73C ]
+[; ;robotmain.c: 338:     printf("\t*                            *\r\n");
+[e ( _printf :s 60C ]
 "339
-[; ;robotmain.c: 339:     printf("  R \t\t (R)ight turn \r\n");
-[e ( _printf :s 74C ]
+[; ;robotmain.c: 339:     printf("\t******************************\r\n");
+[e ( _printf :s 61C ]
 "340
-[; ;robotmain.c: 340:     printf("  S \t\t (S)top motor \r\n");
-[e ( _printf :s 75C ]
+[; ;robotmain.c: 340:     printf("\n\r");
+[e ( _printf :s 62C ]
 "341
-[; ;robotmain.c: 341:     printf("\r\n");
-[e ( _printf :s 76C ]
+[; ;robotmain.c: 341:     printf("Command Key \t Description \r\n");
+[e ( _printf :s 63C ]
 "342
-[; ;robotmain.c: 342:     printf("  m \t\t Refresh (m)enu \r\n");
-[e ( _printf :s 77C ]
+[; ;robotmain.c: 342:     printf("  c \t\t (c)alibrate sensors \r\n");
+[e ( _printf :s 64C ]
 "343
-[; ;robotmain.c: 343:     printf("\n\r");
-[e ( _printf :s 78C ]
+[; ;robotmain.c: 343:     printf("  r \t\t (r)ead calibrated sensors \r\n");
+[e ( _printf :s 65C ]
 "344
-[; ;robotmain.c: 344: }
-[e :UE 2369 ]
-}
+[; ;robotmain.c: 344:     printf("  d \t\t (d)isplay sensor x value \r\n");
+[e ( _printf :s 66C ]
+"345
+[; ;robotmain.c: 345:     printf("\r\n");
+[e ( _printf :s 67C ]
+"346
+[; ;robotmain.c: 346:     printf("  v \t\t (v)oltage - Read and display battery voltage \r\n");
+[e ( _printf :s 68C ]
+"347
+[; ;robotmain.c: 347:     printf("\r\n");
+[e ( _printf :s 69C ]
 "348
-[; ;robotmain.c: 348: char Get_Number(void)
-[v _Get_Number `(uc ~T0 @X0 1 ef ]
+[; ;robotmain.c: 348:     printf("  F \t\t Wheels rotate (F)orward \r\n");
+[e ( _printf :s 70C ]
 "349
-[; ;robotmain.c: 349: {
+[; ;robotmain.c: 349:     printf("  B \t\t Wheels rotate (B)ackward \r\n");
+[e ( _printf :s 71C ]
+"350
+[; ;robotmain.c: 350:     printf("  L \t\t (L)eft turn \r\n");
+[e ( _printf :s 72C ]
+"351
+[; ;robotmain.c: 351:     printf("  R \t\t (R)ight turn \r\n");
+[e ( _printf :s 73C ]
+"352
+[; ;robotmain.c: 352:     printf("  S \t\t (S)top motor \r\n");
+[e ( _printf :s 74C ]
+"353
+[; ;robotmain.c: 353:     printf("\r\n");
+[e ( _printf :s 75C ]
+"354
+[; ;robotmain.c: 354:     printf("  m \t\t Refresh (m)enu \r\n");
+[e ( _printf :s 76C ]
+"355
+[; ;robotmain.c: 355:     printf("\n\r");
+[e ( _printf :s 77C ]
+"356
+[; ;robotmain.c: 356: }
+[e :UE 2393 ]
+}
+"360
+[; ;robotmain.c: 360: char Get_Number(void)
+[v _Get_Number `(uc ~T0 @X0 1 ef ]
+"361
+[; ;robotmain.c: 361: {
 {
 [e :U _Get_Number ]
 [f ]
-"350
-[; ;robotmain.c: 350:     char digit = 255;
+"362
+[; ;robotmain.c: 362:     char digit = 255;
 [v _digit `uc ~T0 @X0 1 a ]
 [e = _digit -> -> 255 `i `uc ]
-"351
-[; ;robotmain.c: 351:     char value = 0;
+"363
+[; ;robotmain.c: 363:     char value = 0;
 [v _value `uc ~T0 @X0 1 a ]
 [e = _value -> -> 0 `i `uc ]
-"353
-[; ;robotmain.c: 353:     while(digit != '\r')
-[e $U 2371  ]
-[e :U 2372 ]
-"354
-[; ;robotmain.c: 354:     {
-{
-"355
-[; ;robotmain.c: 355:         digit = Get_Key();
-[e = _digit ( _Get_Key ..  ]
-"356
-[; ;robotmain.c: 356:         if (digit == '\r')
-[e $ ! == -> _digit `ui -> 13 `ui 2374  ]
-"357
-[; ;robotmain.c: 357:             continue;
-[e $U 2371  ]
-[e $U 2375  ]
-"358
-[; ;robotmain.c: 358:         else if (digit < 48 || digit > 57)
-[e :U 2374 ]
-[e $ ! || < -> _digit `i -> 48 `i > -> _digit `i -> 57 `i 2376  ]
-"359
-[; ;robotmain.c: 359:         {
-{
-"360
-[; ;robotmain.c: 360:             printf("\n\r");
-[e ( _printf :s 79C ]
-"361
-[; ;robotmain.c: 361:             printf("Invalid input. Please redo numerical input. \r\n");
-[e ( _printf :s 80C ]
-"362
-[; ;robotmain.c: 362:             value = 0;
-[e = _value -> -> 0 `i `uc ]
-"363
-[; ;robotmain.c: 363:             digit = 255;
-[e = _digit -> -> 255 `i `uc ]
-"364
-[; ;robotmain.c: 364:         }
-}
-[e $U 2377  ]
 "365
-[; ;robotmain.c: 365:         else
-[e :U 2376 ]
+[; ;robotmain.c: 365:     while(digit != '\r')
+[e $U 2395  ]
+[e :U 2396 ]
 "366
-[; ;robotmain.c: 366:             value = value*10 + (digit-48);
-[e = _value -> + * -> _value `i -> 10 `i - -> _digit `i -> 48 `i `uc ]
-[e :U 2377 ]
-[e :U 2375 ]
+[; ;robotmain.c: 366:     {
+{
 "367
-[; ;robotmain.c: 367:     }
-}
-[e :U 2371 ]
-"353
-[; ;robotmain.c: 353:     while(digit != '\r')
-[e $ != -> _digit `ui -> 13 `ui 2372  ]
-[e :U 2373 ]
+[; ;robotmain.c: 367:         digit = Get_Key();
+[e = _digit ( _Get_Key ..  ]
 "368
-[; ;robotmain.c: 368:     return(value);
-[e ) _value ]
-[e $UE 2370  ]
+[; ;robotmain.c: 368:         if (digit == '\r')
+[e $ ! == -> _digit `ui -> 13 `ui 2398  ]
 "369
-[; ;robotmain.c: 369: }
-[e :UE 2370 ]
-}
+[; ;robotmain.c: 369:             continue;
+[e $U 2395  ]
+[e $U 2399  ]
+"370
+[; ;robotmain.c: 370:         else if (digit < 48 || digit > 57)
+[e :U 2398 ]
+[e $ ! || < -> _digit `i -> 48 `i > -> _digit `i -> 57 `i 2400  ]
+"371
+[; ;robotmain.c: 371:         {
+{
+"372
+[; ;robotmain.c: 372:             printf("\n\r");
+[e ( _printf :s 78C ]
 "373
-[; ;robotmain.c: 373: char Get_Key(void)
-[v _Get_Key `(uc ~T0 @X0 1 ef ]
+[; ;robotmain.c: 373:             printf("Invalid input. Please redo numerical input. \r\n");
+[e ( _printf :s 79C ]
 "374
-[; ;robotmain.c: 374: {
+[; ;robotmain.c: 374:             value = 0;
+[e = _value -> -> 0 `i `uc ]
+"375
+[; ;robotmain.c: 375:             digit = 255;
+[e = _digit -> -> 255 `i `uc ]
+"376
+[; ;robotmain.c: 376:         }
+}
+[e $U 2401  ]
+"377
+[; ;robotmain.c: 377:         else
+[e :U 2400 ]
+"378
+[; ;robotmain.c: 378:             value = value*10 + (digit-48);
+[e = _value -> + * -> _value `i -> 10 `i - -> _digit `i -> 48 `i `uc ]
+[e :U 2401 ]
+[e :U 2399 ]
+"379
+[; ;robotmain.c: 379:     }
+}
+[e :U 2395 ]
+"365
+[; ;robotmain.c: 365:     while(digit != '\r')
+[e $ != -> _digit `ui -> 13 `ui 2396  ]
+[e :U 2397 ]
+"380
+[; ;robotmain.c: 380:     return(value);
+[e ) _value ]
+[e $UE 2394  ]
+"381
+[; ;robotmain.c: 381: }
+[e :UE 2394 ]
+}
+"385
+[; ;robotmain.c: 385: char Get_Key(void)
+[v _Get_Key `(uc ~T0 @X0 1 ef ]
+"386
+[; ;robotmain.c: 386: {
 {
 [e :U _Get_Key ]
 [f ]
-"375
-[; ;robotmain.c: 375:     char rxdata = 255;
+"387
+[; ;robotmain.c: 387:     char rxdata = 255;
 [v _rxdata `uc ~T0 @X0 1 a ]
 [e = _rxdata -> -> 255 `i `uc ]
-"378
-[; ;robotmain.c: 378:     while(((rxdata < 48) || (rxdata > 122)) && (rxdata != '\r'))
-[e $U 2379  ]
-[e :U 2380 ]
-"379
-[; ;robotmain.c: 379:     {
-{
-"380
-[; ;robotmain.c: 380:         if (UART2_is_rx_ready())
-[e $ ! != -> ( _UART2_is_rx_ready ..  `i -> 0 `i 2382  ]
-"381
-[; ;robotmain.c: 381:         {
-{
-"382
-[; ;robotmain.c: 382:             rxdata = UART2_Read();
-[e = _rxdata -> ( _UART2_Read ..  `uc ]
-"383
-[; ;robotmain.c: 383:             if (UART2_is_tx_ready())
-[e $ ! != -> ( _UART2_is_tx_ready ..  `i -> 0 `i 2383  ]
-"384
-[; ;robotmain.c: 384:             {
-{
-"385
-[; ;robotmain.c: 385:                 UART2_Write(rxdata);
-[e ( _UART2_Write (1 -> _rxdata `uc ]
-"386
-[; ;robotmain.c: 386:                 if(rxdata == '\r')
-[e $ ! == -> _rxdata `ui -> 13 `ui 2384  ]
-"387
-[; ;robotmain.c: 387:                     UART2_Write('\n');
-[e ( _UART2_Write (1 -> -> 10 `ui `uc ]
-[e :U 2384 ]
-"388
-[; ;robotmain.c: 388:             }
-}
-[e :U 2383 ]
-"389
-[; ;robotmain.c: 389:         }
-}
-[e :U 2382 ]
 "390
-[; ;robotmain.c: 390:     }
-}
-[e :U 2379 ]
-"378
-[; ;robotmain.c: 378:     while(((rxdata < 48) || (rxdata > 122)) && (rxdata != '\r'))
-[e $ && || < -> _rxdata `i -> 48 `i > -> _rxdata `i -> 122 `i != -> _rxdata `ui -> 13 `ui 2380  ]
-[e :U 2381 ]
+[; ;robotmain.c: 390:     while(((rxdata < 48) || (rxdata > 122)) && (rxdata != '\r'))
+[e $U 2403  ]
+[e :U 2404 ]
 "391
-[; ;robotmain.c: 391:     return(rxdata);
-[e ) _rxdata ]
-[e $UE 2378  ]
+[; ;robotmain.c: 391:     {
+{
 "392
-[; ;robotmain.c: 392: }
-[e :UE 2378 ]
-}
+[; ;robotmain.c: 392:         if (UART2_is_rx_ready())
+[e $ ! != -> ( _UART2_is_rx_ready ..  `i -> 0 `i 2406  ]
+"393
+[; ;robotmain.c: 393:         {
+{
+"394
+[; ;robotmain.c: 394:             rxdata = UART2_Read();
+[e = _rxdata -> ( _UART2_Read ..  `uc ]
+"395
+[; ;robotmain.c: 395:             if (UART2_is_tx_ready())
+[e $ ! != -> ( _UART2_is_tx_ready ..  `i -> 0 `i 2407  ]
 "396
-[; ;robotmain.c: 396: void Countdown(char time)
-[v _Countdown `(v ~T0 @X0 1 ef1`uc ]
+[; ;robotmain.c: 396:             {
+{
 "397
-[; ;robotmain.c: 397: {
+[; ;robotmain.c: 397:                 UART2_Write(rxdata);
+[e ( _UART2_Write (1 -> _rxdata `uc ]
+"398
+[; ;robotmain.c: 398:                 if(rxdata == '\r')
+[e $ ! == -> _rxdata `ui -> 13 `ui 2408  ]
+"399
+[; ;robotmain.c: 399:                     UART2_Write('\n');
+[e ( _UART2_Write (1 -> -> 10 `ui `uc ]
+[e :U 2408 ]
+"400
+[; ;robotmain.c: 400:             }
+}
+[e :U 2407 ]
+"401
+[; ;robotmain.c: 401:         }
+}
+[e :U 2406 ]
+"402
+[; ;robotmain.c: 402:     }
+}
+[e :U 2403 ]
+"390
+[; ;robotmain.c: 390:     while(((rxdata < 48) || (rxdata > 122)) && (rxdata != '\r'))
+[e $ && || < -> _rxdata `i -> 48 `i > -> _rxdata `i -> 122 `i != -> _rxdata `ui -> 13 `ui 2404  ]
+[e :U 2405 ]
+"403
+[; ;robotmain.c: 403:     return(rxdata);
+[e ) _rxdata ]
+[e $UE 2402  ]
+"404
+[; ;robotmain.c: 404: }
+[e :UE 2402 ]
+}
+"408
+[; ;robotmain.c: 408: void Countdown(char time)
+[v _Countdown `(v ~T0 @X0 1 ef1`uc ]
+"409
+[; ;robotmain.c: 409: {
 {
 [e :U _Countdown ]
-"396
-[; ;robotmain.c: 396: void Countdown(char time)
+"408
+[; ;robotmain.c: 408: void Countdown(char time)
 [v _time `uc ~T0 @X0 1 r1 ]
-"397
-[; ;robotmain.c: 397: {
+"409
+[; ;robotmain.c: 409: {
 [f ]
-"398
-[; ;robotmain.c: 398:     char length, msg[9];
+"410
+[; ;robotmain.c: 410:     char length, msg[9];
 [v _length `uc ~T0 @X0 1 a ]
 [v _msg `uc ~T0 @X0 -> 9 `i a ]
-"399
-[; ;robotmain.c: 399:     char i = time;
+"411
+[; ;robotmain.c: 411:     char i = time;
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i _time ]
-"400
-[; ;robotmain.c: 400:     unsigned int counts;
-[v _counts `ui ~T0 @X0 1 a ]
-"402
-[; ;robotmain.c: 402:     LCD_Clear();
-[e ( _LCD_Clear ..  ]
-"403
-[; ;robotmain.c: 403:     LCD_Print("Counting", 8);
-[e ( _LCD_Print (2 , :s 81C -> -> 8 `i `uc ]
-"404
-[; ;robotmain.c: 404:     TMR0_Initialize(0x9F & 0x90, 0x5F & 0xEF & 0xF8);
-[e ( _TMR0_Initialize (2 , -> & -> 159 `i -> 144 `i `uc -> & & -> 95 `i -> 239 `i -> 248 `i `uc ]
-"405
-[; ;robotmain.c: 405:     TMR0_StartTimer();
-[e ( _TMR0_StartTimer ..  ]
-"406
-[; ;robotmain.c: 406:     LCD_Position(0,1);
-[e ( _LCD_Position (2 , -> -> 0 `i `uc -> -> 1 `i `uc ]
-"407
-[; ;robotmain.c: 407:     length = sprintf(msg, "  %u s  ", i);
-[e = _length -> ( _sprintf (1 , (. , &U _msg :s 82C -> _i `i `uc ]
-"408
-[; ;robotmain.c: 408:     LCD_Print(msg, length);
-[e ( _LCD_Print (2 , &U _msg _length ]
-"409
-[; ;robotmain.c: 409:     while (i > 0)
-[e $U 2386  ]
-[e :U 2387 ]
-"410
-[; ;robotmain.c: 410:     {
-{
-"411
-[; ;robotmain.c: 411:         counts = TMR0_Read16BitTimer();
-[e = _counts -> ( _TMR0_Read16BitTimer ..  `ui ]
 "412
-[; ;robotmain.c: 412:         if (counts >= 46875)
-[e $ ! >= -> _counts `l -> 46875 `l 2389  ]
-"413
-[; ;robotmain.c: 413:         {
-{
+[; ;robotmain.c: 412:     unsigned int counts;
+[v _counts `ui ~T0 @X0 1 a ]
 "414
-[; ;robotmain.c: 414:             i--;
-[e -- _i -> -> 1 `i `uc ]
-"415
-[; ;robotmain.c: 415:             TMR0_Write16BitTimer(0);
-[e ( _TMR0_Write16BitTimer (1 -> -> 0 `i `us ]
-"416
-[; ;robotmain.c: 416:             switch(i)
-[e $U 2391  ]
-"417
-[; ;robotmain.c: 417:             {
-{
-"418
-[; ;robotmain.c: 418:                 case 0:
-[e :U 2392 ]
-"419
-[; ;robotmain.c: 419:                     LCD_Clear();
+[; ;robotmain.c: 414:     LCD_Clear();
 [e ( _LCD_Clear ..  ]
+"415
+[; ;robotmain.c: 415:     LCD_Print("Counting", 8);
+[e ( _LCD_Print (2 , :s 80C -> -> 8 `i `uc ]
+"416
+[; ;robotmain.c: 416:     TMR0_Initialize(0x9F & 0x90, 0x5F & 0xEF & 0xF8);
+[e ( _TMR0_Initialize (2 , -> & -> 159 `i -> 144 `i `uc -> & & -> 95 `i -> 239 `i -> 248 `i `uc ]
+"417
+[; ;robotmain.c: 417:     TMR0_StartTimer();
+[e ( _TMR0_StartTimer ..  ]
+"418
+[; ;robotmain.c: 418:     LCD_Position(0,1);
+[e ( _LCD_Position (2 , -> -> 0 `i `uc -> -> 1 `i `uc ]
+"419
+[; ;robotmain.c: 419:     length = sprintf(msg, "  %u s  ", i);
+[e = _length -> ( _sprintf (1 , (. , &U _msg :s 81C -> _i `i `uc ]
 "420
-[; ;robotmain.c: 420:                     LCD_Position(0,1);
-[e ( _LCD_Position (2 , -> -> 0 `i `uc -> -> 1 `i `uc ]
+[; ;robotmain.c: 420:     LCD_Print(msg, length);
+[e ( _LCD_Print (2 , &U _msg _length ]
 "421
-[; ;robotmain.c: 421:                     LCD_Print("   GO   ", 8);
-[e ( _LCD_Print (2 , :s 83C -> -> 8 `i `uc ]
+[; ;robotmain.c: 421:     while (i > 0)
+[e $U 2410  ]
+[e :U 2411 ]
 "422
-[; ;robotmain.c: 422:                     break;
-[e $U 2390  ]
+[; ;robotmain.c: 422:     {
+{
 "423
-[; ;robotmain.c: 423:                 case 1:
-[e :U 2393 ]
+[; ;robotmain.c: 423:         counts = TMR0_Read16BitTimer();
+[e = _counts -> ( _TMR0_Read16BitTimer ..  `ui ]
 "424
-[; ;robotmain.c: 424:                     LCD_Position(0,1);
-[e ( _LCD_Position (2 , -> -> 0 `i `uc -> -> 1 `i `uc ]
+[; ;robotmain.c: 424:         if (counts >= 46875)
+[e $ ! >= -> _counts `l -> 46875 `l 2413  ]
 "425
-[; ;robotmain.c: 425:                     LCD_Print("  SET   ", 8);
-[e ( _LCD_Print (2 , :s 84C -> -> 8 `i `uc ]
+[; ;robotmain.c: 425:         {
+{
 "426
-[; ;robotmain.c: 426:                     break;
-[e $U 2390  ]
+[; ;robotmain.c: 426:             i--;
+[e -- _i -> -> 1 `i `uc ]
 "427
-[; ;robotmain.c: 427:                 case 2:
-[e :U 2394 ]
+[; ;robotmain.c: 427:             TMR0_Write16BitTimer(0);
+[e ( _TMR0_Write16BitTimer (1 -> -> 0 `i `us ]
 "428
-[; ;robotmain.c: 428:                     LCD_Position(0,1);
-[e ( _LCD_Position (2 , -> -> 0 `i `uc -> -> 1 `i `uc ]
+[; ;robotmain.c: 428:             switch(i)
+[e $U 2415  ]
 "429
-[; ;robotmain.c: 429:                     LCD_Print(" READY  ", 8);
-[e ( _LCD_Print (2 , :s 85C -> -> 8 `i `uc ]
+[; ;robotmain.c: 429:             {
+{
 "430
-[; ;robotmain.c: 430:                     break;
-[e $U 2390  ]
+[; ;robotmain.c: 430:                 case 0:
+[e :U 2416 ]
 "431
-[; ;robotmain.c: 431:                 default:
-[e :U 2395 ]
+[; ;robotmain.c: 431:                     LCD_Clear();
+[e ( _LCD_Clear ..  ]
 "432
 [; ;robotmain.c: 432:                     LCD_Position(0,1);
 [e ( _LCD_Position (2 , -> -> 0 `i `uc -> -> 1 `i `uc ]
 "433
-[; ;robotmain.c: 433:                     length = sprintf(msg, "  %u s  ", i);
-[e = _length -> ( _sprintf (1 , (. , &U _msg :s 86C -> _i `i `uc ]
+[; ;robotmain.c: 433:                     LCD_Print("   GO   ", 8);
+[e ( _LCD_Print (2 , :s 82C -> -> 8 `i `uc ]
 "434
-[; ;robotmain.c: 434:                     LCD_Print(msg, length);
-[e ( _LCD_Print (2 , &U _msg _length ]
+[; ;robotmain.c: 434:                     break;
+[e $U 2414  ]
 "435
-[; ;robotmain.c: 435:             }
-}
-[e $U 2390  ]
-[e :U 2391 ]
-[e [\ _i , $ -> 0 `i 2392
- , $ -> 1 `i 2393
- , $ -> 2 `i 2394
- 2395 ]
-[e :U 2390 ]
+[; ;robotmain.c: 435:                 case 1:
+[e :U 2417 ]
 "436
-[; ;robotmain.c: 436:         }
-}
-[e :U 2389 ]
+[; ;robotmain.c: 436:                     LCD_Position(0,1);
+[e ( _LCD_Position (2 , -> -> 0 `i `uc -> -> 1 `i `uc ]
 "437
-[; ;robotmain.c: 437:     }
-}
-[e :U 2386 ]
-"409
-[; ;robotmain.c: 409:     while (i > 0)
-[e $ > -> _i `i -> 0 `i 2387  ]
-[e :U 2388 ]
+[; ;robotmain.c: 437:                     LCD_Print("  SET   ", 8);
+[e ( _LCD_Print (2 , :s 83C -> -> 8 `i `uc ]
 "438
-[; ;robotmain.c: 438:     TMR0_StopTimer();
-[e ( _TMR0_StopTimer ..  ]
+[; ;robotmain.c: 438:                     break;
+[e $U 2414  ]
 "439
-[; ;robotmain.c: 439: }
-[e :UE 2385 ]
+[; ;robotmain.c: 439:                 case 2:
+[e :U 2418 ]
+"440
+[; ;robotmain.c: 440:                     LCD_Position(0,1);
+[e ( _LCD_Position (2 , -> -> 0 `i `uc -> -> 1 `i `uc ]
+"441
+[; ;robotmain.c: 441:                     LCD_Print(" READY  ", 8);
+[e ( _LCD_Print (2 , :s 84C -> -> 8 `i `uc ]
+"442
+[; ;robotmain.c: 442:                     break;
+[e $U 2414  ]
+"443
+[; ;robotmain.c: 443:                 default:
+[e :U 2419 ]
+"444
+[; ;robotmain.c: 444:                     LCD_Position(0,1);
+[e ( _LCD_Position (2 , -> -> 0 `i `uc -> -> 1 `i `uc ]
+"445
+[; ;robotmain.c: 445:                     length = sprintf(msg, "  %u s  ", i);
+[e = _length -> ( _sprintf (1 , (. , &U _msg :s 85C -> _i `i `uc ]
+"446
+[; ;robotmain.c: 446:                     LCD_Print(msg, length);
+[e ( _LCD_Print (2 , &U _msg _length ]
+"447
+[; ;robotmain.c: 447:             }
+}
+[e $U 2414  ]
+[e :U 2415 ]
+[e [\ _i , $ -> 0 `i 2416
+ , $ -> 1 `i 2417
+ , $ -> 2 `i 2418
+ 2419 ]
+[e :U 2414 ]
+"448
+[; ;robotmain.c: 448:         }
+}
+[e :U 2413 ]
+"449
+[; ;robotmain.c: 449:     }
+}
+[e :U 2410 ]
+"421
+[; ;robotmain.c: 421:     while (i > 0)
+[e $ > -> _i `i -> 0 `i 2411  ]
+[e :U 2412 ]
+"450
+[; ;robotmain.c: 450:     TMR0_StopTimer();
+[e ( _TMR0_StopTimer ..  ]
+"451
+[; ;robotmain.c: 451: }
+[e :UE 2409 ]
 }
 [p f _printf 8389760 ]
 [p f _sprintf 8389632 ]
@@ -3740,7 +3811,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [a 3C 67 97 108 105 98 114 97 116 0 ]
 [a 17C 83 101 110 115 111 114 115 0 ]
 [a 53C 65 117 116 111 32 67 97 108 0 ]
-[a 81C 67 111 117 110 116 105 110 103 0 ]
+[a 80C 67 111 117 110 116 105 110 103 0 ]
 [a 15C 67 111 109 112 108 101 116 101 0 ]
 [a 1C 68 105 97 103 110 111 115 101 0 ]
 [a 49C 68 105 97 103 110 111 115 101 0 ]
@@ -3752,21 +3823,20 @@ Version 4.0 HI-TECH Software Intermediate Code
 [a 25C 66 97 116 116 101 114 121 32 0 ]
 [a 32C 32 37 117 32 0 ]
 [a 36C 32 37 117 32 0 ]
-[a 55C 32 37 117 32 0 ]
 [a 4C 83 101 110 115 111 114 115 32 0 ]
 [a 19C 83 101 110 115 111 114 32 0 ]
 [a 29C 70 111 114 119 97 114 100 32 0 ]
 [a 42C 32 82 105 103 104 116 32 32 0 ]
 [a 37C 32 32 76 101 102 116 32 32 0 ]
-[a 82C 32 32 37 117 32 115 32 32 0 ]
-[a 86C 32 32 37 117 32 115 32 32 0 ]
+[a 81C 32 32 37 117 32 115 32 32 0 ]
+[a 85C 32 32 37 117 32 115 32 32 0 ]
 [a 47C 32 32 83 116 111 112 32 32 0 ]
 [a 54C 32 32 100 111 110 101 32 32 0 ]
 [a 16C 32 32 82 101 97 100 32 32 0 ]
-[a 85C 32 82 69 65 68 89 32 32 0 ]
+[a 84C 32 82 69 65 68 89 32 32 0 ]
 [a 51C 32 32 82 117 110 32 32 32 0 ]
-[a 84C 32 32 83 69 84 32 32 32 0 ]
-[a 83C 32 32 32 71 79 32 32 32 0 ]
+[a 83C 32 32 83 69 84 32 32 32 0 ]
+[a 82C 32 32 32 71 79 32 32 32 0 ]
 [a 8C 83 101 110 115 111 114 32 37 117 32 61 32 37 117 32 10 13 0 ]
 [a 12C 83 101 110 115 111 114 32 37 117 32 61 32 37 117 32 10 13 0 ]
 [a 28C 66 97 116 116 101 114 121 32 118 111 108 116 97 103 101 32 61 32 37 117 32 10 13 0 ]
@@ -3789,35 +3859,35 @@ Version 4.0 HI-TECH Software Intermediate Code
 [a 38C 10 13 0 ]
 [a 43C 10 13 0 ]
 [a 48C 10 13 0 ]
-[a 63C 10 13 0 ]
+[a 62C 10 13 0 ]
+[a 77C 10 13 0 ]
 [a 78C 10 13 0 ]
-[a 79C 10 13 0 ]
 [a 24C 83 101 110 115 111 114 32 37 100 58 32 37 117 10 0 ]
-[a 57C 9 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 13 10 0 ]
-[a 62C 9 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 13 10 0 ]
-[a 59C 9 42 32 32 32 65 80 83 67 32 49 50 57 57 32 45 32 80 111 108 111 108 117 32 51 112 105 32 32 32 42 13 10 0 ]
-[a 60C 9 42 32 32 32 32 32 32 68 105 97 103 110 111 115 116 105 99 32 77 101 110 117 32 32 32 32 32 32 32 42 13 10 0 ]
-[a 58C 9 42 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 42 13 10 0 ]
-[a 61C 9 42 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 42 13 10 0 ]
-[a 77C 32 32 109 32 9 9 32 82 101 102 114 101 115 104 32 40 109 41 101 110 117 32 13 10 0 ]
-[a 65C 32 32 99 32 9 9 32 40 99 41 97 108 105 98 114 97 116 101 32 115 101 110 115 111 114 115 32 13 10 0 ]
-[a 66C 32 32 114 32 9 9 32 40 114 41 101 97 100 32 99 97 108 105 98 114 97 116 101 100 32 115 101 110 115 111 114 115 32 13 10 0 ]
-[a 75C 32 32 83 32 9 9 32 40 83 41 116 111 112 32 109 111 116 111 114 32 13 10 0 ]
-[a 74C 32 32 82 32 9 9 32 40 82 41 105 103 104 116 32 116 117 114 110 32 13 10 0 ]
-[a 73C 32 32 76 32 9 9 32 40 76 41 101 102 116 32 116 117 114 110 32 13 10 0 ]
-[a 64C 67 111 109 109 97 110 100 32 75 101 121 32 9 32 68 101 115 99 114 105 112 116 105 111 110 32 13 10 0 ]
-[a 67C 32 32 100 32 9 9 32 40 100 41 105 115 112 108 97 121 32 115 101 110 115 111 114 32 120 32 118 97 108 117 101 32 13 10 0 ]
-[a 69C 32 32 118 32 9 9 32 40 118 41 111 108 116 97 103 101 32 45 32 82 101 97 100 32 97 110 100 32 100 105 115 112 108 97 121 32 98 97 116 116 101 114 121 32 118 111 108 116 97 103 101 32 13 10 0 ]
-[a 71C 32 32 70 32 9 9 32 87 104 101 101 108 115 32 114 111 116 97 116 101 32 40 70 41 111 114 119 97 114 100 32 13 10 0 ]
-[a 72C 32 32 66 32 9 9 32 87 104 101 101 108 115 32 114 111 116 97 116 101 32 40 66 41 97 99 107 119 97 114 100 32 13 10 0 ]
+[a 56C 9 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 13 10 0 ]
+[a 61C 9 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 13 10 0 ]
+[a 58C 9 42 32 32 32 65 80 83 67 32 49 50 57 57 32 45 32 80 111 108 111 108 117 32 51 112 105 32 32 32 42 13 10 0 ]
+[a 59C 9 42 32 32 32 32 32 32 68 105 97 103 110 111 115 116 105 99 32 77 101 110 117 32 32 32 32 32 32 32 42 13 10 0 ]
+[a 57C 9 42 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 42 13 10 0 ]
+[a 60C 9 42 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 42 13 10 0 ]
+[a 76C 32 32 109 32 9 9 32 82 101 102 114 101 115 104 32 40 109 41 101 110 117 32 13 10 0 ]
+[a 64C 32 32 99 32 9 9 32 40 99 41 97 108 105 98 114 97 116 101 32 115 101 110 115 111 114 115 32 13 10 0 ]
+[a 65C 32 32 114 32 9 9 32 40 114 41 101 97 100 32 99 97 108 105 98 114 97 116 101 100 32 115 101 110 115 111 114 115 32 13 10 0 ]
+[a 74C 32 32 83 32 9 9 32 40 83 41 116 111 112 32 109 111 116 111 114 32 13 10 0 ]
+[a 73C 32 32 82 32 9 9 32 40 82 41 105 103 104 116 32 116 117 114 110 32 13 10 0 ]
+[a 72C 32 32 76 32 9 9 32 40 76 41 101 102 116 32 116 117 114 110 32 13 10 0 ]
+[a 63C 67 111 109 109 97 110 100 32 75 101 121 32 9 32 68 101 115 99 114 105 112 116 105 111 110 32 13 10 0 ]
+[a 66C 32 32 100 32 9 9 32 40 100 41 105 115 112 108 97 121 32 115 101 110 115 111 114 32 120 32 118 97 108 117 101 32 13 10 0 ]
+[a 68C 32 32 118 32 9 9 32 40 118 41 111 108 116 97 103 101 32 45 32 82 101 97 100 32 97 110 100 32 100 105 115 112 108 97 121 32 98 97 116 116 101 114 121 32 118 111 108 116 97 103 101 32 13 10 0 ]
+[a 70C 32 32 70 32 9 9 32 87 104 101 101 108 115 32 114 111 116 97 116 101 32 40 70 41 111 114 119 97 114 100 32 13 10 0 ]
+[a 71C 32 32 66 32 9 9 32 87 104 101 101 108 115 32 114 111 116 97 116 101 32 40 66 41 97 99 107 119 97 114 100 32 13 10 0 ]
 [a 40C 9 32 80 108 101 97 115 101 32 101 110 116 101 114 32 116 104 101 32 116 117 114 110 105 110 103 32 100 105 102 102 101 114 101 110 116 105 97 108 58 32 115 112 101 101 100 32 43 32 100 105 102 102 101 114 101 110 116 105 97 108 32 60 32 49 50 55 32 13 10 0 ]
 [a 45C 9 32 80 108 101 97 115 101 32 101 110 116 101 114 32 116 104 101 32 116 117 114 110 105 110 103 32 100 105 102 102 101 114 101 110 116 105 97 108 58 32 115 112 101 101 100 32 43 32 100 105 102 102 101 114 101 110 116 105 97 108 32 60 32 49 50 55 32 13 10 0 ]
 [a 31C 9 32 80 108 101 97 115 101 32 101 110 116 101 114 32 116 104 101 32 102 111 114 119 97 114 100 32 115 112 101 101 100 44 32 48 32 45 32 49 50 55 32 13 10 0 ]
 [a 39C 9 32 80 108 101 97 115 101 32 101 110 116 101 114 32 116 104 101 32 102 111 114 119 97 114 100 32 115 112 101 101 100 44 32 48 32 45 32 49 50 55 32 13 10 0 ]
 [a 44C 9 32 80 108 101 97 115 101 32 101 110 116 101 114 32 116 104 101 32 102 111 114 119 97 114 100 32 115 112 101 101 100 44 32 48 32 45 32 49 50 55 32 13 10 0 ]
 [a 35C 9 32 80 108 101 97 115 101 32 101 110 116 101 114 32 116 104 101 32 98 97 99 107 119 97 114 100 32 115 112 101 101 100 44 32 48 32 45 32 49 50 55 32 13 10 0 ]
-[a 80C 73 110 118 97 108 105 100 32 105 110 112 117 116 46 32 80 108 101 97 115 101 32 114 101 100 111 32 110 117 109 101 114 105 99 97 108 32 105 110 112 117 116 46 32 13 10 0 ]
-[a 56C 13 10 0 ]
-[a 68C 13 10 0 ]
-[a 70C 13 10 0 ]
-[a 76C 13 10 0 ]
+[a 79C 73 110 118 97 108 105 100 32 105 110 112 117 116 46 32 80 108 101 97 115 101 32 114 101 100 111 32 110 117 109 101 114 105 99 97 108 32 105 110 112 117 116 46 32 13 10 0 ]
+[a 55C 13 10 0 ]
+[a 67C 13 10 0 ]
+[a 69C 13 10 0 ]
+[a 75C 13 10 0 ]
