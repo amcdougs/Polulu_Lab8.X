@@ -1,412 +1,16 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"121 ../Common/i2c1_master.c
-[; ;../Common/i2c1_master.c: 121: const i2c1FsmHandler i2c1_fsmStateTable[] = {
-[c E16657 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 .. ]
-[n E16657 . I2C1_IDLE I2C1_SEND_ADR_READ I2C1_SEND_ADR_WRITE I2C1_TX I2C1_RX I2C1_TX_EMPTY I2C1_RX_EMPTY I2C1_SEND_RESTART_READ I2C1_SEND_RESTART_WRITE I2C1_SEND_RESTART I2C1_SEND_STOP I2C1_RX_ACK I2C1_TX_ACK I2C1_RX_NACK_STOP I2C1_RX_NACK_RESTART I2C1_RESET I2C1_ADDRESS_NACK I2C1_BUS_COLLISION I2C1_BUS_ERROR  ]
-[v F16796 `(E16657 ~T0 @X0 0 tf ]
-"100
-[; ;../Common/i2c1_master.c: 100: static i2c1_fsm_states_t I2C1_DO_IDLE(void);
-[v _I2C1_DO_IDLE `(E16657 ~T0 @X0 0 sf ]
-"101
-[; ;../Common/i2c1_master.c: 101: static i2c1_fsm_states_t I2C1_DO_SEND_ADR_READ(void);
-[v _I2C1_DO_SEND_ADR_READ `(E16657 ~T0 @X0 0 sf ]
-"102
-[; ;../Common/i2c1_master.c: 102: static i2c1_fsm_states_t I2C1_DO_SEND_ADR_WRITE(void);
-[v _I2C1_DO_SEND_ADR_WRITE `(E16657 ~T0 @X0 0 sf ]
-"103
-[; ;../Common/i2c1_master.c: 103: static i2c1_fsm_states_t I2C1_DO_TX(void);
-[v _I2C1_DO_TX `(E16657 ~T0 @X0 0 sf ]
-"104
-[; ;../Common/i2c1_master.c: 104: static i2c1_fsm_states_t I2C1_DO_RX(void);
-[v _I2C1_DO_RX `(E16657 ~T0 @X0 0 sf ]
-"105
-[; ;../Common/i2c1_master.c: 105: static i2c1_fsm_states_t I2C1_DO_TX_EMPTY(void);
-[v _I2C1_DO_TX_EMPTY `(E16657 ~T0 @X0 0 sf ]
-"106
-[; ;../Common/i2c1_master.c: 106: static i2c1_fsm_states_t I2C1_DO_RX_EMPTY(void);
-[v _I2C1_DO_RX_EMPTY `(E16657 ~T0 @X0 0 sf ]
-"107
-[; ;../Common/i2c1_master.c: 107: static i2c1_fsm_states_t I2C1_DO_SEND_RESTART_READ(void);
-[v _I2C1_DO_SEND_RESTART_READ `(E16657 ~T0 @X0 0 sf ]
-"108
-[; ;../Common/i2c1_master.c: 108: static i2c1_fsm_states_t I2C1_DO_SEND_RESTART_WRITE(void);
-[v _I2C1_DO_SEND_RESTART_WRITE `(E16657 ~T0 @X0 0 sf ]
-"109
-[; ;../Common/i2c1_master.c: 109: static i2c1_fsm_states_t I2C1_DO_SEND_RESTART(void);
-[v _I2C1_DO_SEND_RESTART `(E16657 ~T0 @X0 0 sf ]
-"110
-[; ;../Common/i2c1_master.c: 110: static i2c1_fsm_states_t I2C1_DO_SEND_STOP(void);
-[v _I2C1_DO_SEND_STOP `(E16657 ~T0 @X0 0 sf ]
-"111
-[; ;../Common/i2c1_master.c: 111: static i2c1_fsm_states_t I2C1_DO_RX_ACK(void);
-[v _I2C1_DO_RX_ACK `(E16657 ~T0 @X0 0 sf ]
-"112
-[; ;../Common/i2c1_master.c: 112: static i2c1_fsm_states_t I2C1_DO_TX_ACK(void);
-[v _I2C1_DO_TX_ACK `(E16657 ~T0 @X0 0 sf ]
-"113
-[; ;../Common/i2c1_master.c: 113: static i2c1_fsm_states_t I2C1_DO_RX_NACK_STOP(void);
-[v _I2C1_DO_RX_NACK_STOP `(E16657 ~T0 @X0 0 sf ]
-"114
-[; ;../Common/i2c1_master.c: 114: static i2c1_fsm_states_t I2C1_DO_RX_NACK_RESTART(void);
-[v _I2C1_DO_RX_NACK_RESTART `(E16657 ~T0 @X0 0 sf ]
-"115
-[; ;../Common/i2c1_master.c: 115: static i2c1_fsm_states_t I2C1_DO_RESET(void);
-[v _I2C1_DO_RESET `(E16657 ~T0 @X0 0 sf ]
-"116
-[; ;../Common/i2c1_master.c: 116: static i2c1_fsm_states_t I2C1_DO_ADDRESS_NACK(void);
-[v _I2C1_DO_ADDRESS_NACK `(E16657 ~T0 @X0 0 sf ]
-"117
-[; ;../Common/i2c1_master.c: 117: static i2c1_fsm_states_t I2C1_DO_BUS_COLLISION(void);
-[v _I2C1_DO_BUS_COLLISION `(E16657 ~T0 @X0 0 sf ]
-"118
-[; ;../Common/i2c1_master.c: 118: static i2c1_fsm_states_t I2C1_DO_BUS_ERROR(void);
-[v _I2C1_DO_BUS_ERROR `(E16657 ~T0 @X0 0 sf ]
-"143
-[; ;../Common/i2c1_master.c: 143: i2c1_status_t I2C1_Status = {0};
-[c E363 1 2 3 4 5 .. ]
-[n E363 . I2C1_STOP I2C1_RESTART_READ I2C1_RESTART_WRITE I2C1_CONTINUE I2C1_RESET_LINK  ]
-[v F16688 `(E363 ~T0 @X0 0 tf1`*v ]
-[c E358 0 1 2 .. ]
-[n E358 . I2C1_NOERR I2C1_BUSY I2C1_FAIL  ]
-"47
-[; ;../Common/i2c1_master.c: 47: {
-[s S2270 `*F16688 -> 6 `i `*v -> 6 `i `us 1 `us 1 `uc 1 `*uc 1 `ui 1 `E16657 1 `E358 1 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S2270 . callbackTable callbackPayload time_out time_out_value address data_ptr data_length state error addressNackCheck busy inUse bufferFree ]
-[v F16817 `(E363 ~T0 @X0 0 tf1`*v ]
-"24790 C:/Users/Maddox/.mchp_packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f46k42.h
-[; ;C:/Users/Maddox/.mchp_packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f46k42.h: 24790: extern volatile unsigned char I2C1CON0 __attribute__((address(0x3D73)));
-[v _I2C1CON0 `Vuc ~T0 @X0 0 e@15731 ]
-"24867
-[; ;C:/Users/Maddox/.mchp_packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f46k42.h: 24867: extern volatile unsigned char I2C1CON1 __attribute__((address(0x3D74)));
-[v _I2C1CON1 `Vuc ~T0 @X0 0 e@15732 ]
-"24924
-[; ;C:/Users/Maddox/.mchp_packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f46k42.h: 24924: extern volatile unsigned char I2C1CON2 __attribute__((address(0x3D75)));
-[v _I2C1CON2 `Vuc ~T0 @X0 0 e@15733 ]
-"25431
-[; ;C:/Users/Maddox/.mchp_packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f46k42.h: 25431: extern volatile unsigned char I2C1CLK __attribute__((address(0x3D7B)));
-[v _I2C1CLK `Vuc ~T0 @X0 0 e@15739 ]
-"25227
-[; ;C:/Users/Maddox/.mchp_packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f46k42.h: 25227: extern volatile unsigned char I2C1PIR __attribute__((address(0x3D79)));
-[v _I2C1PIR `Vuc ~T0 @X0 0 e@15737 ]
-"25329
-[; ;C:/Users/Maddox/.mchp_packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f46k42.h: 25329: extern volatile unsigned char I2C1PIE __attribute__((address(0x3D7A)));
-[v _I2C1PIE `Vuc ~T0 @X0 0 e@15738 ]
-"25000
-[; ;C:/Users/Maddox/.mchp_packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f46k42.h: 25000: extern volatile unsigned char I2C1ERR __attribute__((address(0x3D76)));
-[v _I2C1ERR `Vuc ~T0 @X0 0 e@15734 ]
-"24598
-[; ;C:/Users/Maddox/.mchp_packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f46k42.h: 24598: extern volatile unsigned char I2C1CNT __attribute__((address(0x3D6C)));
-[v _I2C1CNT `Vuc ~T0 @X0 0 e@15724 ]
-"181 ../Common/i2c1_master.c
-[; ;../Common/i2c1_master.c: 181:         I2C1_Status.callbackTable[I2C1_DATA_COMPLETE]=I2C1_CallbackReturnStop;
-[c E16678 0 1 2 3 4 5 .. ]
-[n E16678 . I2C1_DATA_COMPLETE I2C1_WRITE_COLLISION I2C1_ADDR_NACK I2C1_DATA_NACK I2C1_TIMEOUT I2C1_NULL  ]
-"40 ../Common/i2c1_master.h
-[; ;../Common/i2c1_master.h: 40: i2c1_operations_t I2C1_CallbackReturnStop(void *funPtr);
-[v _I2C1_CallbackReturnStop `(E363 ~T0 @X0 0 ef1`*v ]
-"41
-[; ;../Common/i2c1_master.h: 41: i2c1_operations_t I2C1_CallbackReturnReset(void *funPtr);
-[v _I2C1_CallbackReturnReset `(E363 ~T0 @X0 0 ef1`*v ]
-[v F16769 `(v ~T0 @X0 1 tf ]
-"97 ../Common/i2c1_master.c
-[; ;../Common/i2c1_master.c: 97: static __attribute__((inline)) void I2C1_MasterClearIrq(void);
-[v _I2C1_MasterClearIrq `TF16769 ~T0 @X0 0 s ]
-[v F16717 `(a ~T0 @X0 1 tf ]
-"70
-[; ;../Common/i2c1_master.c: 70: static __attribute__((inline)) _Bool I2C1_MasterOpen(void);
-[v _I2C1_MasterOpen `TF16717 ~T0 @X0 0 s ]
-[v F16767 `(v ~T0 @X0 1 tf ]
-"96
-[; ;../Common/i2c1_master.c: 96: static __attribute__((inline)) void I2C1_MasterDisableIrq(void);
-[v _I2C1_MasterDisableIrq `TF16767 ~T0 @X0 0 s ]
-[v F16719 `(v ~T0 @X0 1 tf ]
-"71
-[; ;../Common/i2c1_master.c: 71: static __attribute__((inline)) void I2C1_MasterClose(void);
-[v _I2C1_MasterClose `TF16719 ~T0 @X0 0 s ]
-[v F16726 `(v ~T0 @X0 1 tf1`uc ]
-"74
-[; ;../Common/i2c1_master.c: 74: static __attribute__((inline)) void I2C1_MasterSetCounter(uint8_t counter);
-[v _I2C1_MasterSetCounter `TF16726 ~T0 @X0 0 s ]
-"65
-[; ;../Common/i2c1_master.c: 65: static void I2C1_Poller(void);
-[v _I2C1_Poller `(v ~T0 @X0 0 sf ]
-[v F16763 `(v ~T0 @X0 1 tf ]
-"94
-[; ;../Common/i2c1_master.c: 94: static __attribute__((inline)) void I2C1_MasterEnableIrq(void);
-[v _I2C1_MasterEnableIrq `TF16763 ~T0 @X0 0 s ]
-[v F16896 `(E363 ~T0 @X0 0 tf1`*v ]
-[v F16899 `(E363 ~T0 @X0 0 tf1`*v ]
-[v F16704 `(E363 ~T0 @X0 0 tf1`*v ]
-"64
-[; ;../Common/i2c1_master.c: 64: static void I2C1_SetCallback(i2c1_callbackIndex_t idx, i2c1_callback_t cb, void *ptr);
-[v _I2C1_SetCallback `(v ~T0 @X0 0 sf3`E16678`*F16704`*v ]
-[v F16903 `(E363 ~T0 @X0 0 tf1`*v ]
-[v F16906 `(E363 ~T0 @X0 0 tf1`*v ]
-[v F16910 `(E363 ~T0 @X0 0 tf1`*v ]
-[v F16913 `(E363 ~T0 @X0 0 tf1`*v ]
-[v F16917 `(E363 ~T0 @X0 0 tf1`*v ]
-[v F16920 `(E363 ~T0 @X0 0 tf1`*v ]
-[v F16924 `(E363 ~T0 @X0 0 tf1`*v ]
-[v F16927 `(E363 ~T0 @X0 0 tf1`*v ]
-[v F16931 `(E363 ~T0 @X0 0 tf1`*v ]
-[v F16935 `(E363 ~T0 @X0 0 tf1`*v ]
-[v F16938 `(E363 ~T0 @X0 0 tf1`*v ]
-[v F16771 `(v ~T0 @X0 1 tf ]
-"98
-[; ;../Common/i2c1_master.c: 98: static __attribute__((inline)) void I2C1_MasterWaitForEvent(void);
-[v _I2C1_MasterWaitForEvent `TF16771 ~T0 @X0 0 s ]
-[v F16715 `(v ~T0 @X0 1 tf ]
-"67
-[; ;../Common/i2c1_master.c: 67: static __attribute__((inline)) void I2C1_MasterFsm(void);
-[v _I2C1_MasterFsm `TF16715 ~T0 @X0 0 s ]
-[v F16713 `(v ~T0 @X0 1 tf ]
-"66
-[; ;../Common/i2c1_master.c: 66: static __attribute__((inline)) void I2C1_ClearInterruptFlags(void);
-[v _I2C1_ClearInterruptFlags `TF16713 ~T0 @X0 0 s ]
-[v F16739 `(a ~T0 @X0 1 tf ]
-"80
-[; ;../Common/i2c1_master.c: 80: static __attribute__((inline)) _Bool I2C1_MasterIsNack(void);
-[v _I2C1_MasterIsNack `TF16739 ~T0 @X0 0 s ]
-[v F16753 `(a ~T0 @X0 1 tf ]
-"87
-[; ;../Common/i2c1_master.c: 87: static __attribute__((inline)) _Bool I2C1_MasterIsCountFlagSet(void);
-[v _I2C1_MasterIsCountFlagSet `TF16753 ~T0 @X0 0 s ]
-[v F16759 `(v ~T0 @X0 1 tf ]
-"90
-[; ;../Common/i2c1_master.c: 90: static __attribute__((inline)) void I2C1_MasterClearCountFlag(void);
-[v _I2C1_MasterClearCountFlag `TF16759 ~T0 @X0 0 s ]
-[v F16751 `(a ~T0 @X0 1 tf ]
-"86
-[; ;../Common/i2c1_master.c: 86: static __attribute__((inline)) _Bool I2C1_MasterIsStopFlagSet(void);
-[v _I2C1_MasterIsStopFlagSet `TF16751 ~T0 @X0 0 s ]
-[v F16757 `(v ~T0 @X0 1 tf ]
-"89
-[; ;../Common/i2c1_master.c: 89: static __attribute__((inline)) void I2C1_MasterClearStopFlag(void);
-[v _I2C1_MasterClearStopFlag `TF16757 ~T0 @X0 0 s ]
-[v F16755 `(a ~T0 @X0 1 tf ]
-"88
-[; ;../Common/i2c1_master.c: 88: static __attribute__((inline)) _Bool I2C1_MasterIsNackFlagSet(void);
-[v _I2C1_MasterIsNackFlagSet `TF16755 ~T0 @X0 0 s ]
-[v F16761 `(v ~T0 @X0 1 tf ]
-"91
-[; ;../Common/i2c1_master.c: 91: static __attribute__((inline)) void I2C1_MasterClearNackFlag(void);
-[v _I2C1_MasterClearNackFlag `TF16761 ~T0 @X0 0 s ]
-[v F16723 `(v ~T0 @X0 1 tf1`uc ]
-"73
-[; ;../Common/i2c1_master.c: 73: static __attribute__((inline)) void I2C1_MasterSendTxData(uint8_t data);
-[v _I2C1_MasterSendTxData `TF16723 ~T0 @X0 0 s ]
-[v F16749 `(a ~T0 @X0 1 tf ]
-"85
-[; ;../Common/i2c1_master.c: 85: static __attribute__((inline)) _Bool I2C1_MasterIsTxBufEmpty(void);
-[v _I2C1_MasterIsTxBufEmpty `TF16749 ~T0 @X0 0 s ]
-[v F16747 `(a ~T0 @X0 1 tf ]
-"84
-[; ;../Common/i2c1_master.c: 84: static __attribute__((inline)) _Bool I2C1_MasterIsRxBufFull(void);
-[v _I2C1_MasterIsRxBufFull `TF16747 ~T0 @X0 0 s ]
-[v F16721 `(uc ~T0 @X0 1 tf ]
-"72
-[; ;../Common/i2c1_master.c: 72: static __attribute__((inline)) uint8_t I2C1_MasterGetRxData(void);
-[v _I2C1_MasterGetRxData `TF16721 ~T0 @X0 0 s ]
-[v F16733 `(v ~T0 @X0 1 tf ]
-"77
-[; ;../Common/i2c1_master.c: 77: static __attribute__((inline)) void I2C1_MasterEnableRestart(void);
-[v _I2C1_MasterEnableRestart `TF16733 ~T0 @X0 0 s ]
-[v F16735 `(v ~T0 @X0 1 tf ]
-"78
-[; ;../Common/i2c1_master.c: 78: static __attribute__((inline)) void I2C1_MasterDisableRestart(void);
-[v _I2C1_MasterDisableRestart `TF16735 ~T0 @X0 0 s ]
-[v F16737 `(v ~T0 @X0 1 tf ]
-"79
-[; ;../Common/i2c1_master.c: 79: static __attribute__((inline)) void I2C1_MasterStop(void);
-[v _I2C1_MasterStop `TF16737 ~T0 @X0 0 s ]
-[v F16729 `(uc ~T0 @X0 1 tf ]
-"75
-[; ;../Common/i2c1_master.c: 75: static __attribute__((inline)) uint8_t I2C1_MasterGetCounter();
-[v _I2C1_MasterGetCounter `TF16729 ~T0 @X0 0 s ]
-[v F16741 `(v ~T0 @X0 1 tf ]
-"81
-[; ;../Common/i2c1_master.c: 81: static __attribute__((inline)) void I2C1_MasterSendAck(void);
-[v _I2C1_MasterSendAck `TF16741 ~T0 @X0 0 s ]
-[v F16743 `(v ~T0 @X0 1 tf ]
-"82
-[; ;../Common/i2c1_master.c: 82: static __attribute__((inline)) void I2C1_MasterSendNack(void);
-[v _I2C1_MasterSendNack `TF16743 ~T0 @X0 0 s ]
-[v F16731 `(v ~T0 @X0 1 tf ]
-"76
-[; ;../Common/i2c1_master.c: 76: static __attribute__((inline)) void I2C1_MasterResetBus(void);
-[v _I2C1_MasterResetBus `TF16731 ~T0 @X0 0 s ]
-[v F16745 `(v ~T0 @X0 1 tf ]
-"83
-[; ;../Common/i2c1_master.c: 83: static __attribute__((inline)) void I2C1_MasterClearBusCollision(void);
-[v _I2C1_MasterClearBusCollision `TF16745 ~T0 @X0 0 s ]
-"24796 C:/Users/Maddox/.mchp_packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f46k42.h
-[; ;C:/Users/Maddox/.mchp_packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f46k42.h: 24796:     struct {
-[s S1097 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1097 . MODE MDR CSTR S RSEN EN ]
-"24804
-[; ;C:/Users/Maddox/.mchp_packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f46k42.h: 24804:     struct {
-[s S1098 :1 `uc 1 :1 `uc 1 :1 `uc 1 :4 `uc 1 :1 `uc 1 ]
-[n S1098 . MODE0 MODE1 MODE2 . I2CEN ]
-"24795
-[; ;C:/Users/Maddox/.mchp_packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f46k42.h: 24795: typedef union {
-[u S1096 `S1097 1 `S1098 1 ]
-[n S1096 . . . ]
-"24812
-[; ;C:/Users/Maddox/.mchp_packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f46k42.h: 24812: extern volatile I2C1CON0bits_t I2C1CON0bits __attribute__((address(0x3D73)));
-[v _I2C1CON0bits `VS1096 ~T0 @X0 0 e@15731 ]
-"10093
-[; ;C:/Users/Maddox/.mchp_packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f46k42.h: 10093: extern volatile unsigned char RC3I2C __attribute__((address(0x3A6A)));
-[v _RC3I2C `Vuc ~T0 @X0 0 e@14954 ]
-"10201
-[; ;C:/Users/Maddox/.mchp_packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f46k42.h: 10201: extern volatile unsigned char RC4I2C __attribute__((address(0x3A6B)));
-[v _RC4I2C `Vuc ~T0 @X0 0 e@14955 ]
-"25186
-[; ;C:/Users/Maddox/.mchp_packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f46k42.h: 25186:     struct {
-[s S1113 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1113 . RXBF . CLRBF RXRE . TXBE . TXWE ]
-"25185
-[; ;C:/Users/Maddox/.mchp_packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f46k42.h: 25185: typedef union {
-[u S1112 `S1113 1 ]
-[n S1112 . . ]
-"25197
-[; ;C:/Users/Maddox/.mchp_packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f46k42.h: 25197: extern volatile I2C1STAT1bits_t I2C1STAT1bits __attribute__((address(0x3D78)));
-[v _I2C1STAT1bits `VS1112 ~T0 @X0 0 e@15736 ]
-"24558
-[; ;C:/Users/Maddox/.mchp_packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f46k42.h: 24558: extern volatile unsigned char I2C1RXB __attribute__((address(0x3D6A)));
-[v _I2C1RXB `Vuc ~T0 @X0 0 e@15722 ]
-"24578
-[; ;C:/Users/Maddox/.mchp_packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f46k42.h: 24578: extern volatile unsigned char I2C1TXB __attribute__((address(0x3D6B)));
-[v _I2C1TXB `Vuc ~T0 @X0 0 e@15723 ]
-"24873
-[; ;C:/Users/Maddox/.mchp_packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f46k42.h: 24873:     struct {
-[s S1100 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1100 . CSD TXU RXO . ACKT ACKSTAT ACKDT ACKCNT ]
-"24872
-[; ;C:/Users/Maddox/.mchp_packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f46k42.h: 24872: typedef union {
-[u S1099 `S1100 1 ]
-[n S1099 . . ]
-"24884
-[; ;C:/Users/Maddox/.mchp_packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f46k42.h: 24884: extern volatile I2C1CON1bits_t I2C1CON1bits __attribute__((address(0x3D74)));
-[v _I2C1CON1bits `VS1099 ~T0 @X0 0 e@15732 ]
-"25006
-[; ;C:/Users/Maddox/.mchp_packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f46k42.h: 25006:     struct {
-[s S1105 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1105 . NACKIE BCLIE BTOIE . NACKIF BCLIF BTOIF ]
-"25015
-[; ;C:/Users/Maddox/.mchp_packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f46k42.h: 25015:     struct {
-[s S1106 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1106 . NACK1IE BCL1IE BTO1IE . NACK1IF BCL1IF BTO1IF ]
-"25005
-[; ;C:/Users/Maddox/.mchp_packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f46k42.h: 25005: typedef union {
-[u S1104 `S1105 1 `S1106 1 ]
-[n S1104 . . . ]
-"25025
-[; ;C:/Users/Maddox/.mchp_packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f46k42.h: 25025: extern volatile I2C1ERRbits_t I2C1ERRbits __attribute__((address(0x3D76)));
-[v _I2C1ERRbits `VS1104 ~T0 @X0 0 e@15734 ]
-"25233
-[; ;C:/Users/Maddox/.mchp_packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f46k42.h: 25233:     struct {
-[s S1115 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1115 . SCIF RSCIF PCIF ADRIF WRIF . ACKTIF CNTIF ]
-"25243
-[; ;C:/Users/Maddox/.mchp_packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f46k42.h: 25243:     struct {
-[s S1116 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1116 . SC1IF RSC1IF PC1IF ADR1IF WR1IF . ACKT1IF CNT1IF ]
-"25232
-[; ;C:/Users/Maddox/.mchp_packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f46k42.h: 25232: typedef union {
-[u S1114 `S1115 1 `S1116 1 ]
-[n S1114 . . . ]
-"25254
-[; ;C:/Users/Maddox/.mchp_packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f46k42.h: 25254: extern volatile I2C1PIRbits_t I2C1PIRbits __attribute__((address(0x3D79)));
-[v _I2C1PIRbits `VS1114 ~T0 @X0 0 e@15737 ]
-"3522
-[; ;C:/Users/Maddox/.mchp_packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f46k42.h: 3522:     struct {
-[s S158 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S158 . I2C1TXIE I2C1IE I2C1EIE U1RXIE U1TXIE U1EIE U1IE TMR0IE ]
-"3521
-[; ;C:/Users/Maddox/.mchp_packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f46k42.h: 3521: typedef union {
-[u S157 `S158 1 ]
-[n S157 . . ]
-"3533
-[; ;C:/Users/Maddox/.mchp_packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f46k42.h: 3533: extern volatile PIE3bits_t PIE3bits __attribute__((address(0x3993)));
-[v _PIE3bits `VS157 ~T0 @X0 0 e@14739 ]
-"3460
-[; ;C:/Users/Maddox/.mchp_packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f46k42.h: 3460:     struct {
-[s S156 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S156 . DMA1SCNTIE DMA1DCNTIE DMA1ORIE DMA1AIE SPI1RXIE SPI1TXIE SPI1IE I2C1RXIE ]
-"3459
-[; ;C:/Users/Maddox/.mchp_packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f46k42.h: 3459: typedef union {
-[u S155 `S156 1 ]
-[n S155 . . ]
-"3471
-[; ;C:/Users/Maddox/.mchp_packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f46k42.h: 3471: extern volatile PIE2bits_t PIE2bits __attribute__((address(0x3992)));
-[v _PIE2bits `VS155 ~T0 @X0 0 e@14738 ]
-"25335
-[; ;C:/Users/Maddox/.mchp_packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f46k42.h: 25335:     struct {
-[s S1118 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1118 . SCIE RSCIE PCIE ADRIE WRIE . ACKTIE CNTIE ]
-"25345
-[; ;C:/Users/Maddox/.mchp_packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f46k42.h: 25345:     struct {
-[s S1119 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1119 . SC1IE RSC1IE PC1IE ADR1IE WR1IE . ACKT1IE CNT1IE ]
-"25334
-[; ;C:/Users/Maddox/.mchp_packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f46k42.h: 25334: typedef union {
-[u S1117 `S1118 1 `S1119 1 ]
-[n S1117 . . . ]
-"25356
-[; ;C:/Users/Maddox/.mchp_packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f46k42.h: 25356: extern volatile I2C1PIEbits_t I2C1PIEbits __attribute__((address(0x3D7A)));
-[v _I2C1PIEbits `VS1117 ~T0 @X0 0 e@15738 ]
-"4087
-[; ;C:/Users/Maddox/.mchp_packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f46k42.h: 4087:     struct {
-[s S180 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S180 . I2C1TXIF I2C1IF I2C1EIF U1RXIF U1TXIF U1EIF U1IF TMR0IF ]
-"4086
-[; ;C:/Users/Maddox/.mchp_packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f46k42.h: 4086: typedef union {
-[u S179 `S180 1 ]
-[n S179 . . ]
-"4098
-[; ;C:/Users/Maddox/.mchp_packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f46k42.h: 4098: extern volatile PIR3bits_t PIR3bits __attribute__((address(0x39A3)));
-[v _PIR3bits `VS179 ~T0 @X0 0 e@14755 ]
-"4025
-[; ;C:/Users/Maddox/.mchp_packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f46k42.h: 4025:     struct {
-[s S178 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S178 . DMA1SCNTIF DMA1DCNTIF DMA1ORIF DMA1AIF SPI1RXIF SPI1TXIF SPI1IF I2C1RXIF ]
-"4024
-[; ;C:/Users/Maddox/.mchp_packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f46k42.h: 4024: typedef union {
-[u S177 `S178 1 ]
-[n S177 . . ]
-"4036
-[; ;C:/Users/Maddox/.mchp_packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f46k42.h: 4036: extern volatile PIR2bits_t PIR2bits __attribute__((address(0x39A2)));
-[v _PIR2bits `VS177 ~T0 @X0 0 e@14754 ]
-"809 ../Common/i2c1_master.c
-[; ;../Common/i2c1_master.c: 809: static i2c1_operations_t rd1RegCompleteHandler(void *ptr);
-[v _rd1RegCompleteHandler `(E363 ~T0 @X0 0 sf1`*v ]
-[v F17120 `(E363 ~T0 @X0 0 tf1`*v ]
-"810
-[; ;../Common/i2c1_master.c: 810: static i2c1_operations_t rd2RegCompleteHandler(void *ptr);
-[v _rd2RegCompleteHandler `(E363 ~T0 @X0 0 sf1`*v ]
-[v F17128 `(E363 ~T0 @X0 0 tf1`*v ]
-"811
-[; ;../Common/i2c1_master.c: 811: static i2c1_operations_t wr1RegCompleteHandler(void *ptr);
-[v _wr1RegCompleteHandler `(E363 ~T0 @X0 0 sf1`*v ]
-[v F17136 `(E363 ~T0 @X0 0 tf1`*v ]
-"812
-[; ;../Common/i2c1_master.c: 812: static i2c1_operations_t wr2RegCompleteHandler(void *ptr);
-[v _wr2RegCompleteHandler `(E363 ~T0 @X0 0 sf1`*v ]
-[v F17144 `(E363 ~T0 @X0 0 tf1`*v ]
-[v F17150 `(E363 ~T0 @X0 0 tf1`*v ]
-"804
-[; ;../Common/i2c1_master.c: 804: {
-[s S2407 `ui 1 `*uc 1 ]
-[n S2407 . len data ]
-"813
-[; ;../Common/i2c1_master.c: 813: static i2c1_operations_t rdBlkRegCompleteHandler(void *ptr);
-[v _rdBlkRegCompleteHandler `(E363 ~T0 @X0 0 sf1`*v ]
-[v F17164 `(E363 ~T0 @X0 0 tf1`*v ]
-[v F17168 `(E363 ~T0 @X0 0 tf1`*v ]
-[v F17172 `(E363 ~T0 @X0 0 tf1`*v ]
-[v F17176 `(E363 ~T0 @X0 0 tf1`*v ]
-[v F17180 `(E363 ~T0 @X0 0 tf1`*v ]
-[v F17184 `(E363 ~T0 @X0 0 tf1`*v ]
+"139 ./../Common/uart1.h
+[; ;./../Common/uart1.h: 139: _Bool UART1_is_tx_ready(void);
+[v _UART1_is_tx_ready `(a ~T0 @X0 0 ef ]
+"284
+[; ;./../Common/uart1.h: 284: void UART1_Write(uint8_t txData);
+[v _UART1_Write `(v ~T0 @X0 0 ef1`uc ]
+"97
+[; ;./../Common/uart1.h: 97: _Bool UART1_is_rx_ready(void);
+[v _UART1_is_rx_ready `(a ~T0 @X0 0 ef ]
+"265
+[; ;./../Common/uart1.h: 265: uint8_t UART1_Read(void);
+[v _UART1_Read `(uc ~T0 @X0 0 ef ]
 "250 C:/Users/Maddox/.mchp_packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f46k42.h
 [; ;C:/Users/Maddox/.mchp_packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f46k42.h: 250: __asm("STATUS_CSHAD equ 03880h");
 [; <" STATUS_CSHAD equ 03880h ;# ">
@@ -2666,2617 +2270,658 @@ Version 4.0 HI-TECH Software Intermediate Code
 "49098
 [; ;C:/Users/Maddox/.mchp_packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f46k42.h: 49098: __asm("TOSU equ 03FFFh");
 [; <" TOSU equ 03FFFh ;# ">
-[v F16795 `*F16796 ~T0 @X0 1 t ]
-"121 ../Common/i2c1_master.c
-[; ;../Common/i2c1_master.c: 121: const i2c1FsmHandler i2c1_fsmStateTable[] = {
-[v _i2c1_fsmStateTable `C*F16796 ~T0 @X0 -> 19 `i e ]
-[i _i2c1_fsmStateTable
-:U ..
-&U _I2C1_DO_IDLE
-&U _I2C1_DO_SEND_ADR_READ
-&U _I2C1_DO_SEND_ADR_WRITE
-&U _I2C1_DO_TX
-&U _I2C1_DO_RX
-&U _I2C1_DO_TX_EMPTY
-&U _I2C1_DO_RX_EMPTY
-&U _I2C1_DO_SEND_RESTART_READ
-&U _I2C1_DO_SEND_RESTART_WRITE
-&U _I2C1_DO_SEND_RESTART
-&U _I2C1_DO_SEND_STOP
-&U _I2C1_DO_RX_ACK
-&U _I2C1_DO_TX_ACK
-&U _I2C1_DO_RX_NACK_STOP
-&U _I2C1_DO_RX_NACK_RESTART
-&U _I2C1_DO_RESET
-&U _I2C1_DO_ADDRESS_NACK
-&U _I2C1_DO_BUS_COLLISION
-&U _I2C1_DO_BUS_ERROR
-..
-]
-"143
-[; ;../Common/i2c1_master.c: 143: i2c1_status_t I2C1_Status = {0};
-[v _I2C1_Status `S2270 ~T0 @X0 1 e ]
-[i _I2C1_Status
-:U ..
-:U ..
-:U ..
--> -> 0 `i `*F16817
-..
-..
-..
-]
-"145
-[; ;../Common/i2c1_master.c: 145: void I2C1_Initialize()
-[v _I2C1_Initialize `(v ~T0 @X0 1 ef ]
-"146
-[; ;../Common/i2c1_master.c: 146: {
+"13 pololu_robot.c
+[; ;pololu_robot.c: 13: unsigned int* Calibrate_Sensors(void)
+[v _Calibrate_Sensors `(*ui ~T0 @X0 1 ef ]
+"14
+[; ;pololu_robot.c: 14: {
 {
-[e :U _I2C1_Initialize ]
+[e :U _Calibrate_Sensors ]
 [f ]
-"148
-[; ;../Common/i2c1_master.c: 148:     I2C1CON0 = 0x04;
-[e = _I2C1CON0 -> -> 4 `i `uc ]
-"150
-[; ;../Common/i2c1_master.c: 150:     I2C1CON1 = 0x80;
-[e = _I2C1CON1 -> -> 128 `i `uc ]
-"152
-[; ;../Common/i2c1_master.c: 152:     I2C1CON2 = 0x18;
-[e = _I2C1CON2 -> -> 24 `i `uc ]
-"154
-[; ;../Common/i2c1_master.c: 154:     I2C1CLK = 0x03;
-[e = _I2C1CLK -> -> 3 `i `uc ]
-"156
-[; ;../Common/i2c1_master.c: 156:     I2C1PIR = 0x00;
-[e = _I2C1PIR -> -> 0 `i `uc ]
-"158
-[; ;../Common/i2c1_master.c: 158:     I2C1PIE = 0x00;
-[e = _I2C1PIE -> -> 0 `i `uc ]
-"160
-[; ;../Common/i2c1_master.c: 160:     I2C1ERR = 0x00;
-[e = _I2C1ERR -> -> 0 `i `uc ]
-"162
-[; ;../Common/i2c1_master.c: 162:     I2C1CNT = 0xFF;
-[e = _I2C1CNT -> -> 255 `i `uc ]
-"163
-[; ;../Common/i2c1_master.c: 163:     return;
-[e $UE 2271  ]
-"164
-[; ;../Common/i2c1_master.c: 164: }
-[e :UE 2271 ]
-}
-"166
-[; ;../Common/i2c1_master.c: 166: i2c1_error_t I2C1_Open(i2c1_address_t address)
-[v _I2C1_Open `(E358 ~T0 @X0 1 ef1`uc ]
-"167
-[; ;../Common/i2c1_master.c: 167: {
-{
-[e :U _I2C1_Open ]
-"166
-[; ;../Common/i2c1_master.c: 166: i2c1_error_t I2C1_Open(i2c1_address_t address)
-[v _address `uc ~T0 @X0 1 r1 ]
-"167
-[; ;../Common/i2c1_master.c: 167: {
-[f ]
-"168
-[; ;../Common/i2c1_master.c: 168:     i2c1_error_t returnValue = I2C1_BUSY;
-[v _returnValue `E358 ~T0 @X0 1 a ]
-[e = _returnValue . `E358 1 ]
-"170
-[; ;../Common/i2c1_master.c: 170:     if(!I2C1_Status.inUse)
-[e $ ! ! != -> . _I2C1_Status 11 `i -> 0 `i 2273  ]
-"171
-[; ;../Common/i2c1_master.c: 171:     {
-{
-"172
-[; ;../Common/i2c1_master.c: 172:         I2C1_Status.address = address;
-[e = . _I2C1_Status 4 _address ]
-"173
-[; ;../Common/i2c1_master.c: 173:         I2C1_Status.busy = 0;
-[e = . _I2C1_Status 10 -> -> 0 `i `uc ]
-"174
-[; ;../Common/i2c1_master.c: 174:         I2C1_Status.inUse = 1;
-[e = . _I2C1_Status 11 -> -> 1 `i `uc ]
-"175
-[; ;../Common/i2c1_master.c: 175:         I2C1_Status.addressNackCheck = 0;
-[e = . _I2C1_Status 9 -> -> 0 `i `uc ]
-"176
-[; ;../Common/i2c1_master.c: 176:         I2C1_Status.state = I2C1_RESET;
-[e = . _I2C1_Status 7 . `E16657 15 ]
-"177
-[; ;../Common/i2c1_master.c: 177:         I2C1_Status.time_out_value = 500;
-[e = . _I2C1_Status 3 -> -> 500 `i `us ]
-"178
-[; ;../Common/i2c1_master.c: 178:         I2C1_Status.bufferFree = 1;
-[e = . _I2C1_Status 12 -> -> 1 `i `uc ]
-"181
-[; ;../Common/i2c1_master.c: 181:         I2C1_Status.callbackTable[I2C1_DATA_COMPLETE]=I2C1_CallbackReturnStop;
-[e = *U + &U . _I2C1_Status 0 * -> . `E16678 0 `ux -> -> # *U &U . _I2C1_Status 0 `ui `ux &U _I2C1_CallbackReturnStop ]
-"182
-[; ;../Common/i2c1_master.c: 182:         I2C1_Status.callbackPayload[I2C1_DATA_COMPLETE] = ((void*)0);
-[e = *U + &U . _I2C1_Status 1 * -> . `E16678 0 `ux -> -> # *U &U . _I2C1_Status 1 `ui `ux -> -> 0 `i `*v ]
-"183
-[; ;../Common/i2c1_master.c: 183:         I2C1_Status.callbackTable[I2C1_WRITE_COLLISION]=I2C1_CallbackReturnStop;
-[e = *U + &U . _I2C1_Status 0 * -> . `E16678 1 `ux -> -> # *U &U . _I2C1_Status 0 `ui `ux &U _I2C1_CallbackReturnStop ]
-"184
-[; ;../Common/i2c1_master.c: 184:         I2C1_Status.callbackPayload[I2C1_WRITE_COLLISION] = ((void*)0);
-[e = *U + &U . _I2C1_Status 1 * -> . `E16678 1 `ux -> -> # *U &U . _I2C1_Status 1 `ui `ux -> -> 0 `i `*v ]
-"185
-[; ;../Common/i2c1_master.c: 185:         I2C1_Status.callbackTable[I2C1_ADDR_NACK]=I2C1_CallbackReturnStop;
-[e = *U + &U . _I2C1_Status 0 * -> . `E16678 2 `ux -> -> # *U &U . _I2C1_Status 0 `ui `ux &U _I2C1_CallbackReturnStop ]
-"186
-[; ;../Common/i2c1_master.c: 186:         I2C1_Status.callbackPayload[I2C1_ADDR_NACK] = ((void*)0);
-[e = *U + &U . _I2C1_Status 1 * -> . `E16678 2 `ux -> -> # *U &U . _I2C1_Status 1 `ui `ux -> -> 0 `i `*v ]
-"187
-[; ;../Common/i2c1_master.c: 187:         I2C1_Status.callbackTable[I2C1_DATA_NACK]=I2C1_CallbackReturnStop;
-[e = *U + &U . _I2C1_Status 0 * -> . `E16678 3 `ux -> -> # *U &U . _I2C1_Status 0 `ui `ux &U _I2C1_CallbackReturnStop ]
-"188
-[; ;../Common/i2c1_master.c: 188:         I2C1_Status.callbackPayload[I2C1_DATA_NACK] = ((void*)0);
-[e = *U + &U . _I2C1_Status 1 * -> . `E16678 3 `ux -> -> # *U &U . _I2C1_Status 1 `ui `ux -> -> 0 `i `*v ]
-"189
-[; ;../Common/i2c1_master.c: 189:         I2C1_Status.callbackTable[I2C1_TIMEOUT]=I2C1_CallbackReturnReset;
-[e = *U + &U . _I2C1_Status 0 * -> . `E16678 4 `ux -> -> # *U &U . _I2C1_Status 0 `ui `ux &U _I2C1_CallbackReturnReset ]
-"190
-[; ;../Common/i2c1_master.c: 190:         I2C1_Status.callbackPayload[I2C1_TIMEOUT] = ((void*)0);
-[e = *U + &U . _I2C1_Status 1 * -> . `E16678 4 `ux -> -> # *U &U . _I2C1_Status 1 `ui `ux -> -> 0 `i `*v ]
-"192
-[; ;../Common/i2c1_master.c: 192:         I2C1_MasterClearIrq();
-[e ( _I2C1_MasterClearIrq ..  ]
-"193
-[; ;../Common/i2c1_master.c: 193:         I2C1_MasterOpen();
-[e ( _I2C1_MasterOpen ..  ]
-"194
-[; ;../Common/i2c1_master.c: 194:         returnValue = I2C1_NOERR;
-[e = _returnValue . `E358 0 ]
-"195
-[; ;../Common/i2c1_master.c: 195:     }
-}
+"15
+[; ;pololu_robot.c: 15:     unsigned char lbyte[5], ubyte[5], i;
+[v _lbyte `uc ~T0 @X0 -> 5 `i a ]
+[v _ubyte `uc ~T0 @X0 -> 5 `i a ]
+[v _i `uc ~T0 @X0 1 a ]
+"16
+[; ;pololu_robot.c: 16:     static unsigned int values[5];
+[v F16615 `ui ~T0 @X0 -> 5 `i s values ]
+"18
+[; ;pololu_robot.c: 18:     while(!UART1_is_tx_ready()) continue;
+[e $U 2273  ]
+[e :U 2274 ]
+[e $U 2273  ]
 [e :U 2273 ]
-"196
-[; ;../Common/i2c1_master.c: 196:     return returnValue;
-[e ) _returnValue ]
+[e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2274  ]
+[e :U 2275 ]
+"19
+[; ;pololu_robot.c: 19:     UART1_Write(0xB4);
+[e ( _UART1_Write (1 -> -> 180 `i `uc ]
+"20
+[; ;pololu_robot.c: 20:     for (i=0; i<5; i++)
+{
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 5 `i 2276  ]
+[e $U 2277  ]
+[e :U 2276 ]
+"21
+[; ;pololu_robot.c: 21:     {
+{
+"22
+[; ;pololu_robot.c: 22:         while (!UART1_is_rx_ready()) continue;
+[e $U 2279  ]
+[e :U 2280 ]
+[e $U 2279  ]
+[e :U 2279 ]
+[e $ ! != -> ( _UART1_is_rx_ready ..  `i -> 0 `i 2280  ]
+[e :U 2281 ]
+"23
+[; ;pololu_robot.c: 23:         lbyte[i] = UART1_Read();
+[e = *U + &U _lbyte * -> _i `ux -> -> # *U &U _lbyte `ui `ux ( _UART1_Read ..  ]
+"24
+[; ;pololu_robot.c: 24:         while (!UART1_is_rx_ready()) continue;
+[e $U 2282  ]
+[e :U 2283 ]
+[e $U 2282  ]
+[e :U 2282 ]
+[e $ ! != -> ( _UART1_is_rx_ready ..  `i -> 0 `i 2283  ]
+[e :U 2284 ]
+"25
+[; ;pololu_robot.c: 25:         ubyte[i] = UART1_Read();
+[e = *U + &U _ubyte * -> _i `ux -> -> # *U &U _ubyte `ui `ux ( _UART1_Read ..  ]
+"26
+[; ;pololu_robot.c: 26:         values[i] = ubyte[i]*256 + lbyte[i];
+[e = *U + &U F16615 * -> _i `ux -> -> # *U &U F16615 `ui `ux -> + * -> *U + &U _ubyte * -> _i `ux -> -> # *U &U _ubyte `ui `ux `i -> 256 `i -> *U + &U _lbyte * -> _i `ux -> -> # *U &U _lbyte `ui `ux `i `ui ]
+"27
+[; ;pololu_robot.c: 27:     }
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 5 `i 2276  ]
+[e :U 2277 ]
+}
+"28
+[; ;pololu_robot.c: 28:     return values;
+[e ) &U F16615 ]
 [e $UE 2272  ]
-"197
-[; ;../Common/i2c1_master.c: 197: }
+"29
+[; ;pololu_robot.c: 29: }
 [e :UE 2272 ]
 }
-"199
-[; ;../Common/i2c1_master.c: 199: i2c1_error_t I2C1_Close(void)
-[v _I2C1_Close `(E358 ~T0 @X0 1 ef ]
-"200
-[; ;../Common/i2c1_master.c: 200: {
+"31
+[; ;pololu_robot.c: 31: void Auto_Calibrate(void)
+[v _Auto_Calibrate `(v ~T0 @X0 1 ef ]
+"32
+[; ;pololu_robot.c: 32: {
 {
-[e :U _I2C1_Close ]
+[e :U _Auto_Calibrate ]
 [f ]
-"201
-[; ;../Common/i2c1_master.c: 201:     i2c1_error_t returnValue = I2C1_BUSY;
-[v _returnValue `E358 ~T0 @X0 1 a ]
-[e = _returnValue . `E358 1 ]
-"202
-[; ;../Common/i2c1_master.c: 202:     if(!I2C1_Status.busy)
-[e $ ! ! != -> . _I2C1_Status 10 `i -> 0 `i 2275  ]
-"203
-[; ;../Common/i2c1_master.c: 203:     {
-{
-"204
-[; ;../Common/i2c1_master.c: 204:         I2C1_Status.inUse = 0;
-[e = . _I2C1_Status 11 -> -> 0 `i `uc ]
-"205
-[; ;../Common/i2c1_master.c: 205:         I2C1_Status.address = 0xff;
-[e = . _I2C1_Status 4 -> -> 255 `i `uc ]
-"206
-[; ;../Common/i2c1_master.c: 206:         I2C1_MasterClearIrq();
-[e ( _I2C1_MasterClearIrq ..  ]
-"207
-[; ;../Common/i2c1_master.c: 207:         I2C1_MasterDisableIrq();
-[e ( _I2C1_MasterDisableIrq ..  ]
-"208
-[; ;../Common/i2c1_master.c: 208:         I2C1_MasterClose();
-[e ( _I2C1_MasterClose ..  ]
-"209
-[; ;../Common/i2c1_master.c: 209:         returnValue = I2C1_Status.error;
-[e = _returnValue . _I2C1_Status 8 ]
-"210
-[; ;../Common/i2c1_master.c: 210:     }
-}
-[e :U 2275 ]
-"211
-[; ;../Common/i2c1_master.c: 211:     return returnValue;
-[e ) _returnValue ]
-[e $UE 2274  ]
-"212
-[; ;../Common/i2c1_master.c: 212: }
-[e :UE 2274 ]
-}
-"214
-[; ;../Common/i2c1_master.c: 214: i2c1_error_t I2C1_MasterOperation(_Bool read)
-[v _I2C1_MasterOperation `(E358 ~T0 @X0 1 ef1`a ]
-"215
-[; ;../Common/i2c1_master.c: 215: {
-{
-[e :U _I2C1_MasterOperation ]
-"214
-[; ;../Common/i2c1_master.c: 214: i2c1_error_t I2C1_MasterOperation(_Bool read)
-[v _read `a ~T0 @X0 1 r1 ]
-"215
-[; ;../Common/i2c1_master.c: 215: {
-[f ]
-"216
-[; ;../Common/i2c1_master.c: 216:     i2c1_error_t returnValue = I2C1_BUSY;
-[v _returnValue `E358 ~T0 @X0 1 a ]
-[e = _returnValue . `E358 1 ]
-"217
-[; ;../Common/i2c1_master.c: 217:     if(!I2C1_Status.busy)
-[e $ ! ! != -> . _I2C1_Status 10 `i -> 0 `i 2277  ]
-"218
-[; ;../Common/i2c1_master.c: 218:     {
-{
-"219
-[; ;../Common/i2c1_master.c: 219:         I2C1_Status.busy = 1;
-[e = . _I2C1_Status 10 -> -> 1 `i `uc ]
-"220
-[; ;../Common/i2c1_master.c: 220:         returnValue = I2C1_NOERR;
-[e = _returnValue . `E358 0 ]
-"221
-[; ;../Common/i2c1_master.c: 221:         I2C1_MasterSetCounter((uint8_t) I2C1_Status.data_length);
-[e ( _I2C1_MasterSetCounter (1 -> . _I2C1_Status 6 `uc ]
-"223
-[; ;../Common/i2c1_master.c: 223:         if(read)
-[e $ ! != -> _read `i -> 0 `i 2278  ]
-"224
-[; ;../Common/i2c1_master.c: 224:         {
-{
-"225
-[; ;../Common/i2c1_master.c: 225:             I2C1_Status.state = I2C1_RX;
-[e = . _I2C1_Status 7 . `E16657 4 ]
-"226
-[; ;../Common/i2c1_master.c: 226:             I2C1_DO_SEND_ADR_READ();
-[e ( _I2C1_DO_SEND_ADR_READ ..  ]
-"227
-[; ;../Common/i2c1_master.c: 227:         }
-}
-[e $U 2279  ]
-"228
-[; ;../Common/i2c1_master.c: 228:         else
-[e :U 2278 ]
-"229
-[; ;../Common/i2c1_master.c: 229:         {
-{
-"230
-[; ;../Common/i2c1_master.c: 230:             I2C1_Status.state = I2C1_TX;
-[e = . _I2C1_Status 7 . `E16657 3 ]
-"231
-[; ;../Common/i2c1_master.c: 231:             I2C1_DO_SEND_ADR_WRITE();
-[e ( _I2C1_DO_SEND_ADR_WRITE ..  ]
-"232
-[; ;../Common/i2c1_master.c: 232:         }
-}
-[e :U 2279 ]
-"233
-[; ;../Common/i2c1_master.c: 233:         I2C1_Poller();
-[e ( _I2C1_Poller ..  ]
-"234
-[; ;../Common/i2c1_master.c: 234:     }
-}
-[e :U 2277 ]
-"235
-[; ;../Common/i2c1_master.c: 235:     return returnValue;
-[e ) _returnValue ]
-[e $UE 2276  ]
-"236
-[; ;../Common/i2c1_master.c: 236: }
-[e :UE 2276 ]
-}
-"238
-[; ;../Common/i2c1_master.c: 238: i2c1_error_t I2C1_MasterRead(void)
-[v _I2C1_MasterRead `(E358 ~T0 @X0 1 ef ]
-"239
-[; ;../Common/i2c1_master.c: 239: {
-{
-[e :U _I2C1_MasterRead ]
-[f ]
-"240
-[; ;../Common/i2c1_master.c: 240:     return I2C1_MasterOperation(1);
-[e ) ( _I2C1_MasterOperation (1 -> -> 1 `i `a ]
-[e $UE 2280  ]
-"241
-[; ;../Common/i2c1_master.c: 241: }
-[e :UE 2280 ]
-}
-"243
-[; ;../Common/i2c1_master.c: 243: i2c1_error_t I2C1_MasterWrite(void)
-[v _I2C1_MasterWrite `(E358 ~T0 @X0 1 ef ]
-"244
-[; ;../Common/i2c1_master.c: 244: {
-{
-[e :U _I2C1_MasterWrite ]
-[f ]
-"245
-[; ;../Common/i2c1_master.c: 245:     return I2C1_MasterOperation(0);
-[e ) ( _I2C1_MasterOperation (1 -> -> 0 `i `a ]
-[e $UE 2281  ]
-"246
-[; ;../Common/i2c1_master.c: 246: }
-[e :UE 2281 ]
-}
-"248
-[; ;../Common/i2c1_master.c: 248: void I2C1_SetTimeOut(uint8_t timeOutValue)
-[v _I2C1_SetTimeOut `(v ~T0 @X0 1 ef1`uc ]
-"249
-[; ;../Common/i2c1_master.c: 249: {
-{
-[e :U _I2C1_SetTimeOut ]
-"248
-[; ;../Common/i2c1_master.c: 248: void I2C1_SetTimeOut(uint8_t timeOutValue)
-[v _timeOutValue `uc ~T0 @X0 1 r1 ]
-"249
-[; ;../Common/i2c1_master.c: 249: {
-[f ]
-"250
-[; ;../Common/i2c1_master.c: 250:     I2C1_MasterDisableIrq();
-[e ( _I2C1_MasterDisableIrq ..  ]
-"251
-[; ;../Common/i2c1_master.c: 251:     I2C1_Status.time_out_value = timeOutValue;
-[e = . _I2C1_Status 3 -> _timeOutValue `us ]
-"252
-[; ;../Common/i2c1_master.c: 252:     I2C1_MasterEnableIrq();
-[e ( _I2C1_MasterEnableIrq ..  ]
-"253
-[; ;../Common/i2c1_master.c: 253: }
-[e :UE 2282 ]
-}
-"255
-[; ;../Common/i2c1_master.c: 255: void I2C1_SetBuffer(void *buffer, size_t bufferSize)
-[v _I2C1_SetBuffer `(v ~T0 @X0 1 ef2`*v`ui ]
-"256
-[; ;../Common/i2c1_master.c: 256: {
-{
-[e :U _I2C1_SetBuffer ]
-"255
-[; ;../Common/i2c1_master.c: 255: void I2C1_SetBuffer(void *buffer, size_t bufferSize)
-[v _buffer `*v ~T0 @X0 1 r1 ]
-[v _bufferSize `ui ~T0 @X0 1 r2 ]
-"256
-[; ;../Common/i2c1_master.c: 256: {
-[f ]
-"257
-[; ;../Common/i2c1_master.c: 257:     if(I2C1_Status.bufferFree)
-[e $ ! != -> . _I2C1_Status 12 `i -> 0 `i 2284  ]
-"258
-[; ;../Common/i2c1_master.c: 258:     {
-{
-"259
-[; ;../Common/i2c1_master.c: 259:         I2C1_Status.data_ptr = buffer;
-[e = . _I2C1_Status 5 -> _buffer `*uc ]
-"260
-[; ;../Common/i2c1_master.c: 260:         I2C1_Status.data_length = bufferSize;
-[e = . _I2C1_Status 6 _bufferSize ]
-"261
-[; ;../Common/i2c1_master.c: 261:         I2C1_Status.bufferFree = 0;
-[e = . _I2C1_Status 12 -> -> 0 `i `uc ]
-"262
-[; ;../Common/i2c1_master.c: 262:     }
-}
-[e :U 2284 ]
-"263
-[; ;../Common/i2c1_master.c: 263: }
-[e :UE 2283 ]
-}
-"265
-[; ;../Common/i2c1_master.c: 265: void I2C1_SetDataCompleteCallback(i2c1_callback_t cb, void *ptr)
-[v _I2C1_SetDataCompleteCallback `(v ~T0 @X0 1 ef2`*F16896`*v ]
-"266
-[; ;../Common/i2c1_master.c: 266: {
-{
-[e :U _I2C1_SetDataCompleteCallback ]
-"265
-[; ;../Common/i2c1_master.c: 265: void I2C1_SetDataCompleteCallback(i2c1_callback_t cb, void *ptr)
-[v _cb `*F16899 ~T0 @X0 1 r1 ]
-[v _ptr `*v ~T0 @X0 1 r2 ]
-"266
-[; ;../Common/i2c1_master.c: 266: {
-[f ]
-"267
-[; ;../Common/i2c1_master.c: 267:     I2C1_SetCallback(I2C1_DATA_COMPLETE, cb, ptr);
-[e ( _I2C1_SetCallback (3 , , . `E16678 0 _cb _ptr ]
-"268
-[; ;../Common/i2c1_master.c: 268: }
-[e :UE 2285 ]
-}
-"270
-[; ;../Common/i2c1_master.c: 270: void I2C1_SetWriteCollisionCallback(i2c1_callback_t cb, void *ptr)
-[v _I2C1_SetWriteCollisionCallback `(v ~T0 @X0 1 ef2`*F16903`*v ]
-"271
-[; ;../Common/i2c1_master.c: 271: {
-{
-[e :U _I2C1_SetWriteCollisionCallback ]
-"270
-[; ;../Common/i2c1_master.c: 270: void I2C1_SetWriteCollisionCallback(i2c1_callback_t cb, void *ptr)
-[v _cb `*F16906 ~T0 @X0 1 r1 ]
-[v _ptr `*v ~T0 @X0 1 r2 ]
-"271
-[; ;../Common/i2c1_master.c: 271: {
-[f ]
-"272
-[; ;../Common/i2c1_master.c: 272:     I2C1_SetCallback(I2C1_WRITE_COLLISION, cb, ptr);
-[e ( _I2C1_SetCallback (3 , , . `E16678 1 _cb _ptr ]
-"273
-[; ;../Common/i2c1_master.c: 273: }
-[e :UE 2286 ]
-}
-"275
-[; ;../Common/i2c1_master.c: 275: void I2C1_SetAddressNackCallback(i2c1_callback_t cb, void *ptr)
-[v _I2C1_SetAddressNackCallback `(v ~T0 @X0 1 ef2`*F16910`*v ]
-"276
-[; ;../Common/i2c1_master.c: 276: {
-{
-[e :U _I2C1_SetAddressNackCallback ]
-"275
-[; ;../Common/i2c1_master.c: 275: void I2C1_SetAddressNackCallback(i2c1_callback_t cb, void *ptr)
-[v _cb `*F16913 ~T0 @X0 1 r1 ]
-[v _ptr `*v ~T0 @X0 1 r2 ]
-"276
-[; ;../Common/i2c1_master.c: 276: {
-[f ]
-"277
-[; ;../Common/i2c1_master.c: 277:     I2C1_SetCallback(I2C1_ADDR_NACK, cb, ptr);
-[e ( _I2C1_SetCallback (3 , , . `E16678 2 _cb _ptr ]
-"278
-[; ;../Common/i2c1_master.c: 278: }
-[e :UE 2287 ]
-}
-"280
-[; ;../Common/i2c1_master.c: 280: void I2C1_SetDataNackCallback(i2c1_callback_t cb, void *ptr)
-[v _I2C1_SetDataNackCallback `(v ~T0 @X0 1 ef2`*F16917`*v ]
-"281
-[; ;../Common/i2c1_master.c: 281: {
-{
-[e :U _I2C1_SetDataNackCallback ]
-"280
-[; ;../Common/i2c1_master.c: 280: void I2C1_SetDataNackCallback(i2c1_callback_t cb, void *ptr)
-[v _cb `*F16920 ~T0 @X0 1 r1 ]
-[v _ptr `*v ~T0 @X0 1 r2 ]
-"281
-[; ;../Common/i2c1_master.c: 281: {
-[f ]
-"282
-[; ;../Common/i2c1_master.c: 282:     I2C1_SetCallback(I2C1_DATA_NACK, cb, ptr);
-[e ( _I2C1_SetCallback (3 , , . `E16678 3 _cb _ptr ]
-"283
-[; ;../Common/i2c1_master.c: 283: }
-[e :UE 2288 ]
-}
-"285
-[; ;../Common/i2c1_master.c: 285: void I2C1_SetTimeoutCallback(i2c1_callback_t cb, void *ptr)
-[v _I2C1_SetTimeoutCallback `(v ~T0 @X0 1 ef2`*F16924`*v ]
-"286
-[; ;../Common/i2c1_master.c: 286: {
-{
-[e :U _I2C1_SetTimeoutCallback ]
-"285
-[; ;../Common/i2c1_master.c: 285: void I2C1_SetTimeoutCallback(i2c1_callback_t cb, void *ptr)
-[v _cb `*F16927 ~T0 @X0 1 r1 ]
-[v _ptr `*v ~T0 @X0 1 r2 ]
-"286
-[; ;../Common/i2c1_master.c: 286: {
-[f ]
-"287
-[; ;../Common/i2c1_master.c: 287:     I2C1_SetCallback(I2C1_TIMEOUT, cb, ptr);
-[e ( _I2C1_SetCallback (3 , , . `E16678 4 _cb _ptr ]
-"288
-[; ;../Common/i2c1_master.c: 288: }
-[e :UE 2289 ]
-}
-"290
-[; ;../Common/i2c1_master.c: 290: static void I2C1_SetCallback(i2c1_callbackIndex_t idx, i2c1_callback_t cb, void *ptr)
-[v _I2C1_SetCallback `(v ~T0 @X0 1 sf3`E16678`*F16931`*v ]
-"291
-[; ;../Common/i2c1_master.c: 291: {
-{
-[e :U _I2C1_SetCallback ]
-"290
-[; ;../Common/i2c1_master.c: 290: static void I2C1_SetCallback(i2c1_callbackIndex_t idx, i2c1_callback_t cb, void *ptr)
-[v _idx `E16678 ~T0 @X0 1 r1 ]
-[v _cb `*F16935 ~T0 @X0 1 r2 ]
-[v _ptr `*v ~T0 @X0 1 r3 ]
-"291
-[; ;../Common/i2c1_master.c: 291: {
-[f ]
-"292
-[; ;../Common/i2c1_master.c: 292:     if(cb)
-[e $ ! != _cb -> -> 0 `i `*F16938 2291  ]
-"293
-[; ;../Common/i2c1_master.c: 293:     {
-{
-"294
-[; ;../Common/i2c1_master.c: 294:         I2C1_Status.callbackTable[idx] = cb;
-[e = *U + &U . _I2C1_Status 0 * -> _idx `ux -> -> # *U &U . _I2C1_Status 0 `ui `ux _cb ]
-"295
-[; ;../Common/i2c1_master.c: 295:         I2C1_Status.callbackPayload[idx] = ptr;
-[e = *U + &U . _I2C1_Status 1 * -> _idx `ux -> -> # *U &U . _I2C1_Status 1 `ui `ux _ptr ]
-"296
-[; ;../Common/i2c1_master.c: 296:     }
-}
-[e $U 2292  ]
-"297
-[; ;../Common/i2c1_master.c: 297:     else
+"33
+[; ;pololu_robot.c: 33:     _Bool center = 0;
+[v _center `a ~T0 @X0 1 a ]
+[e = _center -> -> 0 `i `a ]
+"34
+[; ;pololu_robot.c: 34:     char lbyte, ubyte;
+[v _lbyte `uc ~T0 @X0 1 a ]
+[v _ubyte `uc ~T0 @X0 1 a ]
+"35
+[; ;pololu_robot.c: 35:     unsigned int position;
+[v _position `ui ~T0 @X0 1 a ]
+"37
+[; ;pololu_robot.c: 37:     while(!UART1_is_tx_ready()) continue;
+[e $U 2286  ]
+[e :U 2287 ]
+[e $U 2286  ]
+[e :U 2286 ]
+[e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2287  ]
+[e :U 2288 ]
+"38
+[; ;pololu_robot.c: 38:     UART1_Write(0xBA);
+[e ( _UART1_Write (1 -> -> 186 `i `uc ]
+"39
+[; ;pololu_robot.c: 39:     while(!UART1_is_rx_ready()) continue;
+[e $U 2289  ]
+[e :U 2290 ]
+[e $U 2289  ]
+[e :U 2289 ]
+[e $ ! != -> ( _UART1_is_rx_ready ..  `i -> 0 `i 2290  ]
 [e :U 2291 ]
-"298
-[; ;../Common/i2c1_master.c: 298:     {
+"40
+[; ;pololu_robot.c: 40:     while(UART1_Read() != 'c')
+[e $U 2292  ]
+[e :U 2293 ]
+"41
+[; ;pololu_robot.c: 41:     {
 {
-"299
-[; ;../Common/i2c1_master.c: 299:         I2C1_Status.callbackTable[idx] = I2C1_CallbackReturnStop;
-[e = *U + &U . _I2C1_Status 0 * -> _idx `ux -> -> # *U &U . _I2C1_Status 0 `ui `ux &U _I2C1_CallbackReturnStop ]
-"300
-[; ;../Common/i2c1_master.c: 300:         I2C1_Status.callbackPayload[idx] = ((void*)0);
-[e = *U + &U . _I2C1_Status 1 * -> _idx `ux -> -> # *U &U . _I2C1_Status 1 `ui `ux -> -> 0 `i `*v ]
-"301
-[; ;../Common/i2c1_master.c: 301:     }
+"42
+[; ;pololu_robot.c: 42:         while(!UART1_is_rx_ready()) continue;
+[e $U 2295  ]
+[e :U 2296 ]
+[e $U 2295  ]
+[e :U 2295 ]
+[e $ ! != -> ( _UART1_is_rx_ready ..  `i -> 0 `i 2296  ]
+[e :U 2297 ]
+"43
+[; ;pololu_robot.c: 43:     }
 }
 [e :U 2292 ]
-"302
-[; ;../Common/i2c1_master.c: 302: }
-[e :UE 2290 ]
-}
-"304
-[; ;../Common/i2c1_master.c: 304: static void I2C1_Poller(void)
-[v _I2C1_Poller `(v ~T0 @X0 1 sf ]
-"305
-[; ;../Common/i2c1_master.c: 305: {
-{
-[e :U _I2C1_Poller ]
-[f ]
-"306
-[; ;../Common/i2c1_master.c: 306:     while(I2C1_Status.busy)
-[e $U 2294  ]
-[e :U 2295 ]
-"307
-[; ;../Common/i2c1_master.c: 307:     {
-{
-"308
-[; ;../Common/i2c1_master.c: 308:         I2C1_MasterWaitForEvent();
-[e ( _I2C1_MasterWaitForEvent ..  ]
-"309
-[; ;../Common/i2c1_master.c: 309:         I2C1_MasterFsm();
-[e ( _I2C1_MasterFsm ..  ]
-"310
-[; ;../Common/i2c1_master.c: 310:     }
-}
+"40
+[; ;pololu_robot.c: 40:     while(UART1_Read() != 'c')
+[e $ != -> ( _UART1_Read ..  `ui -> 99 `ui 2293  ]
 [e :U 2294 ]
-"306
-[; ;../Common/i2c1_master.c: 306:     while(I2C1_Status.busy)
-[e $ != -> . _I2C1_Status 10 `i -> 0 `i 2295  ]
-[e :U 2296 ]
-"311
-[; ;../Common/i2c1_master.c: 311: }
-[e :UE 2293 ]
+"44
+[; ;pololu_robot.c: 44: }
+[e :UE 2285 ]
 }
-[v F16964 `(v ~T0 @X0 1 tf ]
-"313
-[; ;../Common/i2c1_master.c: 313: static __attribute__((inline)) void I2C1_MasterFsm(void)
-[v _I2C1_MasterFsm `TF16964 ~T0 @X0 1 s ]
-"314
-[; ;../Common/i2c1_master.c: 314: {
+"46
+[; ;pololu_robot.c: 46: unsigned int* Read_Calibrated_Sensors(void)
+[v _Read_Calibrated_Sensors `(*ui ~T0 @X0 1 ef ]
+"47
+[; ;pololu_robot.c: 47: {
 {
-[e :U _I2C1_MasterFsm ]
+[e :U _Read_Calibrated_Sensors ]
 [f ]
-"315
-[; ;../Common/i2c1_master.c: 315:     I2C1_ClearInterruptFlags();
-[e ( _I2C1_ClearInterruptFlags ..  ]
-"317
-[; ;../Common/i2c1_master.c: 317:     if(I2C1_Status.addressNackCheck && I2C1_MasterIsNack())
-[e $ ! && != -> . _I2C1_Status 9 `i -> 0 `i != -> ( _I2C1_MasterIsNack ..  `i -> 0 `i 2298  ]
-"318
-[; ;../Common/i2c1_master.c: 318:     {
-{
-"319
-[; ;../Common/i2c1_master.c: 319:         I2C1_Status.state = I2C1_ADDRESS_NACK;
-[e = . _I2C1_Status 7 . `E16657 16 ]
-"320
-[; ;../Common/i2c1_master.c: 320:     }
-}
-[e :U 2298 ]
-"321
-[; ;../Common/i2c1_master.c: 321:     I2C1_Status.state = i2c1_fsmStateTable[I2C1_Status.state]();
-[e = . _I2C1_Status 7 ( *U *U + &U _i2c1_fsmStateTable * -> . _I2C1_Status 7 `ux -> -> # *U &U _i2c1_fsmStateTable `ui `ux ..  ]
-"322
-[; ;../Common/i2c1_master.c: 322: }
-[e :UE 2297 ]
-}
-[v F16972 `(v ~T0 @X0 1 tf ]
-"324
-[; ;../Common/i2c1_master.c: 324: static __attribute__((inline)) void I2C1_ClearInterruptFlags(void)
-[v _I2C1_ClearInterruptFlags `TF16972 ~T0 @X0 1 s ]
-"325
-[; ;../Common/i2c1_master.c: 325: {
-{
-[e :U _I2C1_ClearInterruptFlags ]
-[f ]
-"326
-[; ;../Common/i2c1_master.c: 326:     if(I2C1_MasterIsCountFlagSet())
-[e $ ! != -> ( _I2C1_MasterIsCountFlagSet ..  `i -> 0 `i 2300  ]
-"327
-[; ;../Common/i2c1_master.c: 327:     {
-{
-"328
-[; ;../Common/i2c1_master.c: 328:         I2C1_MasterClearCountFlag();
-[e ( _I2C1_MasterClearCountFlag ..  ]
-"329
-[; ;../Common/i2c1_master.c: 329:     }
-}
-[e $U 2301  ]
-"330
-[; ;../Common/i2c1_master.c: 330:     else if(I2C1_MasterIsStopFlagSet())
+"49
+[; ;pololu_robot.c: 49:     while(!UART1_is_tx_ready()) continue;
+[e $U 2299  ]
 [e :U 2300 ]
-[e $ ! != -> ( _I2C1_MasterIsStopFlagSet ..  `i -> 0 `i 2302  ]
-"331
-[; ;../Common/i2c1_master.c: 331:     {
-{
-"332
-[; ;../Common/i2c1_master.c: 332:         I2C1_MasterClearStopFlag();
-[e ( _I2C1_MasterClearStopFlag ..  ]
-"333
-[; ;../Common/i2c1_master.c: 333:     }
-}
-[e $U 2303  ]
-"334
-[; ;../Common/i2c1_master.c: 334:     else if(I2C1_MasterIsNackFlagSet())
-[e :U 2302 ]
-[e $ ! != -> ( _I2C1_MasterIsNackFlagSet ..  `i -> 0 `i 2304  ]
-"335
-[; ;../Common/i2c1_master.c: 335:     {
-{
-"336
-[; ;../Common/i2c1_master.c: 336:         I2C1_MasterClearNackFlag();
-[e ( _I2C1_MasterClearNackFlag ..  ]
-"337
-[; ;../Common/i2c1_master.c: 337:     }
-}
-[e :U 2304 ]
-[e :U 2303 ]
+[e $U 2299  ]
+[e :U 2299 ]
+[e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2300  ]
 [e :U 2301 ]
-"338
-[; ;../Common/i2c1_master.c: 338: }
-[e :UE 2299 ]
-}
-"340
-[; ;../Common/i2c1_master.c: 340: static i2c1_fsm_states_t I2C1_DO_IDLE(void)
-[v _I2C1_DO_IDLE `(E16657 ~T0 @X0 1 sf ]
-"341
-[; ;../Common/i2c1_master.c: 341: {
+"50
+[; ;pololu_robot.c: 50:     UART1_Write(0x87);
+[e ( _UART1_Write (1 -> -> 135 `i `uc ]
+"52
+[; ;pololu_robot.c: 52:     unsigned char lbyte[5], ubyte[5], i;
+[v _lbyte `uc ~T0 @X0 -> 5 `i a ]
+[v _ubyte `uc ~T0 @X0 -> 5 `i a ]
+[v _i `uc ~T0 @X0 1 a ]
+"53
+[; ;pololu_robot.c: 53:     static unsigned int values[5];
+[v F16625 `ui ~T0 @X0 -> 5 `i s values ]
+"55
+[; ;pololu_robot.c: 55:     while(!UART1_is_tx_ready()) continue;
+[e $U 2302  ]
+[e :U 2303 ]
+[e $U 2302  ]
+[e :U 2302 ]
+[e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2303  ]
+[e :U 2304 ]
+"56
+[; ;pololu_robot.c: 56:     UART1_Write(0x87);
+[e ( _UART1_Write (1 -> -> 135 `i `uc ]
+"57
+[; ;pololu_robot.c: 57:     for (i=0; i<5; i++)
 {
-[e :U _I2C1_DO_IDLE ]
-[f ]
-"342
-[; ;../Common/i2c1_master.c: 342:     I2C1_Status.busy = 0;
-[e = . _I2C1_Status 10 -> -> 0 `i `uc ]
-"343
-[; ;../Common/i2c1_master.c: 343:     I2C1_Status.error = I2C1_NOERR;
-[e = . _I2C1_Status 8 . `E358 0 ]
-"344
-[; ;../Common/i2c1_master.c: 344:     return I2C1_RESET;
-[e ) . `E16657 15 ]
-[e $UE 2305  ]
-"345
-[; ;../Common/i2c1_master.c: 345: }
-[e :UE 2305 ]
-}
-"347
-[; ;../Common/i2c1_master.c: 347: static i2c1_fsm_states_t I2C1_DO_SEND_ADR_READ(void)
-[v _I2C1_DO_SEND_ADR_READ `(E16657 ~T0 @X0 1 sf ]
-"348
-[; ;../Common/i2c1_master.c: 348: {
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 5 `i 2305  ]
+[e $U 2306  ]
+[e :U 2305 ]
+"58
+[; ;pololu_robot.c: 58:     {
 {
-[e :U _I2C1_DO_SEND_ADR_READ ]
-[f ]
-"349
-[; ;../Common/i2c1_master.c: 349:     I2C1_Status.addressNackCheck = 2;
-[e = . _I2C1_Status 9 -> -> 2 `i `uc ]
-"350
-[; ;../Common/i2c1_master.c: 350:     if(I2C1_Status.data_length == 1)
-[e $ ! == . _I2C1_Status 6 -> -> 1 `i `ui 2307  ]
-"351
-[; ;../Common/i2c1_master.c: 351:     {
-{
-"352
-[; ;../Common/i2c1_master.c: 352:         I2C1_DO_RX_EMPTY();
-[e ( _I2C1_DO_RX_EMPTY ..  ]
-"353
-[; ;../Common/i2c1_master.c: 353:     }
-}
-[e :U 2307 ]
-"354
-[; ;../Common/i2c1_master.c: 354:     I2C1_MasterSendTxData((uint8_t) (I2C1_Status.address << 1 | 1));
-[e ( _I2C1_MasterSendTxData (1 -> | << -> . _I2C1_Status 4 `i -> 1 `i -> 1 `i `uc ]
-"355
-[; ;../Common/i2c1_master.c: 355:     return I2C1_RX;
-[e ) . `E16657 4 ]
-[e $UE 2306  ]
-"356
-[; ;../Common/i2c1_master.c: 356: }
-[e :UE 2306 ]
-}
-"358
-[; ;../Common/i2c1_master.c: 358: static i2c1_fsm_states_t I2C1_DO_SEND_ADR_WRITE(void)
-[v _I2C1_DO_SEND_ADR_WRITE `(E16657 ~T0 @X0 1 sf ]
-"359
-[; ;../Common/i2c1_master.c: 359: {
-{
-[e :U _I2C1_DO_SEND_ADR_WRITE ]
-[f ]
-"360
-[; ;../Common/i2c1_master.c: 360:     I2C1_Status.addressNackCheck = 2;
-[e = . _I2C1_Status 9 -> -> 2 `i `uc ]
-"361
-[; ;../Common/i2c1_master.c: 361:     I2C1_MasterSendTxData((uint8_t) (I2C1_Status.address << 1));
-[e ( _I2C1_MasterSendTxData (1 -> << -> . _I2C1_Status 4 `i -> 1 `i `uc ]
-"362
-[; ;../Common/i2c1_master.c: 362:     return I2C1_TX;
-[e ) . `E16657 3 ]
-[e $UE 2308  ]
-"363
-[; ;../Common/i2c1_master.c: 363: }
-[e :UE 2308 ]
-}
-"365
-[; ;../Common/i2c1_master.c: 365: static i2c1_fsm_states_t I2C1_DO_TX(void)
-[v _I2C1_DO_TX `(E16657 ~T0 @X0 1 sf ]
-"366
-[; ;../Common/i2c1_master.c: 366: {
-{
-[e :U _I2C1_DO_TX ]
-[f ]
-"367
-[; ;../Common/i2c1_master.c: 367:     if(I2C1_MasterIsNack())
-[e $ ! != -> ( _I2C1_MasterIsNack ..  `i -> 0 `i 2310  ]
-"368
-[; ;../Common/i2c1_master.c: 368:     {
-{
-"369
-[; ;../Common/i2c1_master.c: 369:         switch(I2C1_Status.callbackTable[I2C1_DATA_NACK](I2C1_Status.callbackPayload[I2C1_DATA_NACK]))
-[e $U 2312  ]
-"370
-[; ;../Common/i2c1_master.c: 370:         {
-{
-"371
-[; ;../Common/i2c1_master.c: 371:             case I2C1_RESTART_READ:
-[e :U 2313 ]
-"372
-[; ;../Common/i2c1_master.c: 372:                 return I2C1_DO_SEND_RESTART_READ();
-[e ) ( _I2C1_DO_SEND_RESTART_READ ..  ]
-[e $UE 2309  ]
-"373
-[; ;../Common/i2c1_master.c: 373:             case I2C1_RESTART_WRITE:
-[e :U 2314 ]
-"374
-[; ;../Common/i2c1_master.c: 374:                   return I2C1_DO_SEND_RESTART_WRITE();
-[e ) ( _I2C1_DO_SEND_RESTART_WRITE ..  ]
-[e $UE 2309  ]
-"375
-[; ;../Common/i2c1_master.c: 375:             default:
-[e :U 2315 ]
-"376
-[; ;../Common/i2c1_master.c: 376:             case I2C1_CONTINUE:
-[e :U 2316 ]
-"377
-[; ;../Common/i2c1_master.c: 377:             case I2C1_STOP:
-[e :U 2317 ]
-"378
-[; ;../Common/i2c1_master.c: 378:                 return I2C1_IDLE;
-[e ) . `E16657 0 ]
-[e $UE 2309  ]
-"379
-[; ;../Common/i2c1_master.c: 379:         }
-}
+"59
+[; ;pololu_robot.c: 59:         while (!UART1_is_rx_ready()) continue;
+[e $U 2308  ]
+[e :U 2309 ]
+[e $U 2308  ]
+[e :U 2308 ]
+[e $ ! != -> ( _UART1_is_rx_ready ..  `i -> 0 `i 2309  ]
+[e :U 2310 ]
+"60
+[; ;pololu_robot.c: 60:         lbyte[i] = UART1_Read();
+[e = *U + &U _lbyte * -> _i `ux -> -> # *U &U _lbyte `ui `ux ( _UART1_Read ..  ]
+"61
+[; ;pololu_robot.c: 61:         while (!UART1_is_rx_ready()) continue;
 [e $U 2311  ]
 [e :U 2312 ]
-[e [\ -> ( *U *U + &U . _I2C1_Status 0 * -> . `E16678 3 `ux -> -> # *U &U . _I2C1_Status 0 `ui `ux (1 *U + &U . _I2C1_Status 1 * -> . `E16678 3 `ux -> -> # *U &U . _I2C1_Status 1 `ui `ux `ui , $ -> . `E363 1 `ui 2313
- , $ -> . `E363 2 `ui 2314
- , $ -> . `E363 3 `ui 2316
- , $ -> . `E363 0 `ui 2317
- 2315 ]
+[e $U 2311  ]
 [e :U 2311 ]
-"380
-[; ;../Common/i2c1_master.c: 380:     }
+[e $ ! != -> ( _UART1_is_rx_ready ..  `i -> 0 `i 2312  ]
+[e :U 2313 ]
+"62
+[; ;pololu_robot.c: 62:         ubyte[i] = UART1_Read();
+[e = *U + &U _ubyte * -> _i `ux -> -> # *U &U _ubyte `ui `ux ( _UART1_Read ..  ]
+"63
+[; ;pololu_robot.c: 63:         values[i] = ubyte[i]*256 + lbyte[i];
+[e = *U + &U F16625 * -> _i `ux -> -> # *U &U F16625 `ui `ux -> + * -> *U + &U _ubyte * -> _i `ux -> -> # *U &U _ubyte `ui `ux `i -> 256 `i -> *U + &U _lbyte * -> _i `ux -> -> # *U &U _lbyte `ui `ux `i `ui ]
+"64
+[; ;pololu_robot.c: 64:     }
 }
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 5 `i 2305  ]
+[e :U 2306 ]
+}
+"65
+[; ;pololu_robot.c: 65:     return values;
+[e ) &U F16625 ]
+[e $UE 2298  ]
+"66
+[; ;pololu_robot.c: 66: }
+[e :UE 2298 ]
+}
+"68
+[; ;pololu_robot.c: 68: unsigned int Read_Battery_Voltage(void)
+[v _Read_Battery_Voltage `(ui ~T0 @X0 1 ef ]
+"69
+[; ;pololu_robot.c: 69: {
+{
+[e :U _Read_Battery_Voltage ]
+[f ]
+"70
+[; ;pololu_robot.c: 70:     unsigned char lbyte, ubyte;
+[v _lbyte `uc ~T0 @X0 1 a ]
+[v _ubyte `uc ~T0 @X0 1 a ]
+"72
+[; ;pololu_robot.c: 72:     while(!UART1_is_tx_ready()) continue;
+[e $U 2315  ]
+[e :U 2316 ]
+[e $U 2315  ]
+[e :U 2315 ]
+[e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2316  ]
+[e :U 2317 ]
+"73
+[; ;pololu_robot.c: 73:     UART1_Write(0xB1);
+[e ( _UART1_Write (1 -> -> 177 `i `uc ]
+"74
+[; ;pololu_robot.c: 74:     while (!UART1_is_rx_ready()) continue;
 [e $U 2318  ]
-"381
-[; ;../Common/i2c1_master.c: 381:     else if(I2C1_MasterIsTxBufEmpty())
-[e :U 2310 ]
-[e $ ! != -> ( _I2C1_MasterIsTxBufEmpty ..  `i -> 0 `i 2319  ]
-"382
-[; ;../Common/i2c1_master.c: 382:     {
-{
-"383
-[; ;../Common/i2c1_master.c: 383:         if(I2C1_Status.addressNackCheck)
-[e $ ! != -> . _I2C1_Status 9 `i -> 0 `i 2320  ]
-"384
-[; ;../Common/i2c1_master.c: 384:         {
-{
-"385
-[; ;../Common/i2c1_master.c: 385:             I2C1_Status.addressNackCheck--;
-[e -- . _I2C1_Status 9 -> -> 1 `i `uc ]
-"386
-[; ;../Common/i2c1_master.c: 386:         }
-}
-[e :U 2320 ]
-"387
-[; ;../Common/i2c1_master.c: 387:         uint8_t dataTx = *I2C1_Status.data_ptr++;
-[v _dataTx `uc ~T0 @X0 1 a ]
-[e = _dataTx *U ++ . _I2C1_Status 5 * -> -> 1 `i `x -> -> # *U . _I2C1_Status 5 `i `x ]
-"388
-[; ;../Common/i2c1_master.c: 388:         i2c1_fsm_states_t retFsmState = (--I2C1_Status.data_length)?I2C1_TX:I2C1_DO_TX_EMPTY();
-[v _retFsmState `E16657 ~T0 @X0 1 a ]
-[e = _retFsmState -> ? != =- . _I2C1_Status 6 -> -> 1 `i `ui -> -> 0 `i `ui : -> . `E16657 3 `ui -> ( _I2C1_DO_TX_EMPTY ..  `ui `E16657 ]
-"389
-[; ;../Common/i2c1_master.c: 389:         I2C1_MasterSendTxData(dataTx);
-[e ( _I2C1_MasterSendTxData (1 _dataTx ]
-"390
-[; ;../Common/i2c1_master.c: 390:         return retFsmState;
-[e ) _retFsmState ]
-[e $UE 2309  ]
-"391
-[; ;../Common/i2c1_master.c: 391:     }
-}
-[e $U 2321  ]
-"392
-[; ;../Common/i2c1_master.c: 392:     else
 [e :U 2319 ]
-"393
-[; ;../Common/i2c1_master.c: 393:     {
-{
-"394
-[; ;../Common/i2c1_master.c: 394:         return I2C1_TX;
-[e ) . `E16657 3 ]
-[e $UE 2309  ]
-"395
-[; ;../Common/i2c1_master.c: 395:     }
-}
-[e :U 2321 ]
+[e $U 2318  ]
 [e :U 2318 ]
-"396
-[; ;../Common/i2c1_master.c: 396: }
-[e :UE 2309 ]
-}
-"398
-[; ;../Common/i2c1_master.c: 398: static i2c1_fsm_states_t I2C1_DO_RX(void)
-[v _I2C1_DO_RX `(E16657 ~T0 @X0 1 sf ]
-"399
-[; ;../Common/i2c1_master.c: 399: {
-{
-[e :U _I2C1_DO_RX ]
-[f ]
-"400
-[; ;../Common/i2c1_master.c: 400:     if(!I2C1_MasterIsRxBufFull())
-[e $ ! ! != -> ( _I2C1_MasterIsRxBufFull ..  `i -> 0 `i 2323  ]
-"401
-[; ;../Common/i2c1_master.c: 401:     {
-{
-"402
-[; ;../Common/i2c1_master.c: 402:         return I2C1_RX;
-[e ) . `E16657 4 ]
-[e $UE 2322  ]
-"403
-[; ;../Common/i2c1_master.c: 403:     }
-}
+[e $ ! != -> ( _UART1_is_rx_ready ..  `i -> 0 `i 2319  ]
+[e :U 2320 ]
+"75
+[; ;pololu_robot.c: 75:     lbyte = UART1_Read();
+[e = _lbyte ( _UART1_Read ..  ]
+"76
+[; ;pololu_robot.c: 76:     while (!UART1_is_rx_ready()) continue;
+[e $U 2321  ]
+[e :U 2322 ]
+[e $U 2321  ]
+[e :U 2321 ]
+[e $ ! != -> ( _UART1_is_rx_ready ..  `i -> 0 `i 2322  ]
 [e :U 2323 ]
-"404
-[; ;../Common/i2c1_master.c: 404:     if(I2C1_Status.addressNackCheck)
-[e $ ! != -> . _I2C1_Status 9 `i -> 0 `i 2324  ]
-"405
-[; ;../Common/i2c1_master.c: 405:     {
-{
-"406
-[; ;../Common/i2c1_master.c: 406:         I2C1_Status.addressNackCheck--;
-[e -- . _I2C1_Status 9 -> -> 1 `i `uc ]
-"407
-[; ;../Common/i2c1_master.c: 407:     }
+"77
+[; ;pololu_robot.c: 77:     ubyte = UART1_Read();
+[e = _ubyte ( _UART1_Read ..  ]
+"78
+[; ;pololu_robot.c: 78:     return (unsigned int)(ubyte*256 + lbyte);
+[e ) -> + * -> _ubyte `i -> 256 `i -> _lbyte `i `ui ]
+[e $UE 2314  ]
+"79
+[; ;pololu_robot.c: 79: }
+[e :UE 2314 ]
 }
-[e :U 2324 ]
-"409
-[; ;../Common/i2c1_master.c: 409:     if(--I2C1_Status.data_length)
-[e $ ! != =- . _I2C1_Status 6 -> -> 1 `i `ui -> -> 0 `i `ui 2325  ]
-"410
-[; ;../Common/i2c1_master.c: 410:     {
+"81
+[; ;pololu_robot.c: 81: void LCD_Clear(void)
+[v _LCD_Clear `(v ~T0 @X0 1 ef ]
+"82
+[; ;pololu_robot.c: 82: {
 {
-"411
-[; ;../Common/i2c1_master.c: 411:         *I2C1_Status.data_ptr++ = I2C1_MasterGetRxData();
-[e = *U ++ . _I2C1_Status 5 * -> -> 1 `i `x -> -> # *U . _I2C1_Status 5 `i `x ( _I2C1_MasterGetRxData ..  ]
-"412
-[; ;../Common/i2c1_master.c: 412:         return I2C1_RX;
-[e ) . `E16657 4 ]
-[e $UE 2322  ]
-"413
-[; ;../Common/i2c1_master.c: 413:     }
-}
-[e $U 2326  ]
-"414
-[; ;../Common/i2c1_master.c: 414:     else
-[e :U 2325 ]
-"415
-[; ;../Common/i2c1_master.c: 415:     {
-{
-"416
-[; ;../Common/i2c1_master.c: 416:         i2c1_fsm_states_t retFsmState = I2C1_DO_RX_EMPTY();
-[v _retFsmState `E16657 ~T0 @X0 1 a ]
-[e = _retFsmState ( _I2C1_DO_RX_EMPTY ..  ]
-"417
-[; ;../Common/i2c1_master.c: 417:         *I2C1_Status.data_ptr++ = I2C1_MasterGetRxData();
-[e = *U ++ . _I2C1_Status 5 * -> -> 1 `i `x -> -> # *U . _I2C1_Status 5 `i `x ( _I2C1_MasterGetRxData ..  ]
-"418
-[; ;../Common/i2c1_master.c: 418:         return retFsmState;
-[e ) _retFsmState ]
-[e $UE 2322  ]
-"419
-[; ;../Common/i2c1_master.c: 419:     }
-}
+[e :U _LCD_Clear ]
+[f ]
+"83
+[; ;pololu_robot.c: 83:     while(!UART1_is_tx_ready()) continue;
+[e $U 2325  ]
 [e :U 2326 ]
-"420
-[; ;../Common/i2c1_master.c: 420: }
-[e :UE 2322 ]
+[e $U 2325  ]
+[e :U 2325 ]
+[e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2326  ]
+[e :U 2327 ]
+"84
+[; ;pololu_robot.c: 84:     UART1_Write(0xB7);
+[e ( _UART1_Write (1 -> -> 183 `i `uc ]
+"85
+[; ;pololu_robot.c: 85: }
+[e :UE 2324 ]
 }
-"422
-[; ;../Common/i2c1_master.c: 422: static i2c1_fsm_states_t I2C1_DO_TX_EMPTY(void)
-[v _I2C1_DO_TX_EMPTY `(E16657 ~T0 @X0 1 sf ]
-"423
-[; ;../Common/i2c1_master.c: 423: {
+"87
+[; ;pololu_robot.c: 87: void LCD_Print(char *str, char length)
+[v _LCD_Print `(v ~T0 @X0 1 ef2`*uc`uc ]
+"88
+[; ;pololu_robot.c: 88: {
 {
-[e :U _I2C1_DO_TX_EMPTY ]
+[e :U _LCD_Print ]
+"87
+[; ;pololu_robot.c: 87: void LCD_Print(char *str, char length)
+[v _str `*uc ~T0 @X0 1 r1 ]
+[v _length `uc ~T0 @X0 1 r2 ]
+"88
+[; ;pololu_robot.c: 88: {
 [f ]
-"424
-[; ;../Common/i2c1_master.c: 424:     I2C1_Status.bufferFree = 1;
-[e = . _I2C1_Status 12 -> -> 1 `i `uc ]
-"425
-[; ;../Common/i2c1_master.c: 425:     switch(I2C1_Status.callbackTable[I2C1_DATA_COMPLETE](I2C1_Status.callbackPayload[I2C1_DATA_COMPLETE]))
+"89
+[; ;pololu_robot.c: 89:     char i=0;
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `uc ]
+"91
+[; ;pololu_robot.c: 91:     while(!UART1_is_tx_ready()) continue;
 [e $U 2329  ]
-"426
-[; ;../Common/i2c1_master.c: 426:     {
-{
-"427
-[; ;../Common/i2c1_master.c: 427:         case I2C1_RESTART_READ:
 [e :U 2330 ]
-"428
-[; ;../Common/i2c1_master.c: 428:             I2C1_MasterEnableRestart();
-[e ( _I2C1_MasterEnableRestart ..  ]
-"429
-[; ;../Common/i2c1_master.c: 429:             return I2C1_SEND_RESTART_READ;
-[e ) . `E16657 7 ]
-[e $UE 2327  ]
-"430
-[; ;../Common/i2c1_master.c: 430:         case I2C1_CONTINUE:
-[e :U 2331 ]
-"432
-[; ;../Common/i2c1_master.c: 432:             I2C1_MasterSetCounter((uint8_t) I2C1_Status.data_length + 1);
-[e ( _I2C1_MasterSetCounter (1 -> + -> -> . _I2C1_Status 6 `uc `i -> 1 `i `uc ]
-"433
-[; ;../Common/i2c1_master.c: 433:             return I2C1_TX;
-[e ) . `E16657 3 ]
-[e $UE 2327  ]
-"434
-[; ;../Common/i2c1_master.c: 434:         default:
-[e :U 2332 ]
-"435
-[; ;../Common/i2c1_master.c: 435:         case I2C1_STOP:
-[e :U 2333 ]
-"436
-[; ;../Common/i2c1_master.c: 436:             I2C1_MasterDisableRestart();
-[e ( _I2C1_MasterDisableRestart ..  ]
-"437
-[; ;../Common/i2c1_master.c: 437:             return I2C1_SEND_STOP;
-[e ) . `E16657 10 ]
-[e $UE 2327  ]
-"438
-[; ;../Common/i2c1_master.c: 438:     }
-}
-[e $U 2328  ]
+[e $U 2329  ]
 [e :U 2329 ]
-[e [\ -> ( *U *U + &U . _I2C1_Status 0 * -> . `E16678 0 `ux -> -> # *U &U . _I2C1_Status 0 `ui `ux (1 *U + &U . _I2C1_Status 1 * -> . `E16678 0 `ux -> -> # *U &U . _I2C1_Status 1 `ui `ux `ui , $ -> . `E363 1 `ui 2330
- , $ -> . `E363 3 `ui 2331
- , $ -> . `E363 0 `ui 2333
- 2332 ]
-[e :U 2328 ]
-"439
-[; ;../Common/i2c1_master.c: 439: }
-[e :UE 2327 ]
-}
-"441
-[; ;../Common/i2c1_master.c: 441: static i2c1_fsm_states_t I2C1_DO_RX_EMPTY(void)
-[v _I2C1_DO_RX_EMPTY `(E16657 ~T0 @X0 1 sf ]
-"442
-[; ;../Common/i2c1_master.c: 442: {
-{
-[e :U _I2C1_DO_RX_EMPTY ]
-[f ]
-"443
-[; ;../Common/i2c1_master.c: 443:     I2C1_Status.bufferFree = 1;
-[e = . _I2C1_Status 12 -> -> 1 `i `uc ]
-"444
-[; ;../Common/i2c1_master.c: 444:     switch(I2C1_Status.callbackTable[I2C1_DATA_COMPLETE](I2C1_Status.callbackPayload[I2C1_DATA_COMPLETE]))
-[e $U 2336  ]
-"445
-[; ;../Common/i2c1_master.c: 445:     {
-{
-"446
-[; ;../Common/i2c1_master.c: 446:         case I2C1_RESTART_WRITE:
-[e :U 2337 ]
-"447
-[; ;../Common/i2c1_master.c: 447:             I2C1_MasterEnableRestart();
-[e ( _I2C1_MasterEnableRestart ..  ]
-"448
-[; ;../Common/i2c1_master.c: 448:             return I2C1_SEND_RESTART_WRITE;
-[e ) . `E16657 8 ]
-[e $UE 2334  ]
-"449
-[; ;../Common/i2c1_master.c: 449:         case I2C1_RESTART_READ:
-[e :U 2338 ]
-"450
-[; ;../Common/i2c1_master.c: 450:             I2C1_MasterEnableRestart();
-[e ( _I2C1_MasterEnableRestart ..  ]
-"451
-[; ;../Common/i2c1_master.c: 451:             return I2C1_SEND_RESTART_READ;
-[e ) . `E16657 7 ]
-[e $UE 2334  ]
-"452
-[; ;../Common/i2c1_master.c: 452:         case I2C1_CONTINUE:
-[e :U 2339 ]
-"454
-[; ;../Common/i2c1_master.c: 454:             I2C1_MasterSetCounter((uint8_t) (I2C1_Status.data_length + 1));
-[e ( _I2C1_MasterSetCounter (1 -> + . _I2C1_Status 6 -> -> 1 `i `ui `uc ]
-"455
-[; ;../Common/i2c1_master.c: 455:             return I2C1_RX;
-[e ) . `E16657 4 ]
-[e $UE 2334  ]
-"456
-[; ;../Common/i2c1_master.c: 456:         default:
-[e :U 2340 ]
-"457
-[; ;../Common/i2c1_master.c: 457:         case I2C1_STOP:
-[e :U 2341 ]
-"458
-[; ;../Common/i2c1_master.c: 458:             if(I2C1_Status.state != I2C1_SEND_RESTART_READ)
-[e $ ! != -> . _I2C1_Status 7 `ui -> . `E16657 7 `ui 2342  ]
-"459
-[; ;../Common/i2c1_master.c: 459:             {
-{
-"460
-[; ;../Common/i2c1_master.c: 460:                 I2C1_MasterDisableRestart();
-[e ( _I2C1_MasterDisableRestart ..  ]
-"461
-[; ;../Common/i2c1_master.c: 461:             }
-}
-[e :U 2342 ]
-"462
-[; ;../Common/i2c1_master.c: 462:             return I2C1_RESET;
-[e ) . `E16657 15 ]
-[e $UE 2334  ]
-"463
-[; ;../Common/i2c1_master.c: 463:     }
-}
+[e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2330  ]
+[e :U 2331 ]
+"92
+[; ;pololu_robot.c: 92:     UART1_Write(0xB8);
+[e ( _UART1_Write (1 -> -> 184 `i `uc ]
+"93
+[; ;pololu_robot.c: 93:     while(!UART1_is_tx_ready()) continue;
+[e $U 2332  ]
+[e :U 2333 ]
+[e $U 2332  ]
+[e :U 2332 ]
+[e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2333  ]
+[e :U 2334 ]
+"94
+[; ;pololu_robot.c: 94:     UART1_Write(length);
+[e ( _UART1_Write (1 -> _length `uc ]
+"95
+[; ;pololu_robot.c: 95:     while (i<length)
 [e $U 2335  ]
 [e :U 2336 ]
-[e [\ -> ( *U *U + &U . _I2C1_Status 0 * -> . `E16678 0 `ux -> -> # *U &U . _I2C1_Status 0 `ui `ux (1 *U + &U . _I2C1_Status 1 * -> . `E16678 0 `ux -> -> # *U &U . _I2C1_Status 1 `ui `ux `ui , $ -> . `E363 2 `ui 2337
- , $ -> . `E363 1 `ui 2338
- , $ -> . `E363 3 `ui 2339
- , $ -> . `E363 0 `ui 2341
- 2340 ]
+"96
+[; ;pololu_robot.c: 96:     {
+{
+"97
+[; ;pololu_robot.c: 97:         if(UART1_is_tx_ready())
+[e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2338  ]
+"98
+[; ;pololu_robot.c: 98:         {
+{
+"99
+[; ;pololu_robot.c: 99:             UART1_Write(str[i]);
+[e ( _UART1_Write (1 -> *U + _str * -> _i `ux -> -> # *U _str `ui `ux `uc ]
+"100
+[; ;pololu_robot.c: 100:             i++;
+[e ++ _i -> -> 1 `i `uc ]
+"101
+[; ;pololu_robot.c: 101:         }
+}
+[e :U 2338 ]
+"102
+[; ;pololu_robot.c: 102:     }
+}
 [e :U 2335 ]
-"464
-[; ;../Common/i2c1_master.c: 464: }
-[e :UE 2334 ]
+"95
+[; ;pololu_robot.c: 95:     while (i<length)
+[e $ < -> _i `i -> _length `i 2336  ]
+[e :U 2337 ]
+"103
+[; ;pololu_robot.c: 103: }
+[e :UE 2328 ]
 }
-"466
-[; ;../Common/i2c1_master.c: 466: static i2c1_fsm_states_t I2C1_DO_SEND_RESTART_READ(void)
-[v _I2C1_DO_SEND_RESTART_READ `(E16657 ~T0 @X0 1 sf ]
-"467
-[; ;../Common/i2c1_master.c: 467: {
+"105
+[; ;pololu_robot.c: 105: void LCD_PrintCharacter(char byte)
+[v _LCD_PrintCharacter `(v ~T0 @X0 1 ef1`uc ]
+"106
+[; ;pololu_robot.c: 106: {
 {
-[e :U _I2C1_DO_SEND_RESTART_READ ]
+[e :U _LCD_PrintCharacter ]
+"105
+[; ;pololu_robot.c: 105: void LCD_PrintCharacter(char byte)
+[v _byte `uc ~T0 @X0 1 r1 ]
+"106
+[; ;pololu_robot.c: 106: {
 [f ]
-"468
-[; ;../Common/i2c1_master.c: 468:     I2C1_MasterSetCounter((uint8_t) I2C1_Status.data_length);
-[e ( _I2C1_MasterSetCounter (1 -> . _I2C1_Status 6 `uc ]
-"469
-[; ;../Common/i2c1_master.c: 469:     return I2C1_DO_SEND_ADR_READ();
-[e ) ( _I2C1_DO_SEND_ADR_READ ..  ]
-[e $UE 2343  ]
-"470
-[; ;../Common/i2c1_master.c: 470: }
-[e :UE 2343 ]
-}
-"472
-[; ;../Common/i2c1_master.c: 472: static i2c1_fsm_states_t I2C1_DO_SEND_RESTART_WRITE(void)
-[v _I2C1_DO_SEND_RESTART_WRITE `(E16657 ~T0 @X0 1 sf ]
-"473
-[; ;../Common/i2c1_master.c: 473: {
-{
-[e :U _I2C1_DO_SEND_RESTART_WRITE ]
-[f ]
-"474
-[; ;../Common/i2c1_master.c: 474:     return I2C1_SEND_ADR_WRITE;
-[e ) . `E16657 2 ]
-[e $UE 2344  ]
-"475
-[; ;../Common/i2c1_master.c: 475: }
-[e :UE 2344 ]
-}
-"478
-[; ;../Common/i2c1_master.c: 478: static i2c1_fsm_states_t I2C1_DO_SEND_RESTART(void)
-[v _I2C1_DO_SEND_RESTART `(E16657 ~T0 @X0 1 sf ]
-"479
-[; ;../Common/i2c1_master.c: 479: {
-{
-[e :U _I2C1_DO_SEND_RESTART ]
-[f ]
-"480
-[; ;../Common/i2c1_master.c: 480:     return I2C1_SEND_ADR_READ;
-[e ) . `E16657 1 ]
-[e $UE 2345  ]
-"481
-[; ;../Common/i2c1_master.c: 481: }
-[e :UE 2345 ]
-}
-"483
-[; ;../Common/i2c1_master.c: 483: static i2c1_fsm_states_t I2C1_DO_SEND_STOP(void)
-[v _I2C1_DO_SEND_STOP `(E16657 ~T0 @X0 1 sf ]
-"484
-[; ;../Common/i2c1_master.c: 484: {
-{
-[e :U _I2C1_DO_SEND_STOP ]
-[f ]
-"485
-[; ;../Common/i2c1_master.c: 485:     I2C1_MasterStop();
-[e ( _I2C1_MasterStop ..  ]
-"486
-[; ;../Common/i2c1_master.c: 486:     if(I2C1_MasterGetCounter())
-[e $ ! != -> ( _I2C1_MasterGetCounter ..  `i -> 0 `i 2347  ]
-"487
-[; ;../Common/i2c1_master.c: 487:     {
-{
-"488
-[; ;../Common/i2c1_master.c: 488:         I2C1_MasterSetCounter(0);
-[e ( _I2C1_MasterSetCounter (1 -> -> 0 `i `uc ]
-"489
-[; ;../Common/i2c1_master.c: 489:         I2C1_MasterSendTxData(0);
-[e ( _I2C1_MasterSendTxData (1 -> -> 0 `i `uc ]
-"490
-[; ;../Common/i2c1_master.c: 490:     }
-}
+"107
+[; ;pololu_robot.c: 107:     while(!UART1_is_tx_ready()) continue;
+[e $U 2340  ]
+[e :U 2341 ]
+[e $U 2340  ]
+[e :U 2340 ]
+[e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2341  ]
+[e :U 2342 ]
+"108
+[; ;pololu_robot.c: 108:     UART1_Write(0xB8);
+[e ( _UART1_Write (1 -> -> 184 `i `uc ]
+"109
+[; ;pololu_robot.c: 109:     while(!UART1_is_tx_ready()) continue;
+[e $U 2343  ]
+[e :U 2344 ]
+[e $U 2343  ]
+[e :U 2343 ]
+[e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2344  ]
+[e :U 2345 ]
+"110
+[; ;pololu_robot.c: 110:     UART1_Write(1);
+[e ( _UART1_Write (1 -> -> 1 `i `uc ]
+"111
+[; ;pololu_robot.c: 111:     while(!UART1_is_tx_ready()) continue;
+[e $U 2346  ]
 [e :U 2347 ]
-"491
-[; ;../Common/i2c1_master.c: 491:     return I2C1_IDLE;
-[e ) . `E16657 0 ]
-[e $UE 2346  ]
-"492
-[; ;../Common/i2c1_master.c: 492: }
-[e :UE 2346 ]
+[e $U 2346  ]
+[e :U 2346 ]
+[e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2347  ]
+[e :U 2348 ]
+"112
+[; ;pololu_robot.c: 112:     UART1_Write(byte);
+[e ( _UART1_Write (1 -> _byte `uc ]
+"113
+[; ;pololu_robot.c: 113: }
+[e :UE 2339 ]
 }
-"494
-[; ;../Common/i2c1_master.c: 494: static i2c1_fsm_states_t I2C1_DO_RX_ACK(void)
-[v _I2C1_DO_RX_ACK `(E16657 ~T0 @X0 1 sf ]
-"495
-[; ;../Common/i2c1_master.c: 495: {
+"115
+[; ;pololu_robot.c: 115: void LCD_Position(char x, char y)
+[v _LCD_Position `(v ~T0 @X0 1 ef2`uc`uc ]
+"116
+[; ;pololu_robot.c: 116: {
 {
-[e :U _I2C1_DO_RX_ACK ]
+[e :U _LCD_Position ]
+"115
+[; ;pololu_robot.c: 115: void LCD_Position(char x, char y)
+[v _x `uc ~T0 @X0 1 r1 ]
+[v _y `uc ~T0 @X0 1 r2 ]
+"116
+[; ;pololu_robot.c: 116: {
 [f ]
-"496
-[; ;../Common/i2c1_master.c: 496:     I2C1_MasterSendAck();
-[e ( _I2C1_MasterSendAck ..  ]
-"497
-[; ;../Common/i2c1_master.c: 497:     return I2C1_RX;
-[e ) . `E16657 4 ]
-[e $UE 2348  ]
-"498
-[; ;../Common/i2c1_master.c: 498: }
-[e :UE 2348 ]
-}
-"500
-[; ;../Common/i2c1_master.c: 500: static i2c1_fsm_states_t I2C1_DO_TX_ACK(void)
-[v _I2C1_DO_TX_ACK `(E16657 ~T0 @X0 1 sf ]
-"501
-[; ;../Common/i2c1_master.c: 501: {
-{
-[e :U _I2C1_DO_TX_ACK ]
-[f ]
-"502
-[; ;../Common/i2c1_master.c: 502:     I2C1_MasterSendAck();
-[e ( _I2C1_MasterSendAck ..  ]
-"503
-[; ;../Common/i2c1_master.c: 503:     return I2C1_TX;
-[e ) . `E16657 3 ]
-[e $UE 2349  ]
-"504
-[; ;../Common/i2c1_master.c: 504: }
+"117
+[; ;pololu_robot.c: 117:     while(!UART1_is_tx_ready()) continue;
+[e $U 2350  ]
+[e :U 2351 ]
+[e $U 2350  ]
+[e :U 2350 ]
+[e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2351  ]
+[e :U 2352 ]
+"118
+[; ;pololu_robot.c: 118:     UART1_Write(0xB9);
+[e ( _UART1_Write (1 -> -> 185 `i `uc ]
+"119
+[; ;pololu_robot.c: 119:     while(!UART1_is_tx_ready()) continue;
+[e $U 2353  ]
+[e :U 2354 ]
+[e $U 2353  ]
+[e :U 2353 ]
+[e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2354  ]
+[e :U 2355 ]
+"120
+[; ;pololu_robot.c: 120:     UART1_Write(x);
+[e ( _UART1_Write (1 -> _x `uc ]
+"121
+[; ;pololu_robot.c: 121:     while(!UART1_is_tx_ready()) continue;
+[e $U 2356  ]
+[e :U 2357 ]
+[e $U 2356  ]
+[e :U 2356 ]
+[e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2357  ]
+[e :U 2358 ]
+"122
+[; ;pololu_robot.c: 122:     UART1_Write(y);
+[e ( _UART1_Write (1 -> _y `uc ]
+"123
+[; ;pololu_robot.c: 123: }
 [e :UE 2349 ]
 }
-"506
-[; ;../Common/i2c1_master.c: 506: static i2c1_fsm_states_t I2C1_DO_RX_NACK_STOP(void)
-[v _I2C1_DO_RX_NACK_STOP `(E16657 ~T0 @X0 1 sf ]
-"507
-[; ;../Common/i2c1_master.c: 507: {
+"125
+[; ;pololu_robot.c: 125: void Forward(char speed)
+[v _Forward `(v ~T0 @X0 1 ef1`uc ]
+"126
+[; ;pololu_robot.c: 126: {
 {
-[e :U _I2C1_DO_RX_NACK_STOP ]
+[e :U _Forward ]
+"125
+[; ;pololu_robot.c: 125: void Forward(char speed)
+[v _speed `uc ~T0 @X0 1 r1 ]
+"126
+[; ;pololu_robot.c: 126: {
 [f ]
-"508
-[; ;../Common/i2c1_master.c: 508:     I2C1_MasterSendNack();
-[e ( _I2C1_MasterSendNack ..  ]
-"509
-[; ;../Common/i2c1_master.c: 509:     I2C1_MasterStop();
-[e ( _I2C1_MasterStop ..  ]
-"510
-[; ;../Common/i2c1_master.c: 510:     return I2C1_DO_IDLE();
-[e ) ( _I2C1_DO_IDLE ..  ]
-[e $UE 2350  ]
-"511
-[; ;../Common/i2c1_master.c: 511: }
-[e :UE 2350 ]
-}
-"513
-[; ;../Common/i2c1_master.c: 513: static i2c1_fsm_states_t I2C1_DO_RX_NACK_RESTART(void)
-[v _I2C1_DO_RX_NACK_RESTART `(E16657 ~T0 @X0 1 sf ]
-"514
-[; ;../Common/i2c1_master.c: 514: {
-{
-[e :U _I2C1_DO_RX_NACK_RESTART ]
-[f ]
-"515
-[; ;../Common/i2c1_master.c: 515:     I2C1_MasterSendNack();
-[e ( _I2C1_MasterSendNack ..  ]
-"516
-[; ;../Common/i2c1_master.c: 516:     return I2C1_SEND_RESTART;
-[e ) . `E16657 9 ]
-[e $UE 2351  ]
-"517
-[; ;../Common/i2c1_master.c: 517: }
-[e :UE 2351 ]
-}
-"519
-[; ;../Common/i2c1_master.c: 519: static i2c1_fsm_states_t I2C1_DO_RESET(void)
-[v _I2C1_DO_RESET `(E16657 ~T0 @X0 1 sf ]
-"520
-[; ;../Common/i2c1_master.c: 520: {
-{
-[e :U _I2C1_DO_RESET ]
-[f ]
-"521
-[; ;../Common/i2c1_master.c: 521:     I2C1_MasterResetBus();
-[e ( _I2C1_MasterResetBus ..  ]
-"522
-[; ;../Common/i2c1_master.c: 522:     I2C1_Status.busy = 0;
-[e = . _I2C1_Status 10 -> -> 0 `i `uc ]
-"523
-[; ;../Common/i2c1_master.c: 523:     I2C1_Status.error = I2C1_NOERR;
-[e = . _I2C1_Status 8 . `E358 0 ]
-"524
-[; ;../Common/i2c1_master.c: 524:     return I2C1_RESET;
-[e ) . `E16657 15 ]
-[e $UE 2352  ]
-"525
-[; ;../Common/i2c1_master.c: 525: }
-[e :UE 2352 ]
-}
-"526
-[; ;../Common/i2c1_master.c: 526: static i2c1_fsm_states_t I2C1_DO_ADDRESS_NACK(void)
-[v _I2C1_DO_ADDRESS_NACK `(E16657 ~T0 @X0 1 sf ]
-"527
-[; ;../Common/i2c1_master.c: 527: {
-{
-[e :U _I2C1_DO_ADDRESS_NACK ]
-[f ]
-"528
-[; ;../Common/i2c1_master.c: 528:     I2C1_Status.addressNackCheck = 0;
-[e = . _I2C1_Status 9 -> -> 0 `i `uc ]
-"529
-[; ;../Common/i2c1_master.c: 529:     I2C1_Status.error = I2C1_FAIL;
-[e = . _I2C1_Status 8 . `E358 2 ]
-"530
-[; ;../Common/i2c1_master.c: 530:     I2C1_Status.busy = 0;
-[e = . _I2C1_Status 10 -> -> 0 `i `uc ]
-"531
-[; ;../Common/i2c1_master.c: 531:     switch(I2C1_Status.callbackTable[I2C1_ADDR_NACK](I2C1_Status.callbackPayload[I2C1_ADDR_NACK]))
-[e $U 2355  ]
-"532
-[; ;../Common/i2c1_master.c: 532:     {
-{
-"533
-[; ;../Common/i2c1_master.c: 533:         case I2C1_RESTART_READ:
-[e :U 2356 ]
-"534
-[; ;../Common/i2c1_master.c: 534:         case I2C1_RESTART_WRITE:
-[e :U 2357 ]
-"535
-[; ;../Common/i2c1_master.c: 535:             return I2C1_DO_SEND_RESTART();
-[e ) ( _I2C1_DO_SEND_RESTART ..  ]
-[e $UE 2353  ]
-"536
-[; ;../Common/i2c1_master.c: 536:         default:
-[e :U 2358 ]
-"537
-[; ;../Common/i2c1_master.c: 537:             return I2C1_RESET;
-[e ) . `E16657 15 ]
-[e $UE 2353  ]
-"538
-[; ;../Common/i2c1_master.c: 538:     }
-}
-[e $U 2354  ]
-[e :U 2355 ]
-[e [\ -> ( *U *U + &U . _I2C1_Status 0 * -> . `E16678 2 `ux -> -> # *U &U . _I2C1_Status 0 `ui `ux (1 *U + &U . _I2C1_Status 1 * -> . `E16678 2 `ux -> -> # *U &U . _I2C1_Status 1 `ui `ux `ui , $ -> . `E363 1 `ui 2356
- , $ -> . `E363 2 `ui 2357
- 2358 ]
-[e :U 2354 ]
-"539
-[; ;../Common/i2c1_master.c: 539: }
-[e :UE 2353 ]
-}
-"541
-[; ;../Common/i2c1_master.c: 541: static i2c1_fsm_states_t I2C1_DO_BUS_COLLISION(void)
-[v _I2C1_DO_BUS_COLLISION `(E16657 ~T0 @X0 1 sf ]
-"542
-[; ;../Common/i2c1_master.c: 542: {
-{
-[e :U _I2C1_DO_BUS_COLLISION ]
-[f ]
-"544
-[; ;../Common/i2c1_master.c: 544:     I2C1_MasterClearIrq();
-[e ( _I2C1_MasterClearIrq ..  ]
-"546
-[; ;../Common/i2c1_master.c: 546:     I2C1_Status.error = I2C1_FAIL;
-[e = . _I2C1_Status 8 . `E358 2 ]
-"547
-[; ;../Common/i2c1_master.c: 547:     switch (I2C1_Status.callbackTable[I2C1_WRITE_COLLISION](I2C1_Status.callbackPayload[I2C1_WRITE_COLLISION])) {
-[e $U 2361  ]
-{
-"548
-[; ;../Common/i2c1_master.c: 548:     case I2C1_RESTART_READ:
-[e :U 2362 ]
-"549
-[; ;../Common/i2c1_master.c: 549:         return I2C1_DO_SEND_RESTART_READ();
-[e ) ( _I2C1_DO_SEND_RESTART_READ ..  ]
-[e $UE 2359  ]
-"550
-[; ;../Common/i2c1_master.c: 550:     case I2C1_RESTART_WRITE:
-[e :U 2363 ]
-"551
-[; ;../Common/i2c1_master.c: 551:         return I2C1_DO_SEND_RESTART_WRITE();
-[e ) ( _I2C1_DO_SEND_RESTART_WRITE ..  ]
-[e $UE 2359  ]
-"552
-[; ;../Common/i2c1_master.c: 552:     default:
-[e :U 2364 ]
-"553
-[; ;../Common/i2c1_master.c: 553:         return I2C1_DO_RESET();
-[e ) ( _I2C1_DO_RESET ..  ]
-[e $UE 2359  ]
-"554
-[; ;../Common/i2c1_master.c: 554:     }
-}
+"127
+[; ;pololu_robot.c: 127:                     while(!UART1_is_tx_ready()) continue;
 [e $U 2360  ]
 [e :U 2361 ]
-[e [\ -> ( *U *U + &U . _I2C1_Status 0 * -> . `E16678 1 `ux -> -> # *U &U . _I2C1_Status 0 `ui `ux (1 *U + &U . _I2C1_Status 1 * -> . `E16678 1 `ux -> -> # *U &U . _I2C1_Status 1 `ui `ux `ui , $ -> . `E363 1 `ui 2362
- , $ -> . `E363 2 `ui 2363
- 2364 ]
+[e $U 2360  ]
 [e :U 2360 ]
-"555
-[; ;../Common/i2c1_master.c: 555: }
+[e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2361  ]
+[e :U 2362 ]
+"128
+[; ;pololu_robot.c: 128:                     UART1_Write(0xC1);
+[e ( _UART1_Write (1 -> -> 193 `i `uc ]
+"129
+[; ;pololu_robot.c: 129:                     while(!UART1_is_tx_ready()) continue;
+[e $U 2363  ]
+[e :U 2364 ]
+[e $U 2363  ]
+[e :U 2363 ]
+[e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2364  ]
+[e :U 2365 ]
+"130
+[; ;pololu_robot.c: 130:                     UART1_Write(speed);
+[e ( _UART1_Write (1 -> _speed `uc ]
+"131
+[; ;pololu_robot.c: 131:                     while(!UART1_is_tx_ready()) continue;
+[e $U 2366  ]
+[e :U 2367 ]
+[e $U 2366  ]
+[e :U 2366 ]
+[e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2367  ]
+[e :U 2368 ]
+"132
+[; ;pololu_robot.c: 132:                     UART1_Write(0xC5);
+[e ( _UART1_Write (1 -> -> 197 `i `uc ]
+"133
+[; ;pololu_robot.c: 133:                     while(!UART1_is_tx_ready()) continue;
+[e $U 2369  ]
+[e :U 2370 ]
+[e $U 2369  ]
+[e :U 2369 ]
+[e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2370  ]
+[e :U 2371 ]
+"134
+[; ;pololu_robot.c: 134:                     UART1_Write(speed);
+[e ( _UART1_Write (1 -> _speed `uc ]
+"135
+[; ;pololu_robot.c: 135: }
 [e :UE 2359 ]
 }
-"557
-[; ;../Common/i2c1_master.c: 557: static i2c1_fsm_states_t I2C1_DO_BUS_ERROR(void)
-[v _I2C1_DO_BUS_ERROR `(E16657 ~T0 @X0 1 sf ]
-"558
-[; ;../Common/i2c1_master.c: 558: {
+"137
+[; ;pololu_robot.c: 137: void Backward(char speed)
+[v _Backward `(v ~T0 @X0 1 ef1`uc ]
+"138
+[; ;pololu_robot.c: 138: {
 {
-[e :U _I2C1_DO_BUS_ERROR ]
+[e :U _Backward ]
+"137
+[; ;pololu_robot.c: 137: void Backward(char speed)
+[v _speed `uc ~T0 @X0 1 r1 ]
+"138
+[; ;pololu_robot.c: 138: {
 [f ]
-"559
-[; ;../Common/i2c1_master.c: 559:     I2C1_MasterResetBus();
-[e ( _I2C1_MasterResetBus ..  ]
-"560
-[; ;../Common/i2c1_master.c: 560:     I2C1_Status.busy = 0;
-[e = . _I2C1_Status 10 -> -> 0 `i `uc ]
-"561
-[; ;../Common/i2c1_master.c: 561:     I2C1_Status.error = I2C1_FAIL;
-[e = . _I2C1_Status 8 . `E358 2 ]
-"562
-[; ;../Common/i2c1_master.c: 562:     return I2C1_RESET;
-[e ) . `E16657 15 ]
-[e $UE 2365  ]
-"563
-[; ;../Common/i2c1_master.c: 563: }
-[e :UE 2365 ]
+"140
+[; ;pololu_robot.c: 140:                     while(!UART1_is_tx_ready()) continue;
+[e $U 2373  ]
+[e :U 2374 ]
+[e $U 2373  ]
+[e :U 2373 ]
+[e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2374  ]
+[e :U 2375 ]
+"141
+[; ;pololu_robot.c: 141:                     UART1_Write(0xC1);
+[e ( _UART1_Write (1 -> -> 193 `i `uc ]
+"142
+[; ;pololu_robot.c: 142:                     while(!UART1_is_tx_ready()) continue;
+[e $U 2376  ]
+[e :U 2377 ]
+[e $U 2376  ]
+[e :U 2376 ]
+[e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2377  ]
+[e :U 2378 ]
+"143
+[; ;pololu_robot.c: 143:                     UART1_Write(speed);
+[e ( _UART1_Write (1 -> _speed `uc ]
+"144
+[; ;pololu_robot.c: 144:                     while(!UART1_is_tx_ready()) continue;
+[e $U 2379  ]
+[e :U 2380 ]
+[e $U 2379  ]
+[e :U 2379 ]
+[e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2380  ]
+[e :U 2381 ]
+"145
+[; ;pololu_robot.c: 145:                     UART1_Write(0xC5);
+[e ( _UART1_Write (1 -> -> 197 `i `uc ]
+"146
+[; ;pololu_robot.c: 146:                     while(!UART1_is_tx_ready()) continue;
+[e $U 2382  ]
+[e :U 2383 ]
+[e $U 2382  ]
+[e :U 2382 ]
+[e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2383  ]
+[e :U 2384 ]
+"147
+[; ;pololu_robot.c: 147:                     UART1_Write(speed);
+[e ( _UART1_Write (1 -> _speed `uc ]
+"148
+[; ;pololu_robot.c: 148: }
+[e :UE 2372 ]
 }
-"565
-[; ;../Common/i2c1_master.c: 565: void I2C1_BusCollisionIsr(void)
-[v _I2C1_BusCollisionIsr `(v ~T0 @X0 1 ef ]
-"566
-[; ;../Common/i2c1_master.c: 566: {
+"150
+[; ;pololu_robot.c: 150: void Left_Turn(char speed, char differential)
+[v _Left_Turn `(v ~T0 @X0 1 ef2`uc`uc ]
+"151
+[; ;pololu_robot.c: 151: {
 {
-[e :U _I2C1_BusCollisionIsr ]
+[e :U _Left_Turn ]
+"150
+[; ;pololu_robot.c: 150: void Left_Turn(char speed, char differential)
+[v _speed `uc ~T0 @X0 1 r1 ]
+[v _differential `uc ~T0 @X0 1 r2 ]
+"151
+[; ;pololu_robot.c: 151: {
 [f ]
-"567
-[; ;../Common/i2c1_master.c: 567:     I2C1_MasterClearBusCollision();
-[e ( _I2C1_MasterClearBusCollision ..  ]
-"568
-[; ;../Common/i2c1_master.c: 568:     I2C1_Status.state = I2C1_RESET;
-[e = . _I2C1_Status 7 . `E16657 15 ]
-"569
-[; ;../Common/i2c1_master.c: 569: }
-[e :UE 2366 ]
-}
-"571
-[; ;../Common/i2c1_master.c: 571: i2c1_operations_t I2C1_CallbackReturnStop(void *funPtr)
-[v _I2C1_CallbackReturnStop `(E363 ~T0 @X0 1 ef1`*v ]
-"572
-[; ;../Common/i2c1_master.c: 572: {
-{
-[e :U _I2C1_CallbackReturnStop ]
-"571
-[; ;../Common/i2c1_master.c: 571: i2c1_operations_t I2C1_CallbackReturnStop(void *funPtr)
-[v _funPtr `*v ~T0 @X0 1 r1 ]
-"572
-[; ;../Common/i2c1_master.c: 572: {
-[f ]
-"573
-[; ;../Common/i2c1_master.c: 573:     return I2C1_STOP;
-[e ) . `E363 0 ]
-[e $UE 2367  ]
-"574
-[; ;../Common/i2c1_master.c: 574: }
-[e :UE 2367 ]
-}
-"576
-[; ;../Common/i2c1_master.c: 576: i2c1_operations_t I2C1_CallbackReturnReset(void *funPtr)
-[v _I2C1_CallbackReturnReset `(E363 ~T0 @X0 1 ef1`*v ]
-"577
-[; ;../Common/i2c1_master.c: 577: {
-{
-[e :U _I2C1_CallbackReturnReset ]
-"576
-[; ;../Common/i2c1_master.c: 576: i2c1_operations_t I2C1_CallbackReturnReset(void *funPtr)
-[v _funPtr `*v ~T0 @X0 1 r1 ]
-"577
-[; ;../Common/i2c1_master.c: 577: {
-[f ]
-"578
-[; ;../Common/i2c1_master.c: 578:     return I2C1_RESET_LINK;
-[e ) . `E363 4 ]
-[e $UE 2368  ]
-"579
-[; ;../Common/i2c1_master.c: 579: }
-[e :UE 2368 ]
-}
-"581
-[; ;../Common/i2c1_master.c: 581: i2c1_operations_t I2C1_CallbackRestartWrite(void *funPtr)
-[v _I2C1_CallbackRestartWrite `(E363 ~T0 @X0 1 ef1`*v ]
-"582
-[; ;../Common/i2c1_master.c: 582: {
-{
-[e :U _I2C1_CallbackRestartWrite ]
-"581
-[; ;../Common/i2c1_master.c: 581: i2c1_operations_t I2C1_CallbackRestartWrite(void *funPtr)
-[v _funPtr `*v ~T0 @X0 1 r1 ]
-"582
-[; ;../Common/i2c1_master.c: 582: {
-[f ]
-"583
-[; ;../Common/i2c1_master.c: 583:     return I2C1_RESTART_WRITE;
-[e ) . `E363 2 ]
-[e $UE 2369  ]
-"584
-[; ;../Common/i2c1_master.c: 584: }
-[e :UE 2369 ]
-}
-"586
-[; ;../Common/i2c1_master.c: 586: i2c1_operations_t I2C1_CallbackRestartRead(void *funPtr)
-[v _I2C1_CallbackRestartRead `(E363 ~T0 @X0 1 ef1`*v ]
-"587
-[; ;../Common/i2c1_master.c: 587: {
-{
-[e :U _I2C1_CallbackRestartRead ]
-"586
-[; ;../Common/i2c1_master.c: 586: i2c1_operations_t I2C1_CallbackRestartRead(void *funPtr)
-[v _funPtr `*v ~T0 @X0 1 r1 ]
-"587
-[; ;../Common/i2c1_master.c: 587: {
-[f ]
-"588
-[; ;../Common/i2c1_master.c: 588:     return I2C1_RESTART_READ;
-[e ) . `E363 1 ]
-[e $UE 2370  ]
-"589
-[; ;../Common/i2c1_master.c: 589: }
-[e :UE 2370 ]
-}
-[v F17045 `(a ~T0 @X0 1 tf ]
-"594
-[; ;../Common/i2c1_master.c: 594: static __attribute__((inline)) _Bool I2C1_MasterOpen(void)
-[v _I2C1_MasterOpen `TF17045 ~T0 @X0 1 s ]
-"595
-[; ;../Common/i2c1_master.c: 595: {
-{
-[e :U _I2C1_MasterOpen ]
-[f ]
-"596
-[; ;../Common/i2c1_master.c: 596:     if(!I2C1CON0bits.EN)
-[e $ ! ! != -> . . _I2C1CON0bits 0 5 `i -> 0 `i 2372  ]
-"597
-[; ;../Common/i2c1_master.c: 597:     {
-{
-"599
-[; ;../Common/i2c1_master.c: 599:         I2C1PIR = 0x00;
-[e = _I2C1PIR -> -> 0 `i `uc ]
-"601
-[; ;../Common/i2c1_master.c: 601:         I2C1PIE = 0x00;
-[e = _I2C1PIE -> -> 0 `i `uc ]
-"603
-[; ;../Common/i2c1_master.c: 603:         I2C1ERR = 0x00;
-[e = _I2C1ERR -> -> 0 `i `uc ]
-"605
-[; ;../Common/i2c1_master.c: 605:         I2C1CNT = 0xFF;
-[e = _I2C1CNT -> -> 255 `i `uc ]
-"607
-[; ;../Common/i2c1_master.c: 607:         RC3I2C = 0x51;
-[e = _RC3I2C -> -> 81 `i `uc ]
-"609
-[; ;../Common/i2c1_master.c: 609:         RC4I2C = 0x51;
-[e = _RC4I2C -> -> 81 `i `uc ]
-"611
-[; ;../Common/i2c1_master.c: 611:         I2C1CON0bits.EN = 1;
-[e = . . _I2C1CON0bits 0 5 -> -> 1 `i `uc ]
-"612
-[; ;../Common/i2c1_master.c: 612:         return 1;
-[e ) -> -> 1 `i `a ]
-[e $UE 2371  ]
-"613
-[; ;../Common/i2c1_master.c: 613:     }
-}
-[e :U 2372 ]
-"614
-[; ;../Common/i2c1_master.c: 614:     return 0;
-[e ) -> -> 0 `i `a ]
-[e $UE 2371  ]
-"615
-[; ;../Common/i2c1_master.c: 615: }
-[e :UE 2371 ]
-}
-[v F17047 `(v ~T0 @X0 1 tf ]
-"617
-[; ;../Common/i2c1_master.c: 617: static __attribute__((inline)) void I2C1_MasterClose(void)
-[v _I2C1_MasterClose `TF17047 ~T0 @X0 1 s ]
-"618
-[; ;../Common/i2c1_master.c: 618: {
-{
-[e :U _I2C1_MasterClose ]
-[f ]
-"620
-[; ;../Common/i2c1_master.c: 620:     I2C1CON0bits.EN = 0;
-[e = . . _I2C1CON0bits 0 5 -> -> 0 `i `uc ]
-"622
-[; ;../Common/i2c1_master.c: 622:     I2C1PIR = 0x00;
-[e = _I2C1PIR -> -> 0 `i `uc ]
-"624
-[; ;../Common/i2c1_master.c: 624:     I2C1STAT1bits.CLRBF = 1;
-[e = . . _I2C1STAT1bits 0 2 -> -> 1 `i `uc ]
-"625
-[; ;../Common/i2c1_master.c: 625: }
-[e :UE 2373 ]
-}
-[v F17049 `(uc ~T0 @X0 1 tf ]
-"627
-[; ;../Common/i2c1_master.c: 627: static __attribute__((inline)) uint8_t I2C1_MasterGetRxData(void)
-[v _I2C1_MasterGetRxData `TF17049 ~T0 @X0 1 s ]
-"628
-[; ;../Common/i2c1_master.c: 628: {
-{
-[e :U _I2C1_MasterGetRxData ]
-[f ]
-"629
-[; ;../Common/i2c1_master.c: 629:     return I2C1RXB;
-[e ) _I2C1RXB ]
-[e $UE 2374  ]
-"630
-[; ;../Common/i2c1_master.c: 630: }
-[e :UE 2374 ]
-}
-[v F17051 `(v ~T0 @X0 1 tf1`uc ]
-"632
-[; ;../Common/i2c1_master.c: 632: static __attribute__((inline)) void I2C1_MasterSendTxData(uint8_t data)
-[v _I2C1_MasterSendTxData `TF17051 ~T0 @X0 1 s ]
-"633
-[; ;../Common/i2c1_master.c: 633: {
-{
-[e :U _I2C1_MasterSendTxData ]
-"632
-[; ;../Common/i2c1_master.c: 632: static __attribute__((inline)) void I2C1_MasterSendTxData(uint8_t data)
-[v _data `uc ~T0 @X0 1 r1 ]
-"633
-[; ;../Common/i2c1_master.c: 633: {
-[f ]
-"634
-[; ;../Common/i2c1_master.c: 634:     I2C1TXB = data;
-[e = _I2C1TXB _data ]
-"635
-[; ;../Common/i2c1_master.c: 635: }
-[e :UE 2375 ]
-}
-[v F17054 `(uc ~T0 @X0 1 tf ]
-"637
-[; ;../Common/i2c1_master.c: 637: static __attribute__((inline)) uint8_t I2C1_MasterGetCounter()
-[v _I2C1_MasterGetCounter `TF17054 ~T0 @X0 1 s ]
-"638
-[; ;../Common/i2c1_master.c: 638: {
-{
-[e :U _I2C1_MasterGetCounter ]
-[f ]
-"639
-[; ;../Common/i2c1_master.c: 639:     return I2C1CNT;
-[e ) _I2C1CNT ]
-[e $UE 2376  ]
-"640
-[; ;../Common/i2c1_master.c: 640: }
-[e :UE 2376 ]
-}
-[v F17056 `(v ~T0 @X0 1 tf1`uc ]
-"642
-[; ;../Common/i2c1_master.c: 642: static __attribute__((inline)) void I2C1_MasterSetCounter(uint8_t counter)
-[v _I2C1_MasterSetCounter `TF17056 ~T0 @X0 1 s ]
-"643
-[; ;../Common/i2c1_master.c: 643: {
-{
-[e :U _I2C1_MasterSetCounter ]
-"642
-[; ;../Common/i2c1_master.c: 642: static __attribute__((inline)) void I2C1_MasterSetCounter(uint8_t counter)
-[v _counter `uc ~T0 @X0 1 r1 ]
-"643
-[; ;../Common/i2c1_master.c: 643: {
-[f ]
-"644
-[; ;../Common/i2c1_master.c: 644:     I2C1CNT = counter;
-[e = _I2C1CNT _counter ]
-"645
-[; ;../Common/i2c1_master.c: 645: }
-[e :UE 2377 ]
-}
-[v F17059 `(v ~T0 @X0 1 tf ]
-"647
-[; ;../Common/i2c1_master.c: 647: static __attribute__((inline)) void I2C1_MasterResetBus(void)
-[v _I2C1_MasterResetBus `TF17059 ~T0 @X0 1 s ]
-"648
-[; ;../Common/i2c1_master.c: 648: {
-{
-[e :U _I2C1_MasterResetBus ]
-[f ]
-"650
-[; ;../Common/i2c1_master.c: 650:     I2C1CON0bits.EN = 0;
-[e = . . _I2C1CON0bits 0 5 -> -> 0 `i `uc ]
-"652
-[; ;../Common/i2c1_master.c: 652:     I2C1STAT1bits.CLRBF = 1;
-[e = . . _I2C1STAT1bits 0 2 -> -> 1 `i `uc ]
-"654
-[; ;../Common/i2c1_master.c: 654:     I2C1CON0bits.EN = 1;
-[e = . . _I2C1CON0bits 0 5 -> -> 1 `i `uc ]
-"655
-[; ;../Common/i2c1_master.c: 655: }
-[e :UE 2378 ]
-}
-[v F17061 `(v ~T0 @X0 1 tf ]
-"657
-[; ;../Common/i2c1_master.c: 657: static __attribute__((inline)) void I2C1_MasterEnableRestart(void)
-[v _I2C1_MasterEnableRestart `TF17061 ~T0 @X0 1 s ]
-"658
-[; ;../Common/i2c1_master.c: 658: {
-{
-[e :U _I2C1_MasterEnableRestart ]
-[f ]
-"660
-[; ;../Common/i2c1_master.c: 660:     I2C1CON0bits.RSEN = 1;
-[e = . . _I2C1CON0bits 0 4 -> -> 1 `i `uc ]
-"661
-[; ;../Common/i2c1_master.c: 661: }
-[e :UE 2379 ]
-}
-[v F17063 `(v ~T0 @X0 1 tf ]
-"663
-[; ;../Common/i2c1_master.c: 663: static __attribute__((inline)) void I2C1_MasterDisableRestart(void)
-[v _I2C1_MasterDisableRestart `TF17063 ~T0 @X0 1 s ]
-"664
-[; ;../Common/i2c1_master.c: 664: {
-{
-[e :U _I2C1_MasterDisableRestart ]
-[f ]
-"666
-[; ;../Common/i2c1_master.c: 666:     I2C1CON0bits.RSEN = 0;
-[e = . . _I2C1CON0bits 0 4 -> -> 0 `i `uc ]
-"667
-[; ;../Common/i2c1_master.c: 667: }
-[e :UE 2380 ]
-}
-[v F17065 `(v ~T0 @X0 1 tf ]
-"669
-[; ;../Common/i2c1_master.c: 669: static __attribute__((inline)) void I2C1_MasterStop(void)
-[v _I2C1_MasterStop `TF17065 ~T0 @X0 1 s ]
-"670
-[; ;../Common/i2c1_master.c: 670: {
-{
-[e :U _I2C1_MasterStop ]
-[f ]
-"672
-[; ;../Common/i2c1_master.c: 672:     I2C1CON0bits.S = 0;
-[e = . . _I2C1CON0bits 0 3 -> -> 0 `i `uc ]
-"673
-[; ;../Common/i2c1_master.c: 673: }
-[e :UE 2381 ]
-}
-[v F17067 `(a ~T0 @X0 1 tf ]
-"675
-[; ;../Common/i2c1_master.c: 675: static __attribute__((inline)) _Bool I2C1_MasterIsNack(void)
-[v _I2C1_MasterIsNack `TF17067 ~T0 @X0 1 s ]
-"676
-[; ;../Common/i2c1_master.c: 676: {
-{
-[e :U _I2C1_MasterIsNack ]
-[f ]
-"677
-[; ;../Common/i2c1_master.c: 677:     return I2C1CON1bits.ACKSTAT;
-[e ) -> . . _I2C1CON1bits 0 5 `a ]
-[e $UE 2382  ]
-"678
-[; ;../Common/i2c1_master.c: 678: }
-[e :UE 2382 ]
-}
-[v F17069 `(v ~T0 @X0 1 tf ]
-"680
-[; ;../Common/i2c1_master.c: 680: static __attribute__((inline)) void I2C1_MasterSendAck(void)
-[v _I2C1_MasterSendAck `TF17069 ~T0 @X0 1 s ]
-"681
-[; ;../Common/i2c1_master.c: 681: {
-{
-[e :U _I2C1_MasterSendAck ]
-[f ]
-"682
-[; ;../Common/i2c1_master.c: 682:     I2C1CON1bits.ACKDT = 0;
-[e = . . _I2C1CON1bits 0 6 -> -> 0 `i `uc ]
-"683
-[; ;../Common/i2c1_master.c: 683: }
-[e :UE 2383 ]
-}
-[v F17071 `(v ~T0 @X0 1 tf ]
-"685
-[; ;../Common/i2c1_master.c: 685: static __attribute__((inline)) void I2C1_MasterSendNack(void)
-[v _I2C1_MasterSendNack `TF17071 ~T0 @X0 1 s ]
-"686
-[; ;../Common/i2c1_master.c: 686: {
-{
-[e :U _I2C1_MasterSendNack ]
-[f ]
-"687
-[; ;../Common/i2c1_master.c: 687:     I2C1CON1bits.ACKDT = 1;
-[e = . . _I2C1CON1bits 0 6 -> -> 1 `i `uc ]
-"688
-[; ;../Common/i2c1_master.c: 688: }
-[e :UE 2384 ]
-}
-[v F17073 `(v ~T0 @X0 1 tf ]
-"690
-[; ;../Common/i2c1_master.c: 690: static __attribute__((inline)) void I2C1_MasterClearBusCollision(void)
-[v _I2C1_MasterClearBusCollision `TF17073 ~T0 @X0 1 s ]
-"691
-[; ;../Common/i2c1_master.c: 691: {
-{
-[e :U _I2C1_MasterClearBusCollision ]
-[f ]
-"692
-[; ;../Common/i2c1_master.c: 692:     I2C1ERRbits.BCLIF = 0;
-[e = . . _I2C1ERRbits 0 5 -> -> 0 `i `uc ]
-"693
-[; ;../Common/i2c1_master.c: 693:     I2C1ERRbits.BTOIF = 0;
-[e = . . _I2C1ERRbits 0 6 -> -> 0 `i `uc ]
-"694
-[; ;../Common/i2c1_master.c: 694:     I2C1ERRbits.NACKIF = 0;
-[e = . . _I2C1ERRbits 0 4 -> -> 0 `i `uc ]
-"695
-[; ;../Common/i2c1_master.c: 695: }
+"153
+[; ;pololu_robot.c: 153: }
 [e :UE 2385 ]
 }
-[v F17075 `(a ~T0 @X0 1 tf ]
-"697
-[; ;../Common/i2c1_master.c: 697: static __attribute__((inline)) _Bool I2C1_MasterIsRxBufFull(void)
-[v _I2C1_MasterIsRxBufFull `TF17075 ~T0 @X0 1 s ]
-"698
-[; ;../Common/i2c1_master.c: 698: {
+"155
+[; ;pololu_robot.c: 155: void Right_Turn(char speed, char differential)
+[v _Right_Turn `(v ~T0 @X0 1 ef2`uc`uc ]
+"156
+[; ;pololu_robot.c: 156: {
 {
-[e :U _I2C1_MasterIsRxBufFull ]
+[e :U _Right_Turn ]
+"155
+[; ;pololu_robot.c: 155: void Right_Turn(char speed, char differential)
+[v _speed `uc ~T0 @X0 1 r1 ]
+[v _differential `uc ~T0 @X0 1 r2 ]
+"156
+[; ;pololu_robot.c: 156: {
 [f ]
-"699
-[; ;../Common/i2c1_master.c: 699:     return I2C1STAT1bits.RXBF;
-[e ) -> . . _I2C1STAT1bits 0 0 `a ]
-[e $UE 2386  ]
-"700
-[; ;../Common/i2c1_master.c: 700: }
+"158
+[; ;pololu_robot.c: 158: }
 [e :UE 2386 ]
 }
-[v F17077 `(a ~T0 @X0 1 tf ]
-"702
-[; ;../Common/i2c1_master.c: 702: static __attribute__((inline)) _Bool I2C1_MasterIsTxBufEmpty(void)
-[v _I2C1_MasterIsTxBufEmpty `TF17077 ~T0 @X0 1 s ]
-"703
-[; ;../Common/i2c1_master.c: 703: {
+"160
+[; ;pololu_robot.c: 160: void Stop (void)
+[v _Stop `(v ~T0 @X0 1 ef ]
+"161
+[; ;pololu_robot.c: 161: {
 {
-[e :U _I2C1_MasterIsTxBufEmpty ]
+[e :U _Stop ]
 [f ]
-"704
-[; ;../Common/i2c1_master.c: 704:     return I2C1STAT1bits.TXBE;
-[e ) -> . . _I2C1STAT1bits 0 5 `a ]
-[e $UE 2387  ]
-"705
-[; ;../Common/i2c1_master.c: 705: }
+"162
+[; ;pololu_robot.c: 162:     Forward(0);
+[e ( _Forward (1 -> -> 0 `i `uc ]
+"163
+[; ;pololu_robot.c: 163: }
 [e :UE 2387 ]
-}
-[v F17079 `(a ~T0 @X0 1 tf ]
-"707
-[; ;../Common/i2c1_master.c: 707: static __attribute__((inline)) _Bool I2C1_MasterIsStopFlagSet(void)
-[v _I2C1_MasterIsStopFlagSet `TF17079 ~T0 @X0 1 s ]
-"708
-[; ;../Common/i2c1_master.c: 708: {
-{
-[e :U _I2C1_MasterIsStopFlagSet ]
-[f ]
-"709
-[; ;../Common/i2c1_master.c: 709:     return I2C1PIRbits.PCIF;
-[e ) -> . . _I2C1PIRbits 0 2 `a ]
-[e $UE 2388  ]
-"710
-[; ;../Common/i2c1_master.c: 710: }
-[e :UE 2388 ]
-}
-[v F17081 `(a ~T0 @X0 1 tf ]
-"712
-[; ;../Common/i2c1_master.c: 712: static __attribute__((inline)) _Bool I2C1_MasterIsCountFlagSet(void)
-[v _I2C1_MasterIsCountFlagSet `TF17081 ~T0 @X0 1 s ]
-"713
-[; ;../Common/i2c1_master.c: 713: {
-{
-[e :U _I2C1_MasterIsCountFlagSet ]
-[f ]
-"714
-[; ;../Common/i2c1_master.c: 714:     return I2C1PIRbits.CNTIF;
-[e ) -> . . _I2C1PIRbits 0 7 `a ]
-[e $UE 2389  ]
-"715
-[; ;../Common/i2c1_master.c: 715: }
-[e :UE 2389 ]
-}
-[v F17083 `(a ~T0 @X0 1 tf ]
-"717
-[; ;../Common/i2c1_master.c: 717: static __attribute__((inline)) _Bool I2C1_MasterIsNackFlagSet(void)
-[v _I2C1_MasterIsNackFlagSet `TF17083 ~T0 @X0 1 s ]
-"718
-[; ;../Common/i2c1_master.c: 718: {
-{
-[e :U _I2C1_MasterIsNackFlagSet ]
-[f ]
-"719
-[; ;../Common/i2c1_master.c: 719:     return I2C1ERRbits.NACKIF;
-[e ) -> . . _I2C1ERRbits 0 4 `a ]
-[e $UE 2390  ]
-"720
-[; ;../Common/i2c1_master.c: 720: }
-[e :UE 2390 ]
-}
-[v F17085 `(v ~T0 @X0 1 tf ]
-"722
-[; ;../Common/i2c1_master.c: 722: static __attribute__((inline)) void I2C1_MasterClearStopFlag(void)
-[v _I2C1_MasterClearStopFlag `TF17085 ~T0 @X0 1 s ]
-"723
-[; ;../Common/i2c1_master.c: 723: {
-{
-[e :U _I2C1_MasterClearStopFlag ]
-[f ]
-"724
-[; ;../Common/i2c1_master.c: 724:     I2C1PIRbits.PCIF = 0;
-[e = . . _I2C1PIRbits 0 2 -> -> 0 `i `uc ]
-"725
-[; ;../Common/i2c1_master.c: 725: }
-[e :UE 2391 ]
-}
-[v F17087 `(v ~T0 @X0 1 tf ]
-"727
-[; ;../Common/i2c1_master.c: 727: static __attribute__((inline)) void I2C1_MasterClearCountFlag(void)
-[v _I2C1_MasterClearCountFlag `TF17087 ~T0 @X0 1 s ]
-"728
-[; ;../Common/i2c1_master.c: 728: {
-{
-[e :U _I2C1_MasterClearCountFlag ]
-[f ]
-"729
-[; ;../Common/i2c1_master.c: 729:     I2C1PIRbits.CNTIF = 0;
-[e = . . _I2C1PIRbits 0 7 -> -> 0 `i `uc ]
-"730
-[; ;../Common/i2c1_master.c: 730: }
-[e :UE 2392 ]
-}
-[v F17089 `(v ~T0 @X0 1 tf ]
-"732
-[; ;../Common/i2c1_master.c: 732: static __attribute__((inline)) void I2C1_MasterClearNackFlag(void)
-[v _I2C1_MasterClearNackFlag `TF17089 ~T0 @X0 1 s ]
-"733
-[; ;../Common/i2c1_master.c: 733: {
-{
-[e :U _I2C1_MasterClearNackFlag ]
-[f ]
-"734
-[; ;../Common/i2c1_master.c: 734:     I2C1ERRbits.NACKIF = 0;
-[e = . . _I2C1ERRbits 0 4 -> -> 0 `i `uc ]
-"735
-[; ;../Common/i2c1_master.c: 735: }
-[e :UE 2393 ]
-}
-[v F17091 `(v ~T0 @X0 1 tf ]
-"737
-[; ;../Common/i2c1_master.c: 737: static __attribute__((inline)) void I2C1_MasterEnableIrq(void)
-[v _I2C1_MasterEnableIrq `TF17091 ~T0 @X0 1 s ]
-"738
-[; ;../Common/i2c1_master.c: 738: {
-{
-[e :U _I2C1_MasterEnableIrq ]
-[f ]
-"739
-[; ;../Common/i2c1_master.c: 739:     PIE3bits.I2C1IE = 1;
-[e = . . _PIE3bits 0 1 -> -> 1 `i `uc ]
-"740
-[; ;../Common/i2c1_master.c: 740:     PIE3bits.I2C1EIE = 1;
-[e = . . _PIE3bits 0 2 -> -> 1 `i `uc ]
-"741
-[; ;../Common/i2c1_master.c: 741:     PIE2bits.I2C1RXIE = 1;
-[e = . . _PIE2bits 0 7 -> -> 1 `i `uc ]
-"742
-[; ;../Common/i2c1_master.c: 742:     PIE3bits.I2C1TXIE = 1;
-[e = . . _PIE3bits 0 0 -> -> 1 `i `uc ]
-"744
-[; ;../Common/i2c1_master.c: 744:     I2C1PIEbits.PCIE = 1;
-[e = . . _I2C1PIEbits 0 2 -> -> 1 `i `uc ]
-"745
-[; ;../Common/i2c1_master.c: 745:     I2C1PIEbits.CNTIE = 1;
-[e = . . _I2C1PIEbits 0 7 -> -> 1 `i `uc ]
-"746
-[; ;../Common/i2c1_master.c: 746:     I2C1ERRbits.NACKIE = 1;
-[e = . . _I2C1ERRbits 0 0 -> -> 1 `i `uc ]
-"747
-[; ;../Common/i2c1_master.c: 747: }
-[e :UE 2394 ]
-}
-[v F17093 `(a ~T0 @X0 1 tf ]
-"749
-[; ;../Common/i2c1_master.c: 749: static __attribute__((inline)) _Bool I2C1_MasterIsIrqEnabled(void)
-[v _I2C1_MasterIsIrqEnabled `TF17093 ~T0 @X0 1 s ]
-"750
-[; ;../Common/i2c1_master.c: 750: {
-{
-[e :U _I2C1_MasterIsIrqEnabled ]
-[f ]
-"751
-[; ;../Common/i2c1_master.c: 751:     return (PIE2bits.I2C1RXIE && PIE3bits.I2C1TXIE && PIE3bits.I2C1IE);
-[e ) -> -> && && != -> . . _PIE2bits 0 7 `i -> 0 `i != -> . . _PIE3bits 0 0 `i -> 0 `i != -> . . _PIE3bits 0 1 `i -> 0 `i `i `a ]
-[e $UE 2395  ]
-"752
-[; ;../Common/i2c1_master.c: 752: }
-[e :UE 2395 ]
-}
-[v F17095 `(v ~T0 @X0 1 tf ]
-"754
-[; ;../Common/i2c1_master.c: 754: static __attribute__((inline)) void I2C1_MasterDisableIrq(void)
-[v _I2C1_MasterDisableIrq `TF17095 ~T0 @X0 1 s ]
-"755
-[; ;../Common/i2c1_master.c: 755: {
-{
-[e :U _I2C1_MasterDisableIrq ]
-[f ]
-"756
-[; ;../Common/i2c1_master.c: 756:     PIE3bits.I2C1IE = 0;
-[e = . . _PIE3bits 0 1 -> -> 0 `i `uc ]
-"757
-[; ;../Common/i2c1_master.c: 757:     PIE3bits.I2C1EIE = 0;
-[e = . . _PIE3bits 0 2 -> -> 0 `i `uc ]
-"758
-[; ;../Common/i2c1_master.c: 758:     PIE2bits.I2C1RXIE = 0;
-[e = . . _PIE2bits 0 7 -> -> 0 `i `uc ]
-"759
-[; ;../Common/i2c1_master.c: 759:     PIE3bits.I2C1TXIE = 0;
-[e = . . _PIE3bits 0 0 -> -> 0 `i `uc ]
-"760
-[; ;../Common/i2c1_master.c: 760:     I2C1PIEbits.SCIE = 0;
-[e = . . _I2C1PIEbits 0 0 -> -> 0 `i `uc ]
-"761
-[; ;../Common/i2c1_master.c: 761:     I2C1PIEbits.PCIE = 0;
-[e = . . _I2C1PIEbits 0 2 -> -> 0 `i `uc ]
-"762
-[; ;../Common/i2c1_master.c: 762:     I2C1PIEbits.CNTIE = 0;
-[e = . . _I2C1PIEbits 0 7 -> -> 0 `i `uc ]
-"763
-[; ;../Common/i2c1_master.c: 763:     I2C1PIEbits.ACKTIE = 0;
-[e = . . _I2C1PIEbits 0 6 -> -> 0 `i `uc ]
-"764
-[; ;../Common/i2c1_master.c: 764:     I2C1PIEbits.RSCIE = 0;
-[e = . . _I2C1PIEbits 0 1 -> -> 0 `i `uc ]
-"765
-[; ;../Common/i2c1_master.c: 765:     I2C1ERRbits.BCLIE = 0;
-[e = . . _I2C1ERRbits 0 1 -> -> 0 `i `uc ]
-"766
-[; ;../Common/i2c1_master.c: 766:     I2C1ERRbits.BTOIE = 0;
-[e = . . _I2C1ERRbits 0 2 -> -> 0 `i `uc ]
-"767
-[; ;../Common/i2c1_master.c: 767:     I2C1ERRbits.NACKIE = 0;
-[e = . . _I2C1ERRbits 0 0 -> -> 0 `i `uc ]
-"768
-[; ;../Common/i2c1_master.c: 768: }
-[e :UE 2396 ]
-}
-[v F17097 `(v ~T0 @X0 1 tf ]
-"770
-[; ;../Common/i2c1_master.c: 770: static __attribute__((inline)) void I2C1_MasterClearIrq(void)
-[v _I2C1_MasterClearIrq `TF17097 ~T0 @X0 1 s ]
-"771
-[; ;../Common/i2c1_master.c: 771: {
-{
-[e :U _I2C1_MasterClearIrq ]
-[f ]
-"772
-[; ;../Common/i2c1_master.c: 772:     I2C1PIR = 0x00;
-[e = _I2C1PIR -> -> 0 `i `uc ]
-"773
-[; ;../Common/i2c1_master.c: 773: }
-[e :UE 2397 ]
-}
-[v F17099 `(v ~T0 @X0 1 tf ]
-"775
-[; ;../Common/i2c1_master.c: 775: static __attribute__((inline)) void I2C1_MasterWaitForEvent(void)
-[v _I2C1_MasterWaitForEvent `TF17099 ~T0 @X0 1 s ]
-"776
-[; ;../Common/i2c1_master.c: 776: {
-{
-[e :U _I2C1_MasterWaitForEvent ]
-[f ]
-"777
-[; ;../Common/i2c1_master.c: 777:     while(1)
-[e :U 2400 ]
-"778
-[; ;../Common/i2c1_master.c: 778:     {
-{
-"779
-[; ;../Common/i2c1_master.c: 779:         if(PIR3bits.I2C1TXIF)
-[e $ ! != -> . . _PIR3bits 0 0 `i -> 0 `i 2402  ]
-"780
-[; ;../Common/i2c1_master.c: 780:         {
-{
-"781
-[; ;../Common/i2c1_master.c: 781:             break;
-[e $U 2401  ]
-"782
-[; ;../Common/i2c1_master.c: 782:         }
-}
-[e :U 2402 ]
-"783
-[; ;../Common/i2c1_master.c: 783:         if(PIR2bits.I2C1RXIF)
-[e $ ! != -> . . _PIR2bits 0 7 `i -> 0 `i 2403  ]
-"784
-[; ;../Common/i2c1_master.c: 784:         {
-{
-"785
-[; ;../Common/i2c1_master.c: 785:             break;
-[e $U 2401  ]
-"786
-[; ;../Common/i2c1_master.c: 786:         }
-}
-[e :U 2403 ]
-"787
-[; ;../Common/i2c1_master.c: 787:         if(I2C1PIRbits.PCIF)
-[e $ ! != -> . . _I2C1PIRbits 0 2 `i -> 0 `i 2404  ]
-"788
-[; ;../Common/i2c1_master.c: 788:         {
-{
-"789
-[; ;../Common/i2c1_master.c: 789:             break;
-[e $U 2401  ]
-"790
-[; ;../Common/i2c1_master.c: 790:         }
-}
-[e :U 2404 ]
-"791
-[; ;../Common/i2c1_master.c: 791:         if(I2C1PIRbits.CNTIF)
-[e $ ! != -> . . _I2C1PIRbits 0 7 `i -> 0 `i 2405  ]
-"792
-[; ;../Common/i2c1_master.c: 792:         {
-{
-"793
-[; ;../Common/i2c1_master.c: 793:             break;
-[e $U 2401  ]
-"794
-[; ;../Common/i2c1_master.c: 794:         }
-}
-[e :U 2405 ]
-"795
-[; ;../Common/i2c1_master.c: 795:         if(I2C1ERRbits.NACKIF)
-[e $ ! != -> . . _I2C1ERRbits 0 4 `i -> 0 `i 2406  ]
-"796
-[; ;../Common/i2c1_master.c: 796:         {
-{
-"797
-[; ;../Common/i2c1_master.c: 797:             break;
-[e $U 2401  ]
-"798
-[; ;../Common/i2c1_master.c: 798:         }
-}
-[e :U 2406 ]
-"799
-[; ;../Common/i2c1_master.c: 799:     }
-}
-[e :U 2399 ]
-[e $U 2400  ]
-[e :U 2401 ]
-"800
-[; ;../Common/i2c1_master.c: 800: }
-[e :UE 2398 ]
-}
-"816
-[; ;../Common/i2c1_master.c: 816: uint8_t I2C1_Read1ByteRegister(i2c1_address_t address, uint8_t reg)
-[v _I2C1_Read1ByteRegister `(uc ~T0 @X0 1 ef2`uc`uc ]
-"817
-[; ;../Common/i2c1_master.c: 817: {
-{
-[e :U _I2C1_Read1ByteRegister ]
-"816
-[; ;../Common/i2c1_master.c: 816: uint8_t I2C1_Read1ByteRegister(i2c1_address_t address, uint8_t reg)
-[v _address `uc ~T0 @X0 1 r1 ]
-[v _reg `uc ~T0 @X0 1 r2 ]
-"817
-[; ;../Common/i2c1_master.c: 817: {
-[f ]
-"818
-[; ;../Common/i2c1_master.c: 818:     uint8_t returnValue = 0x00;
-[v _returnValue `uc ~T0 @X0 1 a ]
-[e = _returnValue -> -> 0 `i `uc ]
-"820
-[; ;../Common/i2c1_master.c: 820:     while(!I2C1_Open(address));
-[e $U 2409  ]
-[e :U 2410 ]
-[e :U 2409 ]
-[e $ ! != -> ( _I2C1_Open (1 _address `ui -> -> 0 `i `ui 2410  ]
-[e :U 2411 ]
-"821
-[; ;../Common/i2c1_master.c: 821:     I2C1_SetDataCompleteCallback(rd1RegCompleteHandler,&returnValue);
-[e ( _I2C1_SetDataCompleteCallback (2 , &U _rd1RegCompleteHandler -> &U _returnValue `*v ]
-"822
-[; ;../Common/i2c1_master.c: 822:     I2C1_SetBuffer(&reg,1);
-[e ( _I2C1_SetBuffer (2 , -> &U _reg `*v -> -> 1 `i `ui ]
-"823
-[; ;../Common/i2c1_master.c: 823:     I2C1_SetAddressNackCallback(((void*)0),((void*)0));
-[e ( _I2C1_SetAddressNackCallback (2 , -> -> -> 0 `i `*v `*F17120 -> -> 0 `i `*v ]
-"824
-[; ;../Common/i2c1_master.c: 824:     I2C1_MasterWrite();
-[e ( _I2C1_MasterWrite ..  ]
-"825
-[; ;../Common/i2c1_master.c: 825:     while(I2C1_BUSY == I2C1_Close());
-[e $U 2412  ]
-[e :U 2413 ]
-[e :U 2412 ]
-[e $ == -> . `E358 1 `ui -> ( _I2C1_Close ..  `ui 2413  ]
-[e :U 2414 ]
-"827
-[; ;../Common/i2c1_master.c: 827:     return returnValue;
-[e ) _returnValue ]
-[e $UE 2408  ]
-"828
-[; ;../Common/i2c1_master.c: 828: }
-[e :UE 2408 ]
-}
-"830
-[; ;../Common/i2c1_master.c: 830: uint16_t I2C1_Read2ByteRegister(i2c1_address_t address, uint8_t reg)
-[v _I2C1_Read2ByteRegister `(us ~T0 @X0 1 ef2`uc`uc ]
-"831
-[; ;../Common/i2c1_master.c: 831: {
-{
-[e :U _I2C1_Read2ByteRegister ]
-"830
-[; ;../Common/i2c1_master.c: 830: uint16_t I2C1_Read2ByteRegister(i2c1_address_t address, uint8_t reg)
-[v _address `uc ~T0 @X0 1 r1 ]
-[v _reg `uc ~T0 @X0 1 r2 ]
-"831
-[; ;../Common/i2c1_master.c: 831: {
-[f ]
-"832
-[; ;../Common/i2c1_master.c: 832:     uint16_t returnValue =0x00;
-[v _returnValue `us ~T0 @X0 1 a ]
-[e = _returnValue -> -> 0 `i `us ]
-"834
-[; ;../Common/i2c1_master.c: 834:     while(!I2C1_Open(address));
-[e $U 2416  ]
-[e :U 2417 ]
-[e :U 2416 ]
-[e $ ! != -> ( _I2C1_Open (1 _address `ui -> -> 0 `i `ui 2417  ]
-[e :U 2418 ]
-"835
-[; ;../Common/i2c1_master.c: 835:     I2C1_SetDataCompleteCallback(rd2RegCompleteHandler,&returnValue);
-[e ( _I2C1_SetDataCompleteCallback (2 , &U _rd2RegCompleteHandler -> &U _returnValue `*v ]
-"836
-[; ;../Common/i2c1_master.c: 836:     I2C1_SetBuffer(&reg,1);
-[e ( _I2C1_SetBuffer (2 , -> &U _reg `*v -> -> 1 `i `ui ]
-"837
-[; ;../Common/i2c1_master.c: 837:     I2C1_SetAddressNackCallback(((void*)0),((void*)0));
-[e ( _I2C1_SetAddressNackCallback (2 , -> -> -> 0 `i `*v `*F17128 -> -> 0 `i `*v ]
-"838
-[; ;../Common/i2c1_master.c: 838:     I2C1_MasterWrite();
-[e ( _I2C1_MasterWrite ..  ]
-"839
-[; ;../Common/i2c1_master.c: 839:     while(I2C1_BUSY == I2C1_Close());
-[e $U 2419  ]
-[e :U 2420 ]
-[e :U 2419 ]
-[e $ == -> . `E358 1 `ui -> ( _I2C1_Close ..  `ui 2420  ]
-[e :U 2421 ]
-"841
-[; ;../Common/i2c1_master.c: 841:     return (returnValue << 8 | returnValue >> 8);
-[e ) -> | << -> _returnValue `ui -> 8 `i >> -> _returnValue `ui -> 8 `i `us ]
-[e $UE 2415  ]
-"842
-[; ;../Common/i2c1_master.c: 842: }
-[e :UE 2415 ]
-}
-"844
-[; ;../Common/i2c1_master.c: 844: void I2C1_Write1ByteRegister(i2c1_address_t address, uint8_t reg, uint8_t data)
-[v _I2C1_Write1ByteRegister `(v ~T0 @X0 1 ef3`uc`uc`uc ]
-"845
-[; ;../Common/i2c1_master.c: 845: {
-{
-[e :U _I2C1_Write1ByteRegister ]
-"844
-[; ;../Common/i2c1_master.c: 844: void I2C1_Write1ByteRegister(i2c1_address_t address, uint8_t reg, uint8_t data)
-[v _address `uc ~T0 @X0 1 r1 ]
-[v _reg `uc ~T0 @X0 1 r2 ]
-[v _data `uc ~T0 @X0 1 r3 ]
-"845
-[; ;../Common/i2c1_master.c: 845: {
-[f ]
-"846
-[; ;../Common/i2c1_master.c: 846:     while(!I2C1_Open(address));
-[e $U 2423  ]
-[e :U 2424 ]
-[e :U 2423 ]
-[e $ ! != -> ( _I2C1_Open (1 _address `ui -> -> 0 `i `ui 2424  ]
-[e :U 2425 ]
-"847
-[; ;../Common/i2c1_master.c: 847:     I2C1_SetDataCompleteCallback(wr1RegCompleteHandler,&data);
-[e ( _I2C1_SetDataCompleteCallback (2 , &U _wr1RegCompleteHandler -> &U _data `*v ]
-"848
-[; ;../Common/i2c1_master.c: 848:     I2C1_SetBuffer(&reg,1);
-[e ( _I2C1_SetBuffer (2 , -> &U _reg `*v -> -> 1 `i `ui ]
-"849
-[; ;../Common/i2c1_master.c: 849:     I2C1_SetAddressNackCallback(((void*)0),((void*)0));
-[e ( _I2C1_SetAddressNackCallback (2 , -> -> -> 0 `i `*v `*F17136 -> -> 0 `i `*v ]
-"850
-[; ;../Common/i2c1_master.c: 850:     I2C1_MasterWrite();
-[e ( _I2C1_MasterWrite ..  ]
-"851
-[; ;../Common/i2c1_master.c: 851:     while(I2C1_BUSY == I2C1_Close());
-[e $U 2426  ]
-[e :U 2427 ]
-[e :U 2426 ]
-[e $ == -> . `E358 1 `ui -> ( _I2C1_Close ..  `ui 2427  ]
-[e :U 2428 ]
-"852
-[; ;../Common/i2c1_master.c: 852: }
-[e :UE 2422 ]
-}
-"854
-[; ;../Common/i2c1_master.c: 854: void I2C1_Write2ByteRegister(i2c1_address_t address, uint8_t reg, uint16_t data)
-[v _I2C1_Write2ByteRegister `(v ~T0 @X0 1 ef3`uc`uc`us ]
-"855
-[; ;../Common/i2c1_master.c: 855: {
-{
-[e :U _I2C1_Write2ByteRegister ]
-"854
-[; ;../Common/i2c1_master.c: 854: void I2C1_Write2ByteRegister(i2c1_address_t address, uint8_t reg, uint16_t data)
-[v _address `uc ~T0 @X0 1 r1 ]
-[v _reg `uc ~T0 @X0 1 r2 ]
-[v _data `us ~T0 @X0 1 r3 ]
-"855
-[; ;../Common/i2c1_master.c: 855: {
-[f ]
-"856
-[; ;../Common/i2c1_master.c: 856:     while(!I2C1_Open(address));
-[e $U 2430  ]
-[e :U 2431 ]
-[e :U 2430 ]
-[e $ ! != -> ( _I2C1_Open (1 _address `ui -> -> 0 `i `ui 2431  ]
-[e :U 2432 ]
-"857
-[; ;../Common/i2c1_master.c: 857:     I2C1_SetDataCompleteCallback(wr2RegCompleteHandler,&data);
-[e ( _I2C1_SetDataCompleteCallback (2 , &U _wr2RegCompleteHandler -> &U _data `*v ]
-"858
-[; ;../Common/i2c1_master.c: 858:     I2C1_SetBuffer(&reg,1);
-[e ( _I2C1_SetBuffer (2 , -> &U _reg `*v -> -> 1 `i `ui ]
-"859
-[; ;../Common/i2c1_master.c: 859:     I2C1_SetAddressNackCallback(((void*)0),((void*)0));
-[e ( _I2C1_SetAddressNackCallback (2 , -> -> -> 0 `i `*v `*F17144 -> -> 0 `i `*v ]
-"860
-[; ;../Common/i2c1_master.c: 860:     I2C1_MasterWrite();
-[e ( _I2C1_MasterWrite ..  ]
-"861
-[; ;../Common/i2c1_master.c: 861:     while(I2C1_BUSY == I2C1_Close());
-[e $U 2433  ]
-[e :U 2434 ]
-[e :U 2433 ]
-[e $ == -> . `E358 1 `ui -> ( _I2C1_Close ..  `ui 2434  ]
-[e :U 2435 ]
-"862
-[; ;../Common/i2c1_master.c: 862: }
-[e :UE 2429 ]
-}
-"864
-[; ;../Common/i2c1_master.c: 864: void I2C1_WriteNBytes(i2c1_address_t address, uint8_t* data, size_t len)
-[v _I2C1_WriteNBytes `(v ~T0 @X0 1 ef3`uc`*uc`ui ]
-"865
-[; ;../Common/i2c1_master.c: 865: {
-{
-[e :U _I2C1_WriteNBytes ]
-"864
-[; ;../Common/i2c1_master.c: 864: void I2C1_WriteNBytes(i2c1_address_t address, uint8_t* data, size_t len)
-[v _address `uc ~T0 @X0 1 r1 ]
-[v _data `*uc ~T0 @X0 1 r2 ]
-[v _len `ui ~T0 @X0 1 r3 ]
-"865
-[; ;../Common/i2c1_master.c: 865: {
-[f ]
-"866
-[; ;../Common/i2c1_master.c: 866:     while(!I2C1_Open(address));
-[e $U 2437  ]
-[e :U 2438 ]
-[e :U 2437 ]
-[e $ ! != -> ( _I2C1_Open (1 _address `ui -> -> 0 `i `ui 2438  ]
-[e :U 2439 ]
-"867
-[; ;../Common/i2c1_master.c: 867:     I2C1_SetBuffer(data,len);
-[e ( _I2C1_SetBuffer (2 , -> _data `*v _len ]
-"868
-[; ;../Common/i2c1_master.c: 868:     I2C1_SetAddressNackCallback(((void*)0),((void*)0));
-[e ( _I2C1_SetAddressNackCallback (2 , -> -> -> 0 `i `*v `*F17150 -> -> 0 `i `*v ]
-"869
-[; ;../Common/i2c1_master.c: 869:     I2C1_MasterWrite();
-[e ( _I2C1_MasterWrite ..  ]
-"870
-[; ;../Common/i2c1_master.c: 870:     while(I2C1_BUSY == I2C1_Close());
-[e $U 2440  ]
-[e :U 2441 ]
-[e :U 2440 ]
-[e $ == -> . `E358 1 `ui -> ( _I2C1_Close ..  `ui 2441  ]
-[e :U 2442 ]
-"871
-[; ;../Common/i2c1_master.c: 871: }
-[e :UE 2436 ]
-}
-"873
-[; ;../Common/i2c1_master.c: 873: void I2C1_ReadNBytes(i2c1_address_t address, uint8_t *data, size_t len)
-[v _I2C1_ReadNBytes `(v ~T0 @X0 1 ef3`uc`*uc`ui ]
-"874
-[; ;../Common/i2c1_master.c: 874: {
-{
-[e :U _I2C1_ReadNBytes ]
-"873
-[; ;../Common/i2c1_master.c: 873: void I2C1_ReadNBytes(i2c1_address_t address, uint8_t *data, size_t len)
-[v _address `uc ~T0 @X0 1 r1 ]
-[v _data `*uc ~T0 @X0 1 r2 ]
-[v _len `ui ~T0 @X0 1 r3 ]
-"874
-[; ;../Common/i2c1_master.c: 874: {
-[f ]
-"875
-[; ;../Common/i2c1_master.c: 875:     while(!I2C1_Open(address));
-[e $U 2444  ]
-[e :U 2445 ]
-[e :U 2444 ]
-[e $ ! != -> ( _I2C1_Open (1 _address `ui -> -> 0 `i `ui 2445  ]
-[e :U 2446 ]
-"876
-[; ;../Common/i2c1_master.c: 876:     I2C1_SetBuffer(data,len);
-[e ( _I2C1_SetBuffer (2 , -> _data `*v _len ]
-"877
-[; ;../Common/i2c1_master.c: 877:     I2C1_MasterRead();
-[e ( _I2C1_MasterRead ..  ]
-"878
-[; ;../Common/i2c1_master.c: 878:     while(I2C1_BUSY == I2C1_Close());
-[e $U 2447  ]
-[e :U 2448 ]
-[e :U 2447 ]
-[e $ == -> . `E358 1 `ui -> ( _I2C1_Close ..  `ui 2448  ]
-[e :U 2449 ]
-"879
-[; ;../Common/i2c1_master.c: 879: }
-[e :UE 2443 ]
-}
-"881
-[; ;../Common/i2c1_master.c: 881: void I2C1_ReadDataBlock(i2c1_address_t address, uint8_t reg, uint8_t *data, size_t len)
-[v _I2C1_ReadDataBlock `(v ~T0 @X0 1 ef4`uc`uc`*uc`ui ]
-"882
-[; ;../Common/i2c1_master.c: 882: {
-{
-[e :U _I2C1_ReadDataBlock ]
-"881
-[; ;../Common/i2c1_master.c: 881: void I2C1_ReadDataBlock(i2c1_address_t address, uint8_t reg, uint8_t *data, size_t len)
-[v _address `uc ~T0 @X0 1 r1 ]
-[v _reg `uc ~T0 @X0 1 r2 ]
-[v _data `*uc ~T0 @X0 1 r3 ]
-[v _len `ui ~T0 @X0 1 r4 ]
-"882
-[; ;../Common/i2c1_master.c: 882: {
-[f ]
-"883
-[; ;../Common/i2c1_master.c: 883:     i2c1_buffer_t bufferBlock;
-[v _bufferBlock `S2407 ~T0 @X0 1 a ]
-"884
-[; ;../Common/i2c1_master.c: 884:     bufferBlock.data = data;
-[e = . _bufferBlock 1 _data ]
-"885
-[; ;../Common/i2c1_master.c: 885:     bufferBlock.len = len;
-[e = . _bufferBlock 0 _len ]
-"887
-[; ;../Common/i2c1_master.c: 887:     while(!I2C1_Open(address));
-[e $U 2451  ]
-[e :U 2452 ]
-[e :U 2451 ]
-[e $ ! != -> ( _I2C1_Open (1 _address `ui -> -> 0 `i `ui 2452  ]
-[e :U 2453 ]
-"888
-[; ;../Common/i2c1_master.c: 888:     I2C1_SetDataCompleteCallback(rdBlkRegCompleteHandler,&bufferBlock);
-[e ( _I2C1_SetDataCompleteCallback (2 , &U _rdBlkRegCompleteHandler -> &U _bufferBlock `*v ]
-"889
-[; ;../Common/i2c1_master.c: 889:     I2C1_SetBuffer(&reg,1);
-[e ( _I2C1_SetBuffer (2 , -> &U _reg `*v -> -> 1 `i `ui ]
-"890
-[; ;../Common/i2c1_master.c: 890:     I2C1_SetAddressNackCallback(((void*)0),((void*)0));
-[e ( _I2C1_SetAddressNackCallback (2 , -> -> -> 0 `i `*v `*F17164 -> -> 0 `i `*v ]
-"891
-[; ;../Common/i2c1_master.c: 891:     I2C1_MasterWrite();
-[e ( _I2C1_MasterWrite ..  ]
-"892
-[; ;../Common/i2c1_master.c: 892:     while(I2C1_BUSY == I2C1_Close());
-[e $U 2454  ]
-[e :U 2455 ]
-[e :U 2454 ]
-[e $ == -> . `E358 1 `ui -> ( _I2C1_Close ..  `ui 2455  ]
-[e :U 2456 ]
-"893
-[; ;../Common/i2c1_master.c: 893: }
-[e :UE 2450 ]
-}
-"895
-[; ;../Common/i2c1_master.c: 895: static i2c1_operations_t rd1RegCompleteHandler(void *ptr)
-[v _rd1RegCompleteHandler `(E363 ~T0 @X0 1 sf1`*v ]
-"896
-[; ;../Common/i2c1_master.c: 896: {
-{
-[e :U _rd1RegCompleteHandler ]
-"895
-[; ;../Common/i2c1_master.c: 895: static i2c1_operations_t rd1RegCompleteHandler(void *ptr)
-[v _ptr `*v ~T0 @X0 1 r1 ]
-"896
-[; ;../Common/i2c1_master.c: 896: {
-[f ]
-"897
-[; ;../Common/i2c1_master.c: 897:     I2C1_SetBuffer(ptr,1);
-[e ( _I2C1_SetBuffer (2 , _ptr -> -> 1 `i `ui ]
-"898
-[; ;../Common/i2c1_master.c: 898:     I2C1_SetDataCompleteCallback(((void*)0),((void*)0));
-[e ( _I2C1_SetDataCompleteCallback (2 , -> -> -> 0 `i `*v `*F17168 -> -> 0 `i `*v ]
-"899
-[; ;../Common/i2c1_master.c: 899:     return I2C1_RESTART_READ;
-[e ) . `E363 1 ]
-[e $UE 2457  ]
-"900
-[; ;../Common/i2c1_master.c: 900: }
-[e :UE 2457 ]
-}
-"902
-[; ;../Common/i2c1_master.c: 902: static i2c1_operations_t rd2RegCompleteHandler(void *ptr)
-[v _rd2RegCompleteHandler `(E363 ~T0 @X0 1 sf1`*v ]
-"903
-[; ;../Common/i2c1_master.c: 903: {
-{
-[e :U _rd2RegCompleteHandler ]
-"902
-[; ;../Common/i2c1_master.c: 902: static i2c1_operations_t rd2RegCompleteHandler(void *ptr)
-[v _ptr `*v ~T0 @X0 1 r1 ]
-"903
-[; ;../Common/i2c1_master.c: 903: {
-[f ]
-"904
-[; ;../Common/i2c1_master.c: 904:     I2C1_SetBuffer(ptr,2);
-[e ( _I2C1_SetBuffer (2 , _ptr -> -> 2 `i `ui ]
-"905
-[; ;../Common/i2c1_master.c: 905:     I2C1_SetDataCompleteCallback(((void*)0),((void*)0));
-[e ( _I2C1_SetDataCompleteCallback (2 , -> -> -> 0 `i `*v `*F17172 -> -> 0 `i `*v ]
-"906
-[; ;../Common/i2c1_master.c: 906:     return I2C1_RESTART_READ;
-[e ) . `E363 1 ]
-[e $UE 2458  ]
-"907
-[; ;../Common/i2c1_master.c: 907: }
-[e :UE 2458 ]
-}
-"909
-[; ;../Common/i2c1_master.c: 909: static i2c1_operations_t wr1RegCompleteHandler(void *ptr)
-[v _wr1RegCompleteHandler `(E363 ~T0 @X0 1 sf1`*v ]
-"910
-[; ;../Common/i2c1_master.c: 910: {
-{
-[e :U _wr1RegCompleteHandler ]
-"909
-[; ;../Common/i2c1_master.c: 909: static i2c1_operations_t wr1RegCompleteHandler(void *ptr)
-[v _ptr `*v ~T0 @X0 1 r1 ]
-"910
-[; ;../Common/i2c1_master.c: 910: {
-[f ]
-"911
-[; ;../Common/i2c1_master.c: 911:     I2C1_SetBuffer(ptr,1);
-[e ( _I2C1_SetBuffer (2 , _ptr -> -> 1 `i `ui ]
-"912
-[; ;../Common/i2c1_master.c: 912:     I2C1_SetDataCompleteCallback(((void*)0),((void*)0));
-[e ( _I2C1_SetDataCompleteCallback (2 , -> -> -> 0 `i `*v `*F17176 -> -> 0 `i `*v ]
-"913
-[; ;../Common/i2c1_master.c: 913:     return I2C1_CONTINUE;
-[e ) . `E363 3 ]
-[e $UE 2459  ]
-"914
-[; ;../Common/i2c1_master.c: 914: }
-[e :UE 2459 ]
-}
-"916
-[; ;../Common/i2c1_master.c: 916: static i2c1_operations_t wr2RegCompleteHandler(void *ptr)
-[v _wr2RegCompleteHandler `(E363 ~T0 @X0 1 sf1`*v ]
-"917
-[; ;../Common/i2c1_master.c: 917: {
-{
-[e :U _wr2RegCompleteHandler ]
-"916
-[; ;../Common/i2c1_master.c: 916: static i2c1_operations_t wr2RegCompleteHandler(void *ptr)
-[v _ptr `*v ~T0 @X0 1 r1 ]
-"917
-[; ;../Common/i2c1_master.c: 917: {
-[f ]
-"918
-[; ;../Common/i2c1_master.c: 918:     I2C1_SetBuffer(ptr,2);
-[e ( _I2C1_SetBuffer (2 , _ptr -> -> 2 `i `ui ]
-"919
-[; ;../Common/i2c1_master.c: 919:     I2C1_SetDataCompleteCallback(((void*)0),((void*)0));
-[e ( _I2C1_SetDataCompleteCallback (2 , -> -> -> 0 `i `*v `*F17180 -> -> 0 `i `*v ]
-"920
-[; ;../Common/i2c1_master.c: 920:     return I2C1_CONTINUE;
-[e ) . `E363 3 ]
-[e $UE 2460  ]
-"921
-[; ;../Common/i2c1_master.c: 921: }
-[e :UE 2460 ]
-}
-"923
-[; ;../Common/i2c1_master.c: 923: static i2c1_operations_t rdBlkRegCompleteHandler(void *ptr)
-[v _rdBlkRegCompleteHandler `(E363 ~T0 @X0 1 sf1`*v ]
-"924
-[; ;../Common/i2c1_master.c: 924: {
-{
-[e :U _rdBlkRegCompleteHandler ]
-"923
-[; ;../Common/i2c1_master.c: 923: static i2c1_operations_t rdBlkRegCompleteHandler(void *ptr)
-[v _ptr `*v ~T0 @X0 1 r1 ]
-"924
-[; ;../Common/i2c1_master.c: 924: {
-[f ]
-"925
-[; ;../Common/i2c1_master.c: 925:     I2C1_SetBuffer(((i2c1_buffer_t *)ptr)->data,((i2c1_buffer_t*)ptr)->len);
-[e ( _I2C1_SetBuffer (2 , -> . *U -> _ptr `*S2407 1 `*v . *U -> _ptr `*S2407 0 ]
-"926
-[; ;../Common/i2c1_master.c: 926:     I2C1_SetDataCompleteCallback(((void*)0),((void*)0));
-[e ( _I2C1_SetDataCompleteCallback (2 , -> -> -> 0 `i `*v `*F17184 -> -> 0 `i `*v ]
-"927
-[; ;../Common/i2c1_master.c: 927:     return I2C1_RESTART_READ;
-[e ) . `E363 1 ]
-[e $UE 2461  ]
-"928
-[; ;../Common/i2c1_master.c: 928: }
-[e :UE 2461 ]
 }

@@ -7,7 +7,7 @@
 
 #include "pololu_robot.h"
 #include <stdio.h>
-#include "uart1.h"
+#include "../Common/uart1.h"
 
 
 unsigned int* Calibrate_Sensors(void)
@@ -46,14 +46,15 @@ void Auto_Calibrate(void)
 unsigned int* Read_Calibrated_Sensors(void)
 {
     // >u<
-    while(!UART1_is_tx_ready()) continue;
+    while(!UART1_is_tx_ready()) continue;//checks uart is clear to send command
     UART1_Write(READ_CALIBRATED_SENSORS); 
+    
     unsigned char lbyte[5], ubyte[5], i;
     static unsigned int values[5];
     
     while(!UART1_is_tx_ready()) continue;
     UART1_Write(READ_CALIBRATED_SENSORS);
-    for (i=0; i<5; i++)
+    for (i=0; i<5; i++)//reads each sensor
     {
         while (!UART1_is_rx_ready()) continue;
         lbyte[i] = UART1_Read();
