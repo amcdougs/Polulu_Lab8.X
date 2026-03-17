@@ -12,9 +12,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "52 ./../Common/uart2.h
 [; ;./../Common/uart2.h: 52: void UART2_Initialize(void);
 [v _UART2_Initialize `(v ~T0 @X0 0 ef ]
-"99 ./../Common/tmr0.h
-[; ;./../Common/tmr0.h: 99: void TMR0_Initialize(uint8_t TMR0control_0, uint8_t TMR0control_1);
-[v _TMR0_Initialize `(v ~T0 @X0 0 ef2`uc`uc ]
 "47160 C:/Users/Maddox/.mchp_packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f46k42.h
 [; ;C:/Users/Maddox/.mchp_packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f46k42.h: 47160:     struct {
 [s S2144 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -118,7 +115,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "31 robotmain.c
 [; ;robotmain.c: 31: void Countdown(char time);
 [v _Countdown `(v ~T0 @X0 0 ef1`uc ]
-"116 ./../Common/tmr0.h
+"99 ./../Common/tmr0.h
+[; ;./../Common/tmr0.h: 99: void TMR0_Initialize(uint8_t TMR0control_0, uint8_t TMR0control_1);
+[v _TMR0_Initialize `(v ~T0 @X0 0 ef2`uc`uc ]
+"116
 [; ;./../Common/tmr0.h: 116: void TMR0_StartTimer(void);
 [v _TMR0_StartTimer `(v ~T0 @X0 0 ef ]
 "203
@@ -2428,9 +2428,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "39
 [; ;robotmain.c: 39:     UART2_Initialize();
 [e ( _UART2_Initialize ..  ]
-"40
-[; ;robotmain.c: 40:     TMR0_Initialize(0x9F & 0x90, 0x5F & 0xEF & 0xF0);
-[e ( _TMR0_Initialize (2 , -> & -> 159 `i -> 144 `i `uc -> & & -> 95 `i -> 239 `i -> 240 `i `uc ]
 "43
 [; ;robotmain.c: 43:     TRISBbits.TRISB5 = 1;
 [e = . . _TRISBbits 0 5 -> -> 1 `i `uc ]
@@ -3379,6 +3376,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "318
 [; ;robotmain.c: 318:         _delay((unsigned long)((1)*(48000000/4000.0)));
 [e ( __delay (1 -> * -> -> 1 `i `d / -> -> 48000000 `l `d .4000.0 `ul ]
+"321
+[; ;robotmain.c: 321:         TMR0_Initialize(0x9F & 0x90, 0x5F & 0xEF & 0xF9);
+[e ( _TMR0_Initialize (2 , -> & -> 159 `i -> 144 `i `uc -> & & -> 95 `i -> 239 `i -> 249 `i `uc ]
 "322
 [; ;robotmain.c: 322:         Forward(25);
 [e ( _Forward (1 -> -> 25 `i `uc ]

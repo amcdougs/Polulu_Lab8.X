@@ -577,7 +577,7 @@ TMR2_UART2_TX_EDGE 24
 [v _INLVLA INLVLA `VEuc  1 e 1 @14916 ]
 "8637
 [v _ANSELB ANSELB `VEuc  1 e 1 @14928 ]
-[s S67 . 1 `uc 1 ANSELB0 1 0 :1:0 
+[s S61 . 1 `uc 1 ANSELB0 1 0 :1:0 
 `uc 1 ANSELB1 1 0 :1:1 
 `uc 1 ANSELB2 1 0 :1:2 
 `uc 1 ANSELB3 1 0 :1:3 
@@ -587,8 +587,8 @@ TMR2_UART2_TX_EDGE 24
 `uc 1 ANSELB7 1 0 :1:7 
 ]
 "8654
-[u S76 . 1 `S67 1 . 1 0 ]
-[v _ANSELBbits ANSELBbits `VES76  1 e 1 @14928 ]
+[u S70 . 1 `S61 1 . 1 0 ]
+[v _ANSELBbits ANSELBbits `VES70  1 e 1 @14928 ]
 "8699
 [v _WPUB WPUB `VEuc  1 e 1 @14929 ]
 "8761
@@ -1294,7 +1294,7 @@ TMR2_UART2_TX_EDGE 24
 [v _TRISA TRISA `VEuc  1 e 1 @16322 ]
 "47154
 [v _TRISB TRISB `VEuc  1 e 1 @16323 ]
-[s S46 . 1 `uc 1 TRISB0 1 0 :1:0 
+[s S40 . 1 `uc 1 TRISB0 1 0 :1:0 
 `uc 1 TRISB1 1 0 :1:1 
 `uc 1 TRISB2 1 0 :1:2 
 `uc 1 TRISB3 1 0 :1:3 
@@ -1304,17 +1304,17 @@ TMR2_UART2_TX_EDGE 24
 `uc 1 TRISB7 1 0 :1:7 
 ]
 "47171
-[u S55 . 1 `S46 1 . 1 0 ]
+[u S49 . 1 `S40 1 . 1 0 ]
 "47171
 "47171
-[v _TRISBbits TRISBbits `VES55  1 e 1 @16323 ]
+[v _TRISBbits TRISBbits `VES49  1 e 1 @16323 ]
 "47216
 [v _TRISC TRISC `VEuc  1 e 1 @16324 ]
 "47278
 [v _TRISD TRISD `VEuc  1 e 1 @16325 ]
 "47340
 [v _TRISE TRISE `VEuc  1 e 1 @16326 ]
-[s S88 . 1 `uc 1 RB0 1 0 :1:0 
+[s S82 . 1 `uc 1 RB0 1 0 :1:0 
 `uc 1 RB1 1 0 :1:1 
 `uc 1 RB2 1 0 :1:2 
 `uc 1 RB3 1 0 :1:3 
@@ -1324,10 +1324,10 @@ TMR2_UART2_TX_EDGE 24
 `uc 1 RB7 1 0 :1:7 
 ]
 "47451
-[u S97 . 1 `S88 1 . 1 0 ]
+[u S91 . 1 `S82 1 . 1 0 ]
 "47451
 "47451
-[v _PORTBbits PORTBbits `VES97  1 e 1 @16331 ]
+[v _PORTBbits PORTBbits `VES91  1 e 1 @16331 ]
 "58530
 [v _TMR0IF TMR0IF `VEb  1 e 0 @118047 ]
 "153 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\doprnt.c
