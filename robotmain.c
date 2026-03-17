@@ -312,14 +312,14 @@ void main(void)
         LCD_Position(0,0);
         LCD_Print("Auto Cal", 8);
         Auto_Calibrate();
-	LCD_Position(0,1);
+        LCD_Position(0,1);
     	LCD_Print("  done  ", 8);
         Countdown(6);
         __delay_ms(1);
         //  Start robot moving using 3pi PD function
         //  Speed = 30; a = 1; b = 20; c = 3; d = 2
         TMR0_Initialize(T0_16_BIT & T0_POST_1_1, T0_SOURCE_INT & T0_SYNC & T0_PRE_1_512);
-        Forward(25);
+        robot_8cm(110);
         TMR0_StartTimer();
         TMR0_Write16BitTimer(6942);
         while(1){

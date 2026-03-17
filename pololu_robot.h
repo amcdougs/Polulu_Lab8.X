@@ -4,6 +4,7 @@
  
     09-MAR-2021
 *****/
+#define spd_scl 1.025//put on right wheel speed
 
 #define READ_CALIBRATED_SENSORS 0x87
 #define READ_BATTERY            0xB1
@@ -54,7 +55,9 @@ void LCD_Clear(void);
 //  the command code - x position (column number, 0-7), then y position (row
 //  number, 0 or 1.
 void LCD_Position(char x, char y);
-
+//  Uses TMR0 and Forward to set the robot to go 8 at any speed
+//  30-110 should be the only values inputed! 20 may work
+void robot_8cm(char speed);
 
 //  Both wheels are set to spin forwards at a speed, 0 (stop) to 127 (full speed)
 void Forward(char speed);

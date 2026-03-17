@@ -27845,7 +27845,7 @@ void UART2_SetOverrunErrorHandler(void (* interruptHandler)(void));
 void UART2_SetErrorHandler(void (* interruptHandler)(void));
 # 20 "robotmain.c" 2
 # 1 "./pololu_robot.h" 1
-# 22 "./pololu_robot.h"
+# 23 "./pololu_robot.h"
 unsigned int* Calibrate_Sensors(void);
 
 
@@ -27882,6 +27882,8 @@ void LCD_Clear(void);
 
 void LCD_Position(char x, char y);
 
+
+void robot_8cm(char speed);
 
 
 void Forward(char speed);
@@ -28200,14 +28202,14 @@ void main(void)
         LCD_Position(0,0);
         LCD_Print("Auto Cal", 8);
         Auto_Calibrate();
- LCD_Position(0,1);
+        LCD_Position(0,1);
      LCD_Print("  done  ", 8);
         Countdown(6);
         _delay((unsigned long)((1)*(48000000/4000.0)));
 
 
         TMR0_Initialize(0x9F & 0x90, 0x5F & 0xEF & 0xF9);
-        Forward(25);
+        robot_8cm(110);
         TMR0_StartTimer();
         TMR0_Write16BitTimer(6942);
         while(1){

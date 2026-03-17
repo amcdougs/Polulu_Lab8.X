@@ -1,28 +1,29 @@
 ___lwdiv@dividend 1 0 COMRAM 1
+___aldiv@counter 9 0 COMRAM 1
 _I2C1_DO_SEND_RESTART_READ 0 0 ABS 0
 ___awdiv@counter 5 0 COMRAM 1
 sprintf@f 2A 0 COMRAM 1
 ___lwdiv@counter 7 0 COMRAM 1
-_UART1_is_rx_ready DE26 0 CODE 0
-_UART2_is_rx_ready DE52 0 CODE 0
+_UART1_is_rx_ready D564 0 CODE 0
+_UART2_is_rx_ready D590 0 CODE 0
 main@upperbyte C0 0 BANK0 1
-UART1_Write@txData 1 0 COMRAM 1
+UART1_Write@txData 32 0 COMRAM 1
 UART2_Write@txData 1 0 COMRAM 1
-__end_of_Right_Turn DD90 0 CODE 0
+__end_of_Right_Turn D4CE 0 CODE 0
 _PR2 3FAB 0 ABS 0
 __S0 10000 0 ABS 0
-__S1 E0 0 ABS 0
+__S1 E2 0 ABS 0
 __S4 0 0 ABS 0
-__end_of_UART2_is_rx_ready DE68 0 CODE 0
+__end_of_UART2_is_rx_ready D5A6 0 CODE 0
 __S5 0 0 ABS 0
-__end_of_UART2_is_tx_ready DF66 0 CODE 0
+__end_of_UART2_is_tx_ready D6A4 0 CODE 0
 main@lowerbyte BB 0 BANK0 1
-_UART1_Write DE68 0 CODE 0
-_UART2_Write DE82 0 CODE 0
-__end_of___awdiv EA1E 0 CODE 0
-_abs DF66 0 CODE 0
-Countdown@msg 35 0 COMRAM 1
-__end_of_Forward E36A 0 CODE 0
+_UART1_Write D5A6 0 CODE 0
+_UART2_Write D5C0 0 CODE 0
+__end_of___awdiv E210 0 CODE 0
+_abs D6A4 0 CODE 0
+Countdown@msg 39 0 COMRAM 1
+__end_of_Forward DAA6 0 CODE 0
 _PMD0 39C0 0 ABS 0
 _PMD1 39C1 0 ABS 0
 _PMD2 39C2 0 ABS 0
@@ -34,7 +35,7 @@ _PMD6 39C6 0 ABS 0
 _PMD7 39C7 0 ABS 0
 _TMR2 3FAA 0 ABS 0
 vfpfcnvrt@c 19 0 COMRAM 1
-__end_of_Get_Key E4EA 0 CODE 0
+__end_of_Get_Key DC26 0 CODE 0
 _LATA 3FBA 0 ABS 0
 _LATB 3FBB 0 ABS 0
 _LATC 3FBC 0 ABS 0
@@ -46,23 +47,25 @@ _WPUC 3A61 0 ABS 0
 _WPUD 3A71 0 ABS 0
 _WPUE 3A81 0 ABS 0
 _T2PR 3FAB 0 ABS 0
-_UART1_is_tx_ready DF12 0 CODE 0
-_UART2_is_tx_ready DF3C 0 CODE 0
-_UART1_ErrorHandler 4D 0 COMRAM 1
-_UART2_ErrorHandler 47 0 COMRAM 1
-__end_of_PIN_MANAGER_Initialize E750 0 CODE 0
-__end_of_UART2_DefaultErrorHandler DD88 0 CODE 0
+_UART1_is_tx_ready D650 0 CODE 0
+_UART2_is_tx_ready D67A 0 CODE 0
+_UART1_ErrorHandler 5A 0 COMRAM 1
+_UART2_ErrorHandler E0 0 BANK0 1
+__end_of_PIN_MANAGER_Initialize DE8E 0 CODE 0
+__end_of_UART2_DefaultErrorHandler D4C6 0 CODE 0
 abs@a 7 0 COMRAM 1
 _I2C1_DO_SEND_ADR_READ 0 0 ABS 0
-_prec 57 0 COMRAM 1
+_prec 4F 0 COMRAM 1
 _dbuf 60 0 BANK0 1
 ?_abs 7 0 COMRAM 1
 _main EFB4 0 CODE 0
 ___sp 0 0 STACK 2
-_Stop DD98 0 CODE 0
+_Stop D4D6 0 CODE 0
 start FFFC 0 CODE 0
-_nout 53 0 COMRAM 1
+_nout 4B 0 COMRAM 1
 sprintf@s 20 0 COMRAM 1
+___fltol@f1 28 0 COMRAM 1
+__end_of___aldiv E420 0 CODE 0
 _U1P1H 3DED 0 ABS 0
 _U1P2H 3DEF 0 ABS 0
 _U1P3H 3DF1 0 ABS 0
@@ -87,6 +90,7 @@ _ADCLK 3EFF 0 ABS 0
 _U1TXB 3DEA 0 ABS 0
 _U2TXB 3DD2 0 ABS 0
 _TRISD 3FC5 0 ABS 0
+__end_of___flmul EFB4 0 CODE 0
 __Hirdata 0 0 CODE 0
 _TRISE 3FC6 0 ABS 0
 __Lirdata 0 0 CODE 0
@@ -102,48 +106,50 @@ _ADCNT 3EEB 0 ABS 0
 _T2TMR 3FAA 0 ABS 0
 _ADRPT 3EEC 0 ABS 0
 _T2RST 3FAF 0 ABS 0
-_UART1_Initialize E028 0 CODE 0
-_UART2_Initialize DFDE 0 CODE 0
+_UART1_Initialize D766 0 CODE 0
+_UART2_Initialize D71C 0 CODE 0
 __Hconfig 30000A 0 CONFIG 4
 __Lconfig 0 0 CONFIG 4
-_Backward E292 0 CODE 0
-__end_of_UART1_Write DE82 0 CODE 0
+_Backward DFE8 0 CODE 0
+__end_of_UART1_Write D5C0 0 CODE 0
 ?___awmod 1 0 COMRAM 1
 main@i DE 0 BANK0 1
 ?___lwmod 1 0 COMRAM 1
 ___inthi_stack_hi 0 0 STACK 2
+_robot_8cm D9D0 0 CODE 0
 __Hbigram 0 0 ABS 0
 __Lbigram 0 0 ABS 0
 __Hrparam 0 0 COMRAM 1
 __Lrparam 0 0 COMRAM 1
-LCD_Print@i 7 0 COMRAM 1
+LCD_Print@i 38 0 COMRAM 1
 __Hram 0 0 ABS 0
 __Lram 0 0 ABS 0
 __Hcomram 0 0 ABS 0
-_putch DDA0 0 CODE 0
+_putch D4DE 0 CODE 0
 __Lcomram 0 0 ABS 0
-_fputc E750 0 CODE 0
-_width 55 0 COMRAM 1
-LCD_Print@str 2 0 COMRAM 1
-Calibrate_Sensors@i 12 0 COMRAM 1
+_fputc DE8E 0 CODE 0
+_width 4D 0 COMRAM 1
+LCD_Print@str 33 0 COMRAM 1
+Calibrate_Sensors@i 43 0 COMRAM 1
 __Hsfr 0 0 ABS 0
 __Lsfr 0 0 ABS 0
-_flags 5B 0 COMRAM 1
+_flags 53 0 COMRAM 1
 __Hbss 0 0 RAM 1
-__end_of_UART2_DefaultOverrunErrorHandler DD8C 0 CODE 0
+__end_of_UART2_DefaultOverrunErrorHandler D4CA 0 CODE 0
 __Lbss 0 0 RAM 1
-Countdown@i 42 0 COMRAM 1
+Countdown@i 46 0 COMRAM 1
 ___param_bank 0 0 ABS 0
 __Hnvrram 0 0 COMRAM 1
 __Lnvrram 0 0 COMRAM 1
 ?_sprintf 20 0 COMRAM 1
-__end_of_Left_Turn DD8E 0 CODE 0
+__end_of_Left_Turn D4CC 0 CODE 0
 ___intlo_stack_hi 0 0 STACK 2
-_vfprintf E11A 0 CODE 0
+_vfprintf D858 0 CODE 0
+___xxtofl E680 0 CODE 0
 Left_Turn@differential 1 0 COMRAM 1
-__end_of_abs DF9A 0 CODE 0
-_UART1_SetFramingErrorHandler DDB4 0 CODE 0
-_UART2_SetFramingErrorHandler DDD2 0 CODE 0
+__end_of_abs D6D8 0 CODE 0
+_UART1_SetFramingErrorHandler D4F2 0 CODE 0
+_UART2_SetFramingErrorHandler D510 0 CODE 0
 _T0CON0 3FB8 0 ABS 0
 _U1CON0 3DF2 0 ABS 0
 _U2CON0 3DDA 0 ABS 0
@@ -161,35 +167,37 @@ _RD1I2C 3A7B 0 ABS 0
 _RC3I2C 3A6A 0 ABS 0
 _ADCON2 3EFA 0 ABS 0
 _RC4I2C 3A6B 0 ABS 0
-_UART1_DefaultOverrunErrorHandler DD84 0 CODE 0
-_UART2_DefaultOverrunErrorHandler DD8A 0 CODE 0
+_UART1_DefaultOverrunErrorHandler D4C2 0 CODE 0
+_UART2_DefaultOverrunErrorHandler D4C8 0 CODE 0
 _ADCON3 3EFB 0 ABS 0
-__end_of_vfpfcnvrt EFB4 0 CODE 0
-_UART1_Read E4EA 0 CODE 0
-_UART2_Read E57E 0 CODE 0
-LCD_Print@length 4 0 COMRAM 1
+__end_of_vfpfcnvrt EB6A 0 CODE 0
+_UART1_Read DC26 0 CODE 0
+_UART2_Read DCBA 0 CODE 0
+?___fltol 28 0 COMRAM 1
+LCD_Print@length 35 0 COMRAM 1
 main@speed DF 0 BANK0 1
-__end_of_putch DDAA 0 CODE 0
+__end_of_putch D4E8 0 CODE 0
 __Hbigsfr 0 0 ABS 0
 __Lbigsfr 0 0 ABS 0
 _I2C1_DO_SEND_ADR_WRITE 0 0 ABS 0
 _PIE2bits 3992 0 ABS 0
-_UART1_is_tx_ready$2400 1 0 COMRAM 1
 _PIE3bits 3993 0 ABS 0
 __Heeprom_data 0 0 EEDATA 0
 __Leeprom_data 0 0 EEDATA 0
+?___flmul F 0 COMRAM 1
 _PIR2bits 39A2 0 ABS 0
 _PIR3bits 39A3 0 ABS 0
 _I2C1_DO_SEND_STOP 0 0 ABS 0
 _PIR4bits 39A4 0 ABS 0
 _PIR6bits 39A6 0 ABS 0
-_Read_Battery_Voltage E1CC 0 CODE 0
-Countdown@length 41 0 COMRAM 1
+_Read_Battery_Voltage D90A 0 CODE 0
+Countdown@length 45 0 COMRAM 1
+_UART1_is_tx_ready$2405 1 0 COMRAM 1
 sprintf@ap 29 0 COMRAM 1
 __Hintsave_regs 0 0 BIGRAM 1
-_UART2_is_tx_ready$2624 1 0 COMRAM 1
 __Lintsave_regs 0 0 BIGRAM 1
 _TMR0IF 1CD1F 0 ABS 0
+?___aldiv 1 0 COMRAM 1
 _ADACCH 3EE9 0 ABS 0
 _ANSELA 3A40 0 ABS 0
 main@turn D1 0 BANK0 1
@@ -200,6 +208,7 @@ _ODCONB 3A52 0 ABS 0
 _ANSELD 3A70 0 ABS 0
 _ADACCL 3EE8 0 ABS 0
 _ODCONC 3A62 0 ABS 0
+_UART2_is_tx_ready$2629 1 0 COMRAM 1
 _INLVLA 3A44 0 ABS 0
 __Hbigbss 0 0 BIGRAM 1
 __Lbigbss 0 0 BIGRAM 1
@@ -258,28 +267,29 @@ _RC5PPS 3A15 0 ABS 0
 _RB6PPS 3A0E 0 ABS 0
 _RC6PPS 3A16 0 ABS 0
 isa$xinst 0 0 ABS 0
-__end_of_Auto_Calibrate E1CC 0 CODE 0
-main@i_324 DB 0 BANK0 1
+__end_of_Auto_Calibrate D90A 0 CODE 0
 __HnvFARRAM 0 0 FARRAM 0
 __LnvFARRAM 0 0 FARRAM 0
 __HnvCOMRAM 0 0 ABS 0
 __LnvCOMRAM 0 0 ABS 0
 ___heap_hi 0 0 ABS 0
-__pnvCOMRAM 47 0 COMRAM 1
+__pnvCOMRAM 56 0 COMRAM 1
 _I2C1_DO_RESET 0 0 ABS 0
 main@differential DA 0 BANK0 1
-_Auto_Calibrate E170 0 CODE 0
+__end_of___fltol E316 0 CODE 0
+_Auto_Calibrate D8AE 0 CODE 0
 fputc@c 3 0 COMRAM 1
-__end_of_Read_Battery_Voltage E22E 0 CODE 0
-__end_of___awmod E8AA 0 CODE 0
+__end_of_Read_Battery_Voltage D96C 0 CODE 0
+__end_of___awmod DFE8 0 CODE 0
 _I2C1_CallbackReturnReset 0 0 ABS 0
-_LCD_Clear DEB6 0 CODE 0
+_LCD_Clear D5F4 0 CODE 0
 _I2C1_DO_RX_EMPTY 0 0 ABS 0
-__end_of_TMR0_StopTimer DD98 0 CODE 0
+__end_of_TMR0_StopTimer D4D6 0 CODE 0
 main@white CF 0 BANK0 1
 ?_TMR0_Read16BitTimer 1 0 COMRAM 1
 __Hdata 0 0 ABS 0
 __Ldata 0 0 ABS 0
+main@i_329 DB 0 BANK0 1
 isa$std 1 0 ABS 0
 stackhi 0 0 ABS 0
 __Hheap 0 0 HEAP 7
@@ -287,9 +297,9 @@ __Lheap 0 0 HEAP 7
 _I2C1_DO_BUS_COLLISION 0 0 ABS 0
 __HcstackBANK0 0 0 ABS 0
 __LcstackBANK0 0 0 ABS 0
-__end_of_UART1_SetFramingErrorHandler DDBE 0 CODE 0
+__end_of_UART1_SetFramingErrorHandler D4FC 0 CODE 0
 _I2C1_DO_TX_EMPTY 0 0 ABS 0
-_printf DE9C 0 CODE 0
+_printf D5DA 0 CODE 0
 __pcstackBANK0 B1 0 BANK0 1
 ___awmod@sign 6 0 COMRAM 1
 __Htemp 0 0 COMRAM 1
@@ -297,7 +307,7 @@ __Ltemp 0 0 COMRAM 1
 stacklo 0 0 ABS 0
 __Hrbit 0 0 COMRAM 1
 __Lrbit 0 0 COMRAM 1
-__end_of_UART2_Write DE9C 0 CODE 0
+__end_of_UART2_Write D5DA 0 CODE 0
 __Hinit 10000 0 CODE 0
 __Linit FFFC 0 CODE 0
 __Hrbss 0 0 COMRAM 1
@@ -306,19 +316,25 @@ __Lrbss 0 0 COMRAM 1
 __Htext 0 0 ABS 0
 __Ltext 0 0 ABS 0
 ?_vfprintf 1A 0 COMRAM 1
-_counts 59 0 COMRAM 1
+_counts 51 0 COMRAM 1
 ___heap_lo 0 0 ABS 0
-_UART1_DefaultFramingErrorHandler DD82 0 CODE 0
-_UART2_DefaultFramingErrorHandler DD88 0 CODE 0
+?___xxtofl 1 0 COMRAM 1
+___flmul@sign 1B 0 COMRAM 1
+_UART1_DefaultFramingErrorHandler D4C0 0 CODE 0
+_UART2_DefaultFramingErrorHandler D4C6 0 CODE 0
 _rd1RegCompleteHandler 0 0 ABS 0
 _rd2RegCompleteHandler 0 0 ABS 0
-end_of_initialization DEEA 0 CODE 0
+end_of_initialization D628 0 CODE 0
 _wr1RegCompleteHandler 0 0 ABS 0
 _wr2RegCompleteHandler 0 0 ABS 0
+___aldiv@sign A 0 COMRAM 1
 TMR0_Read16BitTimer@readValLow 7 0 COMRAM 1
 ___awdiv@sign 6 0 COMRAM 1
-__end_of_LCD_PrintCharacter E11A 0 CODE 0
-_TMR0_StartTimer DD90 0 CODE 0
+__end_of_LCD_PrintCharacter D858 0 CODE 0
+__HnvBANK0 0 0 ABS 0
+__LnvBANK0 0 0 ABS 0
+_TMR0_StartTimer D4CE 0 CODE 0
+__pnvBANK0 E0 0 BANK0 1
 printf@fmt 20 0 COMRAM 1
 _OSCCON1 39D9 0 ABS 0
 _OSCCON3 39DB 0 ABS 0
@@ -326,8 +342,8 @@ Get_Key@rxdata 2 0 COMRAM 1
 vfprintf@fmt 1B 0 COMRAM 1
 UART1_SetOverrunErrorHandler@interruptHandler 1 0 COMRAM 1
 UART2_SetOverrunErrorHandler@interruptHandler 1 0 COMRAM 1
-_Left_Turn DD8C 0 CODE 0
-__end_of_UART1_SetOverrunErrorHandler DDC8 0 CODE 0
+_Left_Turn D4CA 0 CODE 0
+__end_of_UART1_SetOverrunErrorHandler D506 0 CODE 0
 _I2C1_DO_RX_NACK_STOP 0 0 ABS 0
 _I2C1_DO_IDLE 0 0 ABS 0
 vfprintf@ap 1D 0 COMRAM 1
@@ -340,30 +356,30 @@ _I2C1PIE 3D7A 0 ABS 0
 _T2HLTbits 3FAD 0 ABS 0
 _SLRCONA 3A43 0 ABS 0
 _T2RSTbits 3FAF 0 ABS 0
-_LCD_Print E612 0 CODE 0
+_LCD_Print DD50 0 CODE 0
 UART1_SetErrorHandler@interruptHandler 1 0 COMRAM 1
 UART2_SetErrorHandler@interruptHandler 1 0 COMRAM 1
 _SLRCONB 3A53 0 ABS 0
 _PWM7DCL 3F64 0 ABS 0
 _I2C1CLK 3D7B 0 ABS 0
-__end_of_Countdown EC7E 0 CODE 0
+__end_of_Countdown E680 0 CODE 0
 _SLRCONC 3A63 0 ABS 0
 _U1ERRIE 3DFA 0 ABS 0
-Forward@speed 2 0 COMRAM 1
+Forward@speed 33 0 COMRAM 1
 _U2ERRIE 3DE2 0 ABS 0
 _I2C1RXB 3D6A 0 ABS 0
 _SLRCOND 3A73 0 ABS 0
 _I2C1TXB 3D6B 0 ABS 0
 main@sensor_value D5 0 BANK0 1
-_SYSTEM_Initialize DDF2 0 CODE 0
+_SYSTEM_Initialize D530 0 CODE 0
 _SLRCONE 3A83 0 ABS 0
 __Hibigdata 0 0 CODE 0
 __Libigdata 0 0 CODE 0
 _OSCTUNE 39DE 0 ABS 0
-_UART1_SetErrorHandler DDAA 0 CODE 0
-_UART2_SetErrorHandler DDC8 0 CODE 0
-_Countdown EB34 0 CODE 0
-_Calibrate_Sensors E8AA 0 CODE 0
+_UART1_SetErrorHandler D4E8 0 CODE 0
+_UART2_SetErrorHandler D506 0 CODE 0
+_Countdown E536 0 CODE 0
+_Calibrate_Sensors E09C 0 CODE 0
 __Hifardata 0 0 CODE 0
 _PWM7CON 3F66 0 ABS 0
 __Lifardata 0 0 CODE 0
@@ -376,10 +392,10 @@ __Hbank1 0 0 ABS 0
 __Lbank1 0 0 ABS 0
 _I2C1CNT 3D6C 0 ABS 0
 _ADSTPTH 3EE5 0 ABS 0
-Calibrate_Sensors@lbyte 8 0 COMRAM 1
+Calibrate_Sensors@lbyte 39 0 COMRAM 1
 __Hbank2 0 0 ABS 0
 __Lbank2 0 0 ABS 0
-Calibrate_Sensors@ubyte D 0 COMRAM 1
+Calibrate_Sensors@ubyte 3E 0 COMRAM 1
 _I2C1ERR 3D76 0 ABS 0
 Get_Number@value 27 0 COMRAM 1
 __Hbank3 0 0 ABS 0
@@ -411,71 +427,73 @@ _I2C1SDAPPS 3AE2 0 ABS 0
 __Htext1 0 0 ABS 0
 __Ltext1 0 0 ABS 0
 __ptext0 EFB4 0 CODE 0
+___flmul@grs 1C 0 COMRAM 1
 __Htext2 0 0 ABS 0
 __Ltext2 0 0 ABS 0
-__ptext1 DFDE 0 CODE 0
+__ptext1 D9D0 0 CODE 0
 _U1RXPPS 3AE5 0 ABS 0
 _U2RXPPS 3AE8 0 ABS 0
 __Htext3 0 0 ABS 0
 __Ltext3 0 0 ABS 0
-__ptext2 DDDC 0 CODE 0
+__ptext2 E316 0 CODE 0
 __Htext4 0 0 ABS 0
 __Ltext4 0 0 ABS 0
-__ptext3 DDD2 0 CODE 0
+__ptext3 D4D6 0 CODE 0
 ___stack_hi 0 0 STACK 2
 __Htext5 0 0 ABS 0
 __Ltext5 0 0 ABS 0
-__ptext4 DDC8 0 CODE 0
+__ptext4 DA3A 0 CODE 0
 __Htext6 0 0 ABS 0
 __Ltext6 0 0 ABS 0
-__ptext5 E028 0 CODE 0
+__ptext5 D71C 0 CODE 0
 __Htext7 0 0 ABS 0
 __Ltext7 0 0 ABS 0
-__ptext6 DDBE 0 CODE 0
+__ptext6 D51A 0 CODE 0
 __HbssCOMRAM 0 0 ABS 0
 __LbssCOMRAM 0 0 ABS 0
 __Htext8 0 0 ABS 0
 __Ltext8 0 0 ABS 0
-__ptext7 DDB4 0 CODE 0
-__pbssCOMRAM 53 0 COMRAM 1
+__ptext7 D510 0 CODE 0
+__pbssCOMRAM 4B 0 COMRAM 1
 __Htext9 0 0 ABS 0
 __Ltext9 0 0 ABS 0
-__end_of_UART2_SetFramingErrorHandler DDDC 0 CODE 0
-__ptext8 DDAA 0 CODE 0
-__ptext9 DD98 0 CODE 0
-_vfpfcnvrt EC7E 0 CODE 0
+__end_of_UART2_SetFramingErrorHandler D51A 0 CODE 0
+__ptext8 D506 0 CODE 0
+__ptext9 D766 0 CODE 0
+_vfpfcnvrt E834 0 CODE 0
 __Hclrtext 0 0 ABS 0
 __Lclrtext 0 0 ABS 0
 Right_Turn@differential 1 0 COMRAM 1
 _I2C1SCLPPS 3AE1 0 ABS 0
 _I2C1PIEbits 3D7A 0 ABS 0
-__end_of__initialization DEEA 0 CODE 0
+__end_of__initialization D628 0 CODE 0
+robot_8cm@speed 34 0 COMRAM 1
 ___rparam_used 1 0 ABS 0
 _I2C1PIRbits 3D79 0 ABS 0
-__end_of___lwdiv E3DC 0 CODE 0
+__end_of___lwdiv DB18 0 CODE 0
 _I2C1ERRbits 3D76 0 ABS 0
 _U1ERRIRbits 3DF9 0 ABS 0
 _U2ERRIRbits 3DE1 0 ABS 0
-__end_of_UART2_SetOverrunErrorHandler DDE6 0 CODE 0
+__end_of_UART2_SetOverrunErrorHandler D524 0 CODE 0
 __H__absolute__ 0 0 ABS 0
 __L__absolute__ 0 0 ABS 0
-_TMR0_Initialize DE3C 0 CODE 0
+_TMR0_Initialize D57A 0 CODE 0
 __Hidata 0 0 CODE 0
 __Lidata 0 0 CODE 0
 __Hrdata 0 0 COMRAM 1
 __Lrdata 0 0 COMRAM 1
-__end_of_LCD_Position E0C8 0 CODE 0
+__end_of_LCD_Position D806 0 CODE 0
 fputc@fp 5 0 COMRAM 1
 __Hidloc 0 0 ABS 0
 __Lidloc 0 0 ABS 0
-__end_of_TMR0_StartTimer DD94 0 CODE 0
+__end_of_TMR0_StartTimer D4D2 0 CODE 0
 __Hstack 0 0 STACK 2
 __Lstack 0 0 STACK 2
 main@msg C6 0 BANK0 1
-_Forward E2FE 0 CODE 0
-___awmod E7FC 0 CODE 0
+_Forward DA3A 0 CODE 0
+___awmod DF3A 0 CODE 0
 _I2C1_DO_SEND_RESTART 0 0 ABS 0
-___lwmod E22E 0 CODE 0
+___lwmod D96C 0 CODE 0
 __Hparam 0 0 COMRAM 1
 __Lparam 0 0 COMRAM 1
 __Hspace_0 10000 0 ABS 0
@@ -484,65 +502,71 @@ __Lspace_0 0 0 ABS 0
 __LcstackCOMRAM 0 0 ABS 0
 __pcstackCOMRAM 1 0 COMRAM 1
 ?_printf 20 0 COMRAM 1
-_sprintf DF9A 0 CODE 0
-_uart1RxLastError 5D 0 COMRAM 1
-__Hspace_1 E0 0 ABS 0
-_Get_Key E462 0 CODE 0
-_uart2RxLastError 5C 0 COMRAM 1
-LCD_Position@x 3 0 COMRAM 1
+_sprintf D6D8 0 CODE 0
+_uart1RxLastError 55 0 COMRAM 1
+__Hspace_1 E2 0 ABS 0
+_Get_Key DB9E 0 CODE 0
+_uart2RxLastError 54 0 COMRAM 1
+LCD_Position@x 34 0 COMRAM 1
 __Lspace_1 0 0 ABS 0
 __Hsmallconst 0 0 SMALLCONST 0
 __Lsmallconst 0 0 SMALLCONST 0
 main@sum D6 0 BANK0 1
-__end_of_TMR0_Write16BitTimer DDF2 0 CODE 0
-__end_of_LCD_Clear DED2 0 CODE 0
-_UART1_FramingErrorHandler 51 0 COMRAM 1
-__end_of_Backward E2FE 0 CODE 0
-_UART2_FramingErrorHandler 4B 0 COMRAM 1
+__end_of_TMR0_Write16BitTimer D530 0 CODE 0
+__end_of_LCD_Clear D610 0 CODE 0
+_UART1_FramingErrorHandler 5E 0 COMRAM 1
+___fltol E210 0 CODE 0
+__end_of_Backward E09C 0 CODE 0
+_UART2_FramingErrorHandler 58 0 COMRAM 1
 __Hspace_2 0 0 ABS 0
 __Lspace_2 0 0 ABS 0
 main@key D3 0 BANK0 1
+___flmul EB6A 0 CODE 0
 __Hnvbit 0 0 COMRAM 1
 __Lnvbit 0 0 COMRAM 1
 __Hcinit 0 0 ABS 0
 __Lcinit 0 0 ABS 0
-__end_of_PMD_Initialize DE26 0 CODE 0
+___aldiv E316 0 CODE 0
+__end_of_PMD_Initialize D564 0 CODE 0
 main@any C5 0 BANK0 1
-__pcinit DED2 0 CODE 0
+__pcinit D610 0 CODE 0
 main@length DD 0 BANK0 1
-___awdiv E95E 0 CODE 0
+___awdiv E150 0 CODE 0
 __ramtop 1000 0 RAM 0
 __mediumconst FB22 0 MEDIUMCONST 0
-___lwdiv E36A 0 CODE 0
-__end_of_fputc E7FC 0 CODE 0
+___lwdiv DAA6 0 CODE 0
+__end_of_robot_8cm DA3A 0 CODE 0
+__end_of_fputc DF3A 0 CODE 0
 __Hconst 0 0 CONST 0
-__end_of_UART1_Initialize E076 0 CODE 0
+__end_of_UART1_Initialize D7B4 0 CODE 0
 __Lconst 0 0 CONST 0
 __Hspace_4 60000A 0 ABS 0
 __Lspace_4 0 0 ABS 0
-_TMR0_Write16BitTimer DDE6 0 CODE 0
-_TMR0_StopTimer DD94 0 CODE 0
-__end_of_TMR0_Read16BitTimer DF12 0 CODE 0
+___xxtofl@sign 9 0 COMRAM 1
+_TMR0_Write16BitTimer D524 0 CODE 0
+_TMR0_StopTimer D4D2 0 CODE 0
+__end_of_TMR0_Read16BitTimer D650 0 CODE 0
 ___stack_lo 0 0 STACK 2
-_PIN_MANAGER_Initialize E6B0 0 CODE 0
-__end_of_UART1_SetErrorHandler DDB4 0 CODE 0
+_PIN_MANAGER_Initialize DDEE 0 CODE 0
+__end_of_UART1_SetErrorHandler D4F2 0 CODE 0
 _I2C1_DO_ADDRESS_NACK 0 0 ABS 0
-_Get_Number E3DC 0 CODE 0
-?_Read_Battery_Voltage 2 0 COMRAM 1
-__end_of_LCD_Print E6B0 0 CODE 0
-__end_of_sprintf DFDE 0 CODE 0
-_UART1_SetOverrunErrorHandler DDBE 0 CODE 0
-_UART2_SetOverrunErrorHandler DDDC 0 CODE 0
-Countdown@time 40 0 COMRAM 1
+___fltol@exp1 31 0 COMRAM 1
+_Get_Number DB18 0 CODE 0
+?_Read_Battery_Voltage 33 0 COMRAM 1
+__end_of_LCD_Print DDEE 0 CODE 0
+__end_of_sprintf D71C 0 CODE 0
+_UART1_SetOverrunErrorHandler D4FC 0 CODE 0
+_UART2_SetOverrunErrorHandler D51A 0 CODE 0
+Countdown@time 44 0 COMRAM 1
 sprintf@ret 27 0 COMRAM 1
-Read_Battery_Voltage@lbyte 6 0 COMRAM 1
+Read_Battery_Voltage@lbyte 37 0 COMRAM 1
 __end_of_i2c1_fsmStateTable FB49 0 MEDIUMCONST 0
 _I2C1CON0 3D73 0 ABS 0
 TMR0_Read16BitTimer@readValHigh 8 0 COMRAM 1
-Read_Battery_Voltage@ubyte 7 0 COMRAM 1
+Read_Battery_Voltage@ubyte 38 0 COMRAM 1
 Get_Number@digit 28 0 COMRAM 1
 _I2C1CON1 3D74 0 ABS 0
-__end_of_UART1_Read E57E 0 CODE 0
+__end_of_UART1_Read DCBA 0 CODE 0
 putch@txData 2 0 COMRAM 1
 __HbssBANK0 0 0 ABS 0
 __LbssBANK0 0 0 ABS 0
@@ -550,57 +574,61 @@ _I2C1CON2 3D75 0 ABS 0
 __Hbank10 0 0 ABS 0
 __pbssBANK0 60 0 BANK0 1
 __Lbank10 0 0 ABS 0
+___flmul@temp 26 0 COMRAM 1
 vfpfcnvrt@done 10 0 COMRAM 1
 sprintf@fmt 21 0 COMRAM 1
 _I2C1_CallbackReturnStop 0 0 ABS 0
 __Hbank11 0 0 ABS 0
 __Lbank11 0 0 ABS 0
-__end_of_OSCILLATOR_Initialize DE12 0 CODE 0
+__end_of_OSCILLATOR_Initialize D550 0 CODE 0
 __Hbank12 0 0 ABS 0
 __Lbank12 0 0 ABS 0
-__end_of_SYSTEM_Initialize DE00 0 CODE 0
+__end_of_SYSTEM_Initialize D53E 0 CODE 0
 __Hbank13 0 0 ABS 0
 __Lbank13 0 0 ABS 0
 _I2C1_DO_BUS_ERROR 0 0 ABS 0
 _I2C1_DO_RX_ACK 0 0 ABS 0
 _I2C1_DO_RX 0 0 ABS 0
 _i2c1_fsmStateTable FB23 0 MEDIUMCONST 0
+___xxtofl@arg B 0 COMRAM 1
 __Hbank14 0 0 ABS 0
 __Lbank14 0 0 ABS 0
 __Htext10 0 0 ABS 0
 __Ltext10 0 0 ABS 0
 __Htext20 0 0 ABS 0
 __Ltext20 0 0 ABS 0
-__ptext10 E2FE 0 CODE 0
+__ptext10 D4FC 0 CODE 0
 __Hbank15 0 0 ABS 0
 __Lbank15 0 0 ABS 0
 __Htext30 0 0 ABS 0
 __Htext11 0 0 ABS 0
 __Ltext30 0 0 ABS 0
 __Ltext11 0 0 ABS 0
-__ptext20 E462 0 CODE 0
+__ptext20 D806 0 CODE 0
 __Htext40 0 0 ABS 0
 __Htext21 0 0 ABS 0
 __Ltext40 0 0 ABS 0
 __Ltext21 0 0 ABS 0
-__ptext11 DDF2 0 CODE 0
-__ptext30 DF9A 0 CODE 0
+__ptext11 D4F2 0 CODE 0
+__ptext30 D5DA 0 CODE 0
 __Htext50 0 0 ABS 0
 __Htext31 0 0 ABS 0
 __Htext12 0 0 ABS 0
 __Ltext50 0 0 ABS 0
 __Ltext31 0 0 ABS 0
 __Ltext12 0 0 ABS 0
-__ptext21 DF3C 0 CODE 0
-__ptext40 E95E 0 CODE 0
-TMR0_Write16BitTimer@timerVal 1 0 COMRAM 1
+__ptext21 DB18 0 CODE 0
+__ptext40 DAA6 0 CODE 0
+TMR0_Write16BitTimer@timerVal F 0 COMRAM 1
+__Htext60 0 0 ABS 0
 __Htext41 0 0 ABS 0
 __Htext22 0 0 ABS 0
+__Ltext60 0 0 ABS 0
 __Ltext41 0 0 ABS 0
 __Ltext22 0 0 ABS 0
-__ptext12 DE12 0 CODE 0
-__ptext31 E11A 0 CODE 0
-__ptext50 E292 0 CODE 0
+__ptext12 D4E8 0 CODE 0
+__ptext31 E536 0 CODE 0
+__ptext50 D5F4 0 CODE 0
 __Htext51 0 0 ABS 0
 __Htext32 0 0 ABS 0
 __Htext13 0 0 ABS 0
@@ -608,16 +636,19 @@ _I2C1_DO_TX_ACK 0 0 ABS 0
 __Ltext51 0 0 ABS 0
 __Ltext32 0 0 ABS 0
 __Ltext13 0 0 ABS 0
-__ptext22 DE52 0 CODE 0
-__ptext41 DDE6 0 CODE 0
+__ptext22 DB9E 0 CODE 0
+__ptext41 DF3A 0 CODE 0
+__ptext60 DC26 0 CODE 0
 _I2C1_DO_TX 0 0 ABS 0
+__Htext61 0 0 ABS 0
 __Htext42 0 0 ABS 0
 __Htext23 0 0 ABS 0
+__Ltext61 0 0 ABS 0
 __Ltext42 0 0 ABS 0
 __Ltext23 0 0 ABS 0
-__ptext13 E6B0 0 CODE 0
-__ptext32 EC7E 0 CODE 0
-__ptext51 E170 0 CODE 0
+__ptext13 D530 0 CODE 0
+__ptext32 D6D8 0 CODE 0
+__ptext51 E09C 0 CODE 0
 _T0CON0bits 3FB8 0 ABS 0
 _U1CON0bits 3DF2 0 ABS 0
 _U2CON0bits 3DDA 0 ABS 0
@@ -629,18 +660,21 @@ __Ltext52 0 0 ABS 0
 __Ltext33 0 0 ABS 0
 __Ltext14 0 0 ABS 0
 _ADCON1bits 3EF9 0 ABS 0
-__ptext23 E57E 0 CODE 0
-__ptext42 DD94 0 CODE 0
+__ptext23 D67A 0 CODE 0
+__ptext42 E150 0 CODE 0
+__ptext61 D4C2 0 CODE 0
 _ADCON2bits 3EFA 0 ABS 0
+__Htext62 0 0 ABS 0
 __Htext43 0 0 ABS 0
 __Htext24 0 0 ABS 0
+__Ltext62 0 0 ABS 0
 __Ltext43 0 0 ABS 0
 __Ltext24 0 0 ABS 0
 _ADCON3bits 3EFB 0 ABS 0
-__ptext14 DE00 0 CODE 0
-__ptext33 E750 0 CODE 0
-__ptext52 DF12 0 CODE 0
-_Right_Turn DD8E 0 CODE 0
+__ptext14 D550 0 CODE 0
+__ptext33 D858 0 CODE 0
+__ptext52 DFE8 0 CODE 0
+_Right_Turn D4CC 0 CODE 0
 __Htext53 0 0 ABS 0
 __Htext34 0 0 ABS 0
 __Htext15 0 0 ABS 0
@@ -648,15 +682,18 @@ __Ltext53 0 0 ABS 0
 Calibrate_Sensors@values A7 0 BANK0 1
 __Ltext34 0 0 ABS 0
 __Ltext15 0 0 ABS 0
-__ptext24 DD8A 0 CODE 0
-__ptext43 DD90 0 CODE 0
+__ptext24 D590 0 CODE 0
+__ptext43 D524 0 CODE 0
+__ptext62 D4C0 0 CODE 0
+__Htext63 0 0 ABS 0
 __Htext44 0 0 ABS 0
 __Htext25 0 0 ABS 0
+__Ltext63 0 0 ABS 0
 __Ltext44 0 0 ABS 0
 __Ltext25 0 0 ABS 0
-__ptext15 DD8E 0 CODE 0
-__ptext34 DDA0 0 CODE 0
-__ptext53 DE26 0 CODE 0
+__ptext15 DDEE 0 CODE 0
+__ptext34 E834 0 CODE 0
+__ptext53 E680 0 CODE 0
 ___inthi_sp 0 0 STACK 2
 __Htext54 0 0 ABS 0
 __Htext35 0 0 ABS 0
@@ -664,15 +701,16 @@ __Htext16 0 0 ABS 0
 __Ltext54 0 0 ABS 0
 __Ltext35 0 0 ABS 0
 __Ltext16 0 0 ABS 0
-__ptext25 DD88 0 CODE 0
-__ptext44 DEF0 0 CODE 0
+__ptext25 DCBA 0 CODE 0
+__ptext44 D4D2 0 CODE 0
+__ptext63 D4BE 0 CODE 0
 __Htext45 0 0 ABS 0
 __Htext26 0 0 ABS 0
 __Ltext45 0 0 ABS 0
 __Ltext26 0 0 ABS 0
-__ptext16 E1CC 0 CODE 0
-__ptext35 DE82 0 CODE 0
-__ptext54 DE68 0 CODE 0
+__ptext16 D53E 0 CODE 0
+__ptext35 DE8E 0 CODE 0
+__ptext54 E210 0 CODE 0
 TMR0_Initialize@TMR0control_0 2 0 COMRAM 1
 __Htext55 0 0 ABS 0
 __Htext36 0 0 ABS 0
@@ -680,37 +718,38 @@ __Htext17 0 0 ABS 0
 __Ltext55 0 0 ABS 0
 __Ltext36 0 0 ABS 0
 __Ltext17 0 0 ABS 0
-__ptext26 DD86 0 CODE 0
-__ptext45 DE3C 0 CODE 0
+__ptext26 D4C8 0 CODE 0
+__ptext45 D4CE 0 CODE 0
 __Htext46 0 0 ABS 0
 __Htext27 0 0 ABS 0
 __Ltext46 0 0 ABS 0
 __Ltext27 0 0 ABS 0
-__end_of_printf DEB6 0 CODE 0
-__ptext17 DD8C 0 CODE 0
-__ptext36 DF66 0 CODE 0
-__ptext55 E4EA 0 CODE 0
+__end_of_printf D5F4 0 CODE 0
+__ptext17 D4CC 0 CODE 0
+__ptext36 D4DE 0 CODE 0
+__ptext55 EB6A 0 CODE 0
 ___awmod@divisor 3 0 COMRAM 1
 __Htext56 0 0 ABS 0
 __Htext37 0 0 ABS 0
 __Htext18 0 0 ABS 0
-__end_of___lwmod E292 0 CODE 0
+__end_of___lwmod D9D0 0 CODE 0
 __Ltext56 0 0 ABS 0
 __Ltext37 0 0 ABS 0
 __Ltext18 0 0 ABS 0
 _ANSELBbits 3A50 0 ABS 0
-__ptext27 EA1E 0 CODE 0
-__ptext46 E612 0 CODE 0
+__ptext27 D4C6 0 CODE 0
+__ptext46 D62E 0 CODE 0
 _I2C1STAT1bits 3D78 0 ABS 0
 ___lwmod@divisor 3 0 COMRAM 1
-_LCD_PrintCharacter E0C8 0 CODE 0
+_LCD_PrintCharacter D806 0 CODE 0
 __Htext47 0 0 ABS 0
 __Htext28 0 0 ABS 0
 __Ltext47 0 0 ABS 0
 __Ltext28 0 0 ABS 0
-__ptext18 E0C8 0 CODE 0
-__ptext37 E22E 0 CODE 0
-__ptext56 DD84 0 CODE 0
+__ptext18 D90A 0 CODE 0
+__ptext37 D5C0 0 CODE 0
+__ptext56 D8AE 0 CODE 0
+___fltol@sign1 30 0 COMRAM 1
 __Htext57 0 0 ABS 0
 __Htext38 0 0 ABS 0
 __Htext19 0 0 ABS 0
@@ -718,187 +757,206 @@ _I2C1_DO_RX_NACK_RESTART 0 0 ABS 0
 __Ltext57 0 0 ABS 0
 __Ltext38 0 0 ABS 0
 __Ltext19 0 0 ABS 0
-__ptext28 DE9C 0 CODE 0
-__ptext47 E076 0 CODE 0
+__ptext28 D4C4 0 CODE 0
+__ptext47 D57A 0 CODE 0
 __Htext48 0 0 ABS 0
 __Htext29 0 0 ABS 0
 __Ltext48 0 0 ABS 0
 __Ltext29 0 0 ABS 0
 _I2C1_DO_SEND_RESTART_WRITE 0 0 ABS 0
-__ptext19 E3DC 0 CODE 0
-__ptext38 E36A 0 CODE 0
-__ptext57 DD82 0 CODE 0
+__ptext19 D4CA 0 CODE 0
+__ptext38 D6A4 0 CODE 0
+__ptext57 D650 0 CODE 0
 ___intlo_sp 0 0 STACK 2
 __Htext58 0 0 ABS 0
 __Htext39 0 0 ABS 0
 __Ltext58 0 0 ABS 0
 __Ltext39 0 0 ABS 0
-__ptext29 EB34 0 CODE 0
-__ptext48 DEB6 0 CODE 0
+__ptext29 E420 0 CODE 0
+__ptext48 DD50 0 CODE 0
 __Htext49 0 0 ABS 0
-LCD_Position@y 2 0 COMRAM 1
+LCD_Position@y 33 0 COMRAM 1
 __Ltext49 0 0 ABS 0
-__ptext39 E7FC 0 CODE 0
-__ptext58 DD80 0 CODE 0
+__ptext39 D96C 0 CODE 0
+__ptext58 D564 0 CODE 0
+__Htext59 0 0 ABS 0
 vfpfcnvrt@cnt 11 0 COMRAM 1
-__ptext49 E8AA 0 CODE 0
+__Ltext59 0 0 ABS 0
+__ptext49 D7B4 0 CODE 0
 _I2C1_Status 80 0 BANK0 1
+__ptext59 D5A6 0 CODE 0
 _ADSTATbits 3EFC 0 ABS 0
+___aldiv@divisor 5 0 COMRAM 1
 ___awdiv@divisor 3 0 COMRAM 1
 ___lwdiv@divisor 3 0 COMRAM 1
-_PMD_Initialize DE12 0 CODE 0
+_PMD_Initialize D550 0 CODE 0
 vfpfcnvrt@fmt C 0 COMRAM 1
-Backward@speed 2 0 COMRAM 1
-__end_of_UART1_DefaultFramingErrorHandler DD84 0 CODE 0
-__end_of_UART2_Initialize E028 0 CODE 0
-__end_of_Calibrate_Sensors E95E 0 CODE 0
-_OSCILLATOR_Initialize DE00 0 CODE 0
-__end_of_UART2_SetErrorHandler DDD2 0 CODE 0
+Backward@speed 33 0 COMRAM 1
+__end_of_UART1_DefaultFramingErrorHandler D4C2 0 CODE 0
+__end_of_UART2_Initialize D766 0 CODE 0
+__end_of_Calibrate_Sensors E150 0 CODE 0
+_OSCILLATOR_Initialize D53E 0 CODE 0
+__end_of_UART2_SetErrorHandler D510 0 CODE 0
 __smallconst FB22 0 MEDIUMCONST 0
-Countdown@counts 3E 0 COMRAM 1
+Countdown@counts 42 0 COMRAM 1
 UART1_SetFramingErrorHandler@interruptHandler 1 0 COMRAM 1
 UART2_SetFramingErrorHandler@interruptHandler 1 0 COMRAM 1
 __Hreset_vec 4 0 CODE 0
 __Lreset_vec 0 0 CODE 0
+___xxtofl@exp A 0 COMRAM 1
 TMR0_Initialize@TMR0control_1 1 0 COMRAM 1
 vfpfcnvrt@ap D 0 COMRAM 1
 _T2CLKCON 3FAE 0 ABS 0
 __accesstop 60 0 ABS 0
-__end_of_Get_Number E462 0 CODE 0
+__end_of_Get_Number DB9E 0 CODE 0
 main@sensor D4 0 BANK0 1
 intlevel0 0 0 CODE 0
 main@sensor_data B1 0 BANK0 1
-__end_of_UART2_Read E612 0 CODE 0
+__end_of_UART2_Read DD50 0 CODE 0
 intlevel1 0 0 CODE 0
 vfprintf@cfmt 1E 0 COMRAM 1
+___xxtofl@val 1 0 COMRAM 1
 intlevel2 0 0 CODE 0
 Read_Calibrated_Sensors@values 9D 0 BANK0 1
 _I2C1CON0bits 3D73 0 ABS 0
 intlevel3 0 0 CODE 0
 _I2C1CON1bits 3D74 0 ABS 0
-__end_of_UART1_is_rx_ready DE3C 0 CODE 0
-__end_of_UART1_is_tx_ready DF3C 0 CODE 0
-__end_of_vfprintf E170 0 CODE 0
-__end_of_Stop DDA0 0 CODE 0
+__end_of_UART1_is_rx_ready D57A 0 CODE 0
+__end_of_UART1_is_tx_ready D67A 0 CODE 0
+__end_of_vfprintf D8AE 0 CODE 0
+__end_of_Stop D4DE 0 CODE 0
 vfpfcnvrt@cp 13 0 COMRAM 1
 _T0CKIPPS 3AC3 0 ABS 0
-_LCD_Position E076 0 CODE 0
+_LCD_Position D7B4 0 CODE 0
 _ADACTPPS 3ADD 0 ABS 0
 ___inthi_stack_lo 0 0 STACK 2
-_UART1_DefaultErrorHandler DD80 0 CODE 0
-__end_of_UART1_DefaultErrorHandler DD82 0 CODE 0
-_UART2_DefaultErrorHandler DD86 0 CODE 0
-_Diagnostic_Menu EA1E 0 CODE 0
+_UART1_DefaultErrorHandler D4BE 0 CODE 0
+__end_of_UART1_DefaultErrorHandler D4C0 0 CODE 0
+_UART2_DefaultErrorHandler D4C4 0 CODE 0
+_Diagnostic_Menu E420 0 CODE 0
 _CCPTMRS1bits 3F5F 0 ABS 0
-__end_of_Diagnostic_Menu EB34 0 CODE 0
-start_initialization DED2 0 CODE 0
+__end_of_Diagnostic_Menu E536 0 CODE 0
+start_initialization D610 0 CODE 0
+___aldiv@quotient B 0 COMRAM 1
 ___awdiv@quotient 7 0 COMRAM 1
 ___intlo_stack_lo 0 0 STACK 2
 ___lwdiv@quotient 5 0 COMRAM 1
+__end_of___xxtofl E834 0 CODE 0
 ?_vfpfcnvrt B 0 COMRAM 1
-_TMR0_Read16BitTimer DEF0 0 CODE 0
+_TMR0_Read16BitTimer D62E 0 CODE 0
 vfpfcnvrt@fp B 0 COMRAM 1
 main@battery D8 0 BANK0 1
-__initialization DED2 0 CODE 0
-LCD_PrintCharacter@byte 2 0 COMRAM 1
-__end_of_UART2_DefaultFramingErrorHandler DD8A 0 CODE 0
+___flmul@aexp 20 0 COMRAM 1
+__initialization D610 0 CODE 0
+___flmul@bexp 21 0 COMRAM 1
+LCD_PrintCharacter@byte 33 0 COMRAM 1
+__end_of_UART2_DefaultFramingErrorHandler D4C8 0 CODE 0
+___flmul@prod 22 0 COMRAM 1
 ___awmod@dividend 1 0 COMRAM 1
 ___lwmod@dividend 1 0 COMRAM 1
 __activetblptr 3 0 ABS 0
 ___awmod@counter 5 0 COMRAM 1
-__end_of_UART1_DefaultOverrunErrorHandler DD86 0 CODE 0
+__end_of_UART1_DefaultOverrunErrorHandler D4C4 0 CODE 0
 ___lwmod@counter 5 0 COMRAM 1
-_UART1_OverrunErrorHandler 4F 0 COMRAM 1
-_UART2_OverrunErrorHandler 49 0 COMRAM 1
-__end_of_TMR0_Initialize DE52 0 CODE 0
+_UART1_OverrunErrorHandler 5C 0 COMRAM 1
+_UART2_OverrunErrorHandler 56 0 COMRAM 1
+___flmul@a 13 0 COMRAM 1
+__end_of_TMR0_Initialize D590 0 CODE 0
+___flmul@b F 0 COMRAM 1
+___aldiv@dividend 1 0 COMRAM 1
 ___awdiv@dividend 1 0 COMRAM 1
 %segments
 reset_vec 0 3 CODE 0 0
 init FFFC FFFF CODE FFFC 0
 mediumconst FB22 FFFB MEDIUMCONST FB22 0
-cstackCOMRAM 1 5D COMRAM 1 1
-bssBANK0 60 DF BANK0 60 1
+cstackCOMRAM 1 5F COMRAM 1 1
+bssBANK0 60 E1 BANK0 60 1
 text0 EFB4 FB21 CODE EFB4 0
-text32 EC7E EFB3 CODE EC7E 0
-text29 EB34 EC7D CODE EB34 0
-text27 EA1E EB33 CODE EA1E 0
-text40 E95E EA1D CODE E95E 0
-text49 E8AA E95D CODE E8AA 0
-text39 E7FC E8A9 CODE E7FC 0
-text33 E750 E7FB CODE E750 0
-text13 E6B0 E74F CODE E6B0 0
-text46 E612 E6AF CODE E612 0
-text23 E57E E611 CODE E57E 0
-text55 E4EA E57D CODE E4EA 0
-text20 E462 E4E9 CODE E462 0
-text19 E3DC E461 CODE E3DC 0
-text38 E36A E3DB CODE E36A 0
-text10 E2FE E369 CODE E2FE 0
-text50 E292 E2FD CODE E292 0
-text37 E22E E291 CODE E22E 0
-text16 E1CC E22D CODE E1CC 0
-text51 E170 E1CB CODE E170 0
-text31 E11A E16F CODE E11A 0
-text18 E0C8 E119 CODE E0C8 0
-text47 E076 E0C7 CODE E076 0
-text5 E028 E075 CODE E028 0
-text1 DFDE E027 CODE DFDE 0
-text30 DF9A DFDD CODE DF9A 0
-text36 DF66 DF99 CODE DF66 0
-text21 DF3C DF65 CODE DF3C 0
-text52 DF12 DF3B CODE DF12 0
-text44 DEF0 DF11 CODE DEF0 0
-cinit DED2 DEEF CODE DED2 0
-text48 DEB6 DED1 CODE DEB6 0
-text28 DE9C DEB5 CODE DE9C 0
-text35 DE82 DE9B CODE DE82 0
-text54 DE68 DE81 CODE DE68 0
-text22 DE52 DE67 CODE DE52 0
-text45 DE3C DE51 CODE DE3C 0
-text53 DE26 DE3B CODE DE26 0
-text12 DE12 DE25 CODE DE12 0
-text14 DE00 DE11 CODE DE00 0
-text11 DDF2 DDFF CODE DDF2 0
-text41 DDE6 DDF1 CODE DDE6 0
-text2 DDDC DDE5 CODE DDDC 0
-text3 DDD2 DDDB CODE DDD2 0
-text4 DDC8 DDD1 CODE DDC8 0
-text6 DDBE DDC7 CODE DDBE 0
-text7 DDB4 DDBD CODE DDB4 0
-text8 DDAA DDB3 CODE DDAA 0
-text34 DDA0 DDA9 CODE DDA0 0
-text9 DD98 DD9F CODE DD98 0
-text42 DD94 DD97 CODE DD94 0
-text43 DD90 DD93 CODE DD90 0
-text15 DD8E DD8F CODE DD8E 0
-text17 DD8C DD8D CODE DD8C 0
-text24 DD8A DD8B CODE DD8A 0
-text25 DD88 DD89 CODE DD88 0
-text26 DD86 DD87 CODE DD86 0
-text56 DD84 DD85 CODE DD84 0
-text57 DD82 DD83 CODE DD82 0
-text58 DD80 DD81 CODE DD80 0
+text55 EB6A EFB3 CODE EB6A 0
+text34 E834 EB69 CODE E834 0
+text53 E680 E833 CODE E680 0
+text31 E536 E67F CODE E536 0
+text29 E420 E535 CODE E420 0
+text2 E316 E41F CODE E316 0
+text54 E210 E315 CODE E210 0
+text42 E150 E20F CODE E150 0
+text51 E09C E14F CODE E09C 0
+text52 DFE8 E09B CODE DFE8 0
+text41 DF3A DFE7 CODE DF3A 0
+text35 DE8E DF39 CODE DE8E 0
+text15 DDEE DE8D CODE DDEE 0
+text48 DD50 DDED CODE DD50 0
+text25 DCBA DD4F CODE DCBA 0
+text60 DC26 DCB9 CODE DC26 0
+text22 DB9E DC25 CODE DB9E 0
+text21 DB18 DB9D CODE DB18 0
+text40 DAA6 DB17 CODE DAA6 0
+text4 DA3A DAA5 CODE DA3A 0
+text1 D9D0 DA39 CODE D9D0 0
+text39 D96C D9CF CODE D96C 0
+text18 D90A D96B CODE D90A 0
+text56 D8AE D909 CODE D8AE 0
+text33 D858 D8AD CODE D858 0
+text20 D806 D857 CODE D806 0
+text49 D7B4 D805 CODE D7B4 0
+text9 D766 D7B3 CODE D766 0
+text5 D71C D765 CODE D71C 0
+text32 D6D8 D71B CODE D6D8 0
+text38 D6A4 D6D7 CODE D6A4 0
+text23 D67A D6A3 CODE D67A 0
+text57 D650 D679 CODE D650 0
+text46 D62E D64F CODE D62E 0
+cinit D610 D62D CODE D610 0
+text50 D5F4 D60F CODE D5F4 0
+text30 D5DA D5F3 CODE D5DA 0
+text37 D5C0 D5D9 CODE D5C0 0
+text59 D5A6 D5BF CODE D5A6 0
+text24 D590 D5A5 CODE D590 0
+text47 D57A D58F CODE D57A 0
+text58 D564 D579 CODE D564 0
+text14 D550 D563 CODE D550 0
+text16 D53E D54F CODE D53E 0
+text13 D530 D53D CODE D530 0
+text43 D524 D52F CODE D524 0
+text6 D51A D523 CODE D51A 0
+text7 D510 D519 CODE D510 0
+text8 D506 D50F CODE D506 0
+text10 D4FC D505 CODE D4FC 0
+text11 D4F2 D4FB CODE D4F2 0
+text12 D4E8 D4F1 CODE D4E8 0
+text36 D4DE D4E7 CODE D4DE 0
+text3 D4D6 D4DD CODE D4D6 0
+text44 D4D2 D4D5 CODE D4D2 0
+text45 D4CE D4D1 CODE D4CE 0
+text17 D4CC D4CD CODE D4CC 0
+text19 D4CA D4CB CODE D4CA 0
+text26 D4C8 D4C9 CODE D4C8 0
+text27 D4C6 D4C7 CODE D4C6 0
+text28 D4C4 D4C5 CODE D4C4 0
+text61 D4C2 D4C3 CODE D4C2 0
+text62 D4C0 D4C1 CODE D4C0 0
+text63 D4BE D4BF CODE D4BE 0
 %locals
 dist/default/production\Polulu_Lab8.X.production.o
-C:\Users\Maddox\AppData\Local\Temp\xcAslao.0\driver_tmp_1.s
-18714 DED2 0 CODE 0
-18716 DED2 0 CODE 0
-18719 DED2 0 CODE 0
-18756 DED2 0 CODE 0
-18757 DED6 0 CODE 0
-18758 DED8 0 CODE 0
-18759 DED8 0 CODE 0
-18760 DEDA 0 CODE 0
-18761 DEDC 0 CODE 0
-18764 DEDE 0 CODE 0
-18765 DEE2 0 CODE 0
-18766 DEE4 0 CODE 0
-18767 DEE4 0 CODE 0
-18768 DEE6 0 CODE 0
-18769 DEE8 0 CODE 0
-18775 DEEA 0 CODE 0
-18777 DEEA 0 CODE 0
-18778 DEEC 0 CODE 0
+C:\Users\Maddox\AppData\Local\Temp\xcAs1e8.0\driver_tmp_1.s
+18728 D610 0 CODE 0
+18730 D610 0 CODE 0
+18733 D610 0 CODE 0
+18770 D610 0 CODE 0
+18771 D614 0 CODE 0
+18772 D616 0 CODE 0
+18773 D616 0 CODE 0
+18774 D618 0 CODE 0
+18775 D61A 0 CODE 0
+18778 D61C 0 CODE 0
+18779 D620 0 CODE 0
+18780 D622 0 CODE 0
+18781 D622 0 CODE 0
+18782 D624 0 CODE 0
+18783 D626 0 CODE 0
+18789 D628 0 CODE 0
+18791 D628 0 CODE 0
+18792 D62A 0 CODE 0
 robotmain.c
 34 EFB4 0 CODE 0
 36 EFB4 0 CODE 0
@@ -1139,609 +1197,784 @@ robotmain.c
 327 FB06 0 CODE 0
 328 FB16 0 CODE 0
 334 FB1E 0 CODE 0
-../Common/uart2.c
-26 DFDE 0 CODE 0
-33 DFDE 0 CODE 0
-36 DFE2 0 CODE 0
-39 DFE4 0 CODE 0
-42 DFE6 0 CODE 0
-45 DFEA 0 CODE 0
-48 DFEE 0 CODE 0
-51 DFF0 0 CODE 0
-54 DFF4 0 CODE 0
-57 DFF8 0 CODE 0
-60 DFFA 0 CODE 0
-63 DFFC 0 CODE 0
-66 DFFE 0 CODE 0
-68 E000 0 CODE 0
-69 E00C 0 CODE 0
-70 E018 0 CODE 0
-72 E024 0 CODE 0
-73 E026 0 CODE 0
-../Common/uart2.c
-146 DDDC 0 CODE 0
-147 DDDC 0 CODE 0
-148 DDE4 0 CODE 0
-../Common/uart2.c
-142 DDD2 0 CODE 0
-143 DDD2 0 CODE 0
-144 DDDA 0 CODE 0
-../Common/uart2.c
-150 DDC8 0 CODE 0
-151 DDC8 0 CODE 0
-152 DDD0 0 CODE 0
-../Common/uart1.c
-27 E028 0 CODE 0
-34 E028 0 CODE 0
-37 E02C 0 CODE 0
-40 E02E 0 CODE 0
-43 E030 0 CODE 0
-46 E032 0 CODE 0
-49 E034 0 CODE 0
-52 E036 0 CODE 0
-55 E03A 0 CODE 0
-58 E03E 0 CODE 0
-61 E040 0 CODE 0
-64 E044 0 CODE 0
-67 E046 0 CODE 0
-70 E048 0 CODE 0
-73 E04A 0 CODE 0
-76 E04C 0 CODE 0
-79 E04E 0 CODE 0
-80 E05A 0 CODE 0
-81 E066 0 CODE 0
-83 E072 0 CODE 0
-85 E074 0 CODE 0
-../Common/uart1.c
-155 DDBE 0 CODE 0
-156 DDBE 0 CODE 0
-157 DDC6 0 CODE 0
-../Common/uart1.c
-151 DDB4 0 CODE 0
-152 DDB4 0 CODE 0
-153 DDBC 0 CODE 0
-../Common/uart1.c
-159 DDAA 0 CODE 0
-160 DDAA 0 CODE 0
-161 DDB2 0 CODE 0
 pololu_robot.c
-160 DD98 0 CODE 0
-162 DD98 0 CODE 0
-163 DD9E 0 CODE 0
+125 D9D0 0 CODE 0
+128 D9D2 0 CODE 0
+129 D9D6 0 CODE 0
+130 D9E0 0 CODE 0
+131 DA12 0 CODE 0
+132 DA16 0 CODE 0
+133 DA1A 0 CODE 0
+135 DA20 0 CODE 0
+136 DA30 0 CODE 0
+137 DA34 0 CODE 0
+138 DA38 0 CODE 0
+C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\aldiv.c
+7 E316 0 CODE 0
+13 E316 0 CODE 0
+14 E318 0 CODE 0
+15 E326 0 CODE 0
+16 E336 0 CODE 0
+18 E33A 0 CODE 0
+19 E348 0 CODE 0
+20 E358 0 CODE 0
+22 E35C 0 CODE 0
+23 E36C 0 CODE 0
+24 E382 0 CODE 0
+25 E386 0 CODE 0
+26 E38A 0 CODE 0
+27 E394 0 CODE 0
+25 E396 0 CODE 0
+30 E3A4 0 CODE 0
+31 E3AE 0 CODE 0
+32 E3CC 0 CODE 0
+33 E3DC 0 CODE 0
+35 E3DE 0 CODE 0
+36 E3E8 0 CODE 0
+38 E3EE 0 CODE 0
+39 E3FE 0 CODE 0
+40 E40E 0 CODE 0
+41 E41E 0 CODE 0
 pololu_robot.c
-125 E2FE 0 CODE 0
-127 E300 0 CODE 0
-128 E314 0 CODE 0
-129 E31A 0 CODE 0
-130 E32E 0 CODE 0
-131 E334 0 CODE 0
-132 E348 0 CODE 0
-133 E34E 0 CODE 0
-134 E362 0 CODE 0
-135 E368 0 CODE 0
+174 D4D6 0 CODE 0
+176 D4D6 0 CODE 0
+177 D4DC 0 CODE 0
+pololu_robot.c
+139 DA3A 0 CODE 0
+141 DA3C 0 CODE 0
+142 DA50 0 CODE 0
+143 DA56 0 CODE 0
+144 DA6A 0 CODE 0
+145 DA70 0 CODE 0
+146 DA84 0 CODE 0
+147 DA8A 0 CODE 0
+148 DA9E 0 CODE 0
+149 DAA4 0 CODE 0
+../Common/uart2.c
+26 D71C 0 CODE 0
+33 D71C 0 CODE 0
+36 D720 0 CODE 0
+39 D722 0 CODE 0
+42 D724 0 CODE 0
+45 D728 0 CODE 0
+48 D72C 0 CODE 0
+51 D72E 0 CODE 0
+54 D732 0 CODE 0
+57 D736 0 CODE 0
+60 D738 0 CODE 0
+63 D73A 0 CODE 0
+66 D73C 0 CODE 0
+68 D73E 0 CODE 0
+69 D74A 0 CODE 0
+70 D756 0 CODE 0
+72 D762 0 CODE 0
+73 D764 0 CODE 0
+../Common/uart2.c
+146 D51A 0 CODE 0
+147 D51A 0 CODE 0
+148 D522 0 CODE 0
+../Common/uart2.c
+142 D510 0 CODE 0
+143 D510 0 CODE 0
+144 D518 0 CODE 0
+../Common/uart2.c
+150 D506 0 CODE 0
+151 D506 0 CODE 0
+152 D50E 0 CODE 0
+../Common/uart1.c
+27 D766 0 CODE 0
+34 D766 0 CODE 0
+37 D76A 0 CODE 0
+40 D76C 0 CODE 0
+43 D76E 0 CODE 0
+46 D770 0 CODE 0
+49 D772 0 CODE 0
+52 D774 0 CODE 0
+55 D778 0 CODE 0
+58 D77C 0 CODE 0
+61 D77E 0 CODE 0
+64 D782 0 CODE 0
+67 D784 0 CODE 0
+70 D786 0 CODE 0
+73 D788 0 CODE 0
+76 D78A 0 CODE 0
+79 D78C 0 CODE 0
+80 D798 0 CODE 0
+81 D7A4 0 CODE 0
+83 D7B0 0 CODE 0
+85 D7B2 0 CODE 0
+../Common/uart1.c
+155 D4FC 0 CODE 0
+156 D4FC 0 CODE 0
+157 D504 0 CODE 0
+../Common/uart1.c
+151 D4F2 0 CODE 0
+152 D4F2 0 CODE 0
+153 D4FA 0 CODE 0
+../Common/uart1.c
+159 D4E8 0 CODE 0
+160 D4E8 0 CODE 0
+161 D4F0 0 CODE 0
 ../Common/initialize.c
-11 DDF2 0 CODE 0
-13 DDF2 0 CODE 0
-14 DDF6 0 CODE 0
-15 DDFA 0 CODE 0
-16 DDFE 0 CODE 0
+11 D530 0 CODE 0
+13 D530 0 CODE 0
+14 D534 0 CODE 0
+15 D538 0 CODE 0
+16 D53C 0 CODE 0
 ../Common/initialize.c
-32 DE12 0 CODE 0
-35 DE12 0 CODE 0
-37 DE16 0 CODE 0
-39 DE18 0 CODE 0
-41 DE1A 0 CODE 0
-43 DE1C 0 CODE 0
-45 DE1E 0 CODE 0
-47 DE20 0 CODE 0
-49 DE22 0 CODE 0
-50 DE24 0 CODE 0
+32 D550 0 CODE 0
+35 D550 0 CODE 0
+37 D554 0 CODE 0
+39 D556 0 CODE 0
+41 D558 0 CODE 0
+43 D55A 0 CODE 0
+45 D55C 0 CODE 0
+47 D55E 0 CODE 0
+49 D560 0 CODE 0
+50 D562 0 CODE 0
 ../Common/pin_manager.c
-45 E6B0 0 CODE 0
-50 E6B0 0 CODE 0
-51 E6B2 0 CODE 0
-52 E6B4 0 CODE 0
-53 E6B6 0 CODE 0
-54 E6B8 0 CODE 0
-59 E6BA 0 CODE 0
-60 E6BE 0 CODE 0
-61 E6C0 0 CODE 0
-62 E6C4 0 CODE 0
-63 E6C8 0 CODE 0
-68 E6CA 0 CODE 0
-69 E6CE 0 CODE 0
-70 E6D0 0 CODE 0
-71 E6D4 0 CODE 0
-72 E6D8 0 CODE 0
-77 E6DC 0 CODE 0
-78 E6DE 0 CODE 0
-79 E6E0 0 CODE 0
-80 E6E2 0 CODE 0
-81 E6E4 0 CODE 0
-86 E6E6 0 CODE 0
-87 E6E8 0 CODE 0
-88 E6EA 0 CODE 0
-89 E6EC 0 CODE 0
-90 E6EE 0 CODE 0
-91 E6F0 0 CODE 0
-96 E6F2 0 CODE 0
-97 E6F4 0 CODE 0
-98 E6F6 0 CODE 0
-99 E6F8 0 CODE 0
-100 E6FC 0 CODE 0
-105 E6FE 0 CODE 0
-106 E700 0 CODE 0
-107 E702 0 CODE 0
-108 E704 0 CODE 0
-109 E706 0 CODE 0
-114 E70A 0 CODE 0
-115 E70C 0 CODE 0
-116 E70E 0 CODE 0
-117 E710 0 CODE 0
-118 E712 0 CODE 0
-121 E716 0 CODE 0
-122 E71A 0 CODE 0
-123 E71E 0 CODE 0
-124 E722 0 CODE 0
-125 E726 0 CODE 0
-126 E72A 0 CODE 0
-127 E72E 0 CODE 0
-128 E732 0 CODE 0
-129 E736 0 CODE 0
-130 E73A 0 CODE 0
-131 E73E 0 CODE 0
-132 E742 0 CODE 0
-133 E746 0 CODE 0
-134 E74A 0 CODE 0
-135 E74E 0 CODE 0
-../Common/initialize.c
-18 DE00 0 CODE 0
-21 DE00 0 CODE 0
-23 DE06 0 CODE 0
-25 DE08 0 CODE 0
-27 DE0A 0 CODE 0
-29 DE0E 0 CODE 0
-30 DE10 0 CODE 0
-pololu_robot.c
-155 DD8E 0 CODE 0
-158 DD8E 0 CODE 0
-pololu_robot.c
-68 E1CC 0 CODE 0
-72 E1CC 0 CODE 0
-73 E1E0 0 CODE 0
-74 E1E6 0 CODE 0
-75 E1FA 0 CODE 0
-76 E200 0 CODE 0
-77 E214 0 CODE 0
-78 E21A 0 CODE 0
-79 E22C 0 CODE 0
-pololu_robot.c
-150 DD8C 0 CODE 0
-153 DD8C 0 CODE 0
-pololu_robot.c
-105 E0C8 0 CODE 0
-107 E0CA 0 CODE 0
-108 E0DE 0 CODE 0
-109 E0E4 0 CODE 0
-110 E0F8 0 CODE 0
-111 E0FE 0 CODE 0
-112 E112 0 CODE 0
-113 E118 0 CODE 0
-robotmain.c
-365 E3DC 0 CODE 0
-367 E3DC 0 CODE 0
-368 E3DE 0 CODE 0
-370 E3E0 0 CODE 0
-372 E3E4 0 CODE 0
-373 E3EA 0 CODE 0
-375 E400 0 CODE 0
-377 E420 0 CODE 0
-378 E42C 0 CODE 0
-379 E438 0 CODE 0
-380 E43A 0 CODE 0
-381 E43C 0 CODE 0
-383 E440 0 CODE 0
-370 E44C 0 CODE 0
-385 E45E 0 CODE 0
-386 E460 0 CODE 0
-robotmain.c
-390 E462 0 CODE 0
-392 E462 0 CODE 0
-395 E464 0 CODE 0
-397 E468 0 CODE 0
-399 E47C 0 CODE 0
-400 E482 0 CODE 0
-402 E496 0 CODE 0
-403 E49C 0 CODE 0
-404 E4AE 0 CODE 0
-395 E4B4 0 CODE 0
-408 E4E6 0 CODE 0
-409 E4E8 0 CODE 0
-../Common/uart2.c
-80 DF3C 0 CODE 0
-82 DF3C 0 CODE 0
-83 DF64 0 CODE 0
-../Common/uart2.c
-75 DE52 0 CODE 0
-77 DE52 0 CODE 0
-78 DE66 0 CODE 0
-../Common/uart2.c
-94 E57E 0 CODE 0
-96 E57E 0 CODE 0
-98 E57E 0 CODE 0
-96 E57E 0 CODE 0
-99 E58E 0 CODE 0
-101 E590 0 CODE 0
-102 E5A0 0 CODE 0
-103 E5A2 0 CODE 0
-106 E5BA 0 CODE 0
-107 E5CA 0 CODE 0
-108 E5CC 0 CODE 0
-111 E5E4 0 CODE 0
-112 E5F4 0 CODE 0
-114 E60C 0 CODE 0
-115 E610 0 CODE 0
-../Common/uart2.c
-137 DD8A 0 CODE 0
-../Common/uart2.c
-135 DD88 0 CODE 0
-../Common/uart2.c
-139 DD86 0 CODE 0
-140 DD86 0 CODE 0
-robotmain.c
-336 EA1E 0 CODE 0
-338 EA1E 0 CODE 0
-339 EA2A 0 CODE 0
-340 EA36 0 CODE 0
-341 EA42 0 CODE 0
-342 EA4E 0 CODE 0
-343 EA5A 0 CODE 0
-344 EA66 0 CODE 0
-345 EA72 0 CODE 0
-346 EA7E 0 CODE 0
-347 EA8A 0 CODE 0
-348 EA96 0 CODE 0
-349 EAA2 0 CODE 0
-350 EAAE 0 CODE 0
-351 EABA 0 CODE 0
-352 EAC6 0 CODE 0
-353 EAD2 0 CODE 0
-354 EADE 0 CODE 0
-355 EAEA 0 CODE 0
-356 EAF6 0 CODE 0
-357 EB02 0 CODE 0
-358 EB0E 0 CODE 0
-359 EB1A 0 CODE 0
-360 EB26 0 CODE 0
-361 EB32 0 CODE 0
-C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\printf.c
-5 DE9C 0 CODE 0
-9 DE9C 0 CODE 0
-10 DEA0 0 CODE 0
-13 DEB4 0 CODE 0
-robotmain.c
-413 EB34 0 CODE 0
-416 EB36 0 CODE 0
-419 EB3A 0 CODE 0
-420 EB3E 0 CODE 0
-421 EB4E 0 CODE 0
-422 EB58 0 CODE 0
-423 EB5C 0 CODE 0
-424 EB66 0 CODE 0
-425 EB80 0 CODE 0
-426 EB8E 0 CODE 0
-428 EB92 0 CODE 0
-429 EB9E 0 CODE 0
-431 EBB4 0 CODE 0
-432 EBB6 0 CODE 0
-433 EBC0 0 CODE 0
-436 EBC4 0 CODE 0
-437 EBC8 0 CODE 0
-438 EBD2 0 CODE 0
-439 EBE2 0 CODE 0
-441 EBE6 0 CODE 0
-442 EBF0 0 CODE 0
-443 EC00 0 CODE 0
-445 EC04 0 CODE 0
-446 EC0E 0 CODE 0
-447 EC1E 0 CODE 0
-449 EC22 0 CODE 0
-450 EC2C 0 CODE 0
-452 EC4A 0 CODE 0
-452 EC4E 0 CODE 0
-452 EC56 0 CODE 0
-452 EC5E 0 CODE 0
-426 EC68 0 CODE 0
-455 EC78 0 CODE 0
-456 EC7C 0 CODE 0
-C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\nf_sprintf.c
-9 DF9A 0 CODE 0
-15 DF9A 0 CODE 0
-16 DF9E 0 CODE 0
-17 DFA2 0 CODE 0
-18 DFA8 0 CODE 0
-19 DFAE 0 CODE 0
-20 DFCA 0 CODE 0
-22 DFD4 0 CODE 0
-23 DFDC 0 CODE 0
-C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\doprnt.c
-1817 E11A 0 CODE 0
-1822 E11A 0 CODE 0
-1824 E122 0 CODE 0
-1826 E128 0 CODE 0
-1828 E12C 0 CODE 0
-1826 E144 0 CODE 0
-1833 E166 0 CODE 0
-1840 E16E 0 CODE 0
-C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\doprnt.c
-1177 EC7E 0 CODE 0
-1191 EC7E 0 CODE 0
-1201 EC84 0 CODE 0
-1202 ECAC 0 CODE 0
-1204 ECB8 0 CODE 0
-1205 ECC2 0 CODE 0
-1291 ECC6 0 CODE 0
-1361 ECD8 0 CODE 0
-1404 ED1C 0 CODE 0
-1406 ED38 0 CODE 0
-1408 ED56 0 CODE 0
-1409 ED5A 0 CODE 0
-1411 ED6E 0 CODE 0
-1412 ED9C 0 CODE 0
-1414 EDB6 0 CODE 0
-1416 EDBA 0 CODE 0
-1417 EDDC 0 CODE 0
-1418 EDFC 0 CODE 0
-1420 EE0A 0 CODE 0
-1424 EE12 0 CODE 0
-1423 EE2E 0 CODE 0
-1427 EE40 0 CODE 0
-1439 EE4C 0 CODE 0
-1495 EE6E 0 CODE 0
-1497 EE8A 0 CODE 0
-1498 EEA8 0 CODE 0
-1525 EEAC 0 CODE 0
-1527 EEB0 0 CODE 0
-1528 EED2 0 CODE 0
-1530 EEEC 0 CODE 0
-1532 EEF0 0 CODE 0
-1534 EF16 0 CODE 0
-1533 EF32 0 CODE 0
-1589 EF48 0 CODE 0
-1589 EF5C 0 CODE 0
-1806 EF66 0 CODE 0
-1807 EF72 0 CODE 0
-1811 EF7C 0 CODE 0
-1812 EFA0 0 CODE 0
-1813 EFAC 0 CODE 0
-1814 EFB2 0 CODE 0
-C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\nf_fputc.c
-8 E750 0 CODE 0
-12 E750 0 CODE 0
-13 E770 0 CODE 0
-14 E776 0 CODE 0
-15 E77A 0 CODE 0
-18 E7C8 0 CODE 0
-20 E7EA 0 CODE 0
-24 E7FA 0 CODE 0
-../Common/uart2.c
-130 DDA0 0 CODE 0
-132 DDA2 0 CODE 0
-133 DDA8 0 CODE 0
-../Common/uart2.c
-117 DE82 0 CODE 0
-119 DE84 0 CODE 0
-121 DE84 0 CODE 0
-119 DE84 0 CODE 0
-122 DE94 0 CODE 0
-123 DE9A 0 CODE 0
-C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\abs.c
-1 DF66 0 CODE 0
-3 DF66 0 CODE 0
-4 DF98 0 CODE 0
-C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\lwmod.c
-7 E22E 0 CODE 0
-12 E22E 0 CODE 0
-13 E240 0 CODE 0
-14 E244 0 CODE 0
-15 E248 0 CODE 0
-16 E24E 0 CODE 0
-14 E250 0 CODE 0
-19 E25E 0 CODE 0
-20 E274 0 CODE 0
-21 E27C 0 CODE 0
-22 E282 0 CODE 0
-23 E288 0 CODE 0
-24 E288 0 CODE 0
-25 E290 0 CODE 0
-C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\lwdiv.c
-7 E36A 0 CODE 0
-13 E36A 0 CODE 0
-14 E370 0 CODE 0
-15 E382 0 CODE 0
-16 E386 0 CODE 0
-17 E38A 0 CODE 0
-18 E390 0 CODE 0
-16 E392 0 CODE 0
-21 E3A0 0 CODE 0
-22 E3A6 0 CODE 0
-23 E3BC 0 CODE 0
-24 E3C4 0 CODE 0
-26 E3C6 0 CODE 0
-27 E3CC 0 CODE 0
-28 E3D2 0 CODE 0
-29 E3D2 0 CODE 0
-30 E3DA 0 CODE 0
-C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\awmod.c
-7 E7FC 0 CODE 0
-12 E7FC 0 CODE 0
-13 E7FE 0 CODE 0
-14 E80C 0 CODE 0
-15 E814 0 CODE 0
-17 E818 0 CODE 0
-18 E826 0 CODE 0
-19 E82E 0 CODE 0
-20 E840 0 CODE 0
-21 E844 0 CODE 0
-22 E848 0 CODE 0
-23 E84E 0 CODE 0
-21 E850 0 CODE 0
-26 E85E 0 CODE 0
-27 E874 0 CODE 0
-28 E87C 0 CODE 0
-29 E882 0 CODE 0
-31 E888 0 CODE 0
-32 E898 0 CODE 0
-33 E8A0 0 CODE 0
-34 E8A8 0 CODE 0
-C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\awdiv.c
-7 E95E 0 CODE 0
-13 E95E 0 CODE 0
-14 E960 0 CODE 0
-15 E96E 0 CODE 0
-16 E976 0 CODE 0
-18 E97A 0 CODE 0
-19 E988 0 CODE 0
-20 E990 0 CODE 0
-22 E994 0 CODE 0
-23 E99A 0 CODE 0
-24 E9AC 0 CODE 0
-25 E9B0 0 CODE 0
-26 E9B4 0 CODE 0
-27 E9BA 0 CODE 0
-25 E9BC 0 CODE 0
-30 E9CA 0 CODE 0
-31 E9D0 0 CODE 0
-32 E9E6 0 CODE 0
-33 E9EE 0 CODE 0
-35 E9F0 0 CODE 0
-36 E9F6 0 CODE 0
-38 E9FC 0 CODE 0
-39 EA0C 0 CODE 0
-40 EA14 0 CODE 0
-41 EA1C 0 CODE 0
-../Common/tmr0.c
-78 DDE6 0 CODE 0
-81 DDE6 0 CODE 0
-82 DDEA 0 CODE 0
-83 DDF0 0 CODE 0
-../Common/tmr0.c
-43 DD94 0 CODE 0
-46 DD94 0 CODE 0
-47 DD96 0 CODE 0
-../Common/tmr0.c
-37 DD90 0 CODE 0
-40 DD90 0 CODE 0
-41 DD92 0 CODE 0
-../Common/tmr0.c
-59 DEF0 0 CODE 0
-65 DEF0 0 CODE 0
-66 DEF6 0 CODE 0
-67 DEFC 0 CODE 0
-69 DF08 0 CODE 0
-70 DF10 0 CODE 0
-../Common/tmr0.c
-22 DE3C 0 CODE 0
-25 DE3E 0 CODE 0
-28 DE44 0 CODE 0
-31 DE4A 0 CODE 0
-34 DE4C 0 CODE 0
-35 DE50 0 CODE 0
-pololu_robot.c
-87 E612 0 CODE 0
-89 E612 0 CODE 0
-91 E614 0 CODE 0
-92 E628 0 CODE 0
-93 E62E 0 CODE 0
-94 E642 0 CODE 0
-95 E648 0 CODE 0
-97 E64C 0 CODE 0
-99 E660 0 CODE 0
-100 E69A 0 CODE 0
-95 E69C 0 CODE 0
-103 E6AE 0 CODE 0
-pololu_robot.c
-115 E076 0 CODE 0
-117 E078 0 CODE 0
-118 E08C 0 CODE 0
-119 E092 0 CODE 0
-120 E0A6 0 CODE 0
-121 E0AC 0 CODE 0
-122 E0C0 0 CODE 0
-123 E0C6 0 CODE 0
-pololu_robot.c
-81 DEB6 0 CODE 0
-83 DEB6 0 CODE 0
-84 DECA 0 CODE 0
-85 DED0 0 CODE 0
-pololu_robot.c
-13 E8AA 0 CODE 0
-18 E8AA 0 CODE 0
-19 E8BE 0 CODE 0
-20 E8C4 0 CODE 0
-22 E8C6 0 CODE 0
-23 E8DA 0 CODE 0
-24 E8E8 0 CODE 0
-25 E8FC 0 CODE 0
-26 E90A 0 CODE 0
-27 E948 0 CODE 0
-28 E95A 0 CODE 0
-29 E95C 0 CODE 0
-pololu_robot.c
-137 E292 0 CODE 0
-140 E294 0 CODE 0
-141 E2A8 0 CODE 0
-142 E2AE 0 CODE 0
-143 E2C2 0 CODE 0
-144 E2C8 0 CODE 0
-145 E2DC 0 CODE 0
-146 E2E2 0 CODE 0
-147 E2F6 0 CODE 0
-148 E2FC 0 CODE 0
-pololu_robot.c
-31 E170 0 CODE 0
-33 E170 0 CODE 0
-37 E170 0 CODE 0
-38 E184 0 CODE 0
-39 E18A 0 CODE 0
-42 E1A2 0 CODE 0
-40 E1B6 0 CODE 0
-44 E1CA 0 CODE 0
-../Common/uart1.c
-92 DF12 0 CODE 0
-94 DF12 0 CODE 0
-95 DF3A 0 CODE 0
-../Common/uart1.c
+45 DDEE 0 CODE 0
+50 DDEE 0 CODE 0
+51 DDF0 0 CODE 0
+52 DDF2 0 CODE 0
+53 DDF4 0 CODE 0
+54 DDF6 0 CODE 0
+59 DDF8 0 CODE 0
+60 DDFC 0 CODE 0
+61 DDFE 0 CODE 0
+62 DE02 0 CODE 0
+63 DE06 0 CODE 0
+68 DE08 0 CODE 0
+69 DE0C 0 CODE 0
+70 DE0E 0 CODE 0
+71 DE12 0 CODE 0
+72 DE16 0 CODE 0
+77 DE1A 0 CODE 0
+78 DE1C 0 CODE 0
+79 DE1E 0 CODE 0
+80 DE20 0 CODE 0
+81 DE22 0 CODE 0
+86 DE24 0 CODE 0
 87 DE26 0 CODE 0
-89 DE26 0 CODE 0
-90 DE3A 0 CODE 0
+88 DE28 0 CODE 0
+89 DE2A 0 CODE 0
+90 DE2C 0 CODE 0
+91 DE2E 0 CODE 0
+96 DE30 0 CODE 0
+97 DE32 0 CODE 0
+98 DE34 0 CODE 0
+99 DE36 0 CODE 0
+100 DE3A 0 CODE 0
+105 DE3C 0 CODE 0
+106 DE3E 0 CODE 0
+107 DE40 0 CODE 0
+108 DE42 0 CODE 0
+109 DE44 0 CODE 0
+114 DE48 0 CODE 0
+115 DE4A 0 CODE 0
+116 DE4C 0 CODE 0
+117 DE4E 0 CODE 0
+118 DE50 0 CODE 0
+121 DE54 0 CODE 0
+122 DE58 0 CODE 0
+123 DE5C 0 CODE 0
+124 DE60 0 CODE 0
+125 DE64 0 CODE 0
+126 DE68 0 CODE 0
+127 DE6C 0 CODE 0
+128 DE70 0 CODE 0
+129 DE74 0 CODE 0
+130 DE78 0 CODE 0
+131 DE7C 0 CODE 0
+132 DE80 0 CODE 0
+133 DE84 0 CODE 0
+134 DE88 0 CODE 0
+135 DE8C 0 CODE 0
+../Common/initialize.c
+18 D53E 0 CODE 0
+21 D53E 0 CODE 0
+23 D544 0 CODE 0
+25 D546 0 CODE 0
+27 D548 0 CODE 0
+29 D54C 0 CODE 0
+30 D54E 0 CODE 0
+pololu_robot.c
+169 D4CC 0 CODE 0
+172 D4CC 0 CODE 0
+pololu_robot.c
+69 D90A 0 CODE 0
+73 D90A 0 CODE 0
+74 D91E 0 CODE 0
+75 D924 0 CODE 0
+76 D938 0 CODE 0
+77 D93E 0 CODE 0
+78 D952 0 CODE 0
+79 D958 0 CODE 0
+80 D96A 0 CODE 0
+pololu_robot.c
+164 D4CA 0 CODE 0
+167 D4CA 0 CODE 0
+pololu_robot.c
+106 D806 0 CODE 0
+108 D808 0 CODE 0
+109 D81C 0 CODE 0
+110 D822 0 CODE 0
+111 D836 0 CODE 0
+112 D83C 0 CODE 0
+113 D850 0 CODE 0
+114 D856 0 CODE 0
+robotmain.c
+365 DB18 0 CODE 0
+367 DB18 0 CODE 0
+368 DB1A 0 CODE 0
+370 DB1C 0 CODE 0
+372 DB20 0 CODE 0
+373 DB26 0 CODE 0
+375 DB3C 0 CODE 0
+377 DB5C 0 CODE 0
+378 DB68 0 CODE 0
+379 DB74 0 CODE 0
+380 DB76 0 CODE 0
+381 DB78 0 CODE 0
+383 DB7C 0 CODE 0
+370 DB88 0 CODE 0
+385 DB9A 0 CODE 0
+386 DB9C 0 CODE 0
+robotmain.c
+390 DB9E 0 CODE 0
+392 DB9E 0 CODE 0
+395 DBA0 0 CODE 0
+397 DBA4 0 CODE 0
+399 DBB8 0 CODE 0
+400 DBBE 0 CODE 0
+402 DBD2 0 CODE 0
+403 DBD8 0 CODE 0
+404 DBEA 0 CODE 0
+395 DBF0 0 CODE 0
+408 DC22 0 CODE 0
+409 DC24 0 CODE 0
+../Common/uart2.c
+80 D67A 0 CODE 0
+82 D67A 0 CODE 0
+83 D6A2 0 CODE 0
+../Common/uart2.c
+75 D590 0 CODE 0
+77 D590 0 CODE 0
+78 D5A4 0 CODE 0
+../Common/uart2.c
+94 DCBA 0 CODE 0
+96 DCBA 0 CODE 0
+98 DCBA 0 CODE 0
+96 DCBA 0 CODE 0
+99 DCCA 0 CODE 0
+101 DCCC 0 CODE 0
+102 DCDC 0 CODE 0
+103 DCDE 0 CODE 0
+106 DCF6 0 CODE 0
+107 DD06 0 CODE 0
+108 DD08 0 CODE 0
+111 DD20 0 CODE 0
+112 DD30 0 CODE 0
+114 DD4A 0 CODE 0
+115 DD4E 0 CODE 0
+../Common/uart2.c
+137 D4C8 0 CODE 0
+../Common/uart2.c
+135 D4C6 0 CODE 0
+../Common/uart2.c
+139 D4C4 0 CODE 0
+140 D4C4 0 CODE 0
+robotmain.c
+336 E420 0 CODE 0
+338 E420 0 CODE 0
+339 E42C 0 CODE 0
+340 E438 0 CODE 0
+341 E444 0 CODE 0
+342 E450 0 CODE 0
+343 E45C 0 CODE 0
+344 E468 0 CODE 0
+345 E474 0 CODE 0
+346 E480 0 CODE 0
+347 E48C 0 CODE 0
+348 E498 0 CODE 0
+349 E4A4 0 CODE 0
+350 E4B0 0 CODE 0
+351 E4BC 0 CODE 0
+352 E4C8 0 CODE 0
+353 E4D4 0 CODE 0
+354 E4E0 0 CODE 0
+355 E4EC 0 CODE 0
+356 E4F8 0 CODE 0
+357 E504 0 CODE 0
+358 E510 0 CODE 0
+359 E51C 0 CODE 0
+360 E528 0 CODE 0
+361 E534 0 CODE 0
+C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\printf.c
+5 D5DA 0 CODE 0
+9 D5DA 0 CODE 0
+10 D5DE 0 CODE 0
+13 D5F2 0 CODE 0
+robotmain.c
+413 E536 0 CODE 0
+416 E538 0 CODE 0
+419 E53C 0 CODE 0
+420 E540 0 CODE 0
+421 E550 0 CODE 0
+422 E55A 0 CODE 0
+423 E55E 0 CODE 0
+424 E568 0 CODE 0
+425 E582 0 CODE 0
+426 E590 0 CODE 0
+428 E594 0 CODE 0
+429 E5A0 0 CODE 0
+431 E5B6 0 CODE 0
+432 E5B8 0 CODE 0
+433 E5C2 0 CODE 0
+436 E5C6 0 CODE 0
+437 E5CA 0 CODE 0
+438 E5D4 0 CODE 0
+439 E5E4 0 CODE 0
+441 E5E8 0 CODE 0
+442 E5F2 0 CODE 0
+443 E602 0 CODE 0
+445 E606 0 CODE 0
+446 E610 0 CODE 0
+447 E620 0 CODE 0
+449 E624 0 CODE 0
+450 E62E 0 CODE 0
+452 E64C 0 CODE 0
+452 E650 0 CODE 0
+452 E658 0 CODE 0
+452 E660 0 CODE 0
+426 E66A 0 CODE 0
+455 E67A 0 CODE 0
+456 E67E 0 CODE 0
+C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\nf_sprintf.c
+9 D6D8 0 CODE 0
+15 D6D8 0 CODE 0
+16 D6DC 0 CODE 0
+17 D6E0 0 CODE 0
+18 D6E6 0 CODE 0
+19 D6EC 0 CODE 0
+20 D708 0 CODE 0
+22 D712 0 CODE 0
+23 D71A 0 CODE 0
+C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\doprnt.c
+1817 D858 0 CODE 0
+1822 D858 0 CODE 0
+1824 D860 0 CODE 0
+1826 D866 0 CODE 0
+1828 D86A 0 CODE 0
+1826 D882 0 CODE 0
+1833 D8A4 0 CODE 0
+1840 D8AC 0 CODE 0
+C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\doprnt.c
+1177 E834 0 CODE 0
+1191 E834 0 CODE 0
+1201 E83A 0 CODE 0
+1202 E862 0 CODE 0
+1204 E86E 0 CODE 0
+1205 E878 0 CODE 0
+1291 E87C 0 CODE 0
+1361 E88E 0 CODE 0
+1404 E8D2 0 CODE 0
+1406 E8EE 0 CODE 0
+1408 E90C 0 CODE 0
+1409 E910 0 CODE 0
+1411 E924 0 CODE 0
+1412 E952 0 CODE 0
+1414 E96C 0 CODE 0
+1416 E970 0 CODE 0
+1417 E992 0 CODE 0
+1418 E9B2 0 CODE 0
+1420 E9C0 0 CODE 0
+1424 E9C8 0 CODE 0
+1423 E9E4 0 CODE 0
+1427 E9F6 0 CODE 0
+1439 EA02 0 CODE 0
+1495 EA24 0 CODE 0
+1497 EA40 0 CODE 0
+1498 EA5E 0 CODE 0
+1525 EA62 0 CODE 0
+1527 EA66 0 CODE 0
+1528 EA88 0 CODE 0
+1530 EAA2 0 CODE 0
+1532 EAA6 0 CODE 0
+1534 EACC 0 CODE 0
+1533 EAE8 0 CODE 0
+1589 EAFE 0 CODE 0
+1589 EB12 0 CODE 0
+1806 EB1C 0 CODE 0
+1807 EB28 0 CODE 0
+1811 EB32 0 CODE 0
+1812 EB56 0 CODE 0
+1813 EB62 0 CODE 0
+1814 EB68 0 CODE 0
+C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\nf_fputc.c
+8 DE8E 0 CODE 0
+12 DE8E 0 CODE 0
+13 DEAE 0 CODE 0
+14 DEB4 0 CODE 0
+15 DEB8 0 CODE 0
+18 DF06 0 CODE 0
+20 DF28 0 CODE 0
+24 DF38 0 CODE 0
+../Common/uart2.c
+130 D4DE 0 CODE 0
+132 D4E0 0 CODE 0
+133 D4E6 0 CODE 0
+../Common/uart2.c
+117 D5C0 0 CODE 0
+119 D5C2 0 CODE 0
+121 D5C2 0 CODE 0
+119 D5C2 0 CODE 0
+122 D5D2 0 CODE 0
+123 D5D8 0 CODE 0
+C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\abs.c
+1 D6A4 0 CODE 0
+3 D6A4 0 CODE 0
+4 D6D6 0 CODE 0
+C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\lwmod.c
+7 D96C 0 CODE 0
+12 D96C 0 CODE 0
+13 D97E 0 CODE 0
+14 D982 0 CODE 0
+15 D986 0 CODE 0
+16 D98C 0 CODE 0
+14 D98E 0 CODE 0
+19 D99C 0 CODE 0
+20 D9B2 0 CODE 0
+21 D9BA 0 CODE 0
+22 D9C0 0 CODE 0
+23 D9C6 0 CODE 0
+24 D9C6 0 CODE 0
+25 D9CE 0 CODE 0
+C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\lwdiv.c
+7 DAA6 0 CODE 0
+13 DAA6 0 CODE 0
+14 DAAC 0 CODE 0
+15 DABE 0 CODE 0
+16 DAC2 0 CODE 0
+17 DAC6 0 CODE 0
+18 DACC 0 CODE 0
+16 DACE 0 CODE 0
+21 DADC 0 CODE 0
+22 DAE2 0 CODE 0
+23 DAF8 0 CODE 0
+24 DB00 0 CODE 0
+26 DB02 0 CODE 0
+27 DB08 0 CODE 0
+28 DB0E 0 CODE 0
+29 DB0E 0 CODE 0
+30 DB16 0 CODE 0
+C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\awmod.c
+7 DF3A 0 CODE 0
+12 DF3A 0 CODE 0
+13 DF3C 0 CODE 0
+14 DF4A 0 CODE 0
+15 DF52 0 CODE 0
+17 DF56 0 CODE 0
+18 DF64 0 CODE 0
+19 DF6C 0 CODE 0
+20 DF7E 0 CODE 0
+21 DF82 0 CODE 0
+22 DF86 0 CODE 0
+23 DF8C 0 CODE 0
+21 DF8E 0 CODE 0
+26 DF9C 0 CODE 0
+27 DFB2 0 CODE 0
+28 DFBA 0 CODE 0
+29 DFC0 0 CODE 0
+31 DFC6 0 CODE 0
+32 DFD6 0 CODE 0
+33 DFDE 0 CODE 0
+34 DFE6 0 CODE 0
+C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\awdiv.c
+7 E150 0 CODE 0
+13 E150 0 CODE 0
+14 E152 0 CODE 0
+15 E160 0 CODE 0
+16 E168 0 CODE 0
+18 E16C 0 CODE 0
+19 E17A 0 CODE 0
+20 E182 0 CODE 0
+22 E186 0 CODE 0
+23 E18C 0 CODE 0
+24 E19E 0 CODE 0
+25 E1A2 0 CODE 0
+26 E1A6 0 CODE 0
+27 E1AC 0 CODE 0
+25 E1AE 0 CODE 0
+30 E1BC 0 CODE 0
+31 E1C2 0 CODE 0
+32 E1D8 0 CODE 0
+33 E1E0 0 CODE 0
+35 E1E2 0 CODE 0
+36 E1E8 0 CODE 0
+38 E1EE 0 CODE 0
+39 E1FE 0 CODE 0
+40 E206 0 CODE 0
+41 E20E 0 CODE 0
+../Common/tmr0.c
+78 D524 0 CODE 0
+81 D524 0 CODE 0
+82 D528 0 CODE 0
+83 D52E 0 CODE 0
+../Common/tmr0.c
+43 D4D2 0 CODE 0
+46 D4D2 0 CODE 0
+47 D4D4 0 CODE 0
+../Common/tmr0.c
+37 D4CE 0 CODE 0
+40 D4CE 0 CODE 0
+41 D4D0 0 CODE 0
+../Common/tmr0.c
+59 D62E 0 CODE 0
+65 D62E 0 CODE 0
+66 D634 0 CODE 0
+67 D63A 0 CODE 0
+69 D646 0 CODE 0
+70 D64E 0 CODE 0
+../Common/tmr0.c
+22 D57A 0 CODE 0
+25 D57C 0 CODE 0
+28 D582 0 CODE 0
+31 D588 0 CODE 0
+34 D58A 0 CODE 0
+35 D58E 0 CODE 0
+pololu_robot.c
+88 DD50 0 CODE 0
+90 DD50 0 CODE 0
+92 DD52 0 CODE 0
+93 DD66 0 CODE 0
+94 DD6C 0 CODE 0
+95 DD80 0 CODE 0
+96 DD86 0 CODE 0
+98 DD8A 0 CODE 0
+100 DD9E 0 CODE 0
+101 DDD8 0 CODE 0
+96 DDDA 0 CODE 0
+104 DDEC 0 CODE 0
+pololu_robot.c
+116 D7B4 0 CODE 0
+118 D7B6 0 CODE 0
+119 D7CA 0 CODE 0
+120 D7D0 0 CODE 0
+121 D7E4 0 CODE 0
+122 D7EA 0 CODE 0
+123 D7FE 0 CODE 0
+124 D804 0 CODE 0
+pololu_robot.c
+82 D5F4 0 CODE 0
+84 D5F4 0 CODE 0
+85 D608 0 CODE 0
+86 D60E 0 CODE 0
+pololu_robot.c
+14 E09C 0 CODE 0
+19 E09C 0 CODE 0
+20 E0B0 0 CODE 0
+21 E0B6 0 CODE 0
+23 E0B8 0 CODE 0
+24 E0CC 0 CODE 0
+25 E0DA 0 CODE 0
+26 E0EE 0 CODE 0
+27 E0FC 0 CODE 0
+28 E13A 0 CODE 0
+29 E14C 0 CODE 0
+30 E14E 0 CODE 0
+pololu_robot.c
+151 DFE8 0 CODE 0
+154 DFEA 0 CODE 0
+155 DFFE 0 CODE 0
+156 E004 0 CODE 0
+157 E018 0 CODE 0
+158 E01E 0 CODE 0
+159 E032 0 CODE 0
+160 E038 0 CODE 0
+161 E04C 0 CODE 0
+162 E09A 0 CODE 0
+C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\xxtofl.c
+10 E680 0 CODE 0
+15 E682 0 CODE 0
+16 E6A0 0 CODE 0
+17 E6D2 0 CODE 0
+18 E6D6 0 CODE 0
+19 E6D6 0 CODE 0
+21 E6E6 0 CODE 0
+22 E6FC 0 CODE 0
+23 E710 0 CODE 0
+24 E714 0 CODE 0
+25 E718 0 CODE 0
+26 E71A 0 CODE 0
+24 E724 0 CODE 0
+29 E756 0 CODE 0
+30 E758 0 CODE 0
+31 E764 0 CODE 0
+32 E76E 0 CODE 0
+28 E76E 0 CODE 0
+34 E7A0 0 CODE 0
+35 E7A2 0 CODE 0
+33 E7AC 0 CODE 0
+37 E7CA 0 CODE 0
+38 E7D8 0 CODE 0
+39 E7DA 0 CODE 0
+40 E7DE 0 CODE 0
+41 E802 0 CODE 0
+42 E820 0 CODE 0
+43 E822 0 CODE 0
+44 E832 0 CODE 0
+C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\fltol.c
+43 E210 0 CODE 0
+47 E210 0 CODE 0
+48 E226 0 CODE 0
+49 E23A 0 CODE 0
+50 E264 0 CODE 0
+51 E266 0 CODE 0
+52 E276 0 CODE 0
+53 E27A 0 CODE 0
+54 E288 0 CODE 0
+57 E2A0 0 CODE 0
+60 E2B4 0 CODE 0
+63 E2C8 0 CODE 0
+64 E2D2 0 CODE 0
+62 E2D4 0 CODE 0
+67 E2E4 0 CODE 0
+68 E2F4 0 CODE 0
+69 E304 0 CODE 0
+70 E314 0 CODE 0
+C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\sprcmul.c
+8 EB6A 0 CODE 0
+17 EB6A 0 CODE 0
+18 EB70 0 CODE 0
+19 EB76 0 CODE 0
+20 EB84 0 CODE 0
+24 EB86 0 CODE 0
+26 EB96 0 CODE 0
+28 EBA6 0 CODE 0
+31 EBB6 0 CODE 0
+33 EBB8 0 CODE 0
+36 EBBC 0 CODE 0
+39 EBCC 0 CODE 0
+40 EBD2 0 CODE 0
+41 EBD8 0 CODE 0
+42 EBE6 0 CODE 0
+45 EBE8 0 CODE 0
+48 EBF8 0 CODE 0
+50 EC08 0 CODE 0
+53 EC18 0 CODE 0
+54 EC1A 0 CODE 0
+57 EC1E 0 CODE 0
+58 EC2E 0 CODE 0
+65 EC2E 0 CODE 0
+66 EC4E 0 CODE 0
+95 EC62 0 CODE 0
+96 EC72 0 CODE 0
+97 EC7C 0 CODE 0
+98 EC86 0 CODE 0
+99 EC96 0 CODE 0
+100 ECA2 0 CODE 0
+101 ECAE 0 CODE 0
+102 ECBE 0 CODE 0
+103 ECCA 0 CODE 0
+104 ECD6 0 CODE 0
+105 ECE4 0 CODE 0
+106 ECF4 0 CODE 0
+107 ED04 0 CODE 0
+108 ED14 0 CODE 0
+109 ED24 0 CODE 0
+110 ED32 0 CODE 0
+111 ED42 0 CODE 0
+112 ED52 0 CODE 0
+113 ED62 0 CODE 0
+114 ED72 0 CODE 0
+115 ED82 0 CODE 0
+116 ED92 0 CODE 0
+117 EDA2 0 CODE 0
+145 EDCC 0 CODE 0
+146 EE02 0 CODE 0
+149 EE10 0 CODE 0
+152 EE2A 0 CODE 0
+153 EE2E 0 CODE 0
+154 EE38 0 CODE 0
+155 EE46 0 CODE 0
+156 EE48 0 CODE 0
+157 EE48 0 CODE 0
+158 EE52 0 CODE 0
+152 EE58 0 CODE 0
+163 EE66 0 CODE 0
+164 EE68 0 CODE 0
+165 EE76 0 CODE 0
+166 EEA4 0 CODE 0
+167 EEA8 0 CODE 0
+168 EEAC 0 CODE 0
+169 EEAC 0 CODE 0
+173 EEBE 0 CODE 0
+174 EEBE 0 CODE 0
+175 EECE 0 CODE 0
+176 EEDA 0 CODE 0
+177 EEE8 0 CODE 0
+178 EF12 0 CODE 0
+183 EF16 0 CODE 0
+184 EF30 0 CODE 0
+185 EF40 0 CODE 0
+187 EF44 0 CODE 0
+188 EF5E 0 CODE 0
+190 EF6E 0 CODE 0
+191 EF70 0 CODE 0
+192 EF74 0 CODE 0
+194 EF74 0 CODE 0
+195 EF78 0 CODE 0
+196 EF88 0 CODE 0
+197 EF96 0 CODE 0
+199 EF98 0 CODE 0
+201 EF9E 0 CODE 0
+203 EFA2 0 CODE 0
+205 EFB2 0 CODE 0
+pololu_robot.c
+32 D8AE 0 CODE 0
+34 D8AE 0 CODE 0
+38 D8AE 0 CODE 0
+39 D8C2 0 CODE 0
+40 D8C8 0 CODE 0
+43 D8E0 0 CODE 0
+41 D8F4 0 CODE 0
+45 D908 0 CODE 0
 ../Common/uart1.c
-131 DE68 0 CODE 0
-133 DE6A 0 CODE 0
-135 DE6A 0 CODE 0
-133 DE6A 0 CODE 0
-137 DE7A 0 CODE 0
-138 DE80 0 CODE 0
+92 D650 0 CODE 0
+94 D650 0 CODE 0
+95 D678 0 CODE 0
 ../Common/uart1.c
-106 E4EA 0 CODE 0
-108 E4EA 0 CODE 0
-110 E4EA 0 CODE 0
-108 E4EA 0 CODE 0
-112 E4FA 0 CODE 0
-114 E4FC 0 CODE 0
-115 E50C 0 CODE 0
-116 E50E 0 CODE 0
-119 E526 0 CODE 0
-120 E536 0 CODE 0
-121 E538 0 CODE 0
-124 E550 0 CODE 0
-125 E560 0 CODE 0
-128 E578 0 CODE 0
-129 E57C 0 CODE 0
+87 D564 0 CODE 0
+89 D564 0 CODE 0
+90 D578 0 CODE 0
 ../Common/uart1.c
-146 DD84 0 CODE 0
+131 D5A6 0 CODE 0
+133 D5A8 0 CODE 0
+135 D5A8 0 CODE 0
+133 D5A8 0 CODE 0
+137 D5B8 0 CODE 0
+138 D5BE 0 CODE 0
 ../Common/uart1.c
-144 DD82 0 CODE 0
+106 DC26 0 CODE 0
+108 DC26 0 CODE 0
+110 DC26 0 CODE 0
+108 DC26 0 CODE 0
+112 DC36 0 CODE 0
+114 DC38 0 CODE 0
+115 DC48 0 CODE 0
+116 DC4A 0 CODE 0
+119 DC62 0 CODE 0
+120 DC72 0 CODE 0
+121 DC74 0 CODE 0
+124 DC8C 0 CODE 0
+125 DC9C 0 CODE 0
+128 DCB4 0 CODE 0
+129 DCB8 0 CODE 0
 ../Common/uart1.c
-148 DD80 0 CODE 0
-149 DD80 0 CODE 0
+146 D4C2 0 CODE 0
+../Common/uart1.c
+144 D4C0 0 CODE 0
+../Common/uart1.c
+148 D4BE 0 CODE 0
+149 D4BE 0 CODE 0

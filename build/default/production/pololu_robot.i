@@ -15,7 +15,7 @@
 
 
 # 1 "./pololu_robot.h" 1
-# 22 "./pololu_robot.h"
+# 23 "./pololu_robot.h"
 unsigned int* Calibrate_Sensors(void);
 
 
@@ -52,6 +52,8 @@ void LCD_Clear(void);
 
 void LCD_Position(char x, char y);
 
+
+void robot_8cm(char speed);
 
 
 void Forward(char speed);
@@ -27539,6 +27541,24 @@ void UART1_SetOverrunErrorHandler(void (* interruptHandler)(void));
 # 340 "./../Common/uart1.h"
 void UART1_SetErrorHandler(void (* interruptHandler)(void));
 # 11 "pololu_robot.c" 2
+# 1 "./../Common/tmr0.h" 1
+# 99 "./../Common/tmr0.h"
+void TMR0_Initialize(uint8_t TMR0control_0, uint8_t TMR0control_1);
+# 116 "./../Common/tmr0.h"
+void TMR0_StartTimer(void);
+# 139 "./../Common/tmr0.h"
+void TMR0_StopTimer(void);
+# 168 "./../Common/tmr0.h"
+uint8_t TMR0_Read8BitTimer(void);
+uint16_t TMR0_Read16BitTimer(void);
+# 202 "./../Common/tmr0.h"
+void TMR0_Write8BitTimer(uint8_t timerVal);
+void TMR0_Write16BitTimer(uint16_t timerVal);
+# 236 "./../Common/tmr0.h"
+void TMR0_Period8BitSet(uint8_t periodVal);
+# 269 "./../Common/tmr0.h"
+_Bool TMR0_HasOverflowOccured(void);
+# 12 "pololu_robot.c" 2
 
 
 unsigned int* Calibrate_Sensors(void)
@@ -27652,7 +27672,20 @@ void LCD_Position(char x, char y)
     while(!UART1_is_tx_ready()) continue;
     UART1_Write(y);
 }
+void robot_8cm (char speed)
+{
 
+    TMR0_StopTimer();
+    TMR0_Initialize(0x9F & 0x90, 0x5F & 0xEF & 0xF7);
+    TMR0_Write16BitTimer((65536-(983143/speed)));
+    TMR0IF=0;
+    TMR0_StartTimer();
+    Forward(speed);
+
+    while(TMR0IF==0) continue;
+    Stop();
+    TMR0_StopTimer();
+}
 void Forward(char speed)
 {
                     while(!UART1_is_tx_ready()) continue;
@@ -27662,7 +27695,7 @@ void Forward(char speed)
                     while(!UART1_is_tx_ready()) continue;
                     UART1_Write(0xC5);
                     while(!UART1_is_tx_ready()) continue;
-                    UART1_Write(speed);
+                    UART1_Write((char) speed+1);
 }
 
 void Backward(char speed)
@@ -27675,7 +27708,7 @@ void Backward(char speed)
                     while(!UART1_is_tx_ready()) continue;
                     UART1_Write(0xC5);
                     while(!UART1_is_tx_ready()) continue;
-                    UART1_Write(speed);
+                    UART1_Write((char) speed*1.025);
 }
 
 void Left_Turn(char speed, char differential)

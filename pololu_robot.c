@@ -8,6 +8,7 @@
 #include "pololu_robot.h"
 #include <stdio.h>
 #include "../Common/uart1.h"
+#include "../Common/tmr0.h"
 
 
 unsigned int* Calibrate_Sensors(void)
@@ -121,7 +122,20 @@ void LCD_Position(char x, char y)
     while(!UART1_is_tx_ready()) continue;
     UART1_Write(y);
 }
-
+void robot_8cm (char speed)
+{
+    //set tmr to 0 and start it with a prescale of 128
+    TMR0_StopTimer();
+    TMR0_Initialize(T0_16_BIT & T0_POST_1_1, T0_SOURCE_INT & T0_SYNC & T0_PRE_1_128);
+    TMR0_Write16BitTimer((65536-(983143/speed)));//calculation for timer start
+    TMR0IF=0;
+    TMR0_StartTimer();
+    Forward(speed);//go forward
+    
+    while(TMR0IF==0) continue;//stay till flag
+    Stop();//stop after flag
+    TMR0_StopTimer();
+}
 void Forward(char speed)
 {
                     while(!UART1_is_tx_ready()) continue;
@@ -131,7 +145,7 @@ void Forward(char speed)
                     while(!UART1_is_tx_ready()) continue;
                     UART1_Write(FORWARD_RIGHT);
                     while(!UART1_is_tx_ready()) continue;
-                    UART1_Write(speed);
+                    UART1_Write((char) speed+1);
 }
 
 void Backward(char speed)
@@ -144,7 +158,7 @@ void Backward(char speed)
                     while(!UART1_is_tx_ready()) continue;
                     UART1_Write(FORWARD_RIGHT);
                     while(!UART1_is_tx_ready()) continue;
-                    UART1_Write(speed);
+                    UART1_Write((char) speed*spd_scl);
 }
 
 void Left_Turn(char speed, char differential)

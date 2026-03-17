@@ -48,17 +48,17 @@ Version 4.0 HI-TECH Software Intermediate Code
 "28 robotmain.c
 [; ;robotmain.c: 28: void Diagnostic_Menu(void);
 [v _Diagnostic_Menu `(v ~T0 @X0 0 ef ]
-"50 ./pololu_robot.h
-[; ;./pololu_robot.h: 50: void LCD_Clear(void);
+"51 ./pololu_robot.h
+[; ;./pololu_robot.h: 51: void LCD_Clear(void);
 [v _LCD_Clear `(v ~T0 @X0 0 ef ]
-"56
-[; ;./pololu_robot.h: 56: void LCD_Position(char x, char y);
+"57
+[; ;./pololu_robot.h: 57: void LCD_Position(char x, char y);
 [v _LCD_Position `(v ~T0 @X0 0 ef2`uc`uc ]
-"42
-[; ;./pololu_robot.h: 42: void LCD_Print(char *str, char length);
+"43
+[; ;./pololu_robot.h: 43: void LCD_Print(char *str, char length);
 [v _LCD_Print `(v ~T0 @X0 0 ef2`*uc`uc ]
-"36
-[; ;./pololu_robot.h: 36: unsigned int Read_Battery_Voltage(void);
+"37
+[; ;./pololu_robot.h: 37: unsigned int Read_Battery_Voltage(void);
 [v _Read_Battery_Voltage `(ui ~T0 @X0 0 ef ]
 "121 C:\Program Files\Microchip\xc8\v3.10\pic\include\c99/stdio.h
 [; ;C:\Program Files\Microchip\xc8\v3.10\pic\include\c99/stdio.h: 121: int sprintf(char *restrict, const char *restrict, ...);
@@ -69,11 +69,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 "117 C:\Program Files\Microchip\xc8\v3.10\pic\include\c99/stdio.h
 [; ;C:\Program Files\Microchip\xc8\v3.10\pic\include\c99/stdio.h: 117: int printf(const char *restrict, ...);
 [v _printf `(i ~T0 @X0 0 ev`*Cuc ]
-"22 ./pololu_robot.h
-[; ;./pololu_robot.h: 22: unsigned int* Calibrate_Sensors(void);
+"23 ./pololu_robot.h
+[; ;./pololu_robot.h: 23: unsigned int* Calibrate_Sensors(void);
 [v _Calibrate_Sensors `(*ui ~T0 @X0 0 ef ]
-"46
-[; ;./pololu_robot.h: 46: void LCD_PrintCharacter(char byte);
+"47
+[; ;./pololu_robot.h: 47: void LCD_PrintCharacter(char byte);
 [v _LCD_PrintCharacter `(v ~T0 @X0 0 ef1`uc ]
 "139 ./../Common/uart1.h
 [; ;./../Common/uart1.h: 139: _Bool UART1_is_tx_ready(void);
@@ -90,27 +90,27 @@ Version 4.0 HI-TECH Software Intermediate Code
 "29 robotmain.c
 [; ;robotmain.c: 29: char Get_Number(void);
 [v _Get_Number `(uc ~T0 @X0 0 ef ]
-"60 ./pololu_robot.h
-[; ;./pololu_robot.h: 60: void Forward(char speed);
+"63 ./pololu_robot.h
+[; ;./pololu_robot.h: 63: void Forward(char speed);
 [v _Forward `(v ~T0 @X0 0 ef1`uc ]
-"64
-[; ;./pololu_robot.h: 64: void Backward(char speed);
+"67
+[; ;./pololu_robot.h: 67: void Backward(char speed);
 [v _Backward `(v ~T0 @X0 0 ef1`uc ]
-"70
-[; ;./pololu_robot.h: 70: void Left_Turn(char speed, char differential);
+"73
+[; ;./pololu_robot.h: 73: void Left_Turn(char speed, char differential);
 [v _Left_Turn `(v ~T0 @X0 0 ef2`uc`uc ]
-"76
-[; ;./pololu_robot.h: 76: void Right_Turn(char speed, char differential);
+"79
+[; ;./pololu_robot.h: 79: void Right_Turn(char speed, char differential);
 [v _Right_Turn `(v ~T0 @X0 0 ef2`uc`uc ]
-"80
-[; ;./pololu_robot.h: 80: void Stop (void);
+"83
+[; ;./pololu_robot.h: 83: void Stop (void);
 [v _Stop `(v ~T0 @X0 0 ef ]
 [v F205 `(v ~T0 @X0 1 tf1`ul ]
 "20 C:\Program Files\Microchip\xc8\v3.10\pic\include/builtins.h
 [v __delay `JF205 ~T0 @X0 0 e ]
 [p i __delay ]
-"27 ./pololu_robot.h
-[; ;./pololu_robot.h: 27: void Auto_Calibrate(void);
+"28 ./pololu_robot.h
+[; ;./pololu_robot.h: 28: void Auto_Calibrate(void);
 [v _Auto_Calibrate `(v ~T0 @X0 0 ef ]
 "31 robotmain.c
 [; ;robotmain.c: 31: void Countdown(char time);
@@ -118,7 +118,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "99 ./../Common/tmr0.h
 [; ;./../Common/tmr0.h: 99: void TMR0_Initialize(uint8_t TMR0control_0, uint8_t TMR0control_1);
 [v _TMR0_Initialize `(v ~T0 @X0 0 ef2`uc`uc ]
-"116
+"60 ./pololu_robot.h
+[; ;./pololu_robot.h: 60: void robot_8cm(char speed);
+[v _robot_8cm `(v ~T0 @X0 0 ef1`uc ]
+"116 ./../Common/tmr0.h
 [; ;./../Common/tmr0.h: 116: void TMR0_StartTimer(void);
 [v _TMR0_StartTimer `(v ~T0 @X0 0 ef ]
 "203
@@ -3365,7 +3368,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;robotmain.c: 314:         Auto_Calibrate();
 [e ( _Auto_Calibrate ..  ]
 "315
-[; ;robotmain.c: 315:  LCD_Position(0,1);
+[; ;robotmain.c: 315:         LCD_Position(0,1);
 [e ( _LCD_Position (2 , -> -> 0 `i `uc -> -> 1 `i `uc ]
 "316
 [; ;robotmain.c: 316:      LCD_Print("  done  ", 8);
@@ -3380,8 +3383,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;robotmain.c: 321:         TMR0_Initialize(0x9F & 0x90, 0x5F & 0xEF & 0xF9);
 [e ( _TMR0_Initialize (2 , -> & -> 159 `i -> 144 `i `uc -> & & -> 95 `i -> 239 `i -> 249 `i `uc ]
 "322
-[; ;robotmain.c: 322:         Forward(25);
-[e ( _Forward (1 -> -> 25 `i `uc ]
+[; ;robotmain.c: 322:         robot_8cm(110);
+[e ( _robot_8cm (1 -> -> 110 `i `uc ]
 "323
 [; ;robotmain.c: 323:         TMR0_StartTimer();
 [e ( _TMR0_StartTimer ..  ]
