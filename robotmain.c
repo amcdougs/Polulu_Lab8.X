@@ -17,7 +17,7 @@
 #include "../Common/tmr2.h"
 #include "../Common/uart1.h"
 #include "../Common/uart2.h"
-#include "../Common/pololu_robot.h"
+#include "pololu_robot.h"
 
 #define TRUE    1
 #define FALSE   0
