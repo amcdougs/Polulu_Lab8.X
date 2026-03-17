@@ -29,6 +29,7 @@ void Diagnostic_Menu(void);
 char Get_Number(void);
 char Get_Key(void);
 void Countdown(char time);
+uint16_t counts;
 
 void main(void) 
 {
@@ -316,14 +317,19 @@ void main(void)
         __delay_ms(1);
         //  Start robot moving using 3pi PD function
         //  Speed = 30; a = 1; b = 20; c = 3; d = 2
-        while(!UART1_is_tx_ready()) continue;
-                    UART1_Write(FORWARD_LEFT);
-                    while(!UART1_is_tx_ready()) continue;
-                    UART1_Write(25);
-                    while(!UART1_is_tx_ready()) continue;
-                    UART1_Write(FORWARD_RIGHT);
-                    while(!UART1_is_tx_ready()) continue;
-                    UART1_Write(25);
+        TMR0_Initialize(T0_16_BIT & T0_POST_1_2, T0_SOURCE_INT & T0_SYNC & T0_PRE_1_256);
+        TMR0_StartTimer();
+        TMR0IF = 0;
+        Forward(25);
+       
+        while(1){
+            counts = TMR0_Read16BitTimer(); 
+            
+            if(counts >= 58592 && TMR0IF == 1){
+                Stop();
+            }
+            //do nothing 
+        }
         
     }
 }

@@ -27654,12 +27654,27 @@ void LCD_Position(char x, char y)
 
 void Forward(char speed)
 {
-
+                    while(!UART1_is_tx_ready()) continue;
+                    UART1_Write(0xC1);
+                    while(!UART1_is_tx_ready()) continue;
+                    UART1_Write(speed);
+                    while(!UART1_is_tx_ready()) continue;
+                    UART1_Write(0xC5);
+                    while(!UART1_is_tx_ready()) continue;
+                    UART1_Write(speed);
 }
 
 void Backward(char speed)
 {
 
+                    while(!UART1_is_tx_ready()) continue;
+                    UART1_Write(0xC1);
+                    while(!UART1_is_tx_ready()) continue;
+                    UART1_Write(speed);
+                    while(!UART1_is_tx_ready()) continue;
+                    UART1_Write(0xC5);
+                    while(!UART1_is_tx_ready()) continue;
+                    UART1_Write(speed);
 }
 
 void Left_Turn(char speed, char differential)

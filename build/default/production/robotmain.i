@@ -27917,6 +27917,7 @@ void Diagnostic_Menu(void);
 char Get_Number(void);
 char Get_Key(void);
 void Countdown(char time);
+uint16_t counts;
 
 void main(void)
 {
@@ -28204,14 +28205,19 @@ void main(void)
         _delay((unsigned long)((1)*(48000000/4000.0)));
 
 
-        while(!UART1_is_tx_ready()) continue;
-                    UART1_Write(0xC1);
-                    while(!UART1_is_tx_ready()) continue;
-                    UART1_Write(25);
-                    while(!UART1_is_tx_ready()) continue;
-                    UART1_Write(0xC5);
-                    while(!UART1_is_tx_ready()) continue;
-                    UART1_Write(25);
+        TMR0_Initialize(0x9F & 0x91, 0x5F & 0xEF & 0xF8);
+        TMR0_StartTimer();
+        TMR0IF = 0;
+        Forward(25);
+
+        while(1){
+            counts = TMR0_Read16BitTimer();
+
+            if(counts >= 58592 && TMR0IF == 1){
+                Stop();
+            }
+
+        }
 
     }
 }
