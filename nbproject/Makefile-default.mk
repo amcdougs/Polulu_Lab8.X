@@ -51,17 +51,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=robotmain.c ../Common/LCD_Cmds.c ../Common/adcc.c ../Common/device_config.c ../Common/i2c1_master.c ../Common/initialize.c ../Common/pin_manager.c ../Common/pololu_robot.c ../Common/pwm7.c ../Common/tmr0.c ../Common/tmr2.c ../Common/uart1.c ../Common/uart2.c
+SOURCEFILES_QUOTED_IF_SPACED=robotmain.c ../Common/adcc.c ../Common/device_config.c ../Common/i2c1_master.c ../Common/initialize.c ../Common/pin_manager.c ../Common/pwm7.c ../Common/tmr0.c ../Common/tmr2.c ../Common/uart1.c ../Common/uart2.c pololu_robot.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/robotmain.p1 ${OBJECTDIR}/_ext/2108356922/LCD_Cmds.p1 ${OBJECTDIR}/_ext/2108356922/adcc.p1 ${OBJECTDIR}/_ext/2108356922/device_config.p1 ${OBJECTDIR}/_ext/2108356922/i2c1_master.p1 ${OBJECTDIR}/_ext/2108356922/initialize.p1 ${OBJECTDIR}/_ext/2108356922/pin_manager.p1 ${OBJECTDIR}/_ext/2108356922/pololu_robot.p1 ${OBJECTDIR}/_ext/2108356922/pwm7.p1 ${OBJECTDIR}/_ext/2108356922/tmr0.p1 ${OBJECTDIR}/_ext/2108356922/tmr2.p1 ${OBJECTDIR}/_ext/2108356922/uart1.p1 ${OBJECTDIR}/_ext/2108356922/uart2.p1
-POSSIBLE_DEPFILES=${OBJECTDIR}/robotmain.p1.d ${OBJECTDIR}/_ext/2108356922/LCD_Cmds.p1.d ${OBJECTDIR}/_ext/2108356922/adcc.p1.d ${OBJECTDIR}/_ext/2108356922/device_config.p1.d ${OBJECTDIR}/_ext/2108356922/i2c1_master.p1.d ${OBJECTDIR}/_ext/2108356922/initialize.p1.d ${OBJECTDIR}/_ext/2108356922/pin_manager.p1.d ${OBJECTDIR}/_ext/2108356922/pololu_robot.p1.d ${OBJECTDIR}/_ext/2108356922/pwm7.p1.d ${OBJECTDIR}/_ext/2108356922/tmr0.p1.d ${OBJECTDIR}/_ext/2108356922/tmr2.p1.d ${OBJECTDIR}/_ext/2108356922/uart1.p1.d ${OBJECTDIR}/_ext/2108356922/uart2.p1.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/robotmain.p1 ${OBJECTDIR}/_ext/2108356922/adcc.p1 ${OBJECTDIR}/_ext/2108356922/device_config.p1 ${OBJECTDIR}/_ext/2108356922/i2c1_master.p1 ${OBJECTDIR}/_ext/2108356922/initialize.p1 ${OBJECTDIR}/_ext/2108356922/pin_manager.p1 ${OBJECTDIR}/_ext/2108356922/pwm7.p1 ${OBJECTDIR}/_ext/2108356922/tmr0.p1 ${OBJECTDIR}/_ext/2108356922/tmr2.p1 ${OBJECTDIR}/_ext/2108356922/uart1.p1 ${OBJECTDIR}/_ext/2108356922/uart2.p1 ${OBJECTDIR}/pololu_robot.p1
+POSSIBLE_DEPFILES=${OBJECTDIR}/robotmain.p1.d ${OBJECTDIR}/_ext/2108356922/adcc.p1.d ${OBJECTDIR}/_ext/2108356922/device_config.p1.d ${OBJECTDIR}/_ext/2108356922/i2c1_master.p1.d ${OBJECTDIR}/_ext/2108356922/initialize.p1.d ${OBJECTDIR}/_ext/2108356922/pin_manager.p1.d ${OBJECTDIR}/_ext/2108356922/pwm7.p1.d ${OBJECTDIR}/_ext/2108356922/tmr0.p1.d ${OBJECTDIR}/_ext/2108356922/tmr2.p1.d ${OBJECTDIR}/_ext/2108356922/uart1.p1.d ${OBJECTDIR}/_ext/2108356922/uart2.p1.d ${OBJECTDIR}/pololu_robot.p1.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/robotmain.p1 ${OBJECTDIR}/_ext/2108356922/LCD_Cmds.p1 ${OBJECTDIR}/_ext/2108356922/adcc.p1 ${OBJECTDIR}/_ext/2108356922/device_config.p1 ${OBJECTDIR}/_ext/2108356922/i2c1_master.p1 ${OBJECTDIR}/_ext/2108356922/initialize.p1 ${OBJECTDIR}/_ext/2108356922/pin_manager.p1 ${OBJECTDIR}/_ext/2108356922/pololu_robot.p1 ${OBJECTDIR}/_ext/2108356922/pwm7.p1 ${OBJECTDIR}/_ext/2108356922/tmr0.p1 ${OBJECTDIR}/_ext/2108356922/tmr2.p1 ${OBJECTDIR}/_ext/2108356922/uart1.p1 ${OBJECTDIR}/_ext/2108356922/uart2.p1
+OBJECTFILES=${OBJECTDIR}/robotmain.p1 ${OBJECTDIR}/_ext/2108356922/adcc.p1 ${OBJECTDIR}/_ext/2108356922/device_config.p1 ${OBJECTDIR}/_ext/2108356922/i2c1_master.p1 ${OBJECTDIR}/_ext/2108356922/initialize.p1 ${OBJECTDIR}/_ext/2108356922/pin_manager.p1 ${OBJECTDIR}/_ext/2108356922/pwm7.p1 ${OBJECTDIR}/_ext/2108356922/tmr0.p1 ${OBJECTDIR}/_ext/2108356922/tmr2.p1 ${OBJECTDIR}/_ext/2108356922/uart1.p1 ${OBJECTDIR}/_ext/2108356922/uart2.p1 ${OBJECTDIR}/pololu_robot.p1
 
 # Source Files
-SOURCEFILES=robotmain.c ../Common/LCD_Cmds.c ../Common/adcc.c ../Common/device_config.c ../Common/i2c1_master.c ../Common/initialize.c ../Common/pin_manager.c ../Common/pololu_robot.c ../Common/pwm7.c ../Common/tmr0.c ../Common/tmr2.c ../Common/uart1.c ../Common/uart2.c
+SOURCEFILES=robotmain.c ../Common/adcc.c ../Common/device_config.c ../Common/i2c1_master.c ../Common/initialize.c ../Common/pin_manager.c ../Common/pwm7.c ../Common/tmr0.c ../Common/tmr2.c ../Common/uart1.c ../Common/uart2.c pololu_robot.c
 
 
 
@@ -95,14 +95,6 @@ ${OBJECTDIR}/robotmain.p1: robotmain.c  nbproject/Makefile-${CND_CONF}.mk
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=none   -mdfp="${DFP_DIR}/xc8"  -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/robotmain.p1 robotmain.c 
 	@-${MV} ${OBJECTDIR}/robotmain.d ${OBJECTDIR}/robotmain.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/robotmain.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
-${OBJECTDIR}/_ext/2108356922/LCD_Cmds.p1: ../Common/LCD_Cmds.c  nbproject/Makefile-${CND_CONF}.mk 
-	@${MKDIR} "${OBJECTDIR}/_ext/2108356922" 
-	@${RM} ${OBJECTDIR}/_ext/2108356922/LCD_Cmds.p1.d 
-	@${RM} ${OBJECTDIR}/_ext/2108356922/LCD_Cmds.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=none   -mdfp="${DFP_DIR}/xc8"  -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/_ext/2108356922/LCD_Cmds.p1 ../Common/LCD_Cmds.c 
-	@-${MV} ${OBJECTDIR}/_ext/2108356922/LCD_Cmds.d ${OBJECTDIR}/_ext/2108356922/LCD_Cmds.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/_ext/2108356922/LCD_Cmds.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 ${OBJECTDIR}/_ext/2108356922/adcc.p1: ../Common/adcc.c  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}/_ext/2108356922" 
@@ -144,14 +136,6 @@ ${OBJECTDIR}/_ext/2108356922/pin_manager.p1: ../Common/pin_manager.c  nbproject/
 	@-${MV} ${OBJECTDIR}/_ext/2108356922/pin_manager.d ${OBJECTDIR}/_ext/2108356922/pin_manager.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/_ext/2108356922/pin_manager.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/_ext/2108356922/pololu_robot.p1: ../Common/pololu_robot.c  nbproject/Makefile-${CND_CONF}.mk 
-	@${MKDIR} "${OBJECTDIR}/_ext/2108356922" 
-	@${RM} ${OBJECTDIR}/_ext/2108356922/pololu_robot.p1.d 
-	@${RM} ${OBJECTDIR}/_ext/2108356922/pololu_robot.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=none   -mdfp="${DFP_DIR}/xc8"  -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/_ext/2108356922/pololu_robot.p1 ../Common/pololu_robot.c 
-	@-${MV} ${OBJECTDIR}/_ext/2108356922/pololu_robot.d ${OBJECTDIR}/_ext/2108356922/pololu_robot.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/_ext/2108356922/pololu_robot.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
 ${OBJECTDIR}/_ext/2108356922/pwm7.p1: ../Common/pwm7.c  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}/_ext/2108356922" 
 	@${RM} ${OBJECTDIR}/_ext/2108356922/pwm7.p1.d 
@@ -192,6 +176,14 @@ ${OBJECTDIR}/_ext/2108356922/uart2.p1: ../Common/uart2.c  nbproject/Makefile-${C
 	@-${MV} ${OBJECTDIR}/_ext/2108356922/uart2.d ${OBJECTDIR}/_ext/2108356922/uart2.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/_ext/2108356922/uart2.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
+${OBJECTDIR}/pololu_robot.p1: pololu_robot.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/pololu_robot.p1.d 
+	@${RM} ${OBJECTDIR}/pololu_robot.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=none   -mdfp="${DFP_DIR}/xc8"  -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/pololu_robot.p1 pololu_robot.c 
+	@-${MV} ${OBJECTDIR}/pololu_robot.d ${OBJECTDIR}/pololu_robot.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/pololu_robot.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
 else
 ${OBJECTDIR}/robotmain.p1: robotmain.c  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}" 
@@ -200,14 +192,6 @@ ${OBJECTDIR}/robotmain.p1: robotmain.c  nbproject/Makefile-${CND_CONF}.mk
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/robotmain.p1 robotmain.c 
 	@-${MV} ${OBJECTDIR}/robotmain.d ${OBJECTDIR}/robotmain.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/robotmain.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
-${OBJECTDIR}/_ext/2108356922/LCD_Cmds.p1: ../Common/LCD_Cmds.c  nbproject/Makefile-${CND_CONF}.mk 
-	@${MKDIR} "${OBJECTDIR}/_ext/2108356922" 
-	@${RM} ${OBJECTDIR}/_ext/2108356922/LCD_Cmds.p1.d 
-	@${RM} ${OBJECTDIR}/_ext/2108356922/LCD_Cmds.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/_ext/2108356922/LCD_Cmds.p1 ../Common/LCD_Cmds.c 
-	@-${MV} ${OBJECTDIR}/_ext/2108356922/LCD_Cmds.d ${OBJECTDIR}/_ext/2108356922/LCD_Cmds.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/_ext/2108356922/LCD_Cmds.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 ${OBJECTDIR}/_ext/2108356922/adcc.p1: ../Common/adcc.c  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}/_ext/2108356922" 
@@ -249,14 +233,6 @@ ${OBJECTDIR}/_ext/2108356922/pin_manager.p1: ../Common/pin_manager.c  nbproject/
 	@-${MV} ${OBJECTDIR}/_ext/2108356922/pin_manager.d ${OBJECTDIR}/_ext/2108356922/pin_manager.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/_ext/2108356922/pin_manager.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/_ext/2108356922/pololu_robot.p1: ../Common/pololu_robot.c  nbproject/Makefile-${CND_CONF}.mk 
-	@${MKDIR} "${OBJECTDIR}/_ext/2108356922" 
-	@${RM} ${OBJECTDIR}/_ext/2108356922/pololu_robot.p1.d 
-	@${RM} ${OBJECTDIR}/_ext/2108356922/pololu_robot.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/_ext/2108356922/pololu_robot.p1 ../Common/pololu_robot.c 
-	@-${MV} ${OBJECTDIR}/_ext/2108356922/pololu_robot.d ${OBJECTDIR}/_ext/2108356922/pololu_robot.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/_ext/2108356922/pololu_robot.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
 ${OBJECTDIR}/_ext/2108356922/pwm7.p1: ../Common/pwm7.c  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}/_ext/2108356922" 
 	@${RM} ${OBJECTDIR}/_ext/2108356922/pwm7.p1.d 
@@ -296,6 +272,14 @@ ${OBJECTDIR}/_ext/2108356922/uart2.p1: ../Common/uart2.c  nbproject/Makefile-${C
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/_ext/2108356922/uart2.p1 ../Common/uart2.c 
 	@-${MV} ${OBJECTDIR}/_ext/2108356922/uart2.d ${OBJECTDIR}/_ext/2108356922/uart2.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/_ext/2108356922/uart2.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/pololu_robot.p1: pololu_robot.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/pololu_robot.p1.d 
+	@${RM} ${OBJECTDIR}/pololu_robot.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/pololu_robot.p1 pololu_robot.c 
+	@-${MV} ${OBJECTDIR}/pololu_robot.d ${OBJECTDIR}/pololu_robot.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/pololu_robot.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 endif
 

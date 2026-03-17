@@ -9,12 +9,12 @@
       <itemPath>../Common/i2c1_master.h</itemPath>
       <itemPath>../Common/initialize.h</itemPath>
       <itemPath>../Common/pin_manager.h</itemPath>
-      <itemPath>../Common/pololu_robot.h</itemPath>
       <itemPath>../Common/pwm7.h</itemPath>
       <itemPath>../Common/tmr0.h</itemPath>
       <itemPath>../Common/tmr2.h</itemPath>
       <itemPath>../Common/uart1.h</itemPath>
       <itemPath>../Common/uart2.h</itemPath>
+      <itemPath>pololu_robot.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -34,12 +34,12 @@
       <itemPath>../Common/i2c1_master.c</itemPath>
       <itemPath>../Common/initialize.c</itemPath>
       <itemPath>../Common/pin_manager.c</itemPath>
-      <itemPath>../Common/pololu_robot.c</itemPath>
       <itemPath>../Common/pwm7.c</itemPath>
       <itemPath>../Common/tmr0.c</itemPath>
       <itemPath>../Common/tmr2.c</itemPath>
       <itemPath>../Common/uart1.c</itemPath>
       <itemPath>../Common/uart2.c</itemPath>
+      <itemPath>pololu_robot.c</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
