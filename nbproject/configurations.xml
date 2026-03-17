@@ -29,7 +29,6 @@
                    displayName="Source Files"
                    projectFiles="true">
       <itemPath>robotmain.c</itemPath>
-      <itemPath>../Common/LCD_Cmds.c</itemPath>
       <itemPath>../Common/adcc.c</itemPath>
       <itemPath>../Common/device_config.c</itemPath>
       <itemPath>../Common/i2c1_master.c</itemPath>
