@@ -27577,8 +27577,22 @@ void Auto_Calibrate(void)
 unsigned int* Read_Calibrated_Sensors(void)
 {
 
+    while(!UART1_is_tx_ready()) continue;
+    UART1_Write(0x87);
+    unsigned char lbyte[5], ubyte[5], i;
+    static unsigned int values[5];
 
-    return 0;
+    while(!UART1_is_tx_ready()) continue;
+    UART1_Write(0x87);
+    for (i=0; i<5; i++)
+    {
+        while (!UART1_is_rx_ready()) continue;
+        lbyte[i] = UART1_Read();
+        while (!UART1_is_rx_ready()) continue;
+        ubyte[i] = UART1_Read();
+        values[i] = ubyte[i]*256 + lbyte[i];
+    }
+    return values;
 }
 
 unsigned int Read_Battery_Voltage(void)
@@ -27640,12 +27654,27 @@ void LCD_Position(char x, char y)
 
 void Forward(char speed)
 {
-
+                    while(!UART1_is_tx_ready()) continue;
+                    UART1_Write(0xC1);
+                    while(!UART1_is_tx_ready()) continue;
+                    UART1_Write(speed);
+                    while(!UART1_is_tx_ready()) continue;
+                    UART1_Write(0xC5);
+                    while(!UART1_is_tx_ready()) continue;
+                    UART1_Write(speed);
 }
 
 void Backward(char speed)
 {
 
+                    while(!UART1_is_tx_ready()) continue;
+                    UART1_Write(0xC1);
+                    while(!UART1_is_tx_ready()) continue;
+                    UART1_Write(speed);
+                    while(!UART1_is_tx_ready()) continue;
+                    UART1_Write(0xC5);
+                    while(!UART1_is_tx_ready()) continue;
+                    UART1_Write(speed);
 }
 
 void Left_Turn(char speed, char differential)
