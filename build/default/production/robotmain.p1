@@ -2429,8 +2429,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;robotmain.c: 39:     UART2_Initialize();
 [e ( _UART2_Initialize ..  ]
 "40
-[; ;robotmain.c: 40:     TMR0_Initialize(0x9F & 0x90, 0x5F & 0xEF & 0xF9);
-[e ( _TMR0_Initialize (2 , -> & -> 159 `i -> 144 `i `uc -> & & -> 95 `i -> 239 `i -> 249 `i `uc ]
+[; ;robotmain.c: 40:     TMR0_Initialize(0x9F & 0x90, 0x5F & 0xEF & 0xF0);
+[e ( _TMR0_Initialize (2 , -> & -> 159 `i -> 144 `i `uc -> & & -> 95 `i -> 239 `i -> 240 `i `uc ]
 "43
 [; ;robotmain.c: 43:     TRISBbits.TRISB5 = 1;
 [e = . . _TRISBbits 0 5 -> -> 1 `i `uc ]

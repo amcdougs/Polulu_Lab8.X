@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V3.10 build 20250813170317 
-                                                                                               Tue Mar 17 13:22:06 2026
+                                                                                               Tue Mar 17 13:43:54 2026
 
 Microchip MPLAB XC8 C Compiler v3.10 (Free license) build 20250813170317 Og1 
      1                           	processor	18F46K42
@@ -10636,8 +10636,8 @@ Microchip MPLAB XC8 C Compiler v3.10 (Free license) build 20250813170317 Og1
  10616                           ;robotmain.c: 39:     UART2_Initialize();
  10617   00EFC0  ECEF  F06F         	call	_UART2_Initialize	;wreg free
  10618                           
- 10619                           ;robotmain.c: 40:     TMR0_Initialize(0x9F & 0x90, 0x5F & 0xEF & 0xF9);
- 10620   00EFC4  0E49               	movlw	73
+ 10619                           ;robotmain.c: 40:     TMR0_Initialize(0x9F & 0x90, 0x5F & 0xEF & 0xF0);
+ 10620   00EFC4  0E40               	movlw	64
  10621   00EFC6  6E01               	movwf	TMR0_Initialize@TMR0control_1^0,c
  10622   00EFC8  0E90               	movlw	144
  10623   00EFCA  EC1E  F06F         	call	_TMR0_Initialize
@@ -18809,7 +18809,7 @@ DATA                 0      0     221      0.0%
 
 
 Microchip Technology PIC18 Macro Assembler V3.10 build 20250813170317 
-Symbol Table                                                                                   Tue Mar 17 13:22:06 2026
+Symbol Table                                                                                   Tue Mar 17 13:43:54 2026
 
                    __end_of_UART2_is_rx_ready DE68                                            l87 FA1A  
                                           l96 F16C                     __end_of_UART2_is_tx_ready DF66  

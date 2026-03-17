@@ -37,7 +37,7 @@ void main(void)
     PIN_MANAGER_Initialize();
     UART1_Initialize();
     UART2_Initialize();
-    TMR0_Initialize(T0_16_BIT & T0_POST_1_1, T0_SOURCE_INT & T0_SYNC & T0_PRE_1_512);
+    TMR0_Initialize(T0_16_BIT & T0_POST_1_1, T0_SOURCE_INT & T0_SYNC & T0_PRE_1_1);
     
     //  Pin settings
     TRISBbits.TRISB5 = INPUT;      //  Monitors value of RUN / DIAGNOSE switch

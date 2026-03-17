@@ -27925,7 +27925,7 @@ void main(void)
     PIN_MANAGER_Initialize();
     UART1_Initialize();
     UART2_Initialize();
-    TMR0_Initialize(0x9F & 0x90, 0x5F & 0xEF & 0xF9);
+    TMR0_Initialize(0x9F & 0x90, 0x5F & 0xEF & 0xF0);
 
 
     TRISBbits.TRISB5 = 1;
