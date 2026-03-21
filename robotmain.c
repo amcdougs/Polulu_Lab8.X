@@ -51,6 +51,10 @@ void main(void)
     unsigned int* sensor_value;
     bool white, black;
     unsigned int turn;
+    uint8_t lowerbyte[5];
+    uint8_t upperbyte[5];
+                    
+    uint16_t sensor_data[5];
             
 
     if (PORTBbits.RB5 == DIAGNOSE)      //  Run code in diagnostic mode
@@ -127,13 +131,29 @@ void main(void)
 
                     //  Add code to read calibrated values of all sensors
                     //  and print sensor number and values to CoolTerm/PuTTY
+                        while(!UART1_is_tx_ready()) continue; //found this code in the slides lmao 
+                        UART1_Write(0x87); //this gets you two bits so you gotta read the first and second 
+                        for(int i = 0; i < 5; i++){
+                            
+                        while(!UART1_is_rx_ready()) continue;
+                        lowerbyte[i] = UART1_Read(); //first 
+                        while(!UART1_is_rx_ready()) continue;
+                        upperbyte[i] = UART1_Read(); //second
+                        
+                        sensor_data[i] = upperbyte[i]*256 + lowerbyte[i]; //combine      
+                    }
+                        for(int i = 0; i < 5; i++){
+                            printf("Sensor. %d %u\n", i, sensor_data[i]); 
+                        }
+                    /*
+                     AIDEN TO-DO turn these values into 1 or 0s and return as array 
+                     * that way its was easier to read the values and check for stuff
+                     * ie sensor[3] == 1 means middle is black
+                     */
 
                     break;
                 case 'd':
-                    uint8_t lowerbyte[5];
-                    uint8_t upperbyte[5];
                     
-                    uint16_t sensor_data[5];
                     LCD_Clear();
                     LCD_Position(0,0);
                     LCD_Print("Sensor ", 7);
@@ -162,7 +182,7 @@ void main(void)
                         sensor_data[i] = upperbyte[i]*256 + lowerbyte[i]; //combine 
                     }
                     
-                    key = sensor - '1'; //this converts the key press to correct ascii 
+                    key = sensor - '0'; //this converts the key press to correct ascii 
                         printf("Sensor %d: %u\n", key, sensor_data[key]); 
                     
 
@@ -318,16 +338,13 @@ void main(void)
         __delay_ms(1);
         //  Start robot moving using 3pi PD function
         //  Speed = 30; a = 1; b = 20; c = 3; d = 2
-        TMR0_Initialize(T0_16_BIT & T0_POST_1_1, T0_SOURCE_INT & T0_SYNC & T0_PRE_1_512);
-        robot_8cm(110);
-        TMR0_StartTimer();
-        TMR0_Write16BitTimer(6942);
+        TMR0_Initialize(T0_16_BIT & T0_POST_1_1, T0_SOURCE_INT & T0_SYNC & T0_PRE_1_1);
         while(1){
-           
-            if(TMR0IF == 1){
-                Stop();
-            }
-            //do nothing 
+        TMR0_StartTimer();
+        Forward(20);
+        TMR0_StopTimer();
+        printf("timer = %u \n\r", TMR0_Read16BitTimer());
+        TMR0_Write16BitTimer(0);
         }
         
     }

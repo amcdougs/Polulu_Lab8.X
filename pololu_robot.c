@@ -10,6 +10,8 @@
 #include "../Common/uart1.h"
 #include "../Common/tmr0.h"
 
+uint16_t sensor_data[5]; //global otherwise the array gets fucked when called
+uint16_t sensor_values[5]; //global binary version of sensor data for easier reading 
 
 unsigned int* Calibrate_Sensors(void)
 {
@@ -46,24 +48,32 @@ void Auto_Calibrate(void)
 
 unsigned int* Read_Calibrated_Sensors(void)
 {
-    // >u<
-    while(!UART1_is_tx_ready()) continue;//checks uart is clear to send command
-    UART1_Write(READ_CALIBRATED_SENSORS); 
-    
-    unsigned char lbyte[5], ubyte[5], i;
-    static unsigned int values[5];
-    
-    while(!UART1_is_tx_ready()) continue;
-    UART1_Write(READ_CALIBRATED_SENSORS);
-    for (i=0; i<5; i++)//reads each sensor
-    {
-        while (!UART1_is_rx_ready()) continue;
-        lbyte[i] = UART1_Read();
-        while (!UART1_is_rx_ready()) continue;
-        ubyte[i] = UART1_Read();
-        values[i] = ubyte[i]*256 + lbyte[i];
+    uint8_t lowerbyte[5];
+    uint8_t upperbyte[5];
+                    
+    while(!UART1_is_tx_ready()) continue; 
+    UART1_Write(0x87); //recives two bytes must read each
+                    
+    for(int i = 0; i < 5; i++){
+                                          
+        while(!UART1_is_rx_ready()) continue;                
+        lowerbyte[i] = UART1_Read(); //first byte            
+        while(!UART1_is_rx_ready()) continue;                
+        upperbyte[i] = UART1_Read(); //second byte
+        
+        sensor_data[i] = upperbyte[i]*256 + lowerbyte[i]; //combine      
+     }
+    //by turning into 1 or 0 the array will be easier to use later on IMO-Aiden
+    for(int i = 0; i < 5; i++){
+        if(sensor_data[i] >= 500){ //if value greater than 500 make 1
+            sensor_values[i] = 1;
+        }else{
+            sensor_values[i] = 0; //if lower than 500 then 0
+        }
     }
-    return values; 
+                       
+    return sensor_values; //returns sensor data as array pointer.
+    
 }
 
 unsigned int Read_Battery_Voltage(void)
@@ -158,21 +168,50 @@ void Backward(char speed)
                     while(!UART1_is_tx_ready()) continue;
                     UART1_Write(FORWARD_RIGHT);
                     while(!UART1_is_tx_ready()) continue;
-                    UART1_Write((char) speed*spd_scl);
+                    UART1_Write((char) speed+1);
 }
 
 void Left_Turn(char speed, char differential)
 {
     //  Add code
+                    while(!UART1_is_tx_ready()) continue;
+                    UART1_Write(FORWARD_LEFT);
+                    while(!UART1_is_tx_ready()) continue;
+                    UART1_Write(speed);
+                    while(!UART1_is_tx_ready()) continue;
+                    UART1_Write(FORWARD_RIGHT);
+                    while(!UART1_is_tx_ready()) continue;
+                    UART1_Write((char) speed+1+differential);
 }
 
 void Right_Turn(char speed, char differential)
 {
     //  Add code
+                    while(!UART1_is_tx_ready()) continue;
+                    UART1_Write(FORWARD_LEFT);
+                    while(!UART1_is_tx_ready()) continue;
+                    UART1_Write(speed+differential);
+                    while(!UART1_is_tx_ready()) continue;
+                    UART1_Write(FORWARD_RIGHT);
+                    while(!UART1_is_tx_ready()) continue;
+                    UART1_Write((char) speed+1);
 }
 
 void Stop (void)
 {
     Forward(0);
+}
+
+void Turn_around(char speed){
+                    while(!UART1_is_tx_ready()) continue;
+                    UART1_Write(FORWARD_LEFT);
+                    while(!UART1_is_tx_ready()) continue;
+                    UART1_Write(speed);
+                    while(!UART1_is_tx_ready()) continue;
+                    UART1_Write(BACKWARD_RIGHT);
+                    while(!UART1_is_tx_ready()) continue;
+                    UART1_Write((char) speed+1);
+                    
+    //makes each wheel the same speed in opposite directions so it spins in place 
 }
 /*  END FILE    */
