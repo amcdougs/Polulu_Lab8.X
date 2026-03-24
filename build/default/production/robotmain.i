@@ -27845,7 +27845,7 @@ void UART2_SetOverrunErrorHandler(void (* interruptHandler)(void));
 void UART2_SetErrorHandler(void (* interruptHandler)(void));
 # 20 "robotmain.c" 2
 # 1 "./pololu_robot.h" 1
-# 23 "./pololu_robot.h"
+# 25 "./pololu_robot.h"
 unsigned int* Calibrate_Sensors(void);
 
 
@@ -27856,7 +27856,7 @@ void Auto_Calibrate(void);
 
 
 
-unsigned int* Read_Calibrated_Sensors(void);
+uint8_t Read_Calibrated_Sensors(void);
 
 
 
@@ -27907,6 +27907,8 @@ void Right_Turn(char speed, char differential);
 
 
 void Stop (void);
+
+void Turn_around(char speed);
 # 21 "robotmain.c" 2
 
 
@@ -27920,6 +27922,7 @@ char Get_Number(void);
 char Get_Key(void);
 void Countdown(char time);
 uint16_t counts;
+
 
 void main(void)
 {
@@ -27945,6 +27948,9 @@ void main(void)
     uint8_t upperbyte[5];
 
     uint16_t sensor_data[5];
+    uint8_t sensor_good;
+
+
 
 
     if (PORTBbits.RB5 == 0)
@@ -28228,13 +28234,74 @@ void main(void)
         _delay((unsigned long)((1)*(48000000/4000.0)));
 
 
+
+
+
+        _Bool L_Turn;
+        _Bool R_Turn;
+
         TMR0_Initialize(0x9F & 0x90, 0x5F & 0xEF & 0xF0);
+
         while(1){
-        TMR0_StartTimer();
-        Forward(20);
-        TMR0_StopTimer();
-        printf("timer = %u \n\r", TMR0_Read16BitTimer());
-        TMR0_Write16BitTimer(0);
+            L_Turn = 0;
+            R_Turn = 0;
+
+            uint8_t giggity = Read_Calibrated_Sensors();
+            switch(giggity){
+                case 0b00000100:
+                    while(!UART1_is_tx_ready()) continue;
+                    UART1_Write(0xBB);
+                    while(!UART1_is_tx_ready()) continue;
+                    UART1_Write(20);
+                    while(!UART1_is_tx_ready()) continue;
+                    UART1_Write(1);
+                    while(!UART1_is_tx_ready()) continue;
+                    UART1_Write(20);
+                    while(!UART1_is_tx_ready()) continue;
+                    UART1_Write(3);
+                    while(!UART1_is_tx_ready()) continue;
+                    UART1_Write(2);
+                    break;
+
+                case 0b00010000:
+                case 0b00001000:
+                case 0b00011000:
+                    while(!UART1_is_tx_ready()) continue;
+                    UART1_Write(0xBC);
+                    Left_Turn(0,30);
+                    _delay((unsigned long)((200)*(48000000/4000.0)));
+                    L_Turn = 1;
+                    break;
+
+                case 0b00000001:
+                case 0b00000010:
+                case 0b00000011:
+                    while(!UART1_is_tx_ready()) continue;
+                    UART1_Write(0xBC);
+                    Right_Turn(0,30);
+                    _delay((unsigned long)((200)*(48000000/4000.0)));
+                    R_Turn = 1;
+                    break;
+                case 0b00000000:
+                    if(L_Turn == 1){
+                     while(!UART1_is_tx_ready()) continue;
+                    UART1_Write(0xBC);
+                    Left_Turn(0,30);
+                    _delay((unsigned long)((200)*(48000000/4000.0)));
+                    }else if(R_Turn == 1){
+                        while(!UART1_is_tx_ready()) continue;
+                        UART1_Write(0xBC);
+                       Right_Turn(0,30);
+                        _delay((unsigned long)((200)*(48000000/4000.0)));
+
+                    }
+
+                    _delay((unsigned long)((150)*(48000000/4000.0)));
+                    while(!UART1_is_tx_ready()) continue;
+                    UART1_Write(0xBC);
+                    break;
+            }
+
         }
 
     }

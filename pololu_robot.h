@@ -4,6 +4,8 @@
  
     09-MAR-2021
 *****/
+#include <stdint.h>
+
 #define spd_scl 1.025//put on right wheel speed
 
 #define READ_CALIBRATED_SENSORS 0x87
@@ -30,7 +32,7 @@ void Auto_Calibrate(void);
 
 //  Reads each of the sensor values and returns a 2-byte value for each of the 
 //  five sensors - total of 10 bytes are returned.
-unsigned int* Read_Calibrated_Sensors(void);
+uint8_t Read_Calibrated_Sensors(void);
 
 
 //  Returns battery voltage in mV
@@ -81,5 +83,9 @@ void Right_Turn(char speed, char differential);
 
 //  Both wheels move at speed zero
 void Stop (void);
+
+void Turn_around(char speed);
+
+//makes it turn around its in the name you dumbass
 
 /*  END FILE    */

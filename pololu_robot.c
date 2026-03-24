@@ -46,10 +46,11 @@ void Auto_Calibrate(void)
     }  
 }
 
-unsigned int* Read_Calibrated_Sensors(void)
+uint8_t Read_Calibrated_Sensors(void)
 {
     uint8_t lowerbyte[5];
     uint8_t upperbyte[5];
+    uint8_t sensor_bits;
                     
     while(!UART1_is_tx_ready()) continue; 
     UART1_Write(0x87); //recives two bytes must read each
@@ -69,11 +70,15 @@ unsigned int* Read_Calibrated_Sensors(void)
             sensor_values[i] = 1;
         }else{
             sensor_values[i] = 0; //if lower than 500 then 0
-        }
+        } 
     }
-                       
-    return sensor_values; //returns sensor data as array pointer.
+        
     
+    sensor_bits = (sensor_values[0] << 4 | sensor_values[1] << 3 | sensor_values[2] << 2
+           | sensor_values[3] << 1 | sensor_values[4]);
+    return sensor_bits; //now returns it as a 8 bit. first 5 bits used
+    //00100
+    //case 0b0000 0100 middle
 }
 
 unsigned int Read_Battery_Voltage(void)

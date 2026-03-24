@@ -31,6 +31,7 @@ char Get_Key(void);
 void Countdown(char time);
 uint16_t counts;
 
+
 void main(void) 
 {
     SYSTEM_Initialize();
@@ -55,6 +56,9 @@ void main(void)
     uint8_t upperbyte[5];
                     
     uint16_t sensor_data[5];
+    uint8_t sensor_good; //TO-DO AIDEN ADD THE CODE FOR THIS
+    
+       
             
 
     if (PORTBbits.RB5 == DIAGNOSE)      //  Run code in diagnostic mode
@@ -338,13 +342,74 @@ void main(void)
         __delay_ms(1);
         //  Start robot moving using 3pi PD function
         //  Speed = 30; a = 1; b = 20; c = 3; d = 2
+        
+        
+        
+        bool L_Turn;
+        bool R_Turn;
+        
         TMR0_Initialize(T0_16_BIT & T0_POST_1_1, T0_SOURCE_INT & T0_SYNC & T0_PRE_1_1);
+        
         while(1){
-        TMR0_StartTimer();
-        Forward(20);
-        TMR0_StopTimer();
-        printf("timer = %u \n\r", TMR0_Read16BitTimer());
-        TMR0_Write16BitTimer(0);
+            L_Turn = false;
+            R_Turn = false;
+                    
+            uint8_t giggity = Read_Calibrated_Sensors();
+            switch(giggity){
+                case 0b00000100: //forward
+                    while(!UART1_is_tx_ready()) continue;
+                    UART1_Write(0xBB);
+                    while(!UART1_is_tx_ready()) continue;
+                    UART1_Write(20);
+                    while(!UART1_is_tx_ready()) continue;
+                    UART1_Write(1);
+                    while(!UART1_is_tx_ready()) continue;
+                    UART1_Write(20);
+                    while(!UART1_is_tx_ready()) continue;
+                    UART1_Write(3);
+                    while(!UART1_is_tx_ready()) continue;
+                    UART1_Write(2); 
+                    break;
+                    
+                case 0b00010000: //left
+                case 0b00001000:
+                case 0b00011000:
+                    while(!UART1_is_tx_ready()) continue;
+                    UART1_Write(0xBC);
+                    Left_Turn(0,30);
+                    __delay_ms(200); 
+                    L_Turn = true;
+                    break;
+                    
+                case 0b00000001:
+                case 0b00000010:
+                case 0b00000011:
+                    while(!UART1_is_tx_ready()) continue;
+                    UART1_Write(0xBC); 
+                    Right_Turn(0,30);
+                    __delay_ms(200);
+                    R_Turn = true;
+                    break;
+                case 0b00000000: //stop
+                    if(L_Turn == true){ //HARD LEFT only if last thing was a turn
+                     while(!UART1_is_tx_ready()) continue;
+                    UART1_Write(0xBC);
+                    Left_Turn(0,30);
+                    __delay_ms(200); 
+                    }else if(R_Turn == true){ //HARD RIGHT give another lil bit of turn time 
+                        while(!UART1_is_tx_ready()) continue;
+                        UART1_Write(0xBC); 
+                       Right_Turn(0,30);
+                        __delay_ms(200);
+                    
+                    }
+                        
+                    __delay_ms(150);
+                    while(!UART1_is_tx_ready()) continue;
+                    UART1_Write(0xBC);
+                    break;
+            }
+        
         }
         
     }
