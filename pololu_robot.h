@@ -86,6 +86,10 @@ void Stop (void);
 
 void Turn_around(char speed);
 
-//makes it turn around its in the name you dumbass
+void Hard_Left(char speed, char speed2);
+
+void Hard_Right(char speed, char speed2);
+
+
 
 /*  END FILE    */

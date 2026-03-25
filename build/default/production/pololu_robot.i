@@ -191,6 +191,10 @@ void Right_Turn(char speed, char differential);
 void Stop (void);
 
 void Turn_around(char speed);
+
+void Hard_Left(char speed, char speed2);
+
+void Hard_Right(char speed, char speed2);
 # 9 "pololu_robot.c" 2
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/stdio.h" 1 3
 # 10 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/stdio.h" 3
@@ -27734,11 +27738,11 @@ void Backward(char speed)
 {
 
                     while(!UART1_is_tx_ready()) continue;
-                    UART1_Write(0xC1);
+                    UART1_Write(0xC2);
                     while(!UART1_is_tx_ready()) continue;
                     UART1_Write(speed);
                     while(!UART1_is_tx_ready()) continue;
-                    UART1_Write(0xC5);
+                    UART1_Write(0xC6);
                     while(!UART1_is_tx_ready()) continue;
                     UART1_Write((char) speed+1);
 }
@@ -27784,5 +27788,29 @@ void Turn_around(char speed){
                     while(!UART1_is_tx_ready()) continue;
                     UART1_Write((char) speed+1);
 
+
+}
+
+void Hard_Right(char speed, char speed2){
+                    while(!UART1_is_tx_ready()) continue;
+                    UART1_Write(0xC1);
+                    while(!UART1_is_tx_ready()) continue;
+                    UART1_Write(speed);
+                    while(!UART1_is_tx_ready()) continue;
+                    UART1_Write(0xC6);
+                    while(!UART1_is_tx_ready()) continue;
+                    UART1_Write((char) speed+1);
+
+}
+
+void Hard_Left(char speed, char speed2){
+                    while(!UART1_is_tx_ready()) continue;
+                    UART1_Write(0xC5);
+                    while(!UART1_is_tx_ready()) continue;
+                    UART1_Write(speed);
+                    while(!UART1_is_tx_ready()) continue;
+                    UART1_Write(0xC2);
+                    while(!UART1_is_tx_ready()) continue;
+                    UART1_Write((char) speed+1);
 
 }

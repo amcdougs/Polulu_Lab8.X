@@ -407,6 +407,9 @@ void main(void)
                     __delay_ms(150);
                     while(!UART1_is_tx_ready()) continue;
                     UART1_Write(0xBC);
+                    robot_8cm(20);
+                    Turn_around(20);
+                    robot_8cm(20);
                     break;
             }
         

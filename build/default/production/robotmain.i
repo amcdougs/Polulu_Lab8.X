@@ -27909,6 +27909,10 @@ void Right_Turn(char speed, char differential);
 void Stop (void);
 
 void Turn_around(char speed);
+
+void Hard_Left(char speed, char speed2);
+
+void Hard_Right(char speed, char speed2);
 # 21 "robotmain.c" 2
 
 
@@ -28299,6 +28303,9 @@ void main(void)
                     _delay((unsigned long)((150)*(48000000/4000.0)));
                     while(!UART1_is_tx_ready()) continue;
                     UART1_Write(0xBC);
+                    robot_8cm(20);
+                    Turn_around(20);
+                    robot_8cm(20);
                     break;
             }
 

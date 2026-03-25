@@ -167,11 +167,11 @@ void Backward(char speed)
 {
     //  Add code
                     while(!UART1_is_tx_ready()) continue;
-                    UART1_Write(FORWARD_LEFT);
+                    UART1_Write(BACKWARD_LEFT);
                     while(!UART1_is_tx_ready()) continue;
                     UART1_Write(speed);
                     while(!UART1_is_tx_ready()) continue;
-                    UART1_Write(FORWARD_RIGHT);
+                    UART1_Write(BACKWARD_RIGHT);
                     while(!UART1_is_tx_ready()) continue;
                     UART1_Write((char) speed+1);
 }
@@ -218,5 +218,29 @@ void Turn_around(char speed){
                     UART1_Write((char) speed+1);
                     
     //makes each wheel the same speed in opposite directions so it spins in place 
+}
+
+void Hard_Right(char speed, char speed2){
+                    while(!UART1_is_tx_ready()) continue;
+                    UART1_Write(FORWARD_LEFT);
+                    while(!UART1_is_tx_ready()) continue;
+                    UART1_Write(speed);
+                    while(!UART1_is_tx_ready()) continue;
+                    UART1_Write(BACKWARD_RIGHT);
+                    while(!UART1_is_tx_ready()) continue;
+                    UART1_Write((char) speed+1);
+    
+}
+
+void Hard_Left(char speed, char speed2){
+                    while(!UART1_is_tx_ready()) continue;
+                    UART1_Write(FORWARD_RIGHT);
+                    while(!UART1_is_tx_ready()) continue;
+                    UART1_Write(speed);
+                    while(!UART1_is_tx_ready()) continue;
+                    UART1_Write(BACKWARD_LEFT);
+                    while(!UART1_is_tx_ready()) continue;
+                    UART1_Write((char) speed+1);
+    
 }
 /*  END FILE    */

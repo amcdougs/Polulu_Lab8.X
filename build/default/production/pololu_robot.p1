@@ -2312,7 +2312,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _i `uc ~T0 @X0 1 a ]
 "19
 [; ;pololu_robot.c: 19:     static unsigned int values[5];
-[v F16635 `ui ~T0 @X0 -> 5 `i s values ]
+[v F16641 `ui ~T0 @X0 -> 5 `i s values ]
 "21
 [; ;pololu_robot.c: 21:     while(!UART1_is_tx_ready()) continue;
 [e $U 2273  ]
@@ -2358,7 +2358,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = *U + &U _ubyte * -> _i `ux -> -> # *U &U _ubyte `ui `ux ( _UART1_Read ..  ]
 "29
 [; ;pololu_robot.c: 29:         values[i] = ubyte[i]*256 + lbyte[i];
-[e = *U + &U F16635 * -> _i `ux -> -> # *U &U F16635 `ui `ux -> + * -> *U + &U _ubyte * -> _i `ux -> -> # *U &U _ubyte `ui `ux `i -> 256 `i -> *U + &U _lbyte * -> _i `ux -> -> # *U &U _lbyte `ui `ux `i `ui ]
+[e = *U + &U F16641 * -> _i `ux -> -> # *U &U F16641 `ui `ux -> + * -> *U + &U _ubyte * -> _i `ux -> -> # *U &U _ubyte `ui `ux `i -> 256 `i -> *U + &U _lbyte * -> _i `ux -> -> # *U &U _lbyte `ui `ux `i `ui ]
 "30
 [; ;pololu_robot.c: 30:     }
 }
@@ -2368,7 +2368,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 "31
 [; ;pololu_robot.c: 31:     return values;
-[e ) &U F16635 ]
+[e ) &U F16641 ]
 [e $UE 2272  ]
 "32
 [; ;pololu_robot.c: 32: }
@@ -2939,8 +2939,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2380  ]
 [e :U 2381 ]
 "170
-[; ;pololu_robot.c: 170:                     UART1_Write(0xC1);
-[e ( _UART1_Write (1 -> -> 193 `i `uc ]
+[; ;pololu_robot.c: 170:                     UART1_Write(0xC2);
+[e ( _UART1_Write (1 -> -> 194 `i `uc ]
 "171
 [; ;pololu_robot.c: 171:                     while(!UART1_is_tx_ready()) continue;
 [e $U 2382  ]
@@ -2961,8 +2961,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2386  ]
 [e :U 2387 ]
 "174
-[; ;pololu_robot.c: 174:                     UART1_Write(0xC5);
-[e ( _UART1_Write (1 -> -> 197 `i `uc ]
+[; ;pololu_robot.c: 174:                     UART1_Write(0xC6);
+[e ( _UART1_Write (1 -> -> 198 `i `uc ]
 "175
 [; ;pololu_robot.c: 175:                     while(!UART1_is_tx_ready()) continue;
 [e $U 2388  ]
@@ -3171,4 +3171,116 @@ Version 4.0 HI-TECH Software Intermediate Code
 "221
 [; ;pololu_robot.c: 221: }
 [e :UE 2418 ]
+}
+"223
+[; ;pololu_robot.c: 223: void Hard_Right(char speed, char speed2){
+[v _Hard_Right `(v ~T0 @X0 1 ef2`uc`uc ]
+{
+[e :U _Hard_Right ]
+[v _speed `uc ~T0 @X0 1 r1 ]
+[v _speed2 `uc ~T0 @X0 1 r2 ]
+[f ]
+"224
+[; ;pololu_robot.c: 224:                     while(!UART1_is_tx_ready()) continue;
+[e $U 2432  ]
+[e :U 2433 ]
+[e $U 2432  ]
+[e :U 2432 ]
+[e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2433  ]
+[e :U 2434 ]
+"225
+[; ;pololu_robot.c: 225:                     UART1_Write(0xC1);
+[e ( _UART1_Write (1 -> -> 193 `i `uc ]
+"226
+[; ;pololu_robot.c: 226:                     while(!UART1_is_tx_ready()) continue;
+[e $U 2435  ]
+[e :U 2436 ]
+[e $U 2435  ]
+[e :U 2435 ]
+[e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2436  ]
+[e :U 2437 ]
+"227
+[; ;pololu_robot.c: 227:                     UART1_Write(speed);
+[e ( _UART1_Write (1 -> _speed `uc ]
+"228
+[; ;pololu_robot.c: 228:                     while(!UART1_is_tx_ready()) continue;
+[e $U 2438  ]
+[e :U 2439 ]
+[e $U 2438  ]
+[e :U 2438 ]
+[e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2439  ]
+[e :U 2440 ]
+"229
+[; ;pololu_robot.c: 229:                     UART1_Write(0xC6);
+[e ( _UART1_Write (1 -> -> 198 `i `uc ]
+"230
+[; ;pololu_robot.c: 230:                     while(!UART1_is_tx_ready()) continue;
+[e $U 2441  ]
+[e :U 2442 ]
+[e $U 2441  ]
+[e :U 2441 ]
+[e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2442  ]
+[e :U 2443 ]
+"231
+[; ;pololu_robot.c: 231:                     UART1_Write((char) speed+1);
+[e ( _UART1_Write (1 -> + -> _speed `i -> 1 `i `uc ]
+"233
+[; ;pololu_robot.c: 233: }
+[e :UE 2431 ]
+}
+"235
+[; ;pololu_robot.c: 235: void Hard_Left(char speed, char speed2){
+[v _Hard_Left `(v ~T0 @X0 1 ef2`uc`uc ]
+{
+[e :U _Hard_Left ]
+[v _speed `uc ~T0 @X0 1 r1 ]
+[v _speed2 `uc ~T0 @X0 1 r2 ]
+[f ]
+"236
+[; ;pololu_robot.c: 236:                     while(!UART1_is_tx_ready()) continue;
+[e $U 2445  ]
+[e :U 2446 ]
+[e $U 2445  ]
+[e :U 2445 ]
+[e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2446  ]
+[e :U 2447 ]
+"237
+[; ;pololu_robot.c: 237:                     UART1_Write(0xC5);
+[e ( _UART1_Write (1 -> -> 197 `i `uc ]
+"238
+[; ;pololu_robot.c: 238:                     while(!UART1_is_tx_ready()) continue;
+[e $U 2448  ]
+[e :U 2449 ]
+[e $U 2448  ]
+[e :U 2448 ]
+[e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2449  ]
+[e :U 2450 ]
+"239
+[; ;pololu_robot.c: 239:                     UART1_Write(speed);
+[e ( _UART1_Write (1 -> _speed `uc ]
+"240
+[; ;pololu_robot.c: 240:                     while(!UART1_is_tx_ready()) continue;
+[e $U 2451  ]
+[e :U 2452 ]
+[e $U 2451  ]
+[e :U 2451 ]
+[e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2452  ]
+[e :U 2453 ]
+"241
+[; ;pololu_robot.c: 241:                     UART1_Write(0xC2);
+[e ( _UART1_Write (1 -> -> 194 `i `uc ]
+"242
+[; ;pololu_robot.c: 242:                     while(!UART1_is_tx_ready()) continue;
+[e $U 2454  ]
+[e :U 2455 ]
+[e $U 2454  ]
+[e :U 2454 ]
+[e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2455  ]
+[e :U 2456 ]
+"243
+[; ;pololu_robot.c: 243:                     UART1_Write((char) speed+1);
+[e ( _UART1_Write (1 -> + -> _speed `i -> 1 `i `uc ]
+"245
+[; ;pololu_robot.c: 245: }
+[e :UE 2444 ]
 }
