@@ -90,6 +90,10 @@ void Hard_Left(char speed, char speed2);
 
 void Hard_Right(char speed, char speed2);
 
+void PID_Init(void);
+
+void PID_Start(void);
+
 
 
 /*  END FILE    */

@@ -27913,6 +27913,10 @@ void Turn_around(char speed);
 void Hard_Left(char speed, char speed2);
 
 void Hard_Right(char speed, char speed2);
+
+void PID_Init(void);
+
+void PID_Start(void);
 # 21 "robotmain.c" 2
 
 
@@ -28245,46 +28249,61 @@ void main(void)
         _Bool R_Turn;
 
         TMR0_Initialize(0x9F & 0x90, 0x5F & 0xEF & 0xF0);
-
+        PID_Init();
         while(1){
-            L_Turn = 0;
-            R_Turn = 0;
+
 
             uint8_t giggity = Read_Calibrated_Sensors();
+
             switch(giggity){
                 case 0b00000100:
-                    while(!UART1_is_tx_ready()) continue;
-                    UART1_Write(0xBB);
-                    while(!UART1_is_tx_ready()) continue;
-                    UART1_Write(20);
-                    while(!UART1_is_tx_ready()) continue;
-                    UART1_Write(1);
-                    while(!UART1_is_tx_ready()) continue;
-                    UART1_Write(20);
-                    while(!UART1_is_tx_ready()) continue;
-                    UART1_Write(3);
-                    while(!UART1_is_tx_ready()) continue;
-                    UART1_Write(2);
+                    PID_Start();
+                    L_Turn = 0;
+                    R_Turn = 0;
                     break;
 
-                case 0b00010000:
                 case 0b00001000:
-                case 0b00011000:
+                    while(!UART1_is_tx_ready()) continue;
+                    L_Turn = 1;
+                    UART1_Write(0xBC);
+                    while(giggity != 0b00000100){
+                        Left_Turn(0,30);
+                    giggity = Read_Calibrated_Sensors();
+                    }
+                    break;
+
+                case 0b00000010:
                     while(!UART1_is_tx_ready()) continue;
                     UART1_Write(0xBC);
-                    Left_Turn(0,30);
-                    _delay((unsigned long)((200)*(48000000/4000.0)));
+                    R_Turn = 1;
+                    while(giggity != 0b00000100){
+                        Right_Turn(0,30);
+                    giggity = Read_Calibrated_Sensors();
+                    }
+                    break;
+                case 0b00010000:
+                case 0b00010100:
+                    while(!UART1_is_tx_ready()) continue;
                     L_Turn = 1;
+                    UART1_Write(0xBC);
+                    while((giggity & 0b00001110) == 0){
+                        Hard_Left(10,10);
+                    giggity = Read_Calibrated_Sensors();
+                    }
+
+
                     break;
 
                 case 0b00000001:
-                case 0b00000010:
-                case 0b00000011:
+                case 0b00000101:
                     while(!UART1_is_tx_ready()) continue;
                     UART1_Write(0xBC);
-                    Right_Turn(0,30);
-                    _delay((unsigned long)((200)*(48000000/4000.0)));
                     R_Turn = 1;
+                    while((giggity & 0b00001110) == 0){
+                        Hard_Right(10,10);
+                    giggity = Read_Calibrated_Sensors();
+                    }
+
                     break;
                 case 0b00000000:
                     if(L_Turn == 1){

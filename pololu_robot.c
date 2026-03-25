@@ -243,4 +243,24 @@ void Hard_Left(char speed, char speed2){
                     UART1_Write((char) speed+1);
     
 }
+
+void PID_Init(void){
+                    while(!UART1_is_tx_ready()) continue;
+                    UART1_Write(0xBB);
+                    while(!UART1_is_tx_ready()) continue;
+                    UART1_Write(20);
+                    while(!UART1_is_tx_ready()) continue;
+                    UART1_Write(1);
+                    while(!UART1_is_tx_ready()) continue;
+                    UART1_Write(20);
+                    while(!UART1_is_tx_ready()) continue;
+                    UART1_Write(3);
+                    while(!UART1_is_tx_ready()) continue;
+                    UART1_Write(2);
+}
+
+void PID_Start(void){
+                    while(!UART1_is_tx_ready()) continue;
+                    UART1_Write(0xBB);
+}
 /*  END FILE    */
