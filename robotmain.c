@@ -45,6 +45,7 @@ void main(void)
     
     //  Variable declarations
     char key, speed, differential;
+    char key2;
     char i, length, any, sensor;
     char msg[9];
     unsigned int sum, battery;
@@ -131,7 +132,8 @@ void main(void)
 
                     //  Add code to read calibrated values of all sensors
                     //  and print sensor number and values to CoolTerm/PuTTY
-                        while(!UART1_is_tx_ready()) continue; //found this code in the slides lmao 
+                    while(1){
+                           while(!UART1_is_tx_ready()) continue; //found this code in the slides lmao 
                         UART1_Write(0x87); //this gets you two bits so you gotta read the first and second 
                         for(int i = 0; i < 5; i++){
                             
@@ -145,6 +147,13 @@ void main(void)
                         for(int i = 0; i < 5; i++){
                             printf("Sensor. %d %u\n", i, sensor_data[i]); 
                         }
+                        
+                        if(UART2_is_rx_ready() == true){
+                            key2 = Get_Key();
+                            if(key2 == 'q')
+                                break;   
+                        }
+                    }
                     /*
                      AIDEN TO-DO turn these values into 1 or 0s and return as array 
                      * that way its was easier to read the values and check for stuff

@@ -27935,6 +27935,7 @@ void main(void)
 
 
     char key, speed, differential;
+    char key2;
     char i, length, any, sensor;
     char msg[9];
     unsigned int sum, battery;
@@ -28021,7 +28022,8 @@ void main(void)
 
 
 
-                        while(!UART1_is_tx_ready()) continue;
+                    while(1){
+                           while(!UART1_is_tx_ready()) continue;
                         UART1_Write(0x87);
                         for(int i = 0; i < 5; i++){
 
@@ -28035,6 +28037,13 @@ void main(void)
                         for(int i = 0; i < 5; i++){
                             printf("Sensor. %d %u\n", i, sensor_data[i]);
                         }
+
+                        if(UART2_is_rx_ready() == 1){
+                            key2 = Get_Key();
+                            if(key2 == 'q')
+                                break;
+                        }
+                    }
 
 
 
