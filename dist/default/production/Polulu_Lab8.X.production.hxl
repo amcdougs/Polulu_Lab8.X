@@ -1,7 +1,7 @@
 ### HEXMate logfile and output summary ###
 
 ### Command-line arguments ###
- C:\Users\aiden\AppData\Local\Temp\xcAsz0.0\driver_tmp_3.o
+ C:\Users\aiden\AppData\Local\Temp\xcAsico.0\driver_tmp_3.o
  -Odist/default/production\Polulu_Lab8.X.production.hex
  -logfile=dist/default/production\Polulu_Lab8.X.production.hxl
  -addressing=1
@@ -9,9 +9,9 @@
 
 ### Memory Usage ###
  Input file ranges:
-  0h - 3h		(C:\Users\aiden\AppData\Local\Temp\xcAsz0.0\driver_tmp_3.o)
-  DB26h - FFFFh		(C:\Users\aiden\AppData\Local\Temp\xcAsz0.0\driver_tmp_3.o)
-  300000h - 300009h		(C:\Users\aiden\AppData\Local\Temp\xcAsz0.0\driver_tmp_3.o)
+  0h - 3h		(C:\Users\aiden\AppData\Local\Temp\xcAsico.0\driver_tmp_3.o)
+  DB26h - FFFFh		(C:\Users\aiden\AppData\Local\Temp\xcAsico.0\driver_tmp_3.o)
+  300000h - 300009h		(C:\Users\aiden\AppData\Local\Temp\xcAsico.0\driver_tmp_3.o)
  Unused ranges:
   4h - DB25h
   10000h - 2FFFFFh
@@ -19,7 +19,7 @@
 ### Hex Memory Map ###
  Legend:
   -- = Unused memory
-  H1 = Input file             (C:\Users\aiden\AppData\Local\Temp\xcAsz0.0\driver_tmp_3.o)
+  H1 = Input file             (C:\Users\aiden\AppData\Local\Temp\xcAsico.0\driver_tmp_3.o)
 ----------------------------------------------------------
          | 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
 ----------------------------------------------------------

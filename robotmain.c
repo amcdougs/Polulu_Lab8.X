@@ -148,10 +148,10 @@ void main(void)
                             printf("Sensor. %d %u\n", i, sensor_data[i]); 
                         }
                         
-                        if(UART2_is_rx_ready() == true){
-                            key2 = Get_Key();
-                            if(key2 == 'q')
-                                break;   
+                        if(UART2_is_rx_ready() == true){ //allows code to keep whiling until any key is pressed, without this it will stop here
+                            key2 = Get_Key(); //reads in key
+                            if(key2 == 'q') //checks if it is the exit key if not continues the loop
+                                break; //if exit key pressed breaks out of loop.
                         }
                     }
                     /*

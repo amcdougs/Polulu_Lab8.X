@@ -6,10 +6,10 @@ Linker command line:
   --edf=C:\Program Files\Microchip\xc8\v3.10\pic\dat\20250813170317_en.msgs \
   -cn -h+dist/default/production\Polulu_Lab8.X.production.sym \
   --cmf=dist/default/production\Polulu_Lab8.X.production.cmf -z -Q18F46K42 \
-  -oC:\Users\aiden\AppData\Local\Temp\xcAsz0.0\driver_tmp_3.o \
+  -oC:\Users\aiden\AppData\Local\Temp\xcAsico.0\driver_tmp_3.o \
   --defsym=__MPLAB_BUILD=1 --fixupoverflow=error \
   -Mdist/default/production/Polulu_Lab8.X.production.map \
-  --md=C:\Users\aiden\AppData\Local\Temp\xcAsz0.0\driver_tmp_0.dat -E1 \
+  --md=C:\Users\aiden\AppData\Local\Temp\xcAsico.0\driver_tmp_0.dat -E1 \
   -ver=XC8 Compiler -ACODE=00h-0FFFFh -ACONST=00h-0FFFFh \
   -ASMALLCONST=01000h-010FFhx240 -AMEDIUMCONST=01000h-0FFFFh \
   -ACOMRAM=01h-05Fh -AABS1=00h-0FFFh -ABIGRAM=01h-0FFFh \
@@ -28,7 +28,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  C:\Users\aiden\AppData\Local\Temp\xcAsz0.0\driver_tmp_14.o \
+  C:\Users\aiden\AppData\Local\Temp\xcAsico.0\driver_tmp_14.o \
   dist/default/production\Polulu_Lab8.X.production.o 
 
 Object code version is 3.11
@@ -38,7 +38,7 @@ Machine type is 18F46K42
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\aiden\AppData\Local\Temp\xcAsz0.0\driver_tmp_14.o
+C:\Users\aiden\AppData\Local\Temp\xcAsico.0\driver_tmp_14.o
                 config                           300000   300000        A        0       4
                 init                               FFFC     FFFC        4     7FFE       0
                 reset_vec                             0        0        4        0       0
