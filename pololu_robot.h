@@ -95,7 +95,5 @@ void PID_Init(void);
 
 void PID_Start(void);
 
-bool problemYN(uint8_t giggity);
-
 
 /*  END FILE    */

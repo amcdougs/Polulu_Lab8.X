@@ -264,12 +264,4 @@ void PID_Start(void){
                     UART1_Write(0xBB);
 }
 
-bool problemYN(uint8_t giggity)//is there a problem (yes/no)
-{
-    if(giggity==CENTERED)
-        return 0;
-    return 1;//else but not needed
-    
-}
-
 /*  END FILE    */

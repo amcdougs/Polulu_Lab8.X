@@ -27917,8 +27917,6 @@ void Hard_Right(char speed, char speed2);
 void PID_Init(void);
 
 void PID_Start(void);
-
-_Bool problemYN(uint8_t giggity);
 # 21 "robotmain.c" 2
 
 
