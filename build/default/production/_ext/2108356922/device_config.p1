@@ -1,0 +1,65 @@
+Version 4.0 HI-TECH Software Intermediate Code
+"11 ../Common/device_config.c
+[p x FEXTOSC  =  OFF     ]
+"12
+[p x RSTOSC  =  HFINTOSC_1MHZ     ]
+"15
+[p x CLKOUTEN  =  ON     ]
+"16
+[p x PR1WAY  =  ON     ]
+"17
+[p x CSWEN  =  ON     ]
+"18
+[p x FCMEN  =  ON     ]
+"21
+[p x MCLRE  =  EXTMCLR     ]
+"22
+[p x PWRTS  =  PWRT_OFF     ]
+"23
+[p x MVECEN  =  OFF     ]
+"24
+[p x IVT1WAY  =  ON     ]
+"25
+[p x LPBOREN  =  OFF     ]
+"26
+[p x BOREN  =  SBORDIS     ]
+"29
+[p x BORV  =  VBOR_2P45     ]
+"30
+[p x ZCD  =  OFF     ]
+"31
+[p x PPS1WAY  =  ON     ]
+"32
+[p x STVREN  =  ON     ]
+"33
+[p x DEBUG  =  OFF     ]
+"34
+[p x XINST  =  OFF     ]
+"37
+[p x WDTCPS  =  WDTCPS_31     ]
+"38
+[p x WDTE  =  OFF     ]
+"41
+[p x WDTCWS  =  WDTCWS_7     ]
+"42
+[p x WDTCCS  =  SC     ]
+"45
+[p x BBSIZE  =  BBSIZE_512     ]
+"46
+[p x BBEN  =  OFF     ]
+"47
+[p x SAFEN  =  OFF     ]
+"48
+[p x WRTAPP  =  OFF     ]
+"51
+[p x WRTB  =  OFF     ]
+"52
+[p x WRTC  =  OFF     ]
+"53
+[p x WRTD  =  OFF     ]
+"54
+[p x WRTSAF  =  OFF     ]
+"55
+[p x LVP  =  ON     ]
+"58
+[p x CP  =  OFF     ]

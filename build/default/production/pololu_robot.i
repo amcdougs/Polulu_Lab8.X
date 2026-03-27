@@ -127,7 +127,7 @@ typedef uint16_t uint_fast16_t;
 typedef uint32_t uint_fast32_t;
 # 149 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/stdint.h" 2 3
 # 8 "./pololu_robot.h" 2
-# 25 "./pololu_robot.h"
+# 26 "./pololu_robot.h"
 unsigned int* Calibrate_Sensors(void);
 
 
@@ -199,6 +199,8 @@ void Hard_Right(char speed, char speed2);
 void PID_Init(void);
 
 void PID_Start(void);
+
+bool problemYN(uint8_t giggity);
 # 9 "pololu_robot.c" 2
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/stdio.h" 1 3
 # 10 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/stdio.h" 3
@@ -27837,4 +27839,12 @@ void PID_Init(void){
 void PID_Start(void){
                     while(!UART1_is_tx_ready()) continue;
                     UART1_Write(0xBB);
+}
+
+_Bool problemYN(uint8_t giggity)
+{
+    if(giggity==0b00000100)
+        return 0;
+    return 1;
+
 }
