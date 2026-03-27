@@ -351,10 +351,13 @@ void main(void)
         TMR0_Initialize(T0_16_BIT & T0_POST_1_1, T0_SOURCE_INT & T0_SYNC & T0_PRE_1_1);
         PID_Init();
         while(1){
-            
+            PID_Start();
+            UART1_Write(0xBC);
+            robot_8cm(20);
+            __delay_ms(100);
                     
             uint8_t giggity = Read_Calibrated_Sensors();
-            
+            /*
             switch(giggity){
                 case 0b00000100: //forward
                     PID_Start();
@@ -362,7 +365,7 @@ void main(void)
                     R_Turn = false;
                     break;
                     
-                case 0b00001000: //left
+                case 0b00001000: //Left turn if 01000 sensor
                     while(!UART1_is_tx_ready()) continue;
                     L_Turn = true; 
                     UART1_Write(0xBC);
@@ -372,7 +375,7 @@ void main(void)
                     }
                     break;
                     
-                case 0b00000010:
+                case 0b00000010: //Right turn if 00010
                     while(!UART1_is_tx_ready()) continue;
                     UART1_Write(0xBC); 
                     R_Turn = true;
@@ -381,12 +384,16 @@ void main(void)
                     giggity = Read_Calibrated_Sensors();
                     }
                     break;
-                case 0b00010000: //left
-                case 0b00010100:
+                case 0b00010000: //Far left only 10000
+                case 0b00011100://Far left, middle left, middle 11100
+                case 0b00011110:// all but far right
+                case 0b00010100: //Far left and middle 10100
                     while(!UART1_is_tx_ready()) continue;
                     L_Turn = true; 
-                    UART1_Write(0xBC);
-                    while((giggity & 0b00001110) == 0){
+                    UART1_Write(0xBC); //turn off PID
+                    Hard_Left(10,10);
+                    __delay_ms(2000);
+                    while(giggity != 0b00000100){// while the sensor is not centered
                         Hard_Left(10,10);
                     giggity = Read_Calibrated_Sensors();
                     }
@@ -394,12 +401,16 @@ void main(void)
                     
                     break;
                     
-                case 0b00000001:
-                case 0b00000101:
+                case 0b00000001://Far right only 
+                case 0b00000111://Far right, middle right, and middle
+                case 0b00001111://all but far left
+                case 0b00000101://Far right and middle 
                     while(!UART1_is_tx_ready()) continue;
-                    UART1_Write(0xBC); 
+                    UART1_Write(0xBC); //pid off
                     R_Turn = true;
-                    while((giggity & 0b00001110) == 0){
+                    Hard_Right(10,10);
+                    __delay_ms(2000);
+                    while(giggity != 0b00000100){// while the sensor is not centered
                         Hard_Right(10,10);
                     giggity = Read_Calibrated_Sensors();
                     }
@@ -427,7 +438,7 @@ void main(void)
                     robot_8cm(20);
                     break;
             }
-        
+        */
         }
         
     }

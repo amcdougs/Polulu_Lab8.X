@@ -1,69 +1,65 @@
 Version 4.0 HI-TECH Software Intermediate Code
 "11 ../Common/device_config.c
-[p n 520  ]
-"12
-[p n 2053 ]
-"17
 [p x FEXTOSC  =  OFF     ]
-"18
+"12
 [p x RSTOSC  =  HFINTOSC_1MHZ     ]
-"21
+"15
 [p x CLKOUTEN  =  ON     ]
-"22
+"16
 [p x PR1WAY  =  ON     ]
-"23
+"17
 [p x CSWEN  =  ON     ]
-"24
+"18
 [p x FCMEN  =  ON     ]
-"27
+"21
 [p x MCLRE  =  EXTMCLR     ]
-"28
+"22
 [p x PWRTS  =  PWRT_OFF     ]
-"29
+"23
 [p x MVECEN  =  OFF     ]
-"30
+"24
 [p x IVT1WAY  =  ON     ]
-"31
+"25
 [p x LPBOREN  =  OFF     ]
-"32
+"26
 [p x BOREN  =  SBORDIS     ]
-"35
+"29
 [p x BORV  =  VBOR_2P45     ]
-"36
+"30
 [p x ZCD  =  OFF     ]
-"37
+"31
 [p x PPS1WAY  =  ON     ]
-"38
+"32
 [p x STVREN  =  ON     ]
-"39
+"33
 [p x DEBUG  =  OFF     ]
-"40
+"34
 [p x XINST  =  OFF     ]
-"43
+"37
 [p x WDTCPS  =  WDTCPS_31     ]
-"44
+"38
 [p x WDTE  =  OFF     ]
-"47
+"41
 [p x WDTCWS  =  WDTCWS_7     ]
-"48
+"42
 [p x WDTCCS  =  SC     ]
-"51
+"45
 [p x BBSIZE  =  BBSIZE_512     ]
-"52
+"46
 [p x BBEN  =  OFF     ]
-"53
+"47
 [p x SAFEN  =  OFF     ]
-"54
+"48
 [p x WRTAPP  =  OFF     ]
-"57
+"51
 [p x WRTB  =  OFF     ]
-"58
+"52
 [p x WRTC  =  OFF     ]
-"59
+"53
 [p x WRTD  =  OFF     ]
-"60
+"54
 [p x WRTSAF  =  OFF     ]
-"61
+"55
 [p x LVP  =  ON     ]
-"64
+"58
 [p x CP  =  OFF     ]
