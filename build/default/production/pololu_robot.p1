@@ -2933,8 +2933,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2380  ]
 [e :U 2381 ]
 "165
-[; ;pololu_robot.c: 165:                     UART1_Write(0xC1);
-[e ( _UART1_Write (1 -> -> 193 `i `uc ]
+[; ;pololu_robot.c: 165:                     UART1_Write(0xC2);
+[e ( _UART1_Write (1 -> -> 194 `i `uc ]
 "166
 [; ;pololu_robot.c: 166:                     while(!UART1_is_tx_ready()) continue;
 [e $U 2382  ]
@@ -2955,8 +2955,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2386  ]
 [e :U 2387 ]
 "169
-[; ;pololu_robot.c: 169:                     UART1_Write(0xC5);
-[e ( _UART1_Write (1 -> -> 197 `i `uc ]
+[; ;pololu_robot.c: 169:                     UART1_Write(0xC6);
+[e ( _UART1_Write (1 -> -> 198 `i `uc ]
 "170
 [; ;pololu_robot.c: 170:                     while(!UART1_is_tx_ready()) continue;
 [e $U 2388  ]

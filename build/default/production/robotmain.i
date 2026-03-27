@@ -28022,6 +28022,33 @@ void main(void)
 
 
 
+                           while(!UART1_is_tx_ready()) continue;
+                        UART1_Write(0x87);
+                        for(int i = 0; i < 5; i++){
+
+                        while(!UART1_is_rx_ready()) continue;
+                        lowerbyte[i] = UART1_Read();
+                        while(!UART1_is_rx_ready()) continue;
+                        upperbyte[i] = UART1_Read();
+
+                        sensor_data[i] = upperbyte[i]*256 + lowerbyte[i];
+                    }
+                        for(int i = 0; i < 5; i++){
+                            printf("Sensor. %d %u\n", i, sensor_data[i]);
+                        }
+# 159 "robotmain.c"
+                    break;
+
+                    case 't':
+                    LCD_Clear();
+                    LCD_Position(0,0);
+                    LCD_Print("  Read  ", 8);
+                    LCD_Position(0,1);
+                    LCD_Print("Sensors", 8);
+                    printf("\n\r");
+
+
+
                     while(1){
                            while(!UART1_is_tx_ready()) continue;
                         UART1_Write(0x87);
@@ -28044,12 +28071,6 @@ void main(void)
                                 break;
                         }
                     }
-
-
-
-
-
-
                     break;
                 case 'd':
 
@@ -28086,6 +28107,7 @@ void main(void)
 
 
                     break;
+
                 case 'v':
                     LCD_Clear();
                     LCD_Position(0,0);
@@ -28237,10 +28259,11 @@ void main(void)
         _delay((unsigned long)((1)*(48000000/4000.0)));
 
 
-        TMR0_Initialize(0x9F & 0x90, 0x5F & 0xEF & 0xF0);
+        TMR0_Initialize(0x9F & 0x90, 0x5F & 0xEF & 0xF3);
         while(1){
         TMR0_StartTimer();
         Forward(20);
+        Read_Calibrated_Sensors();
         TMR0_StopTimer();
         printf("timer = %u \n\r", TMR0_Read16BitTimer());
         TMR0_Write16BitTimer(0);
@@ -28262,6 +28285,7 @@ void Diagnostic_Menu (void)
     printf("Command Key \t Description \r\n");
     printf("  c \t\t (c)alibrate sensors \r\n");
     printf("  r \t\t (r)ead calibrated sensors \r\n");
+    printf("  t \t\t (r)ead calibrated sensors consTantly \r\n");
     printf("  d \t\t (d)isplay sensor x value \r\n");
     printf("\r\n");
     printf("  v \t\t (v)oltage - Read and display battery voltage \r\n");

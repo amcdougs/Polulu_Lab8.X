@@ -132,6 +132,42 @@ void main(void)
 
                     //  Add code to read calibrated values of all sensors
                     //  and print sensor number and values to CoolTerm/PuTTY
+                           while(!UART1_is_tx_ready()) continue; //found this code in the slides lmao 
+                        UART1_Write(0x87); //this gets you two bits so you gotta read the first and second 
+                        for(int i = 0; i < 5; i++){
+                            
+                        while(!UART1_is_rx_ready()) continue;
+                        lowerbyte[i] = UART1_Read(); //first 
+                        while(!UART1_is_rx_ready()) continue;
+                        upperbyte[i] = UART1_Read(); //second
+                        
+                        sensor_data[i] = upperbyte[i]*256 + lowerbyte[i]; //combine      
+                    }
+                        for(int i = 0; i < 5; i++){
+                            printf("Sensor. %d %u\n", i, sensor_data[i]); 
+                        }
+                        
+                       
+                        
+                    
+                    /*
+                     AIDEN TO-DO turn these values into 1 or 0s and return as array 
+                     * that way its was easier to read the values and check for stuff
+                     * ie sensor[3] == 1 means middle is black
+                     */
+
+                    break;
+                    
+                    case 't':
+                    LCD_Clear();
+                    LCD_Position(0,0);
+                    LCD_Print("  Read  ", 8);
+                    LCD_Position(0,1);
+                    LCD_Print("Sensors", 8);
+                    printf("\n\r");
+
+                    //  Add code to read calibrated values of all sensors
+                    //  and print sensor number and values to CoolTerm/PuTTY
                     while(1){
                            while(!UART1_is_tx_ready()) continue; //found this code in the slides lmao 
                         UART1_Write(0x87); //this gets you two bits so you gotta read the first and second 
@@ -154,12 +190,6 @@ void main(void)
                                 break; //if exit key pressed breaks out of loop.
                         }
                     }
-                    /*
-                     AIDEN TO-DO turn these values into 1 or 0s and return as array 
-                     * that way its was easier to read the values and check for stuff
-                     * ie sensor[3] == 1 means middle is black
-                     */
-
                     break;
                 case 'd':
                     
@@ -181,7 +211,7 @@ void main(void)
                     //  Add code to get sensor value of selected sensor and
                     //  display to second line of LCD as well as CoolTerm/PuTTY
                     
-                    while(!UART1_is_tx_ready()) continue; //found this code in the slides lmao 
+                    while(!UART1_is_tx_ready()) continue; //part of this was found in the reference slides so look at those
                     UART1_Write(0x87); //this gets you two bits so you gotta read the first and second 
                     for(int i = 0; i < 5; i++){
                         while(!UART1_is_rx_ready()) continue;
@@ -196,6 +226,7 @@ void main(void)
                     
 
                     break;
+                    
                 case 'v':
                     LCD_Clear();
                     LCD_Position(0,0);
@@ -347,10 +378,11 @@ void main(void)
         __delay_ms(1);
         //  Start robot moving using 3pi PD function
         //  Speed = 30; a = 1; b = 20; c = 3; d = 2
-        TMR0_Initialize(T0_16_BIT & T0_POST_1_1, T0_SOURCE_INT & T0_SYNC & T0_PRE_1_1);
+        TMR0_Initialize(T0_16_BIT & T0_POST_1_1, T0_SOURCE_INT & T0_SYNC & T0_PRE_1_8);
         while(1){
         TMR0_StartTimer();
         Forward(20);
+        Read_Calibrated_Sensors();
         TMR0_StopTimer();
         printf("timer = %u \n\r", TMR0_Read16BitTimer());
         TMR0_Write16BitTimer(0);
@@ -372,6 +404,7 @@ void Diagnostic_Menu (void)
     printf("Command Key \t Description \r\n");
     printf("  c \t\t (c)alibrate sensors \r\n");
     printf("  r \t\t (r)ead calibrated sensors \r\n");
+    printf("  t \t\t (r)ead calibrated sensors consTantly \r\n");
     printf("  d \t\t (d)isplay sensor x value \r\n");
     printf("\r\n");
     printf("  v \t\t (v)oltage - Read and display battery voltage \r\n");

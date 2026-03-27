@@ -162,11 +162,11 @@ void Backward(char speed)
 {
     //  Add code
                     while(!UART1_is_tx_ready()) continue;
-                    UART1_Write(FORWARD_LEFT);
+                    UART1_Write(BACKWARD_LEFT);
                     while(!UART1_is_tx_ready()) continue;
                     UART1_Write(speed);
                     while(!UART1_is_tx_ready()) continue;
-                    UART1_Write(FORWARD_RIGHT);
+                    UART1_Write(BACKWARD_RIGHT);
                     while(!UART1_is_tx_ready()) continue;
                     UART1_Write((char) speed+1);
 }
