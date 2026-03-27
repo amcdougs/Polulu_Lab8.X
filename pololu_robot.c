@@ -263,4 +263,13 @@ void PID_Start(void){
                     while(!UART1_is_tx_ready()) continue;
                     UART1_Write(0xBB);
 }
+
+bool problemYN(uint8_t giggity)//is there a problem (yes/no)
+{
+    if(giggity==CENTERED)
+        return 0;
+    return 1;//else but not needed
+    
+}
+
 /*  END FILE    */

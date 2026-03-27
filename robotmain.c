@@ -351,13 +351,10 @@ void main(void)
         TMR0_Initialize(T0_16_BIT & T0_POST_1_1, T0_SOURCE_INT & T0_SYNC & T0_PRE_1_1);
         PID_Init();
         while(1){
-            PID_Start();
-            UART1_Write(0xBC);
-            robot_8cm(20);
-            __delay_ms(100);
+
                     
             uint8_t giggity = Read_Calibrated_Sensors();
-            /*
+            
             switch(giggity){
                 case 0b00000100: //forward
                     PID_Start();
@@ -407,7 +404,7 @@ void main(void)
                 case 0b00000101://Far right and middle 
                     while(!UART1_is_tx_ready()) continue;
                     UART1_Write(0xBC); //pid off
-                    R_Turn = true;
+                    R_Turn = true; 
                     Hard_Right(10,10);
                     __delay_ms(2000);
                     while(giggity != 0b00000100){// while the sensor is not centered
@@ -438,7 +435,7 @@ void main(void)
                     robot_8cm(20);
                     break;
             }
-        */
+        
         }
         
     }
