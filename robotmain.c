@@ -402,6 +402,8 @@ void main(void)
                 case 0b00000111://Far right, middle right, and middle
                 case 0b00001111://all but far left
                 case 0b00000101://Far right and middle 
+                    MiddleEdge(giggity);
+                    /*
                     while(!UART1_is_tx_ready()) continue;
                     UART1_Write(0xBC); //pid off
                     R_Turn = true; 
@@ -410,8 +412,7 @@ void main(void)
                     while(giggity != 0b00000100){// while the sensor is not centered
                         Hard_Right(10,10);
                     giggity = Read_Calibrated_Sensors();
-                    }
-                    
+                    }*/
                     break;
                 case 0b00000000: //stop
                     if(L_Turn == true){ //HARD LEFT only if last thing was a turn

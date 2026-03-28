@@ -19,7 +19,10 @@
 #define BACKWARD_LEFT           0xC2
 #define FORWARD_RIGHT           0xC5
 #define BACKWARD_RIGHT          0xC6
+
 #define CENTERED                0b00000100
+#define MIDDLERIGHT             0b00000101
+#define MIDDLELEFT              0b00010100
 
 //  Calibrates sensors using a 3pi algorithm.
 //  Returns a 2-byte value for each of the five sensors - total of 10 bytes returned.
@@ -94,6 +97,8 @@ void Hard_Right(char speed, char speed2);
 void PID_Init(void);
 
 void PID_Start(void);
+
+void MiddleEdge(uint8_t sensor);
 
 
 /*  END FILE    */

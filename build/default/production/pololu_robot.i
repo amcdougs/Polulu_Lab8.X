@@ -127,7 +127,7 @@ typedef uint16_t uint_fast16_t;
 typedef uint32_t uint_fast32_t;
 # 149 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/stdint.h" 2 3
 # 8 "./pololu_robot.h" 2
-# 26 "./pololu_robot.h"
+# 29 "./pololu_robot.h"
 unsigned int* Calibrate_Sensors(void);
 
 
@@ -199,6 +199,8 @@ void Hard_Right(char speed, char speed2);
 void PID_Init(void);
 
 void PID_Start(void);
+
+void MiddleEdge(uint8_t sensor);
 # 9 "pololu_robot.c" 2
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/stdio.h" 1 3
 # 10 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/stdio.h" 3
@@ -27837,4 +27839,32 @@ void PID_Init(void){
 void PID_Start(void){
                     while(!UART1_is_tx_ready()) continue;
                     UART1_Write(0xBB);
+}
+void MiddleEdge(uint8_t MEsensor)
+{
+    char sensor;
+    Stop();
+    while(!UART1_is_tx_ready()) continue;
+    UART1_Write(0xBC);
+    Stop();
+    do{
+        robot_8cm(100);
+        sensor=Read_Calibrated_Sensors();;
+        if (sensor==0){
+            if(MEsensor==0b00000101 || MEsensor==0b00000111 || MEsensor==0b00001111){
+                Hard_Right(20,20);
+            }
+
+            else if(MEsensor==0b00010100){
+                Hard_Left(20,20);
+            }
+        }
+
+        else if(sensor==0b00000100){
+        PID_Start();
+        return;
+        }
+    }
+    while(sensor!=0b00000100);
+    PID_Start();
 }

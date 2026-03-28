@@ -263,5 +263,32 @@ void PID_Start(void){
                     while(!UART1_is_tx_ready()) continue;
                     UART1_Write(0xBB);
 }
-
+void MiddleEdge(uint8_t MEsensor)//in implementation
+{//not working next time manually trigger sensors. think pid not turning off idk this version hasnt been tested FUCK YOU
+    char sensor;
+    Stop();
+    while(!UART1_is_tx_ready()) continue;
+    UART1_Write(0xBC);
+    Stop();
+    do{
+        robot_8cm(100);//go forward a bit
+        sensor=Read_Calibrated_Sensors();;//read sensor after distance
+        if (sensor==0){//happens on sharp corners
+            if(MEsensor==MIDDLERIGHT || MEsensor==0b00000111 || MEsensor==0b00001111){
+                Hard_Right(20,20);
+            }
+        
+            else if(MEsensor==MIDDLELEFT){
+                Hard_Left(20,20);
+            }
+        }
+    
+        else if(sensor==CENTERED){//if centered after(sometimes goes twice)
+        PID_Start();
+        return;
+        }
+    }
+    while(sensor!=CENTERED);
+    PID_Start();
+}
 /*  END FILE    */

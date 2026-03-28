@@ -27845,7 +27845,7 @@ void UART2_SetOverrunErrorHandler(void (* interruptHandler)(void));
 void UART2_SetErrorHandler(void (* interruptHandler)(void));
 # 20 "robotmain.c" 2
 # 1 "./pololu_robot.h" 1
-# 26 "./pololu_robot.h"
+# 29 "./pololu_robot.h"
 unsigned int* Calibrate_Sensors(void);
 
 
@@ -27917,6 +27917,8 @@ void Hard_Right(char speed, char speed2);
 void PID_Init(void);
 
 void PID_Start(void);
+
+void MiddleEdge(uint8_t sensor);
 # 21 "robotmain.c" 2
 
 
@@ -28302,16 +28304,8 @@ void main(void)
                 case 0b00000111:
                 case 0b00001111:
                 case 0b00000101:
-                    while(!UART1_is_tx_ready()) continue;
-                    UART1_Write(0xBC);
-                    R_Turn = 1;
-                    Hard_Right(10,10);
-                    _delay((unsigned long)((2000)*(48000000/4000.0)));
-                    while(giggity != 0b00000100){
-                        Hard_Right(10,10);
-                    giggity = Read_Calibrated_Sensors();
-                    }
-
+                    MiddleEdge(giggity);
+# 416 "robotmain.c"
                     break;
                 case 0b00000000:
                     if(L_Turn == 1){

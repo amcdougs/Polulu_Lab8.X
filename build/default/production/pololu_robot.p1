@@ -26,11 +26,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 "116 ./../Common/tmr0.h
 [; ;./../Common/tmr0.h: 116: void TMR0_StartTimer(void);
 [v _TMR0_StartTimer `(v ~T0 @X0 0 ef ]
-"66 ./pololu_robot.h
-[; ;./pololu_robot.h: 66: void Forward(char speed);
+"69 ./pololu_robot.h
+[; ;./pololu_robot.h: 69: void Forward(char speed);
 [v _Forward `(v ~T0 @X0 0 ef1`uc ]
-"86
-[; ;./pololu_robot.h: 86: void Stop (void);
+"89
+[; ;./pololu_robot.h: 89: void Stop (void);
 [v _Stop `(v ~T0 @X0 0 ef ]
 "250 C:/Users/Maddox/.mchp_packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f46k42.h
 [; ;C:/Users/Maddox/.mchp_packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f46k42.h: 250: __asm("STATUS_CSHAD equ 03880h");
@@ -2312,7 +2312,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _i `uc ~T0 @X0 1 a ]
 "19
 [; ;pololu_robot.c: 19:     static unsigned int values[5];
-[v F16643 `ui ~T0 @X0 -> 5 `i s values ]
+[v F16645 `ui ~T0 @X0 -> 5 `i s values ]
 "21
 [; ;pololu_robot.c: 21:     while(!UART1_is_tx_ready()) continue;
 [e $U 2273  ]
@@ -2358,7 +2358,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = *U + &U _ubyte * -> _i `ux -> -> # *U &U _ubyte `ui `ux ( _UART1_Read ..  ]
 "29
 [; ;pololu_robot.c: 29:         values[i] = ubyte[i]*256 + lbyte[i];
-[e = *U + &U F16643 * -> _i `ux -> -> # *U &U F16643 `ui `ux -> + * -> *U + &U _ubyte * -> _i `ux -> -> # *U &U _ubyte `ui `ux `i -> 256 `i -> *U + &U _lbyte * -> _i `ux -> -> # *U &U _lbyte `ui `ux `i `ui ]
+[e = *U + &U F16645 * -> _i `ux -> -> # *U &U F16645 `ui `ux -> + * -> *U + &U _ubyte * -> _i `ux -> -> # *U &U _ubyte `ui `ux `i -> 256 `i -> *U + &U _lbyte * -> _i `ux -> -> # *U &U _lbyte `ui `ux `i `ui ]
 "30
 [; ;pololu_robot.c: 30:     }
 }
@@ -2368,7 +2368,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 "31
 [; ;pololu_robot.c: 31:     return values;
-[e ) &U F16643 ]
+[e ) &U F16645 ]
 [e $UE 2272  ]
 "32
 [; ;pololu_robot.c: 32: }
@@ -3380,4 +3380,107 @@ Version 4.0 HI-TECH Software Intermediate Code
 "265
 [; ;pololu_robot.c: 265: }
 [e :UE 2476 ]
+}
+"266
+[; ;pololu_robot.c: 266: void MiddleEdge(uint8_t MEsensor)
+[v _MiddleEdge `(v ~T0 @X0 1 ef1`uc ]
+"267
+[; ;pololu_robot.c: 267: {
+{
+[e :U _MiddleEdge ]
+"266
+[; ;pololu_robot.c: 266: void MiddleEdge(uint8_t MEsensor)
+[v _MEsensor `uc ~T0 @X0 1 r1 ]
+"267
+[; ;pololu_robot.c: 267: {
+[f ]
+"268
+[; ;pololu_robot.c: 268:     char sensor;
+[v _sensor `uc ~T0 @X0 1 a ]
+"269
+[; ;pololu_robot.c: 269:     Stop();
+[e ( _Stop ..  ]
+"270
+[; ;pololu_robot.c: 270:     while(!UART1_is_tx_ready()) continue;
+[e $U 2481  ]
+[e :U 2482 ]
+[e $U 2481  ]
+[e :U 2481 ]
+[e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2482  ]
+[e :U 2483 ]
+"271
+[; ;pololu_robot.c: 271:     UART1_Write(0xBC);
+[e ( _UART1_Write (1 -> -> 188 `i `uc ]
+"272
+[; ;pololu_robot.c: 272:     Stop();
+[e ( _Stop ..  ]
+"273
+[; ;pololu_robot.c: 273:     do{
+[e :U 2486 ]
+{
+"274
+[; ;pololu_robot.c: 274:         robot_8cm(100);
+[e ( _robot_8cm (1 -> -> 100 `i `uc ]
+"275
+[; ;pololu_robot.c: 275:         sensor=Read_Calibrated_Sensors();;
+[e = _sensor -> ( _Read_Calibrated_Sensors ..  `uc ]
+"276
+[; ;pololu_robot.c: 276:         if (sensor==0){
+[e $ ! == -> _sensor `i -> 0 `i 2487  ]
+{
+"277
+[; ;pololu_robot.c: 277:             if(MEsensor==0b00000101 || MEsensor==0b00000111 || MEsensor==0b00001111){
+[e $ ! || || == -> _MEsensor `i -> 5 `i == -> _MEsensor `i -> 7 `i == -> _MEsensor `i -> 15 `i 2488  ]
+{
+"278
+[; ;pololu_robot.c: 278:                 Hard_Right(20,20);
+[e ( _Hard_Right (2 , -> -> 20 `i `uc -> -> 20 `i `uc ]
+"279
+[; ;pololu_robot.c: 279:             }
+}
+[e $U 2489  ]
+"281
+[; ;pololu_robot.c: 281:             else if(MEsensor==0b00010100){
+[e :U 2488 ]
+[e $ ! == -> _MEsensor `i -> 20 `i 2490  ]
+{
+"282
+[; ;pololu_robot.c: 282:                 Hard_Left(20,20);
+[e ( _Hard_Left (2 , -> -> 20 `i `uc -> -> 20 `i `uc ]
+"283
+[; ;pololu_robot.c: 283:             }
+}
+[e :U 2490 ]
+[e :U 2489 ]
+"284
+[; ;pololu_robot.c: 284:         }
+}
+[e $U 2491  ]
+"286
+[; ;pololu_robot.c: 286:         else if(sensor==0b00000100){
+[e :U 2487 ]
+[e $ ! == -> _sensor `i -> 4 `i 2492  ]
+{
+"287
+[; ;pololu_robot.c: 287:         PID_Start();
+[e ( _PID_Start ..  ]
+"288
+[; ;pololu_robot.c: 288:         return;
+[e $UE 2480  ]
+"289
+[; ;pololu_robot.c: 289:         }
+}
+[e :U 2492 ]
+[e :U 2491 ]
+"290
+[; ;pololu_robot.c: 290:     }
+}
+[e $ != -> _sensor `i -> 4 `i 2486  ]
+[e :U 2485 ]
+"292
+[; ;pololu_robot.c: 292:     PID_Start();
+[e ( _PID_Start ..  ]
+"293
+[; ;pololu_robot.c: 293: }
+[e :UE 2480 ]
 }

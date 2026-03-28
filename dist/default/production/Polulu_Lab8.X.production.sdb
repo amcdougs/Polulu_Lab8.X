@@ -426,33 +426,35 @@ TMR2_UART2_TX_EDGE 24
 [v _PID_Init PID_Init `(v  1 e 1 0 ]
 "262
 [v _PID_Start PID_Start `(v  1 e 1 0 ]
+"266
+[v _MiddleEdge MiddleEdge `(v  1 e 1 0 ]
 "35 C:\Users\Maddox\Documents\APSC1299\Polulu_Lab8.X\robotmain.c
 [v _main main `(v  1 e 1 0 ]
-"444
+"445
 [v _Diagnostic_Menu Diagnostic_Menu `(v  1 e 1 0 ]
-"473
+"474
 [v _Get_Number Get_Number `(uc  1 e 1 0 ]
-"498
+"499
 [v _Get_Key Get_Key `(uc  1 e 1 0 ]
-"521
+"522
 [v _Countdown Countdown `(v  1 e 1 0 ]
 "121 C:\Users\Maddox\Documents\APSC1299/Common/i2c1_master.c
 [v _i2c1_fsmStateTable i2c1_fsmStateTable `C[19]*.37(E16657  1 e 38 0 ]
-[s S934 . 29 `[6]*.37(E363 1 callbackTable 12 0 `[6]*.30v 1 callbackPayload 6 12 `us 1 time_out 2 18 `us 1 time_out_value 2 20 `uc 1 address 1 22 `*.30uc 1 data_ptr 1 23 `ui 1 data_length 2 24 `E16657 1 state 1 26 `E358 1 error 1 27 `uc 1 addressNackCheck 1 28 :2:0 
+[s S933 . 29 `[6]*.37(E363 1 callbackTable 12 0 `[6]*.30v 1 callbackPayload 6 12 `us 1 time_out 2 18 `us 1 time_out_value 2 20 `uc 1 address 1 22 `*.30uc 1 data_ptr 1 23 `ui 1 data_length 2 24 `E16657 1 state 1 26 `E358 1 error 1 27 `uc 1 addressNackCheck 1 28 :2:0 
 `uc 1 busy 1 28 :1:2 
 `uc 1 inUse 1 28 :1:3 
 `uc 1 bufferFree 1 28 :1:4 
 ]
 "143
-[v _I2C1_Status I2C1_Status `S934  1 e 29 0 ]
-[s S2256 . 1 `uc 1 perr 1 0 :1:0 
+[v _I2C1_Status I2C1_Status `S933  1 e 29 0 ]
+[s S2255 . 1 `uc 1 perr 1 0 :1:0 
 `uc 1 ferr 1 0 :1:1 
 `uc 1 oerr 1 0 :1:2 
 `uc 1 reserved 1 0 :5:3 
 ]
 "14 C:\Users\Maddox\Documents\APSC1299/Common/uart1.c
-[u S2261 . 1 `S2256 1 . 1 0 `uc 1 status 1 0 ]
-[v _uart1RxLastError uart1RxLastError `VES2261  1 s 1 uart1RxLastError ]
+[u S2260 . 1 `S2255 1 . 1 0 `uc 1 status 1 0 ]
+[v _uart1RxLastError uart1RxLastError `VES2260  1 s 1 uart1RxLastError ]
 "19
 [v _UART1_FramingErrorHandler UART1_FramingErrorHandler `*.37(v  1 e 2 0 ]
 "20
@@ -460,14 +462,14 @@ TMR2_UART2_TX_EDGE 24
 "21
 [v _UART1_ErrorHandler UART1_ErrorHandler `*.37(v  1 e 2 0 ]
 "13 C:\Users\Maddox\Documents\APSC1299/Common/uart2.c
-[v _uart2RxLastError uart2RxLastError `VES2261  1 s 1 uart2RxLastError ]
+[v _uart2RxLastError uart2RxLastError `VES2260  1 s 1 uart2RxLastError ]
 "18
 [v _UART2_FramingErrorHandler UART2_FramingErrorHandler `*.37(v  1 e 2 0 ]
 "19
 [v _UART2_OverrunErrorHandler UART2_OverrunErrorHandler `*.37(v  1 e 2 0 ]
 "20
 [v _UART2_ErrorHandler UART2_ErrorHandler `*.37(v  1 e 2 0 ]
-[s S1321 . 1 `uc 1 DMA1SCNTIE 1 0 :1:0 
+[s S1320 . 1 `uc 1 DMA1SCNTIE 1 0 :1:0 
 `uc 1 DMA1DCNTIE 1 0 :1:1 
 `uc 1 DMA1ORIE 1 0 :1:2 
 `uc 1 DMA1AIE 1 0 :1:3 
@@ -477,9 +479,9 @@ TMR2_UART2_TX_EDGE 24
 `uc 1 I2C1RXIE 1 0 :1:7 
 ]
 "3471 C:/Users/Maddox/.mchp_packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f46k42.h
-[u S1330 . 1 `S1321 1 . 1 0 ]
-[v _PIE2bits PIE2bits `VES1330  1 e 1 @14738 ]
-[s S1300 . 1 `uc 1 I2C1TXIE 1 0 :1:0 
+[u S1329 . 1 `S1320 1 . 1 0 ]
+[v _PIE2bits PIE2bits `VES1329  1 e 1 @14738 ]
+[s S1299 . 1 `uc 1 I2C1TXIE 1 0 :1:0 
 `uc 1 I2C1IE 1 0 :1:1 
 `uc 1 I2C1EIE 1 0 :1:2 
 `uc 1 U1RXIE 1 0 :1:3 
@@ -489,9 +491,9 @@ TMR2_UART2_TX_EDGE 24
 `uc 1 TMR0IE 1 0 :1:7 
 ]
 "3533
-[u S1309 . 1 `S1300 1 . 1 0 ]
-[v _PIE3bits PIE3bits `VES1309  1 e 1 @14739 ]
-[s S1403 . 1 `uc 1 DMA1SCNTIF 1 0 :1:0 
+[u S1308 . 1 `S1299 1 . 1 0 ]
+[v _PIE3bits PIE3bits `VES1308  1 e 1 @14739 ]
+[s S1402 . 1 `uc 1 DMA1SCNTIF 1 0 :1:0 
 `uc 1 DMA1DCNTIF 1 0 :1:1 
 `uc 1 DMA1ORIF 1 0 :1:2 
 `uc 1 DMA1AIF 1 0 :1:3 
@@ -501,9 +503,9 @@ TMR2_UART2_TX_EDGE 24
 `uc 1 I2C1RXIF 1 0 :1:7 
 ]
 "4036
-[u S1412 . 1 `S1403 1 . 1 0 ]
-[v _PIR2bits PIR2bits `VES1412  1 e 1 @14754 ]
-[s S1382 . 1 `uc 1 I2C1TXIF 1 0 :1:0 
+[u S1411 . 1 `S1402 1 . 1 0 ]
+[v _PIR2bits PIR2bits `VES1411  1 e 1 @14754 ]
+[s S1381 . 1 `uc 1 I2C1TXIF 1 0 :1:0 
 `uc 1 I2C1IF 1 0 :1:1 
 `uc 1 I2C1EIF 1 0 :1:2 
 `uc 1 U1RXIF 1 0 :1:3 
@@ -513,9 +515,9 @@ TMR2_UART2_TX_EDGE 24
 `uc 1 TMR0IF 1 0 :1:7 
 ]
 "4098
-[u S1391 . 1 `S1382 1 . 1 0 ]
-[v _PIR3bits PIR3bits `VES1391  1 e 1 @14755 ]
-[s S1990 . 1 `uc 1 TMR1IF 1 0 :1:0 
+[u S1390 . 1 `S1381 1 . 1 0 ]
+[v _PIR3bits PIR3bits `VES1390  1 e 1 @14755 ]
+[s S1989 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR1GIF 1 0 :1:1 
 `uc 1 TMR2IF 1 0 :1:2 
 `uc 1 CCP1IF 1 0 :1:3 
@@ -525,9 +527,9 @@ TMR2_UART2_TX_EDGE 24
 `uc 1 CLC1IF 1 0 :1:7 
 ]
 "4160
-[u S1999 . 1 `S1990 1 . 1 0 ]
-[v _PIR4bits PIR4bits `VES1999  1 e 1 @14756 ]
-[s S2523 . 1 `uc 1 I2C2IF 1 0 :1:0 
+[u S1998 . 1 `S1989 1 . 1 0 ]
+[v _PIR4bits PIR4bits `VES1998  1 e 1 @14756 ]
+[s S2522 . 1 `uc 1 I2C2IF 1 0 :1:0 
 `uc 1 I2C2EIF 1 0 :1:1 
 `uc 1 U2RXIF 1 0 :1:2 
 `uc 1 U2TXIF 1 0 :1:3 
@@ -537,8 +539,8 @@ TMR2_UART2_TX_EDGE 24
 `uc 1 TMR3GIF 1 0 :1:7 
 ]
 "4279
-[u S2532 . 1 `S2523 1 . 1 0 ]
-[v _PIR6bits PIR6bits `VES2532  1 e 1 @14758 ]
+[u S2531 . 1 `S2522 1 . 1 0 ]
+[v _PIR6bits PIR6bits `VES2531  1 e 1 @14758 ]
 "4460
 [v _PMD0 PMD0 `VEuc  1 e 1 @14784 ]
 "4522
@@ -675,7 +677,7 @@ TMR2_UART2_TX_EDGE 24
 [v _I2C1CNT I2C1CNT `VEuc  1 e 1 @15724 ]
 "24790
 [v _I2C1CON0 I2C1CON0 `VEuc  1 e 1 @15731 ]
-[s S1148 . 1 `uc 1 MODE 1 0 :3:0 
+[s S1147 . 1 `uc 1 MODE 1 0 :3:0 
 `uc 1 MDR 1 0 :1:3 
 `uc 1 CSTR 1 0 :1:4 
 `uc 1 S 1 0 :1:5 
@@ -683,17 +685,17 @@ TMR2_UART2_TX_EDGE 24
 `uc 1 EN 1 0 :1:7 
 ]
 "24812
-[s S1155 . 1 `uc 1 MODE0 1 0 :1:0 
+[s S1154 . 1 `uc 1 MODE0 1 0 :1:0 
 `uc 1 MODE1 1 0 :1:1 
 `uc 1 MODE2 1 0 :1:2 
 `uc 1 . 1 0 :4:3 
 `uc 1 I2CEN 1 0 :1:7 
 ]
-[u S1161 . 1 `S1148 1 . 1 0 `S1155 1 . 1 0 ]
-[v _I2C1CON0bits I2C1CON0bits `VES1161  1 e 1 @15731 ]
+[u S1160 . 1 `S1147 1 . 1 0 `S1154 1 . 1 0 ]
+[v _I2C1CON0bits I2C1CON0bits `VES1160  1 e 1 @15731 ]
 "24867
 [v _I2C1CON1 I2C1CON1 `VEuc  1 e 1 @15732 ]
-[s S1203 . 1 `uc 1 CSD 1 0 :1:0 
+[s S1202 . 1 `uc 1 CSD 1 0 :1:0 
 `uc 1 TXU 1 0 :1:1 
 `uc 1 RXO 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -703,13 +705,13 @@ TMR2_UART2_TX_EDGE 24
 `uc 1 ACKCNT 1 0 :1:7 
 ]
 "24884
-[u S1212 . 1 `S1203 1 . 1 0 ]
-[v _I2C1CON1bits I2C1CON1bits `VES1212  1 e 1 @15732 ]
+[u S1211 . 1 `S1202 1 . 1 0 ]
+[v _I2C1CON1bits I2C1CON1bits `VES1211  1 e 1 @15732 ]
 "24924
 [v _I2C1CON2 I2C1CON2 `VEuc  1 e 1 @15733 ]
 "25000
 [v _I2C1ERR I2C1ERR `VEuc  1 e 1 @15734 ]
-[s S1224 . 1 `uc 1 NACKIE 1 0 :1:0 
+[s S1223 . 1 `uc 1 NACKIE 1 0 :1:0 
 `uc 1 BCLIE 1 0 :1:1 
 `uc 1 BTOIE 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -718,7 +720,7 @@ TMR2_UART2_TX_EDGE 24
 `uc 1 BTOIF 1 0 :1:6 
 ]
 "25025
-[s S1232 . 1 `uc 1 NACK1IE 1 0 :1:0 
+[s S1231 . 1 `uc 1 NACK1IE 1 0 :1:0 
 `uc 1 BCL1IE 1 0 :1:1 
 `uc 1 BTO1IE 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -726,9 +728,9 @@ TMR2_UART2_TX_EDGE 24
 `uc 1 BCL1IF 1 0 :1:5 
 `uc 1 BTO1IF 1 0 :1:6 
 ]
-[u S1240 . 1 `S1224 1 . 1 0 `S1232 1 . 1 0 ]
-[v _I2C1ERRbits I2C1ERRbits `VES1240  1 e 1 @15734 ]
-[s S1180 . 1 `uc 1 RXBF 1 0 :1:0 
+[u S1239 . 1 `S1223 1 . 1 0 `S1231 1 . 1 0 ]
+[v _I2C1ERRbits I2C1ERRbits `VES1239  1 e 1 @15734 ]
+[s S1179 . 1 `uc 1 RXBF 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 CLRBF 1 0 :1:2 
 `uc 1 RXRE 1 0 :1:3 
@@ -738,11 +740,11 @@ TMR2_UART2_TX_EDGE 24
 `uc 1 TXWE 1 0 :1:7 
 ]
 "25197
-[u S1189 . 1 `S1180 1 . 1 0 ]
-[v _I2C1STAT1bits I2C1STAT1bits `VES1189  1 e 1 @15736 ]
+[u S1188 . 1 `S1179 1 . 1 0 ]
+[v _I2C1STAT1bits I2C1STAT1bits `VES1188  1 e 1 @15736 ]
 "25227
 [v _I2C1PIR I2C1PIR `VEuc  1 e 1 @15737 ]
-[s S1260 . 1 `uc 1 SCIF 1 0 :1:0 
+[s S1259 . 1 `uc 1 SCIF 1 0 :1:0 
 `uc 1 RSCIF 1 0 :1:1 
 `uc 1 PCIF 1 0 :1:2 
 `uc 1 ADRIF 1 0 :1:3 
@@ -752,7 +754,7 @@ TMR2_UART2_TX_EDGE 24
 `uc 1 CNTIF 1 0 :1:7 
 ]
 "25254
-[s S1269 . 1 `uc 1 SC1IF 1 0 :1:0 
+[s S1268 . 1 `uc 1 SC1IF 1 0 :1:0 
 `uc 1 RSC1IF 1 0 :1:1 
 `uc 1 PC1IF 1 0 :1:2 
 `uc 1 ADR1IF 1 0 :1:3 
@@ -761,11 +763,11 @@ TMR2_UART2_TX_EDGE 24
 `uc 1 ACKT1IF 1 0 :1:6 
 `uc 1 CNT1IF 1 0 :1:7 
 ]
-[u S1278 . 1 `S1260 1 . 1 0 `S1269 1 . 1 0 ]
-[v _I2C1PIRbits I2C1PIRbits `VES1278  1 e 1 @15737 ]
+[u S1277 . 1 `S1259 1 . 1 0 `S1268 1 . 1 0 ]
+[v _I2C1PIRbits I2C1PIRbits `VES1277  1 e 1 @15737 ]
 "25329
 [v _I2C1PIE I2C1PIE `VEuc  1 e 1 @15738 ]
-[s S1342 . 1 `uc 1 SCIE 1 0 :1:0 
+[s S1341 . 1 `uc 1 SCIE 1 0 :1:0 
 `uc 1 RSCIE 1 0 :1:1 
 `uc 1 PCIE 1 0 :1:2 
 `uc 1 ADRIE 1 0 :1:3 
@@ -775,7 +777,7 @@ TMR2_UART2_TX_EDGE 24
 `uc 1 CNTIE 1 0 :1:7 
 ]
 "25356
-[s S1351 . 1 `uc 1 SC1IE 1 0 :1:0 
+[s S1350 . 1 `uc 1 SC1IE 1 0 :1:0 
 `uc 1 RSC1IE 1 0 :1:1 
 `uc 1 PC1IE 1 0 :1:2 
 `uc 1 ADR1IE 1 0 :1:3 
@@ -784,8 +786,8 @@ TMR2_UART2_TX_EDGE 24
 `uc 1 ACKT1IE 1 0 :1:6 
 `uc 1 CNT1IE 1 0 :1:7 
 ]
-[u S1360 . 1 `S1342 1 . 1 0 `S1351 1 . 1 0 ]
-[v _I2C1PIEbits I2C1PIEbits `VES1360  1 e 1 @15738 ]
+[u S1359 . 1 `S1341 1 . 1 0 `S1350 1 . 1 0 ]
+[v _I2C1PIEbits I2C1PIEbits `VES1359  1 e 1 @15738 ]
 "25431
 [v _I2C1CLK I2C1CLK `VEuc  1 e 1 @15739 ]
 "25579
@@ -800,29 +802,29 @@ TMR2_UART2_TX_EDGE 24
 [v _U2P3L U2P3L `VEuc  1 e 1 @15832 ]
 "25736
 [v _U2CON0 U2CON0 `VEuc  1 e 1 @15834 ]
-[s S2544 . 1 `uc 1 MODE0 1 0 :1:0 
+[s S2543 . 1 `uc 1 MODE0 1 0 :1:0 
 `uc 1 MODE1 1 0 :1:1 
 `uc 1 MODE2 1 0 :1:2 
 ]
 "25767
-[s S2548 . 1 `uc 1 U2MODE 1 0 :4:0 
+[s S2547 . 1 `uc 1 U2MODE 1 0 :4:0 
 `uc 1 U2RXEN 1 0 :1:4 
 `uc 1 U2TXEN 1 0 :1:5 
 `uc 1 U2ABDEN 1 0 :1:6 
 `uc 1 U2BRGS 1 0 :1:7 
 ]
-[s S2554 . 1 `uc 1 U2MODE0 1 0 :1:0 
+[s S2553 . 1 `uc 1 U2MODE0 1 0 :1:0 
 `uc 1 U2MODE1 1 0 :1:1 
 `uc 1 U2MODE2 1 0 :1:2 
 ]
-[s S2340 . 1 `uc 1 MODE 1 0 :4:0 
+[s S2339 . 1 `uc 1 MODE 1 0 :4:0 
 `uc 1 RXEN 1 0 :1:4 
 `uc 1 TXEN 1 0 :1:5 
 `uc 1 ABDEN 1 0 :1:6 
 `uc 1 BRGS 1 0 :1:7 
 ]
-[u S2564 . 1 `S2544 1 . 1 0 `S2548 1 . 1 0 `S2554 1 . 1 0 `S2340 1 . 1 0 ]
-[v _U2CON0bits U2CON0bits `VES2564  1 e 1 @15834 ]
+[u S2563 . 1 `S2543 1 . 1 0 `S2547 1 . 1 0 `S2553 1 . 1 0 `S2339 1 . 1 0 ]
+[v _U2CON0bits U2CON0bits `VES2563  1 e 1 @15834 ]
 "25852
 [v _U2CON1 U2CON1 `VEuc  1 e 1 @15835 ]
 "25932
@@ -837,7 +839,7 @@ TMR2_UART2_TX_EDGE 24
 [v _U2UIR U2UIR `VEuc  1 e 1 @15840 ]
 "26297
 [v _U2ERRIR U2ERRIR `VEuc  1 e 1 @15841 ]
-[s S2374 . 1 `uc 1 TXCIF 1 0 :1:0 
+[s S2373 . 1 `uc 1 TXCIF 1 0 :1:0 
 `uc 1 RXFOIF 1 0 :1:1 
 `uc 1 RXBKIF 1 0 :1:2 
 `uc 1 FERIF 1 0 :1:3 
@@ -847,7 +849,7 @@ TMR2_UART2_TX_EDGE 24
 `uc 1 TXMTIF 1 0 :1:7 
 ]
 "26324
-[s S2599 . 1 `uc 1 U2TXCIF 1 0 :1:0 
+[s S2598 . 1 `uc 1 U2TXCIF 1 0 :1:0 
 `uc 1 U2RXFOIF 1 0 :1:1 
 `uc 1 U2RXBKIF 1 0 :1:2 
 `uc 1 U2FERIF 1 0 :1:3 
@@ -856,8 +858,8 @@ TMR2_UART2_TX_EDGE 24
 `uc 1 U2PERIF 1 0 :1:6 
 `uc 1 U2TXMTIF 1 0 :1:7 
 ]
-[u S2608 . 1 `S2374 1 . 1 0 `S2599 1 . 1 0 ]
-[v _U2ERRIRbits U2ERRIRbits `VES2608  1 e 1 @15841 ]
+[u S2607 . 1 `S2373 1 . 1 0 `S2598 1 . 1 0 ]
+[v _U2ERRIRbits U2ERRIRbits `VES2607  1 e 1 @15841 ]
 "26409
 [v _U2ERRIE U2ERRIE `VEuc  1 e 1 @15842 ]
 "26521
@@ -878,25 +880,25 @@ TMR2_UART2_TX_EDGE 24
 [v _U1P3H U1P3H `VEuc  1 e 1 @15857 ]
 "26778
 [v _U1CON0 U1CON0 `VEuc  1 e 1 @15858 ]
-[s S2324 . 1 `uc 1 MODE0 1 0 :1:0 
+[s S2323 . 1 `uc 1 MODE0 1 0 :1:0 
 `uc 1 MODE1 1 0 :1:1 
 `uc 1 MODE2 1 0 :1:2 
 `uc 1 MODE3 1 0 :1:3 
 ]
 "26811
-[s S2329 . 1 `uc 1 U1MODE 1 0 :4:0 
+[s S2328 . 1 `uc 1 U1MODE 1 0 :4:0 
 `uc 1 U1RXEN 1 0 :1:4 
 `uc 1 U1TXEN 1 0 :1:5 
 `uc 1 U1ABDEN 1 0 :1:6 
 `uc 1 U1BRGS 1 0 :1:7 
 ]
-[s S2335 . 1 `uc 1 U1MODE0 1 0 :1:0 
+[s S2334 . 1 `uc 1 U1MODE0 1 0 :1:0 
 `uc 1 U1MODE1 1 0 :1:1 
 `uc 1 U1MODE2 1 0 :1:2 
 `uc 1 U1MODE3 1 0 :1:3 
 ]
-[u S2346 . 1 `S2324 1 . 1 0 `S2329 1 . 1 0 `S2335 1 . 1 0 `S2340 1 . 1 0 ]
-[v _U1CON0bits U1CON0bits `VES2346  1 e 1 @15858 ]
+[u S2345 . 1 `S2323 1 . 1 0 `S2328 1 . 1 0 `S2334 1 . 1 0 `S2339 1 . 1 0 ]
+[v _U1CON0bits U1CON0bits `VES2345  1 e 1 @15858 ]
 "26906
 [v _U1CON1 U1CON1 `VEuc  1 e 1 @15859 ]
 "26986
@@ -912,7 +914,7 @@ TMR2_UART2_TX_EDGE 24
 "27361
 [v _U1ERRIR U1ERRIR `VEuc  1 e 1 @15865 ]
 "27388
-[s S2383 . 1 `uc 1 U1TXCIF 1 0 :1:0 
+[s S2382 . 1 `uc 1 U1TXCIF 1 0 :1:0 
 `uc 1 U1RXFOIF 1 0 :1:1 
 `uc 1 U1RXBKIF 1 0 :1:2 
 `uc 1 U1FERIF 1 0 :1:3 
@@ -921,8 +923,8 @@ TMR2_UART2_TX_EDGE 24
 `uc 1 U1PERIF 1 0 :1:6 
 `uc 1 U1TXMTIF 1 0 :1:7 
 ]
-[u S2392 . 1 `S2374 1 . 1 0 `S2383 1 . 1 0 ]
-[v _U1ERRIRbits U1ERRIRbits `VES2392  1 e 1 @15865 ]
+[u S2391 . 1 `S2373 1 . 1 0 `S2382 1 . 1 0 ]
+[v _U1ERRIRbits U1ERRIRbits `VES2391  1 e 1 @15865 ]
 "27473
 [v _U1ERRIE U1ERRIE `VEuc  1 e 1 @15866 ]
 "28631
@@ -977,7 +979,7 @@ TMR2_UART2_TX_EDGE 24
 [v _ADPREH ADPREH `VEuc  1 e 1 @16119 ]
 "31756
 [v _ADCON0 ADCON0 `VEuc  1 e 1 @16120 ]
-[s S470 . 1 `uc 1 GO 1 0 :1:0 
+[s S469 . 1 `uc 1 GO 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 FM 1 0 :2:2 
 `uc 1 CS 1 0 :1:4 
@@ -986,7 +988,7 @@ TMR2_UART2_TX_EDGE 24
 `uc 1 ON 1 0 :1:7 
 ]
 "31794
-[s S478 . 1 `uc 1 ADGO 1 0 :1:0 
+[s S477 . 1 `uc 1 ADGO 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 ADFM 1 0 :2:2 
 `uc 1 ADCS 1 0 :1:4 
@@ -994,44 +996,44 @@ TMR2_UART2_TX_EDGE 24
 `uc 1 ADCONT 1 0 :1:6 
 `uc 1 ADON 1 0 :1:7 
 ]
-[s S486 . 1 `uc 1 DONE 1 0 :1:0 
+[s S485 . 1 `uc 1 DONE 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 FM0 1 0 :1:2 
 ]
-[s S490 . 1 `uc 1 GO_NOT_DONE 1 0 :1:0 
+[s S489 . 1 `uc 1 GO_NOT_DONE 1 0 :1:0 
 ]
-[s S492 . 1 `uc 1 GO_nDONE 1 0 :1:0 
+[s S491 . 1 `uc 1 GO_nDONE 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 ADFM0 1 0 :1:2 
 ]
-[u S496 . 1 `S470 1 . 1 0 `S478 1 . 1 0 `S486 1 . 1 0 `S490 1 . 1 0 `S492 1 . 1 0 ]
-[v _ADCON0bits ADCON0bits `VES496  1 e 1 @16120 ]
+[u S495 . 1 `S469 1 . 1 0 `S477 1 . 1 0 `S485 1 . 1 0 `S489 1 . 1 0 `S491 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES495  1 e 1 @16120 ]
 "31874
 [v _ADCON1 ADCON1 `VEuc  1 e 1 @16121 ]
-[s S725 . 1 `uc 1 DSEN 1 0 :1:0 
+[s S724 . 1 `uc 1 DSEN 1 0 :1:0 
 `uc 1 . 1 0 :4:1 
 `uc 1 GPOL 1 0 :1:5 
 `uc 1 IPEN 1 0 :1:6 
 `uc 1 PPOL 1 0 :1:7 
 ]
 "31895
-[s S731 . 1 `uc 1 ADDSEN 1 0 :1:0 
+[s S730 . 1 `uc 1 ADDSEN 1 0 :1:0 
 `uc 1 . 1 0 :4:1 
 `uc 1 ADGPOL 1 0 :1:5 
 `uc 1 ADIPEN 1 0 :1:6 
 `uc 1 ADPPOL 1 0 :1:7 
 ]
-[u S737 . 1 `S725 1 . 1 0 `S731 1 . 1 0 ]
-[v _ADCON1bits ADCON1bits `VES737  1 e 1 @16121 ]
+[u S736 . 1 `S724 1 . 1 0 `S730 1 . 1 0 ]
+[v _ADCON1bits ADCON1bits `VES736  1 e 1 @16121 ]
 "31940
 [v _ADCON2 ADCON2 `VEuc  1 e 1 @16122 ]
-[s S586 . 1 `uc 1 MODE 1 0 :3:0 
+[s S585 . 1 `uc 1 MODE 1 0 :3:0 
 `uc 1 ACLR 1 0 :1:3 
 `uc 1 CRS 1 0 :3:4 
 `uc 1 PSIS 1 0 :1:7 
 ]
 "31988
-[s S591 . 1 `uc 1 ADMD0 1 0 :1:0 
+[s S590 . 1 `uc 1 ADMD0 1 0 :1:0 
 `uc 1 ADMD1 1 0 :1:1 
 `uc 1 ADMD2 1 0 :1:2 
 `uc 1 ADACLR 1 0 :1:3 
@@ -1040,11 +1042,11 @@ TMR2_UART2_TX_EDGE 24
 `uc 1 ADCRS2 1 0 :1:6 
 `uc 1 ADPSIS 1 0 :1:7 
 ]
-[s S600 . 1 `uc 1 ADMD 1 0 :3:0 
+[s S599 . 1 `uc 1 ADMD 1 0 :3:0 
 `uc 1 . 1 0 :1:3 
 `uc 1 ADCRS 1 0 :3:4 
 ]
-[s S604 . 1 `uc 1 MODE0 1 0 :1:0 
+[s S603 . 1 `uc 1 MODE0 1 0 :1:0 
 `uc 1 MODE1 1 0 :1:1 
 `uc 1 MODE2 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -1052,24 +1054,24 @@ TMR2_UART2_TX_EDGE 24
 `uc 1 CRS1 1 0 :1:5 
 `uc 1 CRS2 1 0 :1:6 
 ]
-[s S612 . 1 `uc 1 MD 1 0 :3:0 
+[s S611 . 1 `uc 1 MD 1 0 :3:0 
 ]
-[s S614 . 1 `uc 1 MD0 1 0 :1:0 
+[s S613 . 1 `uc 1 MD0 1 0 :1:0 
 `uc 1 MD1 1 0 :1:1 
 `uc 1 MD2 1 0 :1:2 
 ]
-[s S618 . 1 `uc 1 ADMODE 1 0 :3:0 
+[s S617 . 1 `uc 1 ADMODE 1 0 :3:0 
 ]
-[u S620 . 1 `S586 1 . 1 0 `S591 1 . 1 0 `S600 1 . 1 0 `S604 1 . 1 0 `S612 1 . 1 0 `S614 1 . 1 0 `S618 1 . 1 0 ]
-[v _ADCON2bits ADCON2bits `VES620  1 e 1 @16122 ]
+[u S619 . 1 `S585 1 . 1 0 `S590 1 . 1 0 `S599 1 . 1 0 `S603 1 . 1 0 `S611 1 . 1 0 `S613 1 . 1 0 `S617 1 . 1 0 ]
+[v _ADCON2bits ADCON2bits `VES619  1 e 1 @16122 ]
 "32118
 [v _ADCON3 ADCON3 `VEuc  1 e 1 @16123 ]
-[s S531 . 1 `uc 1 TMD 1 0 :3:0 
+[s S530 . 1 `uc 1 TMD 1 0 :3:0 
 `uc 1 SOI 1 0 :1:3 
 `uc 1 CALC 1 0 :3:4 
 ]
 "32153
-[s S535 . 1 `uc 1 ADTMD0 1 0 :1:0 
+[s S534 . 1 `uc 1 ADTMD0 1 0 :1:0 
 `uc 1 ADTMD1 1 0 :1:1 
 `uc 1 ADTMD2 1 0 :1:2 
 `uc 1 ADSOI 1 0 :1:3 
@@ -1077,11 +1079,11 @@ TMR2_UART2_TX_EDGE 24
 `uc 1 ADCALC1 1 0 :1:5 
 `uc 1 ADCALC2 1 0 :1:6 
 ]
-[s S543 . 1 `uc 1 ADTMD 1 0 :3:0 
+[s S542 . 1 `uc 1 ADTMD 1 0 :3:0 
 `uc 1 . 1 0 :1:3 
 `uc 1 ADCALC 1 0 :3:4 
 ]
-[s S547 . 1 `uc 1 TMD0 1 0 :1:0 
+[s S546 . 1 `uc 1 TMD0 1 0 :1:0 
 `uc 1 TMD1 1 0 :1:1 
 `uc 1 TMD2 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -1089,11 +1091,11 @@ TMR2_UART2_TX_EDGE 24
 `uc 1 CALC1 1 0 :1:5 
 `uc 1 CALC2 1 0 :1:6 
 ]
-[u S555 . 1 `S531 1 . 1 0 `S535 1 . 1 0 `S543 1 . 1 0 `S547 1 . 1 0 ]
-[v _ADCON3bits ADCON3bits `VES555  1 e 1 @16123 ]
+[u S554 . 1 `S530 1 . 1 0 `S534 1 . 1 0 `S542 1 . 1 0 `S546 1 . 1 0 ]
+[v _ADCON3bits ADCON3bits `VES554  1 e 1 @16123 ]
 "32248
 [v _ADSTAT ADSTAT `VEuc  1 e 1 @16124 ]
-[s S665 . 1 `uc 1 STAT 1 0 :3:0 
+[s S664 . 1 `uc 1 STAT 1 0 :3:0 
 `uc 1 . 1 0 :1:3 
 `uc 1 MATH 1 0 :1:4 
 `uc 1 LTHR 1 0 :1:5 
@@ -1101,7 +1103,7 @@ TMR2_UART2_TX_EDGE 24
 `uc 1 OV 1 0 :1:7 
 ]
 "32283
-[s S672 . 1 `uc 1 ADSTAT0 1 0 :1:0 
+[s S671 . 1 `uc 1 ADSTAT0 1 0 :1:0 
 `uc 1 ADSTAT1 1 0 :1:1 
 `uc 1 ADSTAT2 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -1110,29 +1112,29 @@ TMR2_UART2_TX_EDGE 24
 `uc 1 ADUTHR 1 0 :1:6 
 `uc 1 ADAOV 1 0 :1:7 
 ]
-[s S681 . 1 `uc 1 ADSTAT 1 0 :3:0 
+[s S680 . 1 `uc 1 ADSTAT 1 0 :3:0 
 `uc 1 . 1 0 :4:3 
 `uc 1 ADOV 1 0 :1:7 
 ]
-[s S685 . 1 `uc 1 STAT0 1 0 :1:0 
+[s S684 . 1 `uc 1 STAT0 1 0 :1:0 
 `uc 1 STAT1 1 0 :1:1 
 `uc 1 STAT2 1 0 :1:2 
 ]
-[u S689 . 1 `S665 1 . 1 0 `S672 1 . 1 0 `S681 1 . 1 0 `S685 1 . 1 0 ]
-[v _ADSTATbits ADSTATbits `VES689  1 e 1 @16124 ]
+[u S688 . 1 `S664 1 . 1 0 `S671 1 . 1 0 `S680 1 . 1 0 `S684 1 . 1 0 ]
+[v _ADSTATbits ADSTATbits `VES688  1 e 1 @16124 ]
 "32373
 [v _ADREF ADREF `VEuc  1 e 1 @16125 ]
 "32455
 [v _ADACT ADACT `VEuc  1 e 1 @16126 ]
 "32547
 [v _ADCLK ADCLK `VEuc  1 e 1 @16127 ]
-[s S1852 . 1 `uc 1 P5TSEL 1 0 :2:0 
+[s S1851 . 1 `uc 1 P5TSEL 1 0 :2:0 
 `uc 1 P6TSEL 1 0 :2:2 
 `uc 1 P7TSEL 1 0 :2:4 
 `uc 1 P8TSEL 1 0 :2:6 
 ]
 "38440
-[s S1857 . 1 `uc 1 P5TSEL0 1 0 :1:0 
+[s S1856 . 1 `uc 1 P5TSEL0 1 0 :1:0 
 `uc 1 P5TSEL1 1 0 :1:1 
 `uc 1 P6TSEL0 1 0 :1:2 
 `uc 1 P6TSEL1 1 0 :1:3 
@@ -1142,10 +1144,10 @@ TMR2_UART2_TX_EDGE 24
 `uc 1 P8TSEL1 1 0 :1:7 
 ]
 "38440
-[u S1866 . 1 `S1852 1 . 1 0 `S1857 1 . 1 0 ]
+[u S1865 . 1 `S1851 1 . 1 0 `S1856 1 . 1 0 ]
 "38440
 "38440
-[v _CCPTMRS1bits CCPTMRS1bits `VES1866  1 e 1 @16223 ]
+[v _CCPTMRS1bits CCPTMRS1bits `VES1865  1 e 1 @16223 ]
 "38811
 [v _PWM7DCL PWM7DCL `VEuc  1 e 1 @16228 ]
 "38877
@@ -1162,17 +1164,17 @@ TMR2_UART2_TX_EDGE 24
 [v _PR2 PR2 `VEuc  1 e 1 @16299 ]
 "44243
 [v _T2CON T2CON `VEuc  1 e 1 @16300 ]
-[s S2148 . 1 `uc 1 OUTPS 1 0 :4:0 
+[s S2147 . 1 `uc 1 OUTPS 1 0 :4:0 
 `uc 1 CKPS 1 0 :3:4 
 `uc 1 ON 1 0 :1:7 
 ]
 "44279
-[s S2152 . 1 `uc 1 T2OUTPS 1 0 :4:0 
+[s S2151 . 1 `uc 1 T2OUTPS 1 0 :4:0 
 `uc 1 T2CKPS 1 0 :3:4 
 `uc 1 T2ON 1 0 :1:7 
 ]
 "44279
-[s S2156 . 1 `uc 1 T2OUTPS0 1 0 :1:0 
+[s S2155 . 1 `uc 1 T2OUTPS0 1 0 :1:0 
 `uc 1 T2OUTPS1 1 0 :1:1 
 `uc 1 T2OUTPS2 1 0 :1:2 
 `uc 1 T2OUTPS3 1 0 :1:3 
@@ -1181,7 +1183,7 @@ TMR2_UART2_TX_EDGE 24
 `uc 1 T2CKPS2 1 0 :1:6 
 ]
 "44279
-[s S2164 . 1 `uc 1 OUTPS0 1 0 :1:0 
+[s S2163 . 1 `uc 1 OUTPS0 1 0 :1:0 
 `uc 1 OUTPS1 1 0 :1:1 
 `uc 1 OUTPS2 1 0 :1:2 
 `uc 1 OUTPS3 1 0 :1:3 
@@ -1191,107 +1193,107 @@ TMR2_UART2_TX_EDGE 24
 `uc 1 TMR2ON 1 0 :1:7 
 ]
 "44279
-[u S2173 . 1 `S2148 1 . 1 0 `S2152 1 . 1 0 `S2156 1 . 1 0 `S2164 1 . 1 0 ]
+[u S2172 . 1 `S2147 1 . 1 0 `S2151 1 . 1 0 `S2155 1 . 1 0 `S2163 1 . 1 0 ]
 "44279
 "44279
-[v _T2CONbits T2CONbits `VES2173  1 e 1 @16300 ]
+[v _T2CONbits T2CONbits `VES2172  1 e 1 @16300 ]
 "44389
 [v _T2HLT T2HLT `VEuc  1 e 1 @16301 ]
-[s S2034 . 1 `uc 1 MODE 1 0 :5:0 
+[s S2033 . 1 `uc 1 MODE 1 0 :5:0 
 `uc 1 CKSYNC 1 0 :1:5 
 `uc 1 CKPOL 1 0 :1:6 
 `uc 1 PSYNC 1 0 :1:7 
 ]
 "44422
-[s S2039 . 1 `uc 1 MODE0 1 0 :1:0 
+[s S2038 . 1 `uc 1 MODE0 1 0 :1:0 
 `uc 1 MODE1 1 0 :1:1 
 `uc 1 MODE2 1 0 :1:2 
 `uc 1 MODE3 1 0 :1:3 
 `uc 1 MODE4 1 0 :1:4 
 ]
 "44422
-[s S2045 . 1 `uc 1 T2MODE 1 0 :5:0 
+[s S2044 . 1 `uc 1 T2MODE 1 0 :5:0 
 `uc 1 T2CKSYNC 1 0 :1:5 
 `uc 1 T2CKPOL 1 0 :1:6 
 `uc 1 T2PSYNC 1 0 :1:7 
 ]
 "44422
-[s S2050 . 1 `uc 1 T2MODE0 1 0 :1:0 
+[s S2049 . 1 `uc 1 T2MODE0 1 0 :1:0 
 `uc 1 T2MODE1 1 0 :1:1 
 `uc 1 T2MODE2 1 0 :1:2 
 `uc 1 T2MODE3 1 0 :1:3 
 `uc 1 T2MODE4 1 0 :1:4 
 ]
 "44422
-[u S2056 . 1 `S2034 1 . 1 0 `S2039 1 . 1 0 `S2045 1 . 1 0 `S2050 1 . 1 0 ]
+[u S2055 . 1 `S2033 1 . 1 0 `S2038 1 . 1 0 `S2044 1 . 1 0 `S2049 1 . 1 0 ]
 "44422
 "44422
-[v _T2HLTbits T2HLTbits `VES2056  1 e 1 @16301 ]
+[v _T2HLTbits T2HLTbits `VES2055  1 e 1 @16301 ]
 "44517
 [v _T2CLKCON T2CLKCON `VEuc  1 e 1 @16302 ]
 "44675
 [v _T2RST T2RST `VEuc  1 e 1 @16303 ]
-[s S2110 . 1 `uc 1 RSEL 1 0 :5:0 
+[s S2109 . 1 `uc 1 RSEL 1 0 :5:0 
 ]
 "44702
-[s S2112 . 1 `uc 1 RSEL0 1 0 :1:0 
+[s S2111 . 1 `uc 1 RSEL0 1 0 :1:0 
 `uc 1 RSEL1 1 0 :1:1 
 `uc 1 RSEL2 1 0 :1:2 
 `uc 1 RSEL3 1 0 :1:3 
 `uc 1 RSEL4 1 0 :1:4 
 ]
 "44702
-[s S2118 . 1 `uc 1 T2RSEL 1 0 :5:0 
+[s S2117 . 1 `uc 1 T2RSEL 1 0 :5:0 
 ]
 "44702
-[s S2120 . 1 `uc 1 T2RSEL0 1 0 :1:0 
+[s S2119 . 1 `uc 1 T2RSEL0 1 0 :1:0 
 `uc 1 T2RSEL1 1 0 :1:1 
 `uc 1 T2RSEL2 1 0 :1:2 
 `uc 1 T2RSEL3 1 0 :1:3 
 `uc 1 T2RSEL4 1 0 :1:4 
 ]
 "44702
-[u S2126 . 1 `S2110 1 . 1 0 `S2112 1 . 1 0 `S2118 1 . 1 0 `S2120 1 . 1 0 ]
+[u S2125 . 1 `S2109 1 . 1 0 `S2111 1 . 1 0 `S2117 1 . 1 0 `S2119 1 . 1 0 ]
 "44702
 "44702
-[v _T2RSTbits T2RSTbits `VES2126  1 e 1 @16303 ]
+[v _T2RSTbits T2RSTbits `VES2125  1 e 1 @16303 ]
 "45934
 [v _TMR0L TMR0L `VEuc  1 e 1 @16310 ]
 "46072
 [v _TMR0H TMR0H `VEuc  1 e 1 @16311 ]
 "46326
 [v _T0CON0 T0CON0 `VEuc  1 e 1 @16312 ]
-[s S1896 . 1 `uc 1 OUTPS 1 0 :4:0 
+[s S1895 . 1 `uc 1 OUTPS 1 0 :4:0 
 `uc 1 MD16 1 0 :1:4 
 `uc 1 OUT 1 0 :1:5 
 `uc 1 . 1 0 :1:6 
 `uc 1 EN 1 0 :1:7 
 ]
 "46360
-[s S1902 . 1 `uc 1 T0OUTPS 1 0 :4:0 
+[s S1901 . 1 `uc 1 T0OUTPS 1 0 :4:0 
 `uc 1 T0MD16 1 0 :1:4 
 `uc 1 T0OUT 1 0 :1:5 
 `uc 1 . 1 0 :1:6 
 `uc 1 T0EN 1 0 :1:7 
 ]
 "46360
-[s S1908 . 1 `uc 1 OUTPS0 1 0 :1:0 
+[s S1907 . 1 `uc 1 OUTPS0 1 0 :1:0 
 `uc 1 OUTPS1 1 0 :1:1 
 `uc 1 OUTPS2 1 0 :1:2 
 `uc 1 OUTPS3 1 0 :1:3 
 `uc 1 T016BIT 1 0 :1:4 
 ]
 "46360
-[s S1914 . 1 `uc 1 T0OUTPS0 1 0 :1:0 
+[s S1913 . 1 `uc 1 T0OUTPS0 1 0 :1:0 
 `uc 1 T0OUTPS1 1 0 :1:1 
 `uc 1 T0OUTPS2 1 0 :1:2 
 `uc 1 T0OUTPS3 1 0 :1:3 
 ]
 "46360
-[u S1919 . 1 `S1896 1 . 1 0 `S1902 1 . 1 0 `S1908 1 . 1 0 `S1914 1 . 1 0 ]
+[u S1918 . 1 `S1895 1 . 1 0 `S1901 1 . 1 0 `S1907 1 . 1 0 `S1913 1 . 1 0 ]
 "46360
 "46360
-[v _T0CON0bits T0CON0bits `VES1919  1 e 1 @16312 ]
+[v _T0CON0bits T0CON0bits `VES1918  1 e 1 @16312 ]
 "46450
 [v _T0CON1 T0CON1 `VEuc  1 e 1 @16313 ]
 "46592
@@ -1361,17 +1363,17 @@ TMR2_UART2_TX_EDGE 24
 [v _main main `(v  1 e 1 0 ]
 {
 "181
-[v main@i_361 i `i  1 a 2 49 ]
+[v main@i_360 i `i  1 a 2 49 ]
 "149
-[v main@i_354 i `i  1 a 2 37 ]
+[v main@i_353 i `i  1 a 2 37 ]
 "140
-[v main@i_353 i `i  1 a 2 47 ]
+[v main@i_352 i `i  1 a 2 47 ]
 "356
 [v main@giggity giggity `uc  1 a 1 45 ]
-"349
-[v main@R_Turn R_Turn `a  1 a 1 33 ]
 "348
-[v main@L_Turn L_Turn `a  1 a 1 32 ]
+[v main@L_Turn L_Turn `a  1 a 1 33 ]
+"349
+[v main@R_Turn R_Turn `a  1 a 1 32 ]
 "58
 [v main@sensor_data sensor_data `[5]us  1 a 10 1 ]
 "50
@@ -1403,43 +1405,8 @@ TMR2_UART2_TX_EDGE 24
 [v main@white white `a  1 a 1 30 ]
 "49
 [v main@any any `uc  1 a 1 0 ]
-"442
+"443
 } 0
-"140 C:\Users\Maddox\Documents\APSC1299\Polulu_Lab8.X\pololu_robot.c
-[v _robot_8cm robot_8cm `(v  1 e 1 0 ]
-{
-[v robot_8cm@speed speed `uc  1 p 1 wreg ]
-[v robot_8cm@speed speed `uc  1 p 1 wreg ]
-"143
-[v robot_8cm@speed speed `uc  1 p 1 16 ]
-"153
-} 1
-"7 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\aldiv.c
-[v ___aldiv __aldiv `(l  1 e 4 0 ]
-{
-"10
-[v ___aldiv@quotient quotient `l  1 a 4 10 ]
-"11
-[v ___aldiv@sign sign `uc  1 a 1 9 ]
-[v ___aldiv@counter counter `uc  1 a 1 8 ]
-"7
-[v ___aldiv@dividend dividend `l  1 p 4 0 ]
-[v ___aldiv@divisor divisor `l  1 p 4 4 ]
-"41
-} 0
-"205 C:\Users\Maddox\Documents\APSC1299\Polulu_Lab8.X\pololu_robot.c
-[v _Stop Stop `(v  1 e 1 0 ]
-{
-"208
-} 0
-"154
-[v _Forward Forward `(v  1 e 1 0 ]
-{
-[v Forward@speed speed `uc  1 p 1 wreg ]
-[v Forward@speed speed `uc  1 p 1 wreg ]
-[v Forward@speed speed `uc  1 p 1 1 ]
-"164
-} 1
 "26 C:\Users\Maddox\Documents\APSC1299/Common/uart2.c
 [v _UART2_Initialize UART2_Initialize `(v  1 e 1 0 ]
 {
@@ -1523,11 +1490,71 @@ TMR2_UART2_TX_EDGE 24
 [v Right_Turn@speed speed `uc  1 p 1 2 ]
 "203
 } 1
+"84
+[v _Read_Battery_Voltage Read_Battery_Voltage `(ui  1 e 2 0 ]
+{
+"86
+[v Read_Battery_Voltage@ubyte ubyte `uc  1 a 1 6 ]
+[v Read_Battery_Voltage@lbyte lbyte `uc  1 a 1 5 ]
+"95
+} 0
+"247
+[v _PID_Init PID_Init `(v  1 e 1 0 ]
+{
+"260
+} 0
+"266
+[v _MiddleEdge MiddleEdge `(v  1 e 1 0 ]
+{
+[v MiddleEdge@MEsensor MEsensor `uc  1 p 1 wreg ]
+"268
+[v MiddleEdge@sensor sensor `uc  1 a 1 20 ]
+"266
+[v MiddleEdge@MEsensor MEsensor `uc  1 p 1 wreg ]
+"269
+[v MiddleEdge@MEsensor MEsensor `uc  1 p 1 21 ]
+"293
+} 1
+"140
+[v _robot_8cm robot_8cm `(v  1 e 1 0 ]
+{
+[v robot_8cm@speed speed `uc  1 p 1 wreg ]
+[v robot_8cm@speed speed `uc  1 p 1 wreg ]
+"143
+[v robot_8cm@speed speed `uc  1 p 1 16 ]
+"153
+} 1
+"7 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\aldiv.c
+[v ___aldiv __aldiv `(l  1 e 4 0 ]
+{
+"10
+[v ___aldiv@quotient quotient `l  1 a 4 10 ]
+"11
+[v ___aldiv@sign sign `uc  1 a 1 9 ]
+[v ___aldiv@counter counter `uc  1 a 1 8 ]
+"7
+[v ___aldiv@dividend dividend `l  1 p 4 0 ]
+[v ___aldiv@divisor divisor `l  1 p 4 4 ]
+"41
+} 0
+"205 C:\Users\Maddox\Documents\APSC1299\Polulu_Lab8.X\pololu_robot.c
+[v _Stop Stop `(v  1 e 1 0 ]
+{
+"208
+} 0
+"154
+[v _Forward Forward `(v  1 e 1 0 ]
+{
+[v Forward@speed speed `uc  1 p 1 wreg ]
+[v Forward@speed speed `uc  1 p 1 wreg ]
+[v Forward@speed speed `uc  1 p 1 1 ]
+"164
+} 1
 "49
 [v _Read_Calibrated_Sensors Read_Calibrated_Sensors `(uc  1 e 1 0 ]
 {
 "68
-[v Read_Calibrated_Sensors@i_2725 i `i  1 a 2 16 ]
+[v Read_Calibrated_Sensors@i_2724 i `i  1 a 2 16 ]
 "58
 [v Read_Calibrated_Sensors@i i `i  1 a 2 18 ]
 "52
@@ -1538,41 +1565,11 @@ TMR2_UART2_TX_EDGE 24
 [v Read_Calibrated_Sensors@sensor_bits sensor_bits `uc  1 a 1 15 ]
 "82
 } 0
-"84
-[v _Read_Battery_Voltage Read_Battery_Voltage `(ui  1 e 2 0 ]
-{
-"86
-[v Read_Battery_Voltage@ubyte ubyte `uc  1 a 1 6 ]
-[v Read_Battery_Voltage@lbyte lbyte `uc  1 a 1 5 ]
-"95
-} 0
 "262
 [v _PID_Start PID_Start `(v  1 e 1 0 ]
 {
 "265
 } 0
-"247
-[v _PID_Init PID_Init `(v  1 e 1 0 ]
-{
-"260
-} 0
-"179
-[v _Left_Turn Left_Turn `(v  1 e 1 0 ]
-{
-[v Left_Turn@speed speed `uc  1 p 1 wreg ]
-[v Left_Turn@speed speed `uc  1 p 1 wreg ]
-[v Left_Turn@differential differential `uc  1 p 1 1 ]
-[v Left_Turn@speed speed `uc  1 p 1 3 ]
-"190
-} 1
-"121
-[v _LCD_PrintCharacter LCD_PrintCharacter `(v  1 e 1 0 ]
-{
-[v LCD_PrintCharacter@byte byte `uc  1 p 1 wreg ]
-[v LCD_PrintCharacter@byte byte `uc  1 p 1 wreg ]
-[v LCD_PrintCharacter@byte byte `uc  1 p 1 1 ]
-"129
-} 1
 "223
 [v _Hard_Right Hard_Right `(v  1 e 1 0 ]
 {
@@ -1591,21 +1588,38 @@ TMR2_UART2_TX_EDGE 24
 [v Hard_Left@speed speed `uc  1 p 1 2 ]
 "245
 } 1
-"473 C:\Users\Maddox\Documents\APSC1299\Polulu_Lab8.X\robotmain.c
+"179
+[v _Left_Turn Left_Turn `(v  1 e 1 0 ]
+{
+[v Left_Turn@speed speed `uc  1 p 1 wreg ]
+[v Left_Turn@speed speed `uc  1 p 1 wreg ]
+[v Left_Turn@differential differential `uc  1 p 1 1 ]
+[v Left_Turn@speed speed `uc  1 p 1 3 ]
+"190
+} 1
+"121
+[v _LCD_PrintCharacter LCD_PrintCharacter `(v  1 e 1 0 ]
+{
+[v LCD_PrintCharacter@byte byte `uc  1 p 1 wreg ]
+[v LCD_PrintCharacter@byte byte `uc  1 p 1 wreg ]
+[v LCD_PrintCharacter@byte byte `uc  1 p 1 1 ]
+"129
+} 1
+"474 C:\Users\Maddox\Documents\APSC1299\Polulu_Lab8.X\robotmain.c
 [v _Get_Number Get_Number `(uc  1 e 1 0 ]
 {
-"475
-[v Get_Number@digit digit `uc  1 a 1 39 ]
 "476
+[v Get_Number@digit digit `uc  1 a 1 39 ]
+"477
 [v Get_Number@value value `uc  1 a 1 38 ]
-"494
+"495
 } 0
-"498
+"499
 [v _Get_Key Get_Key `(uc  1 e 1 0 ]
 {
-"500
+"501
 [v Get_Key@rxdata rxdata `uc  1 a 1 1 ]
-"517
+"518
 } 0
 "80 C:\Users\Maddox\Documents\APSC1299/Common/uart2.c
 [v _UART2_is_tx_ready UART2_is_tx_ready `(a  1 e 1 0 ]
@@ -1635,10 +1649,10 @@ TMR2_UART2_TX_EDGE 24
 {
 "140
 } 0
-"444 C:\Users\Maddox\Documents\APSC1299\Polulu_Lab8.X\robotmain.c
+"445 C:\Users\Maddox\Documents\APSC1299\Polulu_Lab8.X\robotmain.c
 [v _Diagnostic_Menu Diagnostic_Menu `(v  1 e 1 0 ]
 {
-"469
+"470
 } 0
 "5 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\printf.c
 [v _printf printf `(i  1 e 2 0 ]
@@ -1649,31 +1663,31 @@ TMR2_UART2_TX_EDGE 24
 [v printf@fmt fmt `*.32Cuc  1 p 2 31 ]
 "13
 } 0
-"521 C:\Users\Maddox\Documents\APSC1299\Polulu_Lab8.X\robotmain.c
+"522 C:\Users\Maddox\Documents\APSC1299\Polulu_Lab8.X\robotmain.c
 [v _Countdown Countdown `(v  1 e 1 0 ]
 {
 [v Countdown@time time `uc  1 p 1 wreg ]
-"523
+"524
 [v Countdown@msg msg `[9]uc  1 a 9 52 ]
-"525
+"526
 [v Countdown@counts counts `ui  1 a 2 61 ]
-"524
+"525
 [v Countdown@i i `uc  1 a 1 65 ]
-"523
-[v Countdown@length length `uc  1 a 1 64 ]
-"521
-[v Countdown@time time `uc  1 p 1 wreg ]
 "524
+[v Countdown@length length `uc  1 a 1 64 ]
+"522
+[v Countdown@time time `uc  1 p 1 wreg ]
+"525
 [v Countdown@time time `uc  1 p 1 63 ]
-"564
+"565
 } 1
 "9 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\nf_sprintf.c
 [v _sprintf sprintf `(i  1 e 2 0 ]
 {
-[u S3349 . 2 `*.30uc 1 buffer 1 0 `*.39Cuc 1 source 2 0 ]
+[u S3352 . 2 `*.30uc 1 buffer 1 0 `*.39Cuc 1 source 2 0 ]
 "13
-[s S3352 _IO_FILE 11 `S3349 1 . 2 0 `i 1 count 2 2 `[3]uc 1 ungetbuf 3 4 `i 1 ungetcnt 2 7 `i 1 limit 2 9 ]
-[v sprintf@f f `S3352  1 a 11 41 ]
+[s S3355 _IO_FILE 11 `S3352 1 . 2 0 `i 1 count 2 2 `[3]uc 1 ungetbuf 3 4 `i 1 ungetcnt 2 7 `i 1 limit 2 9 ]
+[v sprintf@f f `S3355  1 a 11 41 ]
 "11
 [v sprintf@ret ret `i  1 a 2 38 ]
 "12
@@ -1688,9 +1702,9 @@ TMR2_UART2_TX_EDGE 24
 {
 "1820
 [v vfprintf@cfmt cfmt `*.32uc  1 a 2 29 ]
-[s S3384 _IO_FILE 0 ]
+[s S3387 _IO_FILE 0 ]
 "1817
-[v vfprintf@fp fp `*.30S3384  1 p 1 25 ]
+[v vfprintf@fp fp `*.30S3387  1 p 1 25 ]
 [v vfprintf@fmt fmt `*.32Cuc  1 p 2 26 ]
 [v vfprintf@ap ap `*.30*.30v  1 p 1 28 ]
 "1840
@@ -1698,9 +1712,9 @@ TMR2_UART2_TX_EDGE 24
 "1177
 [v _vfpfcnvrt vfpfcnvrt `(i  1 s 2 vfpfcnvrt ]
 {
-[u S3402 . 4 `i 1 sint 2 0 `ui 1 uint 2 0 `d 1 f 4 0 ]
+[u S3405 . 4 `i 1 sint 2 0 `ui 1 uint 2 0 `d 1 f 4 0 ]
 "1188
-[v vfpfcnvrt@convarg convarg `S3402  1 a 4 20 ]
+[v vfpfcnvrt@convarg convarg `S3405  1 a 4 20 ]
 "1179
 [v vfpfcnvrt@cp cp `*.32uc  1 a 2 18 ]
 "1191
@@ -1709,9 +1723,9 @@ TMR2_UART2_TX_EDGE 24
 [v vfpfcnvrt@c c `uc  1 a 1 24 ]
 "1180
 [v vfpfcnvrt@done done `a  1 a 1 15 ]
-[s S3384 _IO_FILE 0 ]
+[s S3387 _IO_FILE 0 ]
 "1177
-[v vfpfcnvrt@fp fp `*.30S3384  1 p 1 10 ]
+[v vfpfcnvrt@fp fp `*.30S3387  1 p 1 10 ]
 [v vfpfcnvrt@fmt fmt `*.30*.32uc  1 p 1 11 ]
 [v vfpfcnvrt@ap ap `*.30*.30v  1 p 1 12 ]
 "1814
@@ -1720,9 +1734,9 @@ TMR2_UART2_TX_EDGE 24
 [v _fputc fputc `(i  1 e 2 0 ]
 {
 [v fputc@c c `i  1 p 2 2 ]
-[u S3349 . 2 `*.30uc 1 buffer 1 0 `*.39Cuc 1 source 2 0 ]
-[s S3352 _IO_FILE 11 `S3349 1 . 2 0 `i 1 count 2 2 `[3]uc 1 ungetbuf 3 4 `i 1 ungetcnt 2 7 `i 1 limit 2 9 ]
-[v fputc@fp fp `*.30S3352  1 p 1 4 ]
+[u S3352 . 2 `*.30uc 1 buffer 1 0 `*.39Cuc 1 source 2 0 ]
+[s S3355 _IO_FILE 11 `S3352 1 . 2 0 `i 1 count 2 2 `[3]uc 1 ungetbuf 3 4 `i 1 ungetcnt 2 7 `i 1 limit 2 9 ]
+[v fputc@fp fp `*.30S3355  1 p 1 4 ]
 "24
 } 0
 "130 C:\Users\Maddox\Documents\APSC1299/Common/uart2.c
