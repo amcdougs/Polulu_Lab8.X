@@ -27586,7 +27586,7 @@ _Bool TMR0_HasOverflowOccured(void);
 # 12 "pololu_robot.c" 2
 
 uint16_t sensor_data[5];
-uint16_t sensor_values[5];
+_Bool sensor_values[5];
 
 unsigned int* Calibrate_Sensors(void)
 {
@@ -27641,7 +27641,7 @@ uint8_t Read_Calibrated_Sensors(void)
      }
 
     for(int i = 0; i < 5; i++){
-        if(sensor_data[i] >= 500){
+        if(sensor_data[i] >= 300){
             sensor_values[i] = 1;
         }else{
             sensor_values[i] = 0;

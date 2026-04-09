@@ -11,7 +11,7 @@
 #include "../Common/tmr0.h"
 
 uint16_t sensor_data[5]; //global otherwise the array gets fucked when called
-uint16_t sensor_values[5]; //global binary version of sensor data for easier reading 
+bool sensor_values[5]; //global binary version of sensor data for easier reading 
 
 unsigned int* Calibrate_Sensors(void)
 {
@@ -64,9 +64,9 @@ uint8_t Read_Calibrated_Sensors(void)
         
         sensor_data[i] = upperbyte[i]*256 + lowerbyte[i]; //combine      
      }
-    //by turning into 1 or 0 the array will be easier to use later on IMO-Aiden
+    
     for(int i = 0; i < 5; i++){
-        if(sensor_data[i] >= 500){ //if value greater than 500 make 1
+        if(sensor_data[i] >= 300){ //if value greater than 500 make 1
             sensor_values[i] = 1;
         }else{
             sensor_values[i] = 0; //if lower than 500 then 0

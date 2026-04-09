@@ -2295,8 +2295,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;pololu_robot.c: 13: uint16_t sensor_data[5];
 [v _sensor_data `us ~T0 @X0 -> 5 `i e ]
 "14
-[; ;pololu_robot.c: 14: uint16_t sensor_values[5];
-[v _sensor_values `us ~T0 @X0 -> 5 `i e ]
+[; ;pololu_robot.c: 14: _Bool sensor_values[5];
+[v _sensor_values `a ~T0 @X0 -> 5 `i e ]
 "16
 [; ;pololu_robot.c: 16: unsigned int* Calibrate_Sensors(void)
 [v _Calibrate_Sensors `(*ui ~T0 @X0 1 ef ]
@@ -2518,12 +2518,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 2311 ]
 {
 "69
-[; ;pololu_robot.c: 69:         if(sensor_data[i] >= 500){
-[e $ ! >= -> *U + &U _sensor_data * -> -> _i `ui `ux -> -> # *U &U _sensor_data `ui `ux `ui -> -> 500 `i `ui 2314  ]
+[; ;pololu_robot.c: 69:         if(sensor_data[i] >= 300){
+[e $ ! >= -> *U + &U _sensor_data * -> -> _i `ui `ux -> -> # *U &U _sensor_data `ui `ux `ui -> -> 300 `i `ui 2314  ]
 {
 "70
 [; ;pololu_robot.c: 70:             sensor_values[i] = 1;
-[e = *U + &U _sensor_values * -> -> _i `ui `ux -> -> # *U &U _sensor_values `ui `ux -> -> 1 `i `us ]
+[e = *U + &U _sensor_values * -> -> _i `ui `ux -> -> # *U &U _sensor_values `ui `ux -> -> 1 `i `a ]
 "71
 [; ;pololu_robot.c: 71:         }else{
 }
@@ -2532,7 +2532,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "72
 [; ;pololu_robot.c: 72:             sensor_values[i] = 0;
-[e = *U + &U _sensor_values * -> -> _i `ui `ux -> -> # *U &U _sensor_values `ui `ux -> -> 0 `i `us ]
+[e = *U + &U _sensor_values * -> -> _i `ui `ux -> -> # *U &U _sensor_values `ui `ux -> -> 0 `i `a ]
 "73
 [; ;pololu_robot.c: 73:         }
 }
@@ -2546,7 +2546,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 "77
 [; ;pololu_robot.c: 77:     sensor_bits = (sensor_values[0] << 4 | sensor_values[1] << 3 | sensor_values[2] << 2
-[e = _sensor_bits -> | | | | << -> *U + &U _sensor_values * -> -> -> 0 `i `ui `ux -> -> # *U &U _sensor_values `ui `ux `ui -> 4 `i << -> *U + &U _sensor_values * -> -> -> 1 `i `ui `ux -> -> # *U &U _sensor_values `ui `ux `ui -> 3 `i << -> *U + &U _sensor_values * -> -> -> 2 `i `ui `ux -> -> # *U &U _sensor_values `ui `ux `ui -> 2 `i << -> *U + &U _sensor_values * -> -> -> 3 `i `ui `ux -> -> # *U &U _sensor_values `ui `ux `ui -> 1 `i -> *U + &U _sensor_values * -> -> -> 4 `i `ui `ux -> -> # *U &U _sensor_values `ui `ux `ui `uc ]
+[e = _sensor_bits -> | | | | << -> *U + &U _sensor_values * -> -> -> 0 `i `ui `ux -> -> # *U &U _sensor_values `ui `ux `i -> 4 `i << -> *U + &U _sensor_values * -> -> -> 1 `i `ui `ux -> -> # *U &U _sensor_values `ui `ux `i -> 3 `i << -> *U + &U _sensor_values * -> -> -> 2 `i `ui `ux -> -> # *U &U _sensor_values `ui `ux `i -> 2 `i << -> *U + &U _sensor_values * -> -> -> 3 `i `ui `ux -> -> # *U &U _sensor_values `ui `ux `i -> 1 `i -> *U + &U _sensor_values * -> -> -> 4 `i `ui `ux -> -> # *U &U _sensor_values `ui `ux `i `uc ]
 "79
 [; ;pololu_robot.c: 79:     return sensor_bits;
 [e ) _sensor_bits ]

@@ -28245,8 +28245,7 @@ void main(void)
 
 
 
-        _Bool L_Turn;
-        _Bool R_Turn;
+
 
         TMR0_Initialize(0x9F & 0x90, 0x5F & 0xEF & 0xF0);
         PID_Init();
@@ -28254,41 +28253,45 @@ void main(void)
 
 
             uint8_t giggity = Read_Calibrated_Sensors();
+            printf("Sensors: %u\n", giggity);
 
             switch(giggity){
                 case 0b00000100:
+                    printf("PID ON precommand");
                     PID_Start();
-                    L_Turn = 0;
-                    R_Turn = 0;
+                    printf("PID ON! post command pre break");
                     break;
 
                 case 0b00001000:
                     while(!UART1_is_tx_ready()) continue;
-                    L_Turn = 1;
                     UART1_Write(0xBC);
+                    Right_Turn(10,10);
+                    _delay((unsigned long)((500)*(48000000/4000.0)));
                     while(giggity != 0b00000100){
-                        Left_Turn(0,30);
-                    giggity = Read_Calibrated_Sensors();
+                        Hard_Left(10,10);
+                        giggity = Read_Calibrated_Sensors();
                     }
                     break;
 
                 case 0b00000010:
                     while(!UART1_is_tx_ready()) continue;
                     UART1_Write(0xBC);
-                    R_Turn = 1;
+                    Left_Turn(10,10);
+                    _delay((unsigned long)((500)*(48000000/4000.0)));
                     while(giggity != 0b00000100){
-                        Right_Turn(0,30);
-                    giggity = Read_Calibrated_Sensors();
+                        Hard_Right(10,10);
+                        giggity = Read_Calibrated_Sensors();
                     }
                     break;
+
                 case 0b00010000:
                 case 0b00010100:
                     while(!UART1_is_tx_ready()) continue;
-                    L_Turn = 1;
+
                     UART1_Write(0xBC);
-                    while((giggity & 0b00001110) == 0){
+                    while(giggity != 0b00000001){
                         Hard_Left(10,10);
-                    giggity = Read_Calibrated_Sensors();
+                        giggity = Read_Calibrated_Sensors();
                     }
 
 
@@ -28298,36 +28301,28 @@ void main(void)
                 case 0b00000101:
                     while(!UART1_is_tx_ready()) continue;
                     UART1_Write(0xBC);
-                    R_Turn = 1;
-                    while((giggity & 0b00001110) == 0){
+                    while(giggity != 0b00010000){
                         Hard_Right(10,10);
-                    giggity = Read_Calibrated_Sensors();
+                        giggity = Read_Calibrated_Sensors();
                     }
 
                     break;
                 case 0b00000000:
-                    if(L_Turn == 1){
-                     while(!UART1_is_tx_ready()) continue;
-                    UART1_Write(0xBC);
-                    Left_Turn(0,30);
-                    _delay((unsigned long)((200)*(48000000/4000.0)));
-                    }else if(R_Turn == 1){
-                        while(!UART1_is_tx_ready()) continue;
-                        UART1_Write(0xBC);
-                       Right_Turn(0,30);
-                        _delay((unsigned long)((200)*(48000000/4000.0)));
 
-                    }
-
-                    _delay((unsigned long)((150)*(48000000/4000.0)));
                     while(!UART1_is_tx_ready()) continue;
                     UART1_Write(0xBC);
-                    robot_8cm(20);
-                    Turn_around(20);
-                    robot_8cm(20);
+                    while(!UART1_is_tx_ready()) continue;
+                    Forward(0);
                     break;
+                default:
+                    while(!UART1_is_tx_ready()) continue;
+                    UART1_Write(0xBC);
+                    while(!UART1_is_tx_ready()) continue;
+                    Forward(0);
+                    break;
+# 445 "robotmain.c"
             }
-
+            printf("after switch");
         }
 
     }

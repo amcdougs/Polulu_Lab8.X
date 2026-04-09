@@ -345,8 +345,7 @@ void main(void)
         
         
         
-        bool L_Turn;
-        bool R_Turn;
+       
         
         TMR0_Initialize(T0_16_BIT & T0_POST_1_1, T0_SOURCE_INT & T0_SYNC & T0_PRE_1_1);
         PID_Init();
@@ -354,41 +353,45 @@ void main(void)
             
                     
             uint8_t giggity = Read_Calibrated_Sensors();
+            printf("Sensors: %u\n", giggity);
             
             switch(giggity){
                 case 0b00000100: //forward
+                    printf("PID ON precommand");
                     PID_Start();
-                    L_Turn = false;
-                    R_Turn = false;
+                    printf("PID ON! post command pre break");
                     break;
                     
                 case 0b00001000: //left
-                    while(!UART1_is_tx_ready()) continue;
-                    L_Turn = true; 
+                    while(!UART1_is_tx_ready()) continue; 
                     UART1_Write(0xBC);
+                    Right_Turn(10,10);
+                    __delay_ms(500);
                     while(giggity != 0b00000100){
-                        Left_Turn(0,30);
-                    giggity = Read_Calibrated_Sensors();
+                        Hard_Left(10,10);
+                        giggity = Read_Calibrated_Sensors();
                     }
                     break;
                     
                 case 0b00000010:
                     while(!UART1_is_tx_ready()) continue;
                     UART1_Write(0xBC); 
-                    R_Turn = true;
+                    Left_Turn(10,10);
+                    __delay_ms(500);
                     while(giggity != 0b00000100){
-                        Right_Turn(0,30);
-                    giggity = Read_Calibrated_Sensors();
+                        Hard_Right(10,10);
+                        giggity = Read_Calibrated_Sensors();
                     }
                     break;
+                    
                 case 0b00010000: //left
                 case 0b00010100:
                     while(!UART1_is_tx_ready()) continue;
-                    L_Turn = true; 
+                    
                     UART1_Write(0xBC);
-                    while((giggity & 0b00001110) == 0){
+                    while(giggity != 0b00000001){
                         Hard_Left(10,10);
-                    giggity = Read_Calibrated_Sensors();
+                        giggity = Read_Calibrated_Sensors();
                     }
                     
                     
@@ -398,36 +401,49 @@ void main(void)
                 case 0b00000101:
                     while(!UART1_is_tx_ready()) continue;
                     UART1_Write(0xBC); 
-                    R_Turn = true;
-                    while((giggity & 0b00001110) == 0){
+                    while(giggity != 0b00010000){
                         Hard_Right(10,10);
-                    giggity = Read_Calibrated_Sensors();
+                        giggity = Read_Calibrated_Sensors();
                     }
                     
                     break;
                 case 0b00000000: //stop
-                    if(L_Turn == true){ //HARD LEFT only if last thing was a turn
-                     while(!UART1_is_tx_ready()) continue;
-                    UART1_Write(0xBC);
-                    Left_Turn(0,30);
-                    __delay_ms(200); 
-                    }else if(R_Turn == true){ //HARD RIGHT give another lil bit of turn time 
-                        while(!UART1_is_tx_ready()) continue;
-                        UART1_Write(0xBC); 
-                       Right_Turn(0,30);
-                        __delay_ms(200);
-                    
-                    }
-                        
-                    __delay_ms(150);
+                
                     while(!UART1_is_tx_ready()) continue;
                     UART1_Write(0xBC);
-                    robot_8cm(20);
-                    Turn_around(20);
-                    robot_8cm(20);
+                    while(!UART1_is_tx_ready()) continue;
+                    Forward(0);
                     break;
+                default:
+                    while(!UART1_is_tx_ready()) continue;
+                    UART1_Write(0xBC);
+                    while(!UART1_is_tx_ready()) continue;
+                    Forward(0);
+                    break;
+                    
+                 /*
+                  sensor1 = 1000
+                  * sensor 2 2000
+                  * sensor 3 3000
+                  * sensor 4 4000
+                  * sensor 5 5000
+                  * 
+                  * sensor_pos_avg 1000+2000+3000= 6000/3 = 2000 
+                  * 
+                  * pos = 2000 
+                  * 
+                  * left turn if <= 2500 straight if between 2500-5000 right turn is < 5000 something like this
+                  
+                  if(pos > 2500){
+                  * turn
+                  * }
+                  * 
+                  
+                  
+                  
+                  */     
             }
-        
+            printf("after switch");
         }
         
     }
