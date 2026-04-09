@@ -5,6 +5,9 @@
     09-MAR-2021
 *****/
 #include <stdint.h>
+#include <stdio.h>
+#include "../Common/uart1.h"
+#include "../Common/tmr0.h"
 
 #define spd_scl 1.025//put on right wheel speed
 
@@ -32,7 +35,7 @@ void Auto_Calibrate(void);
 
 //  Reads each of the sensor values and returns a 2-byte value for each of the 
 //  five sensors - total of 10 bytes are returned.
-uint8_t Read_Calibrated_Sensors(void);
+void Read_Calibrated_Sensors(bool* giggity);
 
 
 //  Returns battery voltage in mV
@@ -94,6 +97,6 @@ void PID_Init(void);
 
 void PID_Start(void);
 
-
+void PID_Stop(void);
 
 /*  END FILE    */

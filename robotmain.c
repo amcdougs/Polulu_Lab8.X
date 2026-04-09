@@ -30,7 +30,7 @@ char Get_Number(void);
 char Get_Key(void);
 void Countdown(char time);
 uint16_t counts;
-
+bool* giggity[5];
 
 void main(void) 
 {
@@ -351,99 +351,19 @@ void main(void)
         PID_Init();
         while(1){
             
-                    
-            uint8_t giggity = Read_Calibrated_Sensors();
-            printf("Sensors: %u\n", giggity);
-            
-            switch(giggity){
-                case 0b00000100: //forward
-                    printf("PID ON precommand");
-                    PID_Start();
-                    printf("PID ON! post command pre break");
-                    break;
-                    
-                case 0b00001000: //left
-                    while(!UART1_is_tx_ready()) continue; 
-                    UART1_Write(0xBC);
-                    Right_Turn(10,10);
-                    __delay_ms(500);
-                    while(giggity != 0b00000100){
-                        Hard_Left(10,10);
-                        giggity = Read_Calibrated_Sensors();
-                    }
-                    break;
-                    
-                case 0b00000010:
-                    while(!UART1_is_tx_ready()) continue;
-                    UART1_Write(0xBC); 
-                    Left_Turn(10,10);
-                    __delay_ms(500);
-                    while(giggity != 0b00000100){
-                        Hard_Right(10,10);
-                        giggity = Read_Calibrated_Sensors();
-                    }
-                    break;
-                    
-                case 0b00010000: //left
-                case 0b00010100:
-                    while(!UART1_is_tx_ready()) continue;
-                    
-                    UART1_Write(0xBC);
-                    while(giggity != 0b00000001){
-                        Hard_Left(10,10);
-                        giggity = Read_Calibrated_Sensors();
-                    }
-                    
-                    
-                    break;
-                    
-                case 0b00000001:
-                case 0b00000101:
-                    while(!UART1_is_tx_ready()) continue;
-                    UART1_Write(0xBC); 
-                    while(giggity != 0b00010000){
-                        Hard_Right(10,10);
-                        giggity = Read_Calibrated_Sensors();
-                    }
-                    
-                    break;
-                case 0b00000000: //stop
-                
-                    while(!UART1_is_tx_ready()) continue;
-                    UART1_Write(0xBC);
-                    while(!UART1_is_tx_ready()) continue;
-                    Forward(0);
-                    break;
-                default:
-                    while(!UART1_is_tx_ready()) continue;
-                    UART1_Write(0xBC);
-                    while(!UART1_is_tx_ready()) continue;
-                    Forward(0);
-                    break;
-                    
-                 /*
-                  sensor1 = 1000
-                  * sensor 2 2000
-                  * sensor 3 3000
-                  * sensor 4 4000
-                  * sensor 5 5000
-                  * 
-                  * sensor_pos_avg 1000+2000+3000= 6000/3 = 2000 
-                  * 
-                  * pos = 2000 
-                  * 
-                  * left turn if <= 2500 straight if between 2500-5000 right turn is < 5000 something like this
-                  
-                  if(pos > 2500){
-                  * turn
-                  * }
-                  * 
-                  
-                  
-                  
-                  */     
+             
+            Read_Calibrated_Sensors(giggity);
+            for(int i=0; i<5;i++){
+            printf("\nSensor: %u",giggity[i]);
             }
-            printf("after switch");
+            if(giggity[2]==1&&(giggity[0]==giggity[1]==giggity[3]==giggity[4]==0)){//forward
+                    printf("\nsharp turn ON precommand");
+                    PID_Stop();
+                    __delay_ms(500);
+                    PID_Init();
+                    printf("\nPID ON! post command pre break");
+            }
+            printf("\nafter switch");
         }
         
     }
