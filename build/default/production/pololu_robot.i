@@ -285,6 +285,8 @@ char *ctermid(char *);
 
 char *tempnam(const char *, const char *);
 # 9 "./pololu_robot.h" 2
+# 1 "./../Common/device_config.h" 1
+# 10 "./pololu_robot.h" 2
 # 1 "./../Common/uart1.h" 1
 # 15 "./../Common/uart1.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include/xc.h" 1 3
@@ -27492,7 +27494,7 @@ void UART1_SetFramingErrorHandler(void (* interruptHandler)(void));
 void UART1_SetOverrunErrorHandler(void (* interruptHandler)(void));
 # 340 "./../Common/uart1.h"
 void UART1_SetErrorHandler(void (* interruptHandler)(void));
-# 10 "./pololu_robot.h" 2
+# 11 "./pololu_robot.h" 2
 # 1 "./../Common/tmr0.h" 1
 # 99 "./../Common/tmr0.h"
 void TMR0_Initialize(uint8_t TMR0control_0, uint8_t TMR0control_1);
@@ -27510,7 +27512,7 @@ void TMR0_Write16BitTimer(uint16_t timerVal);
 void TMR0_Period8BitSet(uint8_t periodVal);
 # 269 "./../Common/tmr0.h"
 _Bool TMR0_HasOverflowOccured(void);
-# 11 "./pololu_robot.h" 2
+# 12 "./pololu_robot.h" 2
 # 28 "./pololu_robot.h"
 unsigned int* Calibrate_Sensors(void);
 
@@ -27580,7 +27582,9 @@ void Hard_Left(char speed, char speed2);
 
 void Hard_Right(char speed, char speed2);
 
-void PID_Init(void);
+void edgeMethod(_Bool* gig);
+void deg90(_Bool* gig);
+
 
 void PID_Start(void);
 
@@ -27642,12 +27646,24 @@ void Read_Calibrated_Sensors(_Bool* giggity)
      }
 
     for(int i = 0; i < 5; i++){
-        if(sensor_data[i] >= 400){
+        if(i==2)
+
+        {
+            if(sensor_data[i] >= 300){
+
+                giggity[i] = 1;
+            }else{
+            giggity[i] = 0;
+            }
+        }
+        if(sensor_data[i] >= 700){
+
             giggity[i] = 1;
         }else{
             giggity[i] = 0;
         }
-    }
+        }
+
 }
 
 unsigned int Read_Battery_Voltage(void)
@@ -27812,8 +27828,61 @@ void Hard_Left(char speed, char speed2){
                     UART1_Write((char) speed+1);
 
 }
+void edgeMethod(_Bool* gig)
+{
+    _Bool newSensor[5];
+    PID_Stop();
+    Forward(20);
+    _delay((unsigned long)((350)*(48000000/4000.0)));
+    Stop();
+    Read_Calibrated_Sensors(newSensor);
+    if(gig[4])
+    {
+        Hard_Right(30,30);
+        do{
+            Read_Calibrated_Sensors(newSensor);
+        }while(!newSensor[2]);
+        Stop();
+    }
+    else if(gig[0])
+    {
+        Hard_Left(30,30);
+        do{
+            Read_Calibrated_Sensors(newSensor);
+        }while(!newSensor[2]);
+        Stop();
+    }
+    PID_Start();
+}
 
-void PID_Init(void){
+void deg90(_Bool* gig)
+{
+
+    PID_Stop();
+    Forward(20);
+    _delay((unsigned long)((250)*(48000000/4000.0)));
+    Stop();
+    if(gig[3])
+    {
+        Hard_Right(20,20);
+        do{
+            Read_Calibrated_Sensors(gig);
+        }while(!gig[2]);
+        Stop();
+    }
+    else if(gig[1])
+    {
+        Hard_Left(20,20);
+        do{
+            Read_Calibrated_Sensors(gig);
+        }while(!gig[2]);
+        Stop();
+    }
+    PID_Start();
+
+}
+
+void PID_Start(void){
                     while(!UART1_is_tx_ready()) continue;
                     UART1_Write(0xBB);
                     while(!UART1_is_tx_ready()) continue;
@@ -27828,10 +27897,6 @@ void PID_Init(void){
                     UART1_Write(2);
 }
 
-void PID_Start(void){
-                    while(!UART1_is_tx_ready()) continue;
-                    UART1_Write(0xBB);
-}
 void PID_Stop(void){
                     while(!UART1_is_tx_ready()) continue;
                     UART1_Write(0xBC);

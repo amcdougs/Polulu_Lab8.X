@@ -348,22 +348,38 @@ void main(void)
        
         
         TMR0_Initialize(T0_16_BIT & T0_POST_1_1, T0_SOURCE_INT & T0_SYNC & T0_PRE_1_1);
-        PID_Init();
+        PID_Start();
         while(1){
             
              
             Read_Calibrated_Sensors(giggity);
+            if((giggity[0]||giggity[4])&&!(giggity[1]&&giggity[3]))//if edge and no middle sides(sharp)
+            {
+                edgeMethod(giggity);
+            }
+            /*
+            else if((giggity[1]||giggity[3])&&!(giggity[0]||giggity[4]))//if middle side and edge (90deg)
+            {
+                deg90(giggity);
+            }
+             */
+                
+            /*
             for(int i=0; i<5;i++){
             printf("\nSensor: %u",giggity[i]);
             }
+            
+             weird center debugging code
             if(giggity[2]==1&&(giggity[0]==giggity[1]==giggity[3]==giggity[4]==0)){//forward
                     printf("\nsharp turn ON precommand");
                     PID_Stop();
                     __delay_ms(500);
-                    PID_Init();
+                    PID_Start();
                     printf("\nPID ON! post command pre break");
             }
+            
             printf("\nafter switch");
+             */
         }
         
     }

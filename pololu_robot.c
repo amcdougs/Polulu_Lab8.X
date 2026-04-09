@@ -62,12 +62,24 @@ void Read_Calibrated_Sensors(bool* giggity)
      }
     
     for(int i = 0; i < 5; i++){
-        if(sensor_data[i] >= 400){ //if value greater than 500 make 1
+        if(i==2)//dumb adjustment to make middle sensor easily detect 
+                //if its centered so side sensors are detected with higher confidence
+        {
+            if(sensor_data[i] >= 300){ //if value greater than 500 make 1
+            
+                giggity[i] = 1;
+            }else{
+            giggity[i] = 0; //if lower than 500 then 0
+            } 
+        }
+        if(sensor_data[i] >= 700){ //if value greater than 500 make 1
+            
             giggity[i] = 1;
         }else{
             giggity[i] = 0; //if lower than 500 then 0
         } 
-    }
+        }
+    
 }
 
 unsigned int Read_Battery_Voltage(void)
@@ -230,10 +242,63 @@ void Hard_Left(char speed, char speed2){
                     UART1_Write(BACKWARD_LEFT);
                     while(!UART1_is_tx_ready()) continue;
                     UART1_Write((char) speed+1);
-    
+                    
+}
+void edgeMethod(bool* gig)
+{
+    bool newSensor[5];
+    PID_Stop();
+    Forward(20);
+    __delay_ms(350);//needs to be tested but should be a few CMs
+    Stop();
+    Read_Calibrated_Sensors(newSensor);
+    if(gig[4])//far right edge
+    {
+        Hard_Right(30,30);
+        do{
+            Read_Calibrated_Sensors(newSensor);
+        }while(!newSensor[2]);
+        Stop();
+    }
+    else if(gig[0])//far left edge
+    {
+        Hard_Left(30,30);
+        do{
+            Read_Calibrated_Sensors(newSensor);
+        }while(!newSensor[2]);
+        Stop();
+    }
+    PID_Start();
 }
 
-void PID_Init(void){
+void deg90(bool* gig)
+{
+    
+    PID_Stop();
+    Forward(20);
+    __delay_ms(250);//needs to be tested but should be a few CMs
+    Stop();
+    if(gig[3])//right side
+    {
+        Hard_Right(20,20);
+        do{
+            Read_Calibrated_Sensors(gig);
+        }while(!gig[2]);
+        Stop();
+    }
+    else if(gig[1])//left side
+    {
+        Hard_Left(20,20);
+        do{
+            Read_Calibrated_Sensors(gig);
+        }while(!gig[2]);
+        Stop();
+    }
+    PID_Start();
+
+}
+
+void PID_Start(void){
                     while(!UART1_is_tx_ready()) continue;
                     UART1_Write(0xBB);
                     while(!UART1_is_tx_ready()) continue;
@@ -248,10 +313,6 @@ void PID_Init(void){
                     UART1_Write(2);
 }
 
-void PID_Start(void){
-                    while(!UART1_is_tx_ready()) continue;
-                    UART1_Write(0xBB);
-}
 void PID_Stop(void){
                     while(!UART1_is_tx_ready()) continue;
                     UART1_Write(0xBC);

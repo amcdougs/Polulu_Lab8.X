@@ -27914,7 +27914,9 @@ void Hard_Left(char speed, char speed2);
 
 void Hard_Right(char speed, char speed2);
 
-void PID_Init(void);
+void edgeMethod(_Bool* gig);
+void deg90(_Bool* gig);
+
 
 void PID_Start(void);
 
@@ -28250,22 +28252,16 @@ void main(void)
 
 
         TMR0_Initialize(0x9F & 0x90, 0x5F & 0xEF & 0xF0);
-        PID_Init();
+        PID_Start();
         while(1){
 
 
             Read_Calibrated_Sensors(giggity);
-            for(int i=0; i<5;i++){
-            printf("\nSensor: %u",giggity[i]);
+            if((giggity[0]||giggity[4])&&!(giggity[1]&&giggity[3]))
+            {
+                edgeMethod(giggity);
             }
-            if(giggity[2]==1&&(giggity[0]==giggity[1]==giggity[3]==giggity[4]==0)){
-                    printf("\nsharp turn ON precommand");
-                    PID_Stop();
-                    _delay((unsigned long)((500)*(48000000/4000.0)));
-                    PID_Init();
-                    printf("\nPID ON! post command pre break");
-            }
-            printf("\nafter switch");
+# 383 "robotmain.c"
         }
 
     }
