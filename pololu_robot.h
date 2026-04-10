@@ -6,10 +6,10 @@
 *****/
 #include <stdint.h>
 #include <stdio.h>
+#include "../Common/device_config.h"
 #include "../Common/uart1.h"
 #include "../Common/tmr0.h"
 
-#define spd_scl 1.025//put on right wheel speed
 
 #define READ_CALIBRATED_SENSORS 0x87
 #define READ_BATTERY            0xB1
@@ -93,7 +93,9 @@ void Hard_Left(char speed, char speed2);
 
 void Hard_Right(char speed, char speed2);
 
-void PID_Init(void);
+void edgeMethod(bool* gig);
+void deg90(bool* gig);
+
 
 void PID_Start(void);
 
