@@ -8,8 +8,8 @@
 #include "pololu_robot.h"
 
 uint16_t sensor_data[5]; //global otherwise the array gets fucked when called
-bool sensor_values[5]; //global binary version of sensor data for easier reading 
-uint16_t global_giggity[5];
+uint16_t sensor_values[5]; //array of weight*value of sensor 
+bool sensGlobal[5];
 
 unsigned int* Calibrate_Sensors(void)
 {
@@ -43,15 +43,39 @@ void Auto_Calibrate(void)
         while(!UART1_is_rx_ready()) continue;
     }  
 }
-
-int Read_Calibrated_Sensors()
+void UpdateGlobal()
 {
     uint8_t lowerbyte[5];
     uint8_t upperbyte[5];
     
-    int multiples[5] = {-2000,-1000,0,1000,2000};
-    int final_values = 0;
-    uint8_t active_sensors = 0;
+    while(!UART1_is_tx_ready()) continue; 
+    UART1_Write(0x87); //recives two bytes must read each
+                    
+    for(int i = 0; i < 5; i++){
+                                          
+        while(!UART1_is_rx_ready()) continue;                
+        lowerbyte[i] = UART1_Read(); //first byte            
+        while(!UART1_is_rx_ready()) continue;                
+        upperbyte[i] = UART1_Read(); //second byte
+        
+        sensor_data[i] = upperbyte[i]*256 + lowerbyte[i]; //combine      
+     }
+    
+    for(int i = 0; i < 5; i++){
+        if(sensor_data[i] >= 350){ //gets individual sensors on or off with threshold
+            sensGlobal[i] = 1;
+        }else{//if lower than 500 then 0
+            sensGlobal[i] = 0;
+        } 
+    } 
+}
+uint16_t Read_Calibrated_Sensors()
+{
+    uint8_t lowerbyte[5];
+    uint8_t upperbyte[5];
+    uint16_t weight=3000;
+    
+    int multiples[5] = {-2,-1,0,1,2};
                     
     while(!UART1_is_tx_ready()) continue; 
     UART1_Write(0x87); //recives two bytes must read each
@@ -67,21 +91,18 @@ int Read_Calibrated_Sensors()
      }
     
     for(int i = 0; i < 5; i++){
-        if(sensor_data[i] >= 350){ //if value greater than 500 make 1
-            sensor_values[i] = 1;
-            global_giggity[i] = 1;
-        }else{
-            sensor_values[i] = 0; //if lower than 500 then 0
-            global_giggity[i] = 0;
+        
+        weight=weight+(multiples[i]*sensor_data[i]);//sums 
+        
+        if(sensor_data[i] >= 350){ //gets individual sensors on or off with threshold
+            sensGlobal[i] = 1;
+        }else{//if lower than 500 then 0
+            sensGlobal[i] = 0;
         } 
     } 
     
-        for(int i = 0; i < 5; i++){
-            final_values += multiples[i] * sensor_values[i];
-            active_sensors += sensor_values[i];
-        }
     
-    return final_values/active_sensors;
+    return weight;//returns 0-15,000 value 7500 is centered.
 }
 
 unsigned int Read_Battery_Voltage(void)
@@ -246,54 +267,53 @@ void Hard_Left(char speed, char speed2){
                     UART1_Write((char) speed+1);
                     
 }
-void edgeMethod(bool* gig)
+void edgeMethod(uint16_t sens)
 {
-    bool newSensor[5];
     PID_Stop();
     Forward(20);
     __delay_ms(350);//needs to be tested but should be a few CMs
     Stop();
-    Read_Calibrated_Sensors();
-    if(gig[4])//far right edge
+    UpdateGlobal();
+    if(sens>3000)//far right edge
     {
         Hard_Right(30,30);
         do{
-            Read_Calibrated_Sensors();
-        }while(!newSensor[2]);
+            UpdateGlobal();
+        }while(!sensGlobal[2]);
         Stop();
     }
-    else if(gig[0])//far left edge
+    else if(sens<3000)//far left edge
     {
         Hard_Left(30,30);
         do{
-            Read_Calibrated_Sensors();
-        }while(!newSensor[2]);
+            UpdateGlobal();
+        }while(!sensGlobal[2]);
         Stop();
     }
     PID_Start();
 }
 
-void deg90(bool* gig)
+void deg90(uint16_t sens)
 {
     
     PID_Stop();
     Forward(20);
     __delay_ms(250);//needs to be tested but should be a few CMs
     Stop();
-    if(gig[3])//right side
+    if(sens>3000)//far right edge
     {
-        Hard_Right(20,20);
+        Hard_Right(30,30);
         do{
-            Read_Calibrated_Sensors();
-        }while(!gig[2]);
+            UpdateGlobal();
+        }while(!sensGlobal[2]);
         Stop();
     }
-    else if(gig[1])//left side
+    else if(sens<3000)//far left edge
     {
-        Hard_Left(20,20);
+        Hard_Left(30,30);
         do{
-            Read_Calibrated_Sensors();
-        }while(!gig[2]);
+            UpdateGlobal();
+        }while(!sensGlobal[2]);
         Stop();
     }
     PID_Start();

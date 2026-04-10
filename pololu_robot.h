@@ -32,10 +32,11 @@ unsigned int* Calibrate_Sensors(void);
 //  Calibration is complete when robot returns the 'c' character
 void Auto_Calibrate(void);
 
+void UpdateGlobal();
 
 //  Reads each of the sensor values and returns a 2-byte value for each of the 
 //  five sensors - total of 10 bytes are returned.
-int Read_Calibrated_Sensors(void);
+uint16_t Read_Calibrated_Sensors(void);
 
 
 //  Returns battery voltage in mV
@@ -93,8 +94,8 @@ void Hard_Left(char speed, char speed2);
 
 void Hard_Right(char speed, char speed2);
 
-void edgeMethod(bool* gig);
-void deg90(bool* gig);
+void edgeMethod(uint16_t sens);
+void deg90(uint16_t sens);
 
 
 void PID_Start(void);
