@@ -357,12 +357,12 @@ void main(void)
             {
                 edgeMethod(giggity);
             }
-            /*
+            
             else if((giggity[1]||giggity[3])&&!(giggity[0]||giggity[4]))//if middle side and edge (90deg)
             {
                 deg90(giggity);
             }
-             */
+             
                 
             /*
             for(int i=0; i<5;i++){

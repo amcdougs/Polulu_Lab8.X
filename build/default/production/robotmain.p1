@@ -127,6 +127,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "96
 [; ;./pololu_robot.h: 96: void edgeMethod(_Bool* gig);
 [v _edgeMethod `(v ~T0 @X0 0 ef1`*a ]
+"97
+[; ;./pololu_robot.h: 97: void deg90(_Bool* gig);
+[v _deg90 `(v ~T0 @X0 0 ef1`*a ]
 "94 ./../Common/uart2.h
 [; ;./../Common/uart2.h: 94: _Bool UART2_is_rx_ready(void);
 [v _UART2_is_rx_ready `(a ~T0 @X0 0 ef ]
@@ -3484,7 +3487,22 @@ Version 4.0 HI-TECH Software Intermediate Code
 "359
 [; ;robotmain.c: 359:             }
 }
+[e $U 2400  ]
+"361
+[; ;robotmain.c: 361:             else if((giggity[1]||giggity[3])&&!(giggity[0]||giggity[4]))
 [e :U 2399 ]
+[e $ ! && || != *U + &U _giggity * -> -> -> 1 `i `ui `ux -> -> # *U &U _giggity `ui `ux -> -> 0 `i `*a != *U + &U _giggity * -> -> -> 3 `i `ui `ux -> -> # *U &U _giggity `ui `ux -> -> 0 `i `*a ! || != *U + &U _giggity * -> -> -> 0 `i `ui `ux -> -> # *U &U _giggity `ui `ux -> -> 0 `i `*a != *U + &U _giggity * -> -> -> 4 `i `ui `ux -> -> # *U &U _giggity `ui `ux -> -> 0 `i `*a 2401  ]
+"362
+[; ;robotmain.c: 362:             {
+{
+"363
+[; ;robotmain.c: 363:                 deg90(giggity);
+[e ( _deg90 (1 -> &U _giggity `*a ]
+"364
+[; ;robotmain.c: 364:             }
+}
+[e :U 2401 ]
+[e :U 2400 ]
 "383
 [; ;robotmain.c: 383:         }
 }
@@ -3578,7 +3596,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _printf :s 78C ]
 "413
 [; ;robotmain.c: 413: }
-[e :UE 2400 ]
+[e :UE 2402 ]
 }
 "417
 [; ;robotmain.c: 417: char Get_Number(void)
@@ -3598,8 +3616,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _value -> -> 0 `i `uc ]
 "422
 [; ;robotmain.c: 422:     while(digit != '\r')
-[e $U 2402  ]
-[e :U 2403 ]
+[e $U 2404  ]
+[e :U 2405 ]
 "423
 [; ;robotmain.c: 423:     {
 {
@@ -3608,15 +3626,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _digit ( _Get_Key ..  ]
 "425
 [; ;robotmain.c: 425:         if (digit == '\r')
-[e $ ! == -> _digit `ui -> 13 `ui 2405  ]
+[e $ ! == -> _digit `ui -> 13 `ui 2407  ]
 "426
 [; ;robotmain.c: 426:             continue;
-[e $U 2402  ]
-[e $U 2406  ]
+[e $U 2404  ]
+[e $U 2408  ]
 "427
 [; ;robotmain.c: 427:         else if (digit < 48 || digit > 57)
-[e :U 2405 ]
-[e $ ! || < -> _digit `i -> 48 `i > -> _digit `i -> 57 `i 2407  ]
+[e :U 2407 ]
+[e $ ! || < -> _digit `i -> 48 `i > -> _digit `i -> 57 `i 2409  ]
 "428
 [; ;robotmain.c: 428:         {
 {
@@ -3635,30 +3653,30 @@ Version 4.0 HI-TECH Software Intermediate Code
 "433
 [; ;robotmain.c: 433:         }
 }
-[e $U 2408  ]
+[e $U 2410  ]
 "434
 [; ;robotmain.c: 434:         else
-[e :U 2407 ]
+[e :U 2409 ]
 "435
 [; ;robotmain.c: 435:             value = value*10 + (digit-48);
 [e = _value -> + * -> _value `i -> 10 `i - -> _digit `i -> 48 `i `uc ]
+[e :U 2410 ]
 [e :U 2408 ]
-[e :U 2406 ]
 "436
 [; ;robotmain.c: 436:     }
 }
-[e :U 2402 ]
+[e :U 2404 ]
 "422
 [; ;robotmain.c: 422:     while(digit != '\r')
-[e $ != -> _digit `ui -> 13 `ui 2403  ]
-[e :U 2404 ]
+[e $ != -> _digit `ui -> 13 `ui 2405  ]
+[e :U 2406 ]
 "437
 [; ;robotmain.c: 437:     return(value);
 [e ) _value ]
-[e $UE 2401  ]
+[e $UE 2403  ]
 "438
 [; ;robotmain.c: 438: }
-[e :UE 2401 ]
+[e :UE 2403 ]
 }
 "442
 [; ;robotmain.c: 442: char Get_Key(void)
@@ -3674,14 +3692,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _rxdata -> -> 255 `i `uc ]
 "447
 [; ;robotmain.c: 447:     while(((rxdata < 48) || (rxdata > 122)) && (rxdata != '\r'))
-[e $U 2410  ]
-[e :U 2411 ]
+[e $U 2412  ]
+[e :U 2413 ]
 "448
 [; ;robotmain.c: 448:     {
 {
 "449
 [; ;robotmain.c: 449:         if (UART2_is_rx_ready())
-[e $ ! != -> ( _UART2_is_rx_ready ..  `i -> 0 `i 2413  ]
+[e $ ! != -> ( _UART2_is_rx_ready ..  `i -> 0 `i 2415  ]
 "450
 [; ;robotmain.c: 450:         {
 {
@@ -3690,7 +3708,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _rxdata -> ( _UART2_Read ..  `uc ]
 "452
 [; ;robotmain.c: 452:             if (UART2_is_tx_ready())
-[e $ ! != -> ( _UART2_is_tx_ready ..  `i -> 0 `i 2414  ]
+[e $ ! != -> ( _UART2_is_tx_ready ..  `i -> 0 `i 2416  ]
 "453
 [; ;robotmain.c: 453:             {
 {
@@ -3699,34 +3717,34 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _UART2_Write (1 -> _rxdata `uc ]
 "455
 [; ;robotmain.c: 455:                 if(rxdata == '\r')
-[e $ ! == -> _rxdata `ui -> 13 `ui 2415  ]
+[e $ ! == -> _rxdata `ui -> 13 `ui 2417  ]
 "456
 [; ;robotmain.c: 456:                     UART2_Write('\n');
 [e ( _UART2_Write (1 -> -> 10 `ui `uc ]
-[e :U 2415 ]
+[e :U 2417 ]
 "457
 [; ;robotmain.c: 457:             }
 }
-[e :U 2414 ]
+[e :U 2416 ]
 "458
 [; ;robotmain.c: 458:         }
 }
-[e :U 2413 ]
+[e :U 2415 ]
 "459
 [; ;robotmain.c: 459:     }
 }
-[e :U 2410 ]
+[e :U 2412 ]
 "447
 [; ;robotmain.c: 447:     while(((rxdata < 48) || (rxdata > 122)) && (rxdata != '\r'))
-[e $ && || < -> _rxdata `i -> 48 `i > -> _rxdata `i -> 122 `i != -> _rxdata `ui -> 13 `ui 2411  ]
-[e :U 2412 ]
+[e $ && || < -> _rxdata `i -> 48 `i > -> _rxdata `i -> 122 `i != -> _rxdata `ui -> 13 `ui 2413  ]
+[e :U 2414 ]
 "460
 [; ;robotmain.c: 460:     return(rxdata);
 [e ) _rxdata ]
-[e $UE 2409  ]
+[e $UE 2411  ]
 "461
 [; ;robotmain.c: 461: }
-[e :UE 2409 ]
+[e :UE 2411 ]
 }
 "465
 [; ;robotmain.c: 465: void Countdown(char time)
@@ -3775,8 +3793,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _LCD_Print (2 , &U _msg _length ]
 "478
 [; ;robotmain.c: 478:     while (i > 0)
-[e $U 2417  ]
-[e :U 2418 ]
+[e $U 2419  ]
+[e :U 2420 ]
 "479
 [; ;robotmain.c: 479:     {
 {
@@ -3785,7 +3803,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _counts -> ( _TMR0_Read16BitTimer ..  `ui ]
 "481
 [; ;robotmain.c: 481:         if (counts >= 46875)
-[e $ ! >= -> _counts `l -> 46875 `l 2420  ]
+[e $ ! >= -> _counts `l -> 46875 `l 2422  ]
 "482
 [; ;robotmain.c: 482:         {
 {
@@ -3797,13 +3815,13 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _TMR0_Write16BitTimer (1 -> -> 0 `i `us ]
 "485
 [; ;robotmain.c: 485:             switch(i)
-[e $U 2422  ]
+[e $U 2424  ]
 "486
 [; ;robotmain.c: 486:             {
 {
 "487
 [; ;robotmain.c: 487:                 case 0:
-[e :U 2423 ]
+[e :U 2425 ]
 "488
 [; ;robotmain.c: 488:                     LCD_Clear();
 [e ( _LCD_Clear ..  ]
@@ -3815,10 +3833,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _LCD_Print (2 , :s 83C -> -> 8 `i `uc ]
 "491
 [; ;robotmain.c: 491:                     break;
-[e $U 2421  ]
+[e $U 2423  ]
 "492
 [; ;robotmain.c: 492:                 case 1:
-[e :U 2424 ]
+[e :U 2426 ]
 "493
 [; ;robotmain.c: 493:                     LCD_Position(0,1);
 [e ( _LCD_Position (2 , -> -> 0 `i `uc -> -> 1 `i `uc ]
@@ -3827,10 +3845,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _LCD_Print (2 , :s 84C -> -> 8 `i `uc ]
 "495
 [; ;robotmain.c: 495:                     break;
-[e $U 2421  ]
+[e $U 2423  ]
 "496
 [; ;robotmain.c: 496:                 case 2:
-[e :U 2425 ]
+[e :U 2427 ]
 "497
 [; ;robotmain.c: 497:                     LCD_Position(0,1);
 [e ( _LCD_Position (2 , -> -> 0 `i `uc -> -> 1 `i `uc ]
@@ -3839,10 +3857,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _LCD_Print (2 , :s 85C -> -> 8 `i `uc ]
 "499
 [; ;robotmain.c: 499:                     break;
-[e $U 2421  ]
+[e $U 2423  ]
 "500
 [; ;robotmain.c: 500:                 default:
-[e :U 2426 ]
+[e :U 2428 ]
 "501
 [; ;robotmain.c: 501:                     LCD_Position(0,1);
 [e ( _LCD_Position (2 , -> -> 0 `i `uc -> -> 1 `i `uc ]
@@ -3855,31 +3873,31 @@ Version 4.0 HI-TECH Software Intermediate Code
 "504
 [; ;robotmain.c: 504:             }
 }
-[e $U 2421  ]
-[e :U 2422 ]
-[e [\ _i , $ -> 0 `i 2423
- , $ -> 1 `i 2424
- , $ -> 2 `i 2425
- 2426 ]
-[e :U 2421 ]
+[e $U 2423  ]
+[e :U 2424 ]
+[e [\ _i , $ -> 0 `i 2425
+ , $ -> 1 `i 2426
+ , $ -> 2 `i 2427
+ 2428 ]
+[e :U 2423 ]
 "505
 [; ;robotmain.c: 505:         }
 }
-[e :U 2420 ]
+[e :U 2422 ]
 "506
 [; ;robotmain.c: 506:     }
 }
-[e :U 2417 ]
+[e :U 2419 ]
 "478
 [; ;robotmain.c: 478:     while (i > 0)
-[e $ > -> _i `i -> 0 `i 2418  ]
-[e :U 2419 ]
+[e $ > -> _i `i -> 0 `i 2420  ]
+[e :U 2421 ]
 "507
 [; ;robotmain.c: 507:     TMR0_StopTimer();
 [e ( _TMR0_StopTimer ..  ]
 "508
 [; ;robotmain.c: 508: }
-[e :UE 2416 ]
+[e :UE 2418 ]
 }
 [p f _printf 8389760 ]
 [p f _sprintf 8389632 ]

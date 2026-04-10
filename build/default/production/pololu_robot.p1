@@ -2536,8 +2536,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;pololu_robot.c: 67:         {
 {
 "68
-[; ;pololu_robot.c: 68:             if(sensor_data[i] >= 300){
-[e $ ! >= -> *U + &U _sensor_data * -> -> _i `ui `ux -> -> # *U &U _sensor_data `ui `ux `ui -> -> 300 `i `ui 2315  ]
+[; ;pololu_robot.c: 68:             if(sensor_data[i] >= 200){
+[e $ ! >= -> *U + &U _sensor_data * -> -> _i `ui `ux -> -> # *U &U _sensor_data `ui `ux `ui -> -> 200 `i `ui 2315  ]
 {
 "70
 [; ;pololu_robot.c: 70:                 giggity[i] = 1;
@@ -2560,8 +2560,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e :U 2314 ]
 "75
-[; ;pololu_robot.c: 75:         if(sensor_data[i] >= 700){
-[e $ ! >= -> *U + &U _sensor_data * -> -> _i `ui `ux -> -> # *U &U _sensor_data `ui `ux `ui -> -> 700 `i `ui 2317  ]
+[; ;pololu_robot.c: 75:         if(sensor_data[i] == 1000){
+[e $ ! == -> *U + &U _sensor_data * -> -> _i `ui `ux -> -> # *U &U _sensor_data `ui `ux `ui -> -> 1000 `i `ui 2317  ]
 {
 "77
 [; ;pololu_robot.c: 77:             giggity[i] = 1;

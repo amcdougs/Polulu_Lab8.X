@@ -65,14 +65,14 @@ void Read_Calibrated_Sensors(bool* giggity)
         if(i==2)//dumb adjustment to make middle sensor easily detect 
                 //if its centered so side sensors are detected with higher confidence
         {
-            if(sensor_data[i] >= 300){ //if value greater than 500 make 1
+            if(sensor_data[i] >= 200){ //if value greater than 500 make 1
             
                 giggity[i] = 1;
             }else{
             giggity[i] = 0; //if lower than 500 then 0
             } 
         }
-        if(sensor_data[i] >= 700){ //if value greater than 500 make 1
+        if(sensor_data[i] == 1000){ //if value greater than 500 make 1
             
             giggity[i] = 1;
         }else{

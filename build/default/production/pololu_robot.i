@@ -27649,14 +27649,14 @@ void Read_Calibrated_Sensors(_Bool* giggity)
         if(i==2)
 
         {
-            if(sensor_data[i] >= 300){
+            if(sensor_data[i] >= 200){
 
                 giggity[i] = 1;
             }else{
             giggity[i] = 0;
             }
         }
-        if(sensor_data[i] >= 700){
+        if(sensor_data[i] == 1000){
 
             giggity[i] = 1;
         }else{

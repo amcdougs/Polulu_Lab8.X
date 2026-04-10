@@ -28261,6 +28261,11 @@ void main(void)
             {
                 edgeMethod(giggity);
             }
+
+            else if((giggity[1]||giggity[3])&&!(giggity[0]||giggity[4]))
+            {
+                deg90(giggity);
+            }
 # 383 "robotmain.c"
         }
 
