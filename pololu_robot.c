@@ -9,7 +9,6 @@
 
 uint16_t sensor_data[5]; //global otherwise the array gets fucked when called
 uint16_t sensor_values[5]; //array of weight*value of sensor 
-bool sensGlobal[5];
 
 unsigned int* Calibrate_Sensors(void)
 {
@@ -166,7 +165,7 @@ void robot_8cm (char speed)
     //set tmr to 0 and start it with a prescale of 128
     TMR0_StopTimer();
     TMR0_Initialize(T0_16_BIT & T0_POST_1_1, T0_SOURCE_INT & T0_SYNC & T0_PRE_1_128);
-    TMR0_Write16BitTimer((65536-(983143/speed)));//calculation for timer start
+    TMR0_Write16BitTimer((65536-((983143/speed)/8)));//calculation for timer start
     TMR0IF=0;
     TMR0_StartTimer();
     Forward(speed);//go forward
@@ -338,5 +337,39 @@ void PID_Start(void){
 void PID_Stop(void){
                     while(!UART1_is_tx_ready()) continue;
                     UART1_Write(0xBC);
+}
+
+void Gap(){
+    //forward 8 cm
+    PID_Stop();
+    for(int i = 0; i<8; i++){
+        robot_8cm(20);
+        UpdateGlobal();
+        if(sensGlobal[2] == 1){
+            PID_Start();
+            return;
+        }
+    }
+    //turn around
+    Hard_Left(90,90);
+    __delay_ms(100);
+    Stop();
+    Hard_Right(90,90);
+    __delay_ms(200);
+    Stop();
+    
+    for(int i = 0; i<8; i++){
+        robot_8cm(20);
+        UpdateGlobal();
+        if(sensGlobal[2] == 1){
+            PID_Start();
+            return;
+        }
+    }
+    
+    //turn around then call gap recursively (works)
+    
+    
+    
 }
 /*  END FILE    */

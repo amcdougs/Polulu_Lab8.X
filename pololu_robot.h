@@ -23,6 +23,8 @@
 #define FORWARD_RIGHT           0xC5
 #define BACKWARD_RIGHT          0xC6
 
+bool sensGlobal[5];
+
 //  Calibrates sensors using a 3pi algorithm.
 //  Returns a 2-byte value for each of the five sensors - total of 10 bytes returned.
 unsigned int* Calibrate_Sensors(void);
@@ -96,6 +98,7 @@ void Hard_Right(char speed, char speed2);
 
 void edgeMethod(uint16_t sens);
 void deg90(uint16_t sens);
+void Gap();
 
 
 void PID_Start(void);

@@ -30,7 +30,10 @@ char Get_Number(void);
 char Get_Key(void);
 void Countdown(char time);
 uint16_t counts;
+
 uint16_t sWeight;//0-15000 sensor val USED TO BE giggity
+
+
 void main(void) 
 {
     SYSTEM_Initialize();
@@ -352,17 +355,17 @@ void main(void)
             
              
             sWeight=Read_Calibrated_Sensors();
+            UpdateGlobal();
             printf("\n%u",sWeight);
             if(sWeight>4500||sWeight<1500)//if edge and no middle sides(sharp)
             {
                 edgeMethod(sWeight);
             }
-            /*
-            else if((giggity[1]||giggity[3])&&!(giggity[0]||giggity[4]))//if middle side and edge (90deg)
+            else if(!sensGlobal[2])//if middle sees nothing!
             {
-                deg90(sWeight);
+                Gap();
             }
-             */
+             
                 
             /*
             for(int i=0; i<5;i++){
