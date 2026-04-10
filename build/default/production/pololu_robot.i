@@ -27909,7 +27909,7 @@ void Gap(){
     for(int i = 0; i<8; i++){
         robot_8cm(10);
         UpdateGlobal();
-        if(sensGlobal[0] == 1||sensGlobal[1] == 1||sensGlobal[2] == 1||sensGlobal[3] == 1||sensGlobal[4] == 1){
+        if(sensGlobal[2] == 1){
             PID_Start();
             return;
         }
@@ -27921,7 +27921,7 @@ void Gap(){
     for(int i = 0; i<8; i++){
         robot_8cm(10);
         UpdateGlobal();
-        if(sensGlobal[0] == 1||sensGlobal[1] == 1||sensGlobal[2] == 1||sensGlobal[3] == 1||sensGlobal[4] == 1){
+        if(sensGlobal[2] == 1){
             PID_Start();
             return;
         }

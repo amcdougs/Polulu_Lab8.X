@@ -3643,8 +3643,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;pololu_robot.c: 323:         UpdateGlobal();
 [e ( _UpdateGlobal ..  ]
 "324
-[; ;pololu_robot.c: 324:         if(sensGlobal[0] == 1||sensGlobal[1] == 1||sensGlobal[2] == 1||sensGlobal[3] == 1||sensGlobal[4] == 1){
-[e $ ! || || || || == -> *U + &U _sensGlobal * -> -> -> 0 `i `ui `ux -> -> # *U &U _sensGlobal `ui `ux `i -> 1 `i == -> *U + &U _sensGlobal * -> -> -> 1 `i `ui `ux -> -> # *U &U _sensGlobal `ui `ux `i -> 1 `i == -> *U + &U _sensGlobal * -> -> -> 2 `i `ui `ux -> -> # *U &U _sensGlobal `ui `ux `i -> 1 `i == -> *U + &U _sensGlobal * -> -> -> 3 `i `ui `ux -> -> # *U &U _sensGlobal `ui `ux `i -> 1 `i == -> *U + &U _sensGlobal * -> -> -> 4 `i `ui `ux -> -> # *U &U _sensGlobal `ui `ux `i -> 1 `i 2513  ]
+[; ;pololu_robot.c: 324:         if(sensGlobal[2] == 1){
+[e $ ! == -> *U + &U _sensGlobal * -> -> -> 2 `i `ui `ux -> -> # *U &U _sensGlobal `ui `ux `i -> 1 `i 2513  ]
 {
 "325
 [; ;pololu_robot.c: 325:             PID_Start();
@@ -3688,8 +3688,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;pololu_robot.c: 335:         UpdateGlobal();
 [e ( _UpdateGlobal ..  ]
 "336
-[; ;pololu_robot.c: 336:         if(sensGlobal[0] == 1||sensGlobal[1] == 1||sensGlobal[2] == 1||sensGlobal[3] == 1||sensGlobal[4] == 1){
-[e $ ! || || || || == -> *U + &U _sensGlobal * -> -> -> 0 `i `ui `ux -> -> # *U &U _sensGlobal `ui `ux `i -> 1 `i == -> *U + &U _sensGlobal * -> -> -> 1 `i `ui `ux -> -> # *U &U _sensGlobal `ui `ux `i -> 1 `i == -> *U + &U _sensGlobal * -> -> -> 2 `i `ui `ux -> -> # *U &U _sensGlobal `ui `ux `i -> 1 `i == -> *U + &U _sensGlobal * -> -> -> 3 `i `ui `ux -> -> # *U &U _sensGlobal `ui `ux `i -> 1 `i == -> *U + &U _sensGlobal * -> -> -> 4 `i `ui `ux -> -> # *U &U _sensGlobal `ui `ux `i -> 1 `i 2517  ]
+[; ;pololu_robot.c: 336:         if(sensGlobal[2] == 1){
+[e $ ! == -> *U + &U _sensGlobal * -> -> -> 2 `i `ui `ux -> -> # *U &U _sensGlobal `ui `ux `i -> 1 `i 2517  ]
 {
 "337
 [; ;pololu_robot.c: 337:             PID_Start();
