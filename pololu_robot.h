@@ -23,6 +23,8 @@
 #define FORWARD_RIGHT           0xC5
 #define BACKWARD_RIGHT          0xC6
 
+
+uint8_t global_giggity[5]; 
 //  Calibrates sensors using a 3pi algorithm.
 //  Returns a 2-byte value for each of the five sensors - total of 10 bytes returned.
 unsigned int* Calibrate_Sensors(void);
@@ -35,7 +37,7 @@ void Auto_Calibrate(void);
 
 //  Reads each of the sensor values and returns a 2-byte value for each of the 
 //  five sensors - total of 10 bytes are returned.
-void Read_Calibrated_Sensors(bool* giggity);
+int Read_Calibrated_Sensors();
 
 
 //  Returns battery voltage in mV
@@ -98,5 +100,6 @@ void PID_Init(void);
 void PID_Start(void);
 
 void PID_Stop(void);
+
 
 /*  END FILE    */

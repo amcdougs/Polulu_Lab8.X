@@ -1,7 +1,7 @@
 
 18F46K42 Memory Summary:
-    Program space        used  27BAh ( 10170) of 10000h bytes   ( 15.5%)
-    Data space           used    F2h (   242) of  1000h bytes   (  5.9%)
+    Program space        used  27B2h ( 10162) of 10000h bytes   ( 15.5%)
+    Data space           used   106h (   262) of  1000h bytes   (  6.4%)
     Configuration bits   used     5h (     5) of     5h words   (100.0%)
     EEPROM space         used     0h (     0) of   400h bytes   (  0.0%)
     ID Location space    used     0h (     0) of    10h bytes   (  0.0%)

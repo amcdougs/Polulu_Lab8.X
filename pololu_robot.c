@@ -6,9 +6,12 @@
 *****/
 
 #include "pololu_robot.h"
+#include <xc.h>
+#include <stdio.h>
 
 uint16_t sensor_data[5]; //global otherwise the array gets fucked when called
-bool sensor_values[5]; //global binary version of sensor data for easier reading 
+uint16_t sensor_values[5]; //global binary version of sensor data for easier reading 
+
 
 unsigned int* Calibrate_Sensors(void)
 {
@@ -43,10 +46,14 @@ void Auto_Calibrate(void)
     }  
 }
 
-void Read_Calibrated_Sensors(bool* giggity)
+int Read_Calibrated_Sensors()
 {
     uint8_t lowerbyte[5];
     uint8_t upperbyte[5];
+    
+    int multiples[5] = {-2000,-1000,0,1000,2000};
+    int final_values = 0;
+    uint8_t active_sensors = 0;
                     
     while(!UART1_is_tx_ready()) continue; 
     UART1_Write(0x87); //recives two bytes must read each
@@ -62,12 +69,21 @@ void Read_Calibrated_Sensors(bool* giggity)
      }
     
     for(int i = 0; i < 5; i++){
-        if(sensor_data[i] >= 400){ //if value greater than 500 make 1
-            giggity[i] = 1;
+        if(sensor_data[i] >= 350){ //if value greater than 500 make 1
+            sensor_values[i] = 1;
+            global_giggity[i] = 1;
         }else{
-            giggity[i] = 0; //if lower than 500 then 0
+            sensor_values[i] = 0; //if lower than 500 then 0
+            global_giggity[i] = 0;
         } 
-    }
+    } 
+    
+        for(int i = 0; i < 5; i++){
+            final_values += multiples[i] * sensor_values[i];
+            active_sensors += sensor_values[i];
+        }
+    
+    return final_values/active_sensors;
 }
 
 unsigned int Read_Battery_Voltage(void)
@@ -256,4 +272,6 @@ void PID_Stop(void){
                     while(!UART1_is_tx_ready()) continue;
                     UART1_Write(0xBC);
 }
+
+
 /*  END FILE    */

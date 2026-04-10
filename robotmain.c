@@ -351,19 +351,37 @@ void main(void)
         PID_Init();
         while(1){
             
-             
-            Read_Calibrated_Sensors(giggity);
-            for(int i=0; i<5;i++){
-            printf("\nSensor: %u",giggity[i]);
+            int quagmire = 0;
+            quagmire = Read_Calibrated_Sensors();
+            printf("%d \n", quagmire);
+            __delay_ms(100);
+            /*
+            if(quagmire > 1000){
+                PID_Stop();
+                Forward(10);
+                __delay_ms(150);
+                while(quagmire > 1000){
+                    Hard_Right(10,10);
+                    printf("RIGHT %d \n", quagmire);
+                    quagmire = Read_Calibrated_Sensors();
+                }
+                PID_Start();
+            }else if(quagmire < -1000){
+                PID_Stop();
+                Forward(10);
+                __delay_ms(150);
+                while(quagmire < -1000){
+                    quagmire = Read_Calibrated_Sensors();
+                    Hard_Left(10,10);
+                    printf("LEFT %d \n", quagmire);   
+                }
+                PID_Start();
             }
-            if(giggity[2]==1&&(giggity[0]==giggity[1]==giggity[3]==giggity[4]==0)){//forward
-                    printf("\nsharp turn ON precommand");
-                    PID_Stop();
-                    __delay_ms(500);
-                    PID_Init();
-                    printf("\nPID ON! post command pre break");
-            }
-            printf("\nafter switch");
+             * 
+             * */
+            
+            
+            
         }
         
     }
