@@ -273,6 +273,8 @@ void edgeMethod(uint16_t sens)
     __delay_ms(350);//needs to be tested but should be a few CMs
     Stop();
     UpdateGlobal();
+    if(!sensGlobal[2])
+    {
     if(sens>3000)//far right edge
     {
         Hard_Right(30,30);
@@ -289,13 +291,8 @@ void edgeMethod(uint16_t sens)
         }while(!sensGlobal[2]);
         Stop();
     }
+    }
     PID_Start();
-}
-
-void PlusOrEnd()
-{
-
-
 }
 
 void PID_Start(void){
@@ -329,11 +326,6 @@ void Gap(){
             return;
         }
     }
-    //turn around
-    /*
-    Hard_Left(60,60);
-    __delay_ms(200);
-    Stop(); */
     Hard_Right(60,60);
     __delay_ms(250);
     Stop();
@@ -347,7 +339,7 @@ void Gap(){
         }
     }
     
-    //turn around then call gap recursively (works)
+   
     
     
     

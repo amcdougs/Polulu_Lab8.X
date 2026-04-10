@@ -366,7 +366,7 @@ void main(void)
                 Gap();
             }
             else if(sensGlobal[0] == 1 && sensGlobal[1] == 1 && sensGlobal[2] == 1 && sensGlobal[3] == 1 && sensGlobal[4] == 1){//landing pad or xroads
-                                PID_Stop();
+                PID_Stop();
                 robot_8cm(10);
                 robot_8cm(10);
                 robot_8cm(10);
@@ -379,7 +379,7 @@ void main(void)
                     robot_8cm(10);
                     robot_8cm(10);
                     robot_8cm(10);
-                    while(1);
+                    while(1);//stops robot
                 }
                 else
                 {
