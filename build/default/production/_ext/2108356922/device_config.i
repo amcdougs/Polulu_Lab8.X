@@ -7,14 +7,10 @@
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include/language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "../Common/device_config.c" 2
+# 11 "../Common/device_config.c"
+#pragma warning disable 520
+#pragma warning disable 2053
 
-
-
-
-
-
-# 1 "../Common/device_config.h" 1
-# 8 "../Common/device_config.c" 2
 
 
 

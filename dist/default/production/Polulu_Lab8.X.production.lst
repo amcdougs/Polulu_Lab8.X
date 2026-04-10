@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V3.10 build 20250813170317 
-                                                                                               Thu Apr  9 18:16:04 2026
+                                                                                               Thu Apr  9 18:46:57 2026
 
 Microchip MPLAB XC8 C Compiler v3.10 (Free license) build 20250813170317 Og1 
      1                           	processor	18F46K42
@@ -13772,7 +13772,7 @@ Microchip MPLAB XC8 C Compiler v3.10 (Free license) build 20250813170317 Og1
  13674                           
  13675 ;; *************** function _UART2_Initialize *****************
  13676 ;; Defined at:
- 13677 ;;		line 26 in file "../Common/uart2.c"
+ 13677 ;;		line 29 in file "../Common/uart2.c"
  13678 ;; Parameters:    Size  Location     Type
  13679 ;;		None
  13680 ;; Auto vars:     Size  Location     Type
@@ -13813,55 +13813,55 @@ Microchip MPLAB XC8 C Compiler v3.10 (Free license) build 20250813170317 Og1
  13710   00D8D2                     _UART2_Initialize:
  13711                           	callstack 29
  13712   00D8D2                     
- 13713                           ;../Common/uart2.c: 33:     U2P1L = 0x00;
+ 13713                           ;../Common/uart2.c: 36:     U2P1L = 0x00;
  13714   00D8D2  013D               	movlb	61	; () banked
  13715   00D8D4  6BD4               	clrf	212,b	;volatile
  13716                           
- 13717                           ;../Common/uart2.c: 36:     U2P2L = 0x00;
+ 13717                           ;../Common/uart2.c: 39:     U2P2L = 0x00;
  13718   00D8D6  6BD6               	clrf	214,b	;volatile
  13719                           
- 13720                           ;../Common/uart2.c: 39:     U2P3L = 0x00;
+ 13720                           ;../Common/uart2.c: 42:     U2P3L = 0x00;
  13721   00D8D8  6BD8               	clrf	216,b	;volatile
  13722   00D8DA                     
  13723                           ; BSR set to: 61
- 13724                           ;../Common/uart2.c: 42:     U2CON0 = 0xB0;
+ 13724                           ;../Common/uart2.c: 45:     U2CON0 = 0xB0;
  13725   00D8DA  0EB0               	movlw	176
  13726   00D8DC  6FDA               	movwf	218,b	;volatile
  13727                           
- 13728                           ;../Common/uart2.c: 45:     U2CON1 = 0x80;
+ 13728                           ;../Common/uart2.c: 48:     U2CON1 = 0x80;
  13729   00D8DE  0E80               	movlw	128
  13730   00D8E0  6FDB               	movwf	219,b	;volatile
  13731   00D8E2                     
  13732                           ; BSR set to: 61
- 13733                           ;../Common/uart2.c: 48:     U2CON2 = 0x00;
+ 13733                           ;../Common/uart2.c: 51:     U2CON2 = 0x00;
  13734   00D8E2  6BDC               	clrf	220,b	;volatile
  13735                           
- 13736                           ;../Common/uart2.c: 51:     U2BRGL = 0xE1;
+ 13736                           ;../Common/uart2.c: 54:     U2BRGL = 0xE1;
  13737   00D8E4  0EE1               	movlw	225
  13738   00D8E6  6FDD               	movwf	221,b	;volatile
  13739                           
- 13740                           ;../Common/uart2.c: 54:     U2BRGH = 0x04;
+ 13740                           ;../Common/uart2.c: 57:     U2BRGH = 0x04;
  13741   00D8E8  0E04               	movlw	4
  13742   00D8EA  6FDE               	movwf	222,b	;volatile
  13743   00D8EC                     
  13744                           ; BSR set to: 61
- 13745                           ;../Common/uart2.c: 57:     U2FIFO = 0x00;
+ 13745                           ;../Common/uart2.c: 60:     U2FIFO = 0x00;
  13746   00D8EC  6BDF               	clrf	223,b	;volatile
  13747   00D8EE                     
  13748                           ; BSR set to: 61
- 13749                           ;../Common/uart2.c: 60:     U2UIR = 0x00;
+ 13749                           ;../Common/uart2.c: 63:     U2UIR = 0x00;
  13750   00D8EE  6BE0               	clrf	224,b	;volatile
  13751   00D8F0                     
  13752                           ; BSR set to: 61
- 13753                           ;../Common/uart2.c: 63:     U2ERRIR = 0x00;
+ 13753                           ;../Common/uart2.c: 66:     U2ERRIR = 0x00;
  13754   00D8F0  6BE1               	clrf	225,b	;volatile
  13755   00D8F2                     
  13756                           ; BSR set to: 61
- 13757                           ;../Common/uart2.c: 66:     U2ERRIE = 0x00;
+ 13757                           ;../Common/uart2.c: 69:     U2ERRIE = 0x00;
  13758   00D8F2  6BE2               	clrf	226,b	;volatile
  13759   00D8F4                     
  13760                           ; BSR set to: 61
- 13761                           ;../Common/uart2.c: 68:     UART2_SetFramingErrorHandler(UART2_DefaultFramingErrorHandle
+ 13761                           ;../Common/uart2.c: 72:     UART2_SetFramingErrorHandler(UART2_DefaultFramingErrorHandle
       +                          r);
  13762   00D8F4  0E64               	movlw	low _UART2_DefaultFramingErrorHandler
  13763   00D8F6  6E01               	movwf	UART2_SetFramingErrorHandler@interruptHandler^0,c
@@ -13869,7 +13869,7 @@ Microchip MPLAB XC8 C Compiler v3.10 (Free license) build 20250813170317 Og1
  13765   00D8FA  6E02               	movwf	(UART2_SetFramingErrorHandler@interruptHandler+1)^0,c
  13766   00D8FC  EC55  F06B         	call	_UART2_SetFramingErrorHandler	;wreg free
  13767   00D900                     
- 13768                           ;../Common/uart2.c: 69:     UART2_SetOverrunErrorHandler(UART2_DefaultOverrunErrorHandle
+ 13768                           ;../Common/uart2.c: 73:     UART2_SetOverrunErrorHandler(UART2_DefaultOverrunErrorHandle
       +                          r);
  13769   00D900  0E66               	movlw	low _UART2_DefaultOverrunErrorHandler
  13770   00D902  6E01               	movwf	UART2_SetOverrunErrorHandler@interruptHandler^0,c
@@ -13877,14 +13877,14 @@ Microchip MPLAB XC8 C Compiler v3.10 (Free license) build 20250813170317 Og1
  13772   00D906  6E02               	movwf	(UART2_SetOverrunErrorHandler@interruptHandler+1)^0,c
  13773   00D908  EC5A  F06B         	call	_UART2_SetOverrunErrorHandler	;wreg free
  13774   00D90C                     
- 13775                           ;../Common/uart2.c: 70:     UART2_SetErrorHandler(UART2_DefaultErrorHandler);
+ 13775                           ;../Common/uart2.c: 74:     UART2_SetErrorHandler(UART2_DefaultErrorHandler);
  13776   00D90C  0E62               	movlw	low _UART2_DefaultErrorHandler
  13777   00D90E  6E01               	movwf	UART2_SetErrorHandler@interruptHandler^0,c
  13778   00D910  0ED6               	movlw	high _UART2_DefaultErrorHandler
  13779   00D912  6E02               	movwf	(UART2_SetErrorHandler@interruptHandler+1)^0,c
  13780   00D914  EC50  F06B         	call	_UART2_SetErrorHandler	;wreg free
  13781   00D918                     
- 13782                           ;../Common/uart2.c: 72:     uart2RxLastError.status = 0;
+ 13782                           ;../Common/uart2.c: 76:     uart2RxLastError.status = 0;
  13783   00D918  6A50               	clrf	_uart2RxLastError^0,c	;volatile
  13784   00D91A  0012               	return		;funcret
  13785   00D91C                     __end_of_UART2_Initialize:
@@ -13892,7 +13892,7 @@ Microchip MPLAB XC8 C Compiler v3.10 (Free license) build 20250813170317 Og1
  13787                           
  13788 ;; *************** function _UART2_SetOverrunErrorHandler *****************
  13789 ;; Defined at:
- 13790 ;;		line 146 in file "../Common/uart2.c"
+ 13790 ;;		line 155 in file "../Common/uart2.c"
  13791 ;; Parameters:    Size  Location     Type
  13792 ;;  interruptHan    2    0[COMRAM] PTR FTN()void 
  13793 ;;		 -> UART2_DefaultOverrunErrorHandler(1), 
@@ -13931,7 +13931,7 @@ Microchip MPLAB XC8 C Compiler v3.10 (Free license) build 20250813170317 Og1
  13821   00D6B4                     _UART2_SetOverrunErrorHandler:
  13822                           	callstack 29
  13823   00D6B4                     
- 13824                           ;../Common/uart2.c: 147:     UART2_OverrunErrorHandler = interruptHandler;
+ 13824                           ;../Common/uart2.c: 156:     UART2_OverrunErrorHandler = interruptHandler;
  13825   00D6B4  C001  F0EB         	movff	UART2_SetOverrunErrorHandler@interruptHandler,_UART2_OverrunErrorHandler
  13826   00D6B8  C002  F0EC         	movff	UART2_SetOverrunErrorHandler@interruptHandler+1,_UART2_OverrunErrorHandler+1
  13827   00D6BC  0012               	return		;funcret
@@ -13940,7 +13940,7 @@ Microchip MPLAB XC8 C Compiler v3.10 (Free license) build 20250813170317 Og1
  13830                           
  13831 ;; *************** function _UART2_SetFramingErrorHandler *****************
  13832 ;; Defined at:
- 13833 ;;		line 142 in file "../Common/uart2.c"
+ 13833 ;;		line 151 in file "../Common/uart2.c"
  13834 ;; Parameters:    Size  Location     Type
  13835 ;;  interruptHan    2    0[COMRAM] PTR FTN()void 
  13836 ;;		 -> UART2_DefaultFramingErrorHandler(1), 
@@ -13979,7 +13979,7 @@ Microchip MPLAB XC8 C Compiler v3.10 (Free license) build 20250813170317 Og1
  13864   00D6AA                     _UART2_SetFramingErrorHandler:
  13865                           	callstack 29
  13866   00D6AA                     
- 13867                           ;../Common/uart2.c: 143:     UART2_FramingErrorHandler = interruptHandler;
+ 13867                           ;../Common/uart2.c: 152:     UART2_FramingErrorHandler = interruptHandler;
  13868   00D6AA  C001  F0ED         	movff	UART2_SetFramingErrorHandler@interruptHandler,_UART2_FramingErrorHandler
  13869   00D6AE  C002  F0EE         	movff	UART2_SetFramingErrorHandler@interruptHandler+1,_UART2_FramingErrorHandler+1
  13870   00D6B2  0012               	return		;funcret
@@ -13988,7 +13988,7 @@ Microchip MPLAB XC8 C Compiler v3.10 (Free license) build 20250813170317 Og1
  13873                           
  13874 ;; *************** function _UART2_SetErrorHandler *****************
  13875 ;; Defined at:
- 13876 ;;		line 150 in file "../Common/uart2.c"
+ 13876 ;;		line 159 in file "../Common/uart2.c"
  13877 ;; Parameters:    Size  Location     Type
  13878 ;;  interruptHan    2    0[COMRAM] PTR FTN()void 
  13879 ;;		 -> UART2_DefaultErrorHandler(1), 
@@ -14027,7 +14027,7 @@ Microchip MPLAB XC8 C Compiler v3.10 (Free license) build 20250813170317 Og1
  13907   00D6A0                     _UART2_SetErrorHandler:
  13908                           	callstack 29
  13909   00D6A0                     
- 13910                           ;../Common/uart2.c: 151:     UART2_ErrorHandler = interruptHandler;
+ 13910                           ;../Common/uart2.c: 160:     UART2_ErrorHandler = interruptHandler;
  13911   00D6A0  C001  F0E9         	movff	UART2_SetErrorHandler@interruptHandler,_UART2_ErrorHandler
  13912   00D6A4  C002  F0EA         	movff	UART2_SetErrorHandler@interruptHandler+1,_UART2_ErrorHandler+1
  13913   00D6A8  0012               	return		;funcret
@@ -15415,7 +15415,7 @@ Microchip MPLAB XC8 C Compiler v3.10 (Free license) build 20250813170317 Og1
  15221                           
  15222 ;; *************** function _UART2_is_tx_ready *****************
  15223 ;; Defined at:
- 15224 ;;		line 80 in file "../Common/uart2.c"
+ 15224 ;;		line 85 in file "../Common/uart2.c"
  15225 ;; Parameters:    Size  Location     Type
  15226 ;;		None
  15227 ;; Auto vars:     Size  Location     Type
@@ -15453,7 +15453,7 @@ Microchip MPLAB XC8 C Compiler v3.10 (Free license) build 20250813170317 Og1
  15254   00D830                     _UART2_is_tx_ready:
  15255                           	callstack 28
  15256   00D830                     
- 15257                           ;../Common/uart2.c: 82:     return (_Bool)(PIR6bits.U2TXIF && U2CON0bits.TXEN);
+ 15257                           ;../Common/uart2.c: 87:     return (_Bool)(PIR6bits.U2TXIF && U2CON0bits.TXEN);
  15258   00D830  6A01               	clrf	_UART2_is_tx_ready$2647^0,c
  15259   00D832  0139               	movlb	57	; () banked
  15260   00D834  A7A6               	btfss	166,3,b	;volatile
@@ -15483,7 +15483,7 @@ Microchip MPLAB XC8 C Compiler v3.10 (Free license) build 20250813170317 Og1
  15284                           
  15285 ;; *************** function _UART2_is_rx_ready *****************
  15286 ;; Defined at:
- 15287 ;;		line 75 in file "../Common/uart2.c"
+ 15287 ;;		line 80 in file "../Common/uart2.c"
  15288 ;; Parameters:    Size  Location     Type
  15289 ;;		None
  15290 ;; Auto vars:     Size  Location     Type
@@ -15521,7 +15521,7 @@ Microchip MPLAB XC8 C Compiler v3.10 (Free license) build 20250813170317 Og1
  15317   00D72A                     _UART2_is_rx_ready:
  15318                           	callstack 28
  15319   00D72A                     
- 15320                           ;../Common/uart2.c: 77:     return (_Bool)(PIR6bits.U2RXIF);
+ 15320                           ;../Common/uart2.c: 82:     return (_Bool)(PIR6bits.U2RXIF);
  15321   00D72A  0139               	movlb	57	; () banked
  15322   00D72C  B5A6               	btfsc	166,2,b	;volatile
  15323   00D72E  EF9B  F06B         	goto	u3091
@@ -15540,7 +15540,7 @@ Microchip MPLAB XC8 C Compiler v3.10 (Free license) build 20250813170317 Og1
  15336                           
  15337 ;; *************** function _UART2_Read *****************
  15338 ;; Defined at:
- 15339 ;;		line 94 in file "../Common/uart2.c"
+ 15339 ;;		line 99 in file "../Common/uart2.c"
  15340 ;; Parameters:    Size  Location     Type
  15341 ;;		None
  15342 ;; Auto vars:     Size  Location     Type
@@ -15584,7 +15584,7 @@ Microchip MPLAB XC8 C Compiler v3.10 (Free license) build 20250813170317 Og1
  15375                           	callstack 27
  15376   00E02C                     l1410:
  15377                           
- 15378                           ;../Common/uart2.c: 96:     while(!PIR6bits.U2RXIF)
+ 15378                           ;../Common/uart2.c: 101:     while(!PIR6bits.U2RXIF)
  15379   00E02C  0139               	movlb	57	; () banked
  15380   00E02E  A5A6               	btfss	166,2,b	;volatile
  15381   00E030  EF1C  F070         	goto	u3101
@@ -15594,10 +15594,10 @@ Microchip MPLAB XC8 C Compiler v3.10 (Free license) build 20250813170317 Og1
  15385   00E03C                     u3100:
  15386   00E03C                     
  15387                           ; BSR set to: 57
- 15388                           ;../Common/uart2.c: 99:     uart2RxLastError.status = 0;
+ 15388                           ;../Common/uart2.c: 105:     uart2RxLastError.status = 0;
  15389   00E03C  6A50               	clrf	_uart2RxLastError^0,c	;volatile
  15390                           
- 15391                           ;../Common/uart2.c: 101:     if(U2ERRIRbits.FERIF){
+ 15391                           ;../Common/uart2.c: 107:     if(U2ERRIRbits.FERIF){
  15392   00E03E  013D               	movlb	61	; () banked
  15393   00E040  A7E1               	btfss	225,3,b	;volatile
  15394   00E042  EF25  F070         	goto	u3111
@@ -15607,11 +15607,11 @@ Microchip MPLAB XC8 C Compiler v3.10 (Free license) build 20250813170317 Og1
  15398   00E04E                     u3110:
  15399   00E04E                     
  15400                           ; BSR set to: 61
- 15401                           ;../Common/uart2.c: 102:         uart2RxLastError.ferr = 1;
+ 15401                           ;../Common/uart2.c: 108:         uart2RxLastError.ferr = 1;
  15402   00E04E  8250               	bsf	_uart2RxLastError^0,1,c	;volatile
  15403   00E050                     
  15404                           ; BSR set to: 61
- 15405                           ;../Common/uart2.c: 103:         UART2_FramingErrorHandler();
+ 15405                           ;../Common/uart2.c: 109:         UART2_FramingErrorHandler();
  15406   00E050  D802               	call	u3128
  15407   00E052  EF35  F070         	goto	u3129
  15408   00E056                     u3128:
@@ -15628,7 +15628,7 @@ Microchip MPLAB XC8 C Compiler v3.10 (Free license) build 20250813170317 Og1
  15419   00E06A                     u3129:
  15420   00E06A                     l5250:
  15421                           
- 15422                           ;../Common/uart2.c: 106:     if(U2ERRIRbits.RXFOIF){
+ 15422                           ;../Common/uart2.c: 112:     if(U2ERRIRbits.RXFOIF){
  15423   00E06A  013D               	movlb	61	; () banked
  15424   00E06C  A3E1               	btfss	225,1,b	;volatile
  15425   00E06E  EF3B  F070         	goto	u3131
@@ -15638,11 +15638,11 @@ Microchip MPLAB XC8 C Compiler v3.10 (Free license) build 20250813170317 Og1
  15429   00E07A                     u3130:
  15430   00E07A                     
  15431                           ; BSR set to: 61
- 15432                           ;../Common/uart2.c: 107:         uart2RxLastError.oerr = 1;
+ 15432                           ;../Common/uart2.c: 113:         uart2RxLastError.oerr = 1;
  15433   00E07A  8450               	bsf	_uart2RxLastError^0,2,c	;volatile
  15434   00E07C                     
  15435                           ; BSR set to: 61
- 15436                           ;../Common/uart2.c: 108:         UART2_OverrunErrorHandler();
+ 15436                           ;../Common/uart2.c: 114:         UART2_OverrunErrorHandler();
  15437   00E07C  D802               	call	u3148
  15438   00E07E  EF4B  F070         	goto	u3149
  15439   00E082                     u3148:
@@ -15659,7 +15659,7 @@ Microchip MPLAB XC8 C Compiler v3.10 (Free license) build 20250813170317 Og1
  15450   00E096                     u3149:
  15451   00E096                     l5256:
  15452                           
- 15453                           ;../Common/uart2.c: 111:     if(uart2RxLastError.status){
+ 15453                           ;../Common/uart2.c: 117:     if(uart2RxLastError.status){
  15454   00E096  5050               	movf	_uart2RxLastError^0,w,c	;volatile
  15455   00E098  B4D8               	btfsc	status,2,c
  15456   00E09A  EF51  F070         	goto	u3151
@@ -15668,7 +15668,7 @@ Microchip MPLAB XC8 C Compiler v3.10 (Free license) build 20250813170317 Og1
  15459   00E0A2  EF60  F070         	goto	l5260
  15460   00E0A6                     u3150:
  15461   00E0A6                     
- 15462                           ;../Common/uart2.c: 112:         UART2_ErrorHandler();
+ 15462                           ;../Common/uart2.c: 118:         UART2_ErrorHandler();
  15463   00E0A6  D802               	call	u3168
  15464   00E0A8  EF60  F070         	goto	u3169
  15465   00E0AC                     u3168:
@@ -15685,7 +15685,7 @@ Microchip MPLAB XC8 C Compiler v3.10 (Free license) build 20250813170317 Og1
  15476   00E0C0                     u3169:
  15477   00E0C0                     l5260:
  15478                           
- 15479                           ;../Common/uart2.c: 114:     return U2RXB;
+ 15479                           ;../Common/uart2.c: 121:     return U2RXB;
  15480   00E0C0  013D               	movlb	61	; () banked
  15481   00E0C2  51D0               	movf	208,w,b	;volatile
  15482   00E0C4                     
@@ -15696,7 +15696,7 @@ Microchip MPLAB XC8 C Compiler v3.10 (Free license) build 20250813170317 Og1
  15487                           
  15488 ;; *************** function _UART2_DefaultOverrunErrorHandler *****************
  15489 ;; Defined at:
- 15490 ;;		line 137 in file "../Common/uart2.c"
+ 15490 ;;		line 146 in file "../Common/uart2.c"
  15491 ;; Parameters:    Size  Location     Type
  15492 ;;		None
  15493 ;; Auto vars:     Size  Location     Type
@@ -15740,7 +15740,7 @@ Microchip MPLAB XC8 C Compiler v3.10 (Free license) build 20250813170317 Og1
  15526                           
  15527 ;; *************** function _UART2_DefaultFramingErrorHandler *****************
  15528 ;; Defined at:
- 15529 ;;		line 135 in file "../Common/uart2.c"
+ 15529 ;;		line 144 in file "../Common/uart2.c"
  15530 ;; Parameters:    Size  Location     Type
  15531 ;;		None
  15532 ;; Auto vars:     Size  Location     Type
@@ -15784,7 +15784,7 @@ Microchip MPLAB XC8 C Compiler v3.10 (Free license) build 20250813170317 Og1
  15565                           
  15566 ;; *************** function _UART2_DefaultErrorHandler *****************
  15567 ;; Defined at:
- 15568 ;;		line 139 in file "../Common/uart2.c"
+ 15568 ;;		line 148 in file "../Common/uart2.c"
  15569 ;; Parameters:    Size  Location     Type
  15570 ;;		None
  15571 ;; Auto vars:     Size  Location     Type
@@ -17255,7 +17255,7 @@ Microchip MPLAB XC8 C Compiler v3.10 (Free license) build 20250813170317 Og1
  16945                           
  16946 ;; *************** function _putch *****************
  16947 ;; Defined at:
- 16948 ;;		line 130 in file "../Common/uart2.c"
+ 16948 ;;		line 138 in file "../Common/uart2.c"
  16949 ;; Parameters:    Size  Location     Type
  16950 ;;  txData          1    wreg     unsigned char 
  16951 ;; Auto vars:     Size  Location     Type
@@ -17298,8 +17298,8 @@ Microchip MPLAB XC8 C Compiler v3.10 (Free license) build 20250813170317 Og1
  16983                           ;putch@txData stored from wreg
  16984   00D678  6E02               	movwf	putch@txData^0,c
  16985   00D67A                     
- 16986                           ;../Common/uart2.c: 130: void putch(char txData);../Common/uart2.c: 131: {;../Common/uar
-      +                          t2.c: 132:     UART2_Write(txData);
+ 16986                           ;../Common/uart2.c: 138: void putch(char txData);../Common/uart2.c: 139: {;../Common/uar
+      +                          t2.c: 140:     UART2_Write(txData);
  16987   00D67A  5002               	movf	putch@txData^0,w,c
  16988   00D67C  ECAD  F06B         	call	_UART2_Write
  16989   00D680  0012               	return		;funcret
@@ -17308,7 +17308,7 @@ Microchip MPLAB XC8 C Compiler v3.10 (Free license) build 20250813170317 Og1
  16992                           
  16993 ;; *************** function _UART2_Write *****************
  16994 ;; Defined at:
- 16995 ;;		line 117 in file "../Common/uart2.c"
+ 16995 ;;		line 124 in file "../Common/uart2.c"
  16996 ;; Parameters:    Size  Location     Type
  16997 ;;  txData          1    wreg     unsigned char 
  16998 ;; Auto vars:     Size  Location     Type
@@ -17352,7 +17352,7 @@ Microchip MPLAB XC8 C Compiler v3.10 (Free license) build 20250813170317 Og1
  17031   00D75A  6E01               	movwf	UART2_Write@txData^0,c
  17032   00D75C                     l1419:
  17033                           
- 17034                           ;../Common/uart2.c: 119:     while(0 == PIR6bits.U2TXIF)
+ 17034                           ;../Common/uart2.c: 126:     while(0 == PIR6bits.U2TXIF)
  17035   00D75C  0139               	movlb	57	; () banked
  17036   00D75E  A7A6               	btfss	166,3,b	;volatile
  17037   00D760  EFB4  F06B         	goto	u2561
@@ -17362,7 +17362,7 @@ Microchip MPLAB XC8 C Compiler v3.10 (Free license) build 20250813170317 Og1
  17041   00D76C                     u2560:
  17042   00D76C                     
  17043                           ; BSR set to: 57
- 17044                           ;../Common/uart2.c: 122:     U2TXB = txData;
+ 17044                           ;../Common/uart2.c: 130:     U2TXB = txData;
  17045   00D76C  0060  F007  FDD2   	movff	UART2_Write@txData,15826	;volatile
  17046   00D772                     
  17047                           ; BSR set to: 57
@@ -20345,7 +20345,7 @@ DATA                 0      0     240      0.0%
 
 
 Microchip Technology PIC18 Macro Assembler V3.10 build 20250813170317 
-Symbol Table                                                                                   Thu Apr  9 18:16:04 2026
+Symbol Table                                                                                   Thu Apr  9 18:46:57 2026
 
                    __end_of_UART2_is_rx_ready D740                           edgeMethod@newSensor 0018  
                                           l95 F97C                     __end_of_UART2_is_tx_ready D85A  
