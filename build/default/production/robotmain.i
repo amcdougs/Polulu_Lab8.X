@@ -27856,7 +27856,7 @@ void Auto_Calibrate(void);
 
 
 
-void Read_Calibrated_Sensors(_Bool* giggity);
+int Read_Calibrated_Sensors(void);
 
 
 
@@ -28256,7 +28256,7 @@ void main(void)
         while(1){
 
 
-            Read_Calibrated_Sensors(giggity);
+            Read_Calibrated_Sensors();
             if((giggity[0]||giggity[4])&&!(giggity[1]&&giggity[3]))
             {
                 edgeMethod(giggity);

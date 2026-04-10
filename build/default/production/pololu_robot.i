@@ -27524,7 +27524,7 @@ void Auto_Calibrate(void);
 
 
 
-void Read_Calibrated_Sensors(_Bool* giggity);
+int Read_Calibrated_Sensors(void);
 
 
 
@@ -27593,6 +27593,7 @@ void PID_Stop(void);
 
 uint16_t sensor_data[5];
 _Bool sensor_values[5];
+uint16_t global_giggity[5];
 
 unsigned int* Calibrate_Sensors(void)
 {
@@ -27627,10 +27628,14 @@ void Auto_Calibrate(void)
     }
 }
 
-void Read_Calibrated_Sensors(_Bool* giggity)
+int Read_Calibrated_Sensors()
 {
     uint8_t lowerbyte[5];
     uint8_t upperbyte[5];
+
+    int multiples[5] = {-2000,-1000,0,1000,2000};
+    int final_values = 0;
+    uint8_t active_sensors = 0;
 
     while(!UART1_is_tx_ready()) continue;
     UART1_Write(0x87);
@@ -27646,24 +27651,21 @@ void Read_Calibrated_Sensors(_Bool* giggity)
      }
 
     for(int i = 0; i < 5; i++){
-        if(i==2)
-
-        {
-            if(sensor_data[i] >= 200){
-
-                giggity[i] = 1;
-            }else{
-            giggity[i] = 0;
-            }
-        }
-        if(sensor_data[i] == 1000){
-
-            giggity[i] = 1;
+        if(sensor_data[i] >= 350){
+            sensor_values[i] = 1;
+            global_giggity[i] = 1;
         }else{
-            giggity[i] = 0;
+            sensor_values[i] = 0;
+            global_giggity[i] = 0;
         }
+    }
+
+        for(int i = 0; i < 5; i++){
+            final_values += multiples[i] * sensor_values[i];
+            active_sensors += sensor_values[i];
         }
 
+    return final_values/active_sensors;
 }
 
 unsigned int Read_Battery_Voltage(void)
@@ -27835,12 +27837,12 @@ void edgeMethod(_Bool* gig)
     Forward(20);
     _delay((unsigned long)((350)*(48000000/4000.0)));
     Stop();
-    Read_Calibrated_Sensors(newSensor);
+    Read_Calibrated_Sensors();
     if(gig[4])
     {
         Hard_Right(30,30);
         do{
-            Read_Calibrated_Sensors(newSensor);
+            Read_Calibrated_Sensors();
         }while(!newSensor[2]);
         Stop();
     }
@@ -27848,7 +27850,7 @@ void edgeMethod(_Bool* gig)
     {
         Hard_Left(30,30);
         do{
-            Read_Calibrated_Sensors(newSensor);
+            Read_Calibrated_Sensors();
         }while(!newSensor[2]);
         Stop();
     }
@@ -27866,7 +27868,7 @@ void deg90(_Bool* gig)
     {
         Hard_Right(20,20);
         do{
-            Read_Calibrated_Sensors(gig);
+            Read_Calibrated_Sensors();
         }while(!gig[2]);
         Stop();
     }
@@ -27874,7 +27876,7 @@ void deg90(_Bool* gig)
     {
         Hard_Left(20,20);
         do{
-            Read_Calibrated_Sensors(gig);
+            Read_Calibrated_Sensors();
         }while(!gig[2]);
         Stop();
     }

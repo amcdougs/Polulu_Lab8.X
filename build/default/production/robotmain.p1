@@ -122,8 +122,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./pololu_robot.h: 100: void PID_Start(void);
 [v _PID_Start `(v ~T0 @X0 0 ef ]
 "38
-[; ;./pololu_robot.h: 38: void Read_Calibrated_Sensors(_Bool* giggity);
-[v _Read_Calibrated_Sensors `(v ~T0 @X0 0 ef1`*a ]
+[; ;./pololu_robot.h: 38: int Read_Calibrated_Sensors(void);
+[v _Read_Calibrated_Sensors `(i ~T0 @X0 0 ef ]
 "96
 [; ;./pololu_robot.h: 96: void edgeMethod(_Bool* gig);
 [v _edgeMethod `(v ~T0 @X0 0 ef1`*a ]
@@ -3473,8 +3473,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 2397 ]
 {
 "355
-[; ;robotmain.c: 355:             Read_Calibrated_Sensors(giggity);
-[e ( _Read_Calibrated_Sensors (1 -> &U _giggity `*a ]
+[; ;robotmain.c: 355:             Read_Calibrated_Sensors();
+[e ( _Read_Calibrated_Sensors ..  ]
 "356
 [; ;robotmain.c: 356:             if((giggity[0]||giggity[4])&&!(giggity[1]&&giggity[3]))
 [e $ ! && || != *U + &U _giggity * -> -> -> 0 `i `ui `ux -> -> # *U &U _giggity `ui `ux -> -> 0 `i `*a != *U + &U _giggity * -> -> -> 4 `i `ui `ux -> -> # *U &U _giggity `ui `ux -> -> 0 `i `*a ! && != *U + &U _giggity * -> -> -> 1 `i `ui `ux -> -> # *U &U _giggity `ui `ux -> -> 0 `i `*a != *U + &U _giggity * -> -> -> 3 `i `ui `ux -> -> # *U &U _giggity `ui `ux -> -> 0 `i `*a 2399  ]

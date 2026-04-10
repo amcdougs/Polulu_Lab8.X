@@ -2307,180 +2307,200 @@ Version 4.0 HI-TECH Software Intermediate Code
 "11
 [; ;pololu_robot.c: 11: _Bool sensor_values[5];
 [v _sensor_values `a ~T0 @X0 -> 5 `i e ]
-"13
-[; ;pololu_robot.c: 13: unsigned int* Calibrate_Sensors(void)
-[v _Calibrate_Sensors `(*ui ~T0 @X0 1 ef ]
+"12
+[; ;pololu_robot.c: 12: uint16_t global_giggity[5];
+[v _global_giggity `us ~T0 @X0 -> 5 `i e ]
 "14
-[; ;pololu_robot.c: 14: {
+[; ;pololu_robot.c: 14: unsigned int* Calibrate_Sensors(void)
+[v _Calibrate_Sensors `(*ui ~T0 @X0 1 ef ]
+"15
+[; ;pololu_robot.c: 15: {
 {
 [e :U _Calibrate_Sensors ]
 [f ]
-"15
-[; ;pololu_robot.c: 15:     unsigned char lbyte[5], ubyte[5], i;
+"16
+[; ;pololu_robot.c: 16:     unsigned char lbyte[5], ubyte[5], i;
 [v _lbyte `uc ~T0 @X0 -> 5 `i a ]
 [v _ubyte `uc ~T0 @X0 -> 5 `i a ]
 [v _i `uc ~T0 @X0 1 a ]
-"16
-[; ;pololu_robot.c: 16:     static unsigned int values[5];
+"17
+[; ;pololu_robot.c: 17:     static unsigned int values[5];
 [v F16648 `ui ~T0 @X0 -> 5 `i s values ]
-"18
-[; ;pololu_robot.c: 18:     while(!UART1_is_tx_ready()) continue;
+"19
+[; ;pololu_robot.c: 19:     while(!UART1_is_tx_ready()) continue;
 [e $U 2273  ]
 [e :U 2274 ]
 [e $U 2273  ]
 [e :U 2273 ]
 [e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2274  ]
 [e :U 2275 ]
-"19
-[; ;pololu_robot.c: 19:     UART1_Write(0xB4);
-[e ( _UART1_Write (1 -> -> 180 `i `uc ]
 "20
-[; ;pololu_robot.c: 20:     for (i=0; i<5; i++)
+[; ;pololu_robot.c: 20:     UART1_Write(0xB4);
+[e ( _UART1_Write (1 -> -> 180 `i `uc ]
+"21
+[; ;pololu_robot.c: 21:     for (i=0; i<5; i++)
 {
 [e = _i -> -> 0 `i `uc ]
 [e $ < -> _i `i -> 5 `i 2276  ]
 [e $U 2277  ]
 [e :U 2276 ]
-"21
-[; ;pololu_robot.c: 21:     {
-{
 "22
-[; ;pololu_robot.c: 22:         while (!UART1_is_rx_ready()) continue;
+[; ;pololu_robot.c: 22:     {
+{
+"23
+[; ;pololu_robot.c: 23:         while (!UART1_is_rx_ready()) continue;
 [e $U 2279  ]
 [e :U 2280 ]
 [e $U 2279  ]
 [e :U 2279 ]
 [e $ ! != -> ( _UART1_is_rx_ready ..  `i -> 0 `i 2280  ]
 [e :U 2281 ]
-"23
-[; ;pololu_robot.c: 23:         lbyte[i] = UART1_Read();
-[e = *U + &U _lbyte * -> _i `ux -> -> # *U &U _lbyte `ui `ux ( _UART1_Read ..  ]
 "24
-[; ;pololu_robot.c: 24:         while (!UART1_is_rx_ready()) continue;
+[; ;pololu_robot.c: 24:         lbyte[i] = UART1_Read();
+[e = *U + &U _lbyte * -> _i `ux -> -> # *U &U _lbyte `ui `ux ( _UART1_Read ..  ]
+"25
+[; ;pololu_robot.c: 25:         while (!UART1_is_rx_ready()) continue;
 [e $U 2282  ]
 [e :U 2283 ]
 [e $U 2282  ]
 [e :U 2282 ]
 [e $ ! != -> ( _UART1_is_rx_ready ..  `i -> 0 `i 2283  ]
 [e :U 2284 ]
-"25
-[; ;pololu_robot.c: 25:         ubyte[i] = UART1_Read();
-[e = *U + &U _ubyte * -> _i `ux -> -> # *U &U _ubyte `ui `ux ( _UART1_Read ..  ]
 "26
-[; ;pololu_robot.c: 26:         values[i] = ubyte[i]*256 + lbyte[i];
-[e = *U + &U F16648 * -> _i `ux -> -> # *U &U F16648 `ui `ux -> + * -> *U + &U _ubyte * -> _i `ux -> -> # *U &U _ubyte `ui `ux `i -> 256 `i -> *U + &U _lbyte * -> _i `ux -> -> # *U &U _lbyte `ui `ux `i `ui ]
+[; ;pololu_robot.c: 26:         ubyte[i] = UART1_Read();
+[e = *U + &U _ubyte * -> _i `ux -> -> # *U &U _ubyte `ui `ux ( _UART1_Read ..  ]
 "27
-[; ;pololu_robot.c: 27:     }
+[; ;pololu_robot.c: 27:         values[i] = ubyte[i]*256 + lbyte[i];
+[e = *U + &U F16648 * -> _i `ux -> -> # *U &U F16648 `ui `ux -> + * -> *U + &U _ubyte * -> _i `ux -> -> # *U &U _ubyte `ui `ux `i -> 256 `i -> *U + &U _lbyte * -> _i `ux -> -> # *U &U _lbyte `ui `ux `i `ui ]
+"28
+[; ;pololu_robot.c: 28:     }
 }
 [e ++ _i -> -> 1 `i `uc ]
 [e $ < -> _i `i -> 5 `i 2276  ]
 [e :U 2277 ]
 }
-"28
-[; ;pololu_robot.c: 28:     return values;
+"29
+[; ;pololu_robot.c: 29:     return values;
 [e ) &U F16648 ]
 [e $UE 2272  ]
-"29
-[; ;pololu_robot.c: 29: }
+"30
+[; ;pololu_robot.c: 30: }
 [e :UE 2272 ]
 }
-"31
-[; ;pololu_robot.c: 31: void Auto_Calibrate(void)
-[v _Auto_Calibrate `(v ~T0 @X0 1 ef ]
 "32
-[; ;pololu_robot.c: 32: {
+[; ;pololu_robot.c: 32: void Auto_Calibrate(void)
+[v _Auto_Calibrate `(v ~T0 @X0 1 ef ]
+"33
+[; ;pololu_robot.c: 33: {
 {
 [e :U _Auto_Calibrate ]
 [f ]
-"33
-[; ;pololu_robot.c: 33:     _Bool center = 0;
+"34
+[; ;pololu_robot.c: 34:     _Bool center = 0;
 [v _center `a ~T0 @X0 1 a ]
 [e = _center -> -> 0 `i `a ]
-"34
-[; ;pololu_robot.c: 34:     char lbyte, ubyte;
+"35
+[; ;pololu_robot.c: 35:     char lbyte, ubyte;
 [v _lbyte `uc ~T0 @X0 1 a ]
 [v _ubyte `uc ~T0 @X0 1 a ]
-"35
-[; ;pololu_robot.c: 35:     unsigned int position;
+"36
+[; ;pololu_robot.c: 36:     unsigned int position;
 [v _position `ui ~T0 @X0 1 a ]
-"37
-[; ;pololu_robot.c: 37:     while(!UART1_is_tx_ready()) continue;
+"38
+[; ;pololu_robot.c: 38:     while(!UART1_is_tx_ready()) continue;
 [e $U 2286  ]
 [e :U 2287 ]
 [e $U 2286  ]
 [e :U 2286 ]
 [e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2287  ]
 [e :U 2288 ]
-"38
-[; ;pololu_robot.c: 38:     UART1_Write(0xBA);
-[e ( _UART1_Write (1 -> -> 186 `i `uc ]
 "39
-[; ;pololu_robot.c: 39:     while(!UART1_is_rx_ready()) continue;
+[; ;pololu_robot.c: 39:     UART1_Write(0xBA);
+[e ( _UART1_Write (1 -> -> 186 `i `uc ]
+"40
+[; ;pololu_robot.c: 40:     while(!UART1_is_rx_ready()) continue;
 [e $U 2289  ]
 [e :U 2290 ]
 [e $U 2289  ]
 [e :U 2289 ]
 [e $ ! != -> ( _UART1_is_rx_ready ..  `i -> 0 `i 2290  ]
 [e :U 2291 ]
-"40
-[; ;pololu_robot.c: 40:     while(UART1_Read() != 'c')
+"41
+[; ;pololu_robot.c: 41:     while(UART1_Read() != 'c')
 [e $U 2292  ]
 [e :U 2293 ]
-"41
-[; ;pololu_robot.c: 41:     {
-{
 "42
-[; ;pololu_robot.c: 42:         while(!UART1_is_rx_ready()) continue;
+[; ;pololu_robot.c: 42:     {
+{
+"43
+[; ;pololu_robot.c: 43:         while(!UART1_is_rx_ready()) continue;
 [e $U 2295  ]
 [e :U 2296 ]
 [e $U 2295  ]
 [e :U 2295 ]
 [e $ ! != -> ( _UART1_is_rx_ready ..  `i -> 0 `i 2296  ]
 [e :U 2297 ]
-"43
-[; ;pololu_robot.c: 43:     }
+"44
+[; ;pololu_robot.c: 44:     }
 }
 [e :U 2292 ]
-"40
-[; ;pololu_robot.c: 40:     while(UART1_Read() != 'c')
+"41
+[; ;pololu_robot.c: 41:     while(UART1_Read() != 'c')
 [e $ != -> ( _UART1_Read ..  `ui -> 99 `ui 2293  ]
 [e :U 2294 ]
-"44
-[; ;pololu_robot.c: 44: }
+"45
+[; ;pololu_robot.c: 45: }
 [e :UE 2285 ]
 }
-"46
-[; ;pololu_robot.c: 46: void Read_Calibrated_Sensors(_Bool* giggity)
-[v _Read_Calibrated_Sensors `(v ~T0 @X0 1 ef1`*a ]
 "47
-[; ;pololu_robot.c: 47: {
+[; ;pololu_robot.c: 47: int Read_Calibrated_Sensors()
+[v _Read_Calibrated_Sensors `(i ~T0 @X0 1 ef ]
+"48
+[; ;pololu_robot.c: 48: {
 {
 [e :U _Read_Calibrated_Sensors ]
-"46
-[; ;pololu_robot.c: 46: void Read_Calibrated_Sensors(_Bool* giggity)
-[v _giggity `*a ~T0 @X0 1 r1 ]
-"47
-[; ;pololu_robot.c: 47: {
 [f ]
-"48
-[; ;pololu_robot.c: 48:     uint8_t lowerbyte[5];
-[v _lowerbyte `uc ~T0 @X0 -> 5 `i a ]
 "49
-[; ;pololu_robot.c: 49:     uint8_t upperbyte[5];
+[; ;pololu_robot.c: 49:     uint8_t lowerbyte[5];
+[v _lowerbyte `uc ~T0 @X0 -> 5 `i a ]
+"50
+[; ;pololu_robot.c: 50:     uint8_t upperbyte[5];
 [v _upperbyte `uc ~T0 @X0 -> 5 `i a ]
-"51
-[; ;pololu_robot.c: 51:     while(!UART1_is_tx_ready()) continue;
+[v F16657 `i ~T0 @X0 -> 5 `i s ]
+[i F16657
+:U ..
+"52
+[; ;pololu_robot.c: 52:     int multiples[5] = {-2000,-1000,0,1000,2000};
+-U -> 2000 `i
+-U -> 1000 `i
+-> 0 `i
+-> 1000 `i
+-> 2000 `i
+..
+]
+[v _multiples `i ~T0 @X0 -> 5 `i a ]
+[e = _multiples F16657 ]
+"53
+[; ;pololu_robot.c: 53:     int final_values = 0;
+[v _final_values `i ~T0 @X0 1 a ]
+[e = _final_values -> 0 `i ]
+"54
+[; ;pololu_robot.c: 54:     uint8_t active_sensors = 0;
+[v _active_sensors `uc ~T0 @X0 1 a ]
+[e = _active_sensors -> -> 0 `i `uc ]
+"56
+[; ;pololu_robot.c: 56:     while(!UART1_is_tx_ready()) continue;
 [e $U 2299  ]
 [e :U 2300 ]
 [e $U 2299  ]
 [e :U 2299 ]
 [e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2300  ]
 [e :U 2301 ]
-"52
-[; ;pololu_robot.c: 52:     UART1_Write(0x87);
+"57
+[; ;pololu_robot.c: 57:     UART1_Write(0x87);
 [e ( _UART1_Write (1 -> -> 135 `i `uc ]
-"54
-[; ;pololu_robot.c: 54:     for(int i = 0; i < 5; i++){
+"59
+[; ;pololu_robot.c: 59:     for(int i = 0; i < 5; i++){
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
@@ -2488,40 +2508,40 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $U 2303  ]
 [e :U 2302 ]
 {
-"56
-[; ;pololu_robot.c: 56:         while(!UART1_is_rx_ready()) continue;
+"61
+[; ;pololu_robot.c: 61:         while(!UART1_is_rx_ready()) continue;
 [e $U 2305  ]
 [e :U 2306 ]
 [e $U 2305  ]
 [e :U 2305 ]
 [e $ ! != -> ( _UART1_is_rx_ready ..  `i -> 0 `i 2306  ]
 [e :U 2307 ]
-"57
-[; ;pololu_robot.c: 57:         lowerbyte[i] = UART1_Read();
+"62
+[; ;pololu_robot.c: 62:         lowerbyte[i] = UART1_Read();
 [e = *U + &U _lowerbyte * -> -> _i `ui `ux -> -> # *U &U _lowerbyte `ui `ux ( _UART1_Read ..  ]
-"58
-[; ;pololu_robot.c: 58:         while(!UART1_is_rx_ready()) continue;
+"63
+[; ;pololu_robot.c: 63:         while(!UART1_is_rx_ready()) continue;
 [e $U 2308  ]
 [e :U 2309 ]
 [e $U 2308  ]
 [e :U 2308 ]
 [e $ ! != -> ( _UART1_is_rx_ready ..  `i -> 0 `i 2309  ]
 [e :U 2310 ]
-"59
-[; ;pololu_robot.c: 59:         upperbyte[i] = UART1_Read();
+"64
+[; ;pololu_robot.c: 64:         upperbyte[i] = UART1_Read();
 [e = *U + &U _upperbyte * -> -> _i `ui `ux -> -> # *U &U _upperbyte `ui `ux ( _UART1_Read ..  ]
-"61
-[; ;pololu_robot.c: 61:         sensor_data[i] = upperbyte[i]*256 + lowerbyte[i];
+"66
+[; ;pololu_robot.c: 66:         sensor_data[i] = upperbyte[i]*256 + lowerbyte[i];
 [e = *U + &U _sensor_data * -> -> _i `ui `ux -> -> # *U &U _sensor_data `ui `ux -> + * -> *U + &U _upperbyte * -> -> _i `ui `ux -> -> # *U &U _upperbyte `ui `ux `i -> 256 `i -> *U + &U _lowerbyte * -> -> _i `ui `ux -> -> # *U &U _lowerbyte `ui `ux `i `us ]
-"62
-[; ;pololu_robot.c: 62:      }
+"67
+[; ;pololu_robot.c: 67:      }
 }
 [e ++ _i -> 1 `i ]
 [e $ < _i -> 5 `i 2302  ]
 [e :U 2303 ]
 }
-"64
-[; ;pololu_robot.c: 64:     for(int i = 0; i < 5; i++){
+"69
+[; ;pololu_robot.c: 69:     for(int i = 0; i < 5; i++){
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
@@ -2529,1076 +2549,1078 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $U 2312  ]
 [e :U 2311 ]
 {
-"65
-[; ;pololu_robot.c: 65:         if(i==2)
-[e $ ! == _i -> 2 `i 2314  ]
-"67
-[; ;pololu_robot.c: 67:         {
-{
-"68
-[; ;pololu_robot.c: 68:             if(sensor_data[i] >= 200){
-[e $ ! >= -> *U + &U _sensor_data * -> -> _i `ui `ux -> -> # *U &U _sensor_data `ui `ux `ui -> -> 200 `i `ui 2315  ]
-{
 "70
-[; ;pololu_robot.c: 70:                 giggity[i] = 1;
-[e = *U + _giggity * -> _i `x -> -> # *U _giggity `i `x -> -> 1 `i `a ]
+[; ;pololu_robot.c: 70:         if(sensor_data[i] >= 350){
+[e $ ! >= -> *U + &U _sensor_data * -> -> _i `ui `ux -> -> # *U &U _sensor_data `ui `ux `ui -> -> 350 `i `ui 2314  ]
+{
 "71
-[; ;pololu_robot.c: 71:             }else{
-}
-[e $U 2316  ]
-[e :U 2315 ]
-{
+[; ;pololu_robot.c: 71:             sensor_values[i] = 1;
+[e = *U + &U _sensor_values * -> -> _i `ui `ux -> -> # *U &U _sensor_values `ui `ux -> -> 1 `i `a ]
 "72
-[; ;pololu_robot.c: 72:             giggity[i] = 0;
-[e = *U + _giggity * -> _i `x -> -> # *U _giggity `i `x -> -> 0 `i `a ]
+[; ;pololu_robot.c: 72:             global_giggity[i] = 1;
+[e = *U + &U _global_giggity * -> -> _i `ui `ux -> -> # *U &U _global_giggity `ui `ux -> -> 1 `i `us ]
 "73
-[; ;pololu_robot.c: 73:             }
+[; ;pololu_robot.c: 73:         }else{
 }
-[e :U 2316 ]
-"74
-[; ;pololu_robot.c: 74:         }
-}
+[e $U 2315  ]
 [e :U 2314 ]
+{
+"74
+[; ;pololu_robot.c: 74:             sensor_values[i] = 0;
+[e = *U + &U _sensor_values * -> -> _i `ui `ux -> -> # *U &U _sensor_values `ui `ux -> -> 0 `i `a ]
 "75
-[; ;pololu_robot.c: 75:         if(sensor_data[i] == 1000){
-[e $ ! == -> *U + &U _sensor_data * -> -> _i `ui `ux -> -> # *U &U _sensor_data `ui `ux `ui -> -> 1000 `i `ui 2317  ]
-{
+[; ;pololu_robot.c: 75:             global_giggity[i] = 0;
+[e = *U + &U _global_giggity * -> -> _i `ui `ux -> -> # *U &U _global_giggity `ui `ux -> -> 0 `i `us ]
+"76
+[; ;pololu_robot.c: 76:         }
+}
+[e :U 2315 ]
 "77
-[; ;pololu_robot.c: 77:             giggity[i] = 1;
-[e = *U + _giggity * -> _i `x -> -> # *U _giggity `i `x -> -> 1 `i `a ]
-"78
-[; ;pololu_robot.c: 78:         }else{
-}
-[e $U 2318  ]
-[e :U 2317 ]
-{
-"79
-[; ;pololu_robot.c: 79:             giggity[i] = 0;
-[e = *U + _giggity * -> _i `x -> -> # *U _giggity `i `x -> -> 0 `i `a ]
-"80
-[; ;pololu_robot.c: 80:         }
-}
-[e :U 2318 ]
-"81
-[; ;pololu_robot.c: 81:         }
+[; ;pololu_robot.c: 77:     }
 }
 [e ++ _i -> 1 `i ]
 [e $ < _i -> 5 `i 2311  ]
 [e :U 2312 ]
 }
-"83
-[; ;pololu_robot.c: 83: }
+"79
+[; ;pololu_robot.c: 79:         for(int i = 0; i < 5; i++){
+{
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+[e $ < _i -> 5 `i 2316  ]
+[e $U 2317  ]
+[e :U 2316 ]
+{
+"80
+[; ;pololu_robot.c: 80:             final_values += multiples[i] * sensor_values[i];
+[e =+ _final_values * *U + &U _multiples * -> -> _i `ui `ux -> -> # *U &U _multiples `ui `ux -> *U + &U _sensor_values * -> -> _i `ui `ux -> -> # *U &U _sensor_values `ui `ux `i ]
+"81
+[; ;pololu_robot.c: 81:             active_sensors += sensor_values[i];
+[e =+ _active_sensors -> *U + &U _sensor_values * -> -> _i `ui `ux -> -> # *U &U _sensor_values `ui `ux `uc ]
+"82
+[; ;pololu_robot.c: 82:         }
+}
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 5 `i 2316  ]
+[e :U 2317 ]
+}
+"84
+[; ;pololu_robot.c: 84:     return final_values/active_sensors;
+[e ) / _final_values -> _active_sensors `i ]
+[e $UE 2298  ]
+"85
+[; ;pololu_robot.c: 85: }
 [e :UE 2298 ]
 }
-"85
-[; ;pololu_robot.c: 85: unsigned int Read_Battery_Voltage(void)
+"87
+[; ;pololu_robot.c: 87: unsigned int Read_Battery_Voltage(void)
 [v _Read_Battery_Voltage `(ui ~T0 @X0 1 ef ]
-"86
-[; ;pololu_robot.c: 86: {
+"88
+[; ;pololu_robot.c: 88: {
 {
 [e :U _Read_Battery_Voltage ]
 [f ]
-"87
-[; ;pololu_robot.c: 87:     unsigned char lbyte, ubyte;
+"89
+[; ;pololu_robot.c: 89:     unsigned char lbyte, ubyte;
 [v _lbyte `uc ~T0 @X0 1 a ]
 [v _ubyte `uc ~T0 @X0 1 a ]
-"89
-[; ;pololu_robot.c: 89:     while(!UART1_is_tx_ready()) continue;
+"91
+[; ;pololu_robot.c: 91:     while(!UART1_is_tx_ready()) continue;
 [e $U 2320  ]
 [e :U 2321 ]
 [e $U 2320  ]
 [e :U 2320 ]
 [e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2321  ]
 [e :U 2322 ]
-"90
-[; ;pololu_robot.c: 90:     UART1_Write(0xB1);
+"92
+[; ;pololu_robot.c: 92:     UART1_Write(0xB1);
 [e ( _UART1_Write (1 -> -> 177 `i `uc ]
-"91
-[; ;pololu_robot.c: 91:     while (!UART1_is_rx_ready()) continue;
+"93
+[; ;pololu_robot.c: 93:     while (!UART1_is_rx_ready()) continue;
 [e $U 2323  ]
 [e :U 2324 ]
 [e $U 2323  ]
 [e :U 2323 ]
 [e $ ! != -> ( _UART1_is_rx_ready ..  `i -> 0 `i 2324  ]
 [e :U 2325 ]
-"92
-[; ;pololu_robot.c: 92:     lbyte = UART1_Read();
+"94
+[; ;pololu_robot.c: 94:     lbyte = UART1_Read();
 [e = _lbyte ( _UART1_Read ..  ]
-"93
-[; ;pololu_robot.c: 93:     while (!UART1_is_rx_ready()) continue;
+"95
+[; ;pololu_robot.c: 95:     while (!UART1_is_rx_ready()) continue;
 [e $U 2326  ]
 [e :U 2327 ]
 [e $U 2326  ]
 [e :U 2326 ]
 [e $ ! != -> ( _UART1_is_rx_ready ..  `i -> 0 `i 2327  ]
 [e :U 2328 ]
-"94
-[; ;pololu_robot.c: 94:     ubyte = UART1_Read();
+"96
+[; ;pololu_robot.c: 96:     ubyte = UART1_Read();
 [e = _ubyte ( _UART1_Read ..  ]
-"95
-[; ;pololu_robot.c: 95:     return (unsigned int)(ubyte*256 + lbyte);
+"97
+[; ;pololu_robot.c: 97:     return (unsigned int)(ubyte*256 + lbyte);
 [e ) -> + * -> _ubyte `i -> 256 `i -> _lbyte `i `ui ]
 [e $UE 2319  ]
-"96
-[; ;pololu_robot.c: 96: }
+"98
+[; ;pololu_robot.c: 98: }
 [e :UE 2319 ]
 }
-"98
-[; ;pololu_robot.c: 98: void LCD_Clear(void)
+"100
+[; ;pololu_robot.c: 100: void LCD_Clear(void)
 [v _LCD_Clear `(v ~T0 @X0 1 ef ]
-"99
-[; ;pololu_robot.c: 99: {
+"101
+[; ;pololu_robot.c: 101: {
 {
 [e :U _LCD_Clear ]
 [f ]
-"100
-[; ;pololu_robot.c: 100:     while(!UART1_is_tx_ready()) continue;
+"102
+[; ;pololu_robot.c: 102:     while(!UART1_is_tx_ready()) continue;
 [e $U 2330  ]
 [e :U 2331 ]
 [e $U 2330  ]
 [e :U 2330 ]
 [e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2331  ]
 [e :U 2332 ]
-"101
-[; ;pololu_robot.c: 101:     UART1_Write(0xB7);
+"103
+[; ;pololu_robot.c: 103:     UART1_Write(0xB7);
 [e ( _UART1_Write (1 -> -> 183 `i `uc ]
-"102
-[; ;pololu_robot.c: 102: }
+"104
+[; ;pololu_robot.c: 104: }
 [e :UE 2329 ]
 }
-"104
-[; ;pololu_robot.c: 104: void LCD_Print(char *str, char length)
+"106
+[; ;pololu_robot.c: 106: void LCD_Print(char *str, char length)
 [v _LCD_Print `(v ~T0 @X0 1 ef2`*uc`uc ]
-"105
-[; ;pololu_robot.c: 105: {
+"107
+[; ;pololu_robot.c: 107: {
 {
 [e :U _LCD_Print ]
-"104
-[; ;pololu_robot.c: 104: void LCD_Print(char *str, char length)
+"106
+[; ;pololu_robot.c: 106: void LCD_Print(char *str, char length)
 [v _str `*uc ~T0 @X0 1 r1 ]
 [v _length `uc ~T0 @X0 1 r2 ]
-"105
-[; ;pololu_robot.c: 105: {
+"107
+[; ;pololu_robot.c: 107: {
 [f ]
-"106
-[; ;pololu_robot.c: 106:     char i=0;
+"108
+[; ;pololu_robot.c: 108:     char i=0;
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
-"108
-[; ;pololu_robot.c: 108:     while(!UART1_is_tx_ready()) continue;
+"110
+[; ;pololu_robot.c: 110:     while(!UART1_is_tx_ready()) continue;
 [e $U 2334  ]
 [e :U 2335 ]
 [e $U 2334  ]
 [e :U 2334 ]
 [e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2335  ]
 [e :U 2336 ]
-"109
-[; ;pololu_robot.c: 109:     UART1_Write(0xB8);
+"111
+[; ;pololu_robot.c: 111:     UART1_Write(0xB8);
 [e ( _UART1_Write (1 -> -> 184 `i `uc ]
-"110
-[; ;pololu_robot.c: 110:     while(!UART1_is_tx_ready()) continue;
+"112
+[; ;pololu_robot.c: 112:     while(!UART1_is_tx_ready()) continue;
 [e $U 2337  ]
 [e :U 2338 ]
 [e $U 2337  ]
 [e :U 2337 ]
 [e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2338  ]
 [e :U 2339 ]
-"111
-[; ;pololu_robot.c: 111:     UART1_Write(length);
+"113
+[; ;pololu_robot.c: 113:     UART1_Write(length);
 [e ( _UART1_Write (1 -> _length `uc ]
-"112
-[; ;pololu_robot.c: 112:     while (i<length)
+"114
+[; ;pololu_robot.c: 114:     while (i<length)
 [e $U 2340  ]
 [e :U 2341 ]
-"113
-[; ;pololu_robot.c: 113:     {
-{
-"114
-[; ;pololu_robot.c: 114:         if(UART1_is_tx_ready())
-[e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2343  ]
 "115
-[; ;pololu_robot.c: 115:         {
+[; ;pololu_robot.c: 115:     {
 {
 "116
-[; ;pololu_robot.c: 116:             UART1_Write(str[i]);
-[e ( _UART1_Write (1 -> *U + _str * -> _i `ux -> -> # *U _str `ui `ux `uc ]
+[; ;pololu_robot.c: 116:         if(UART1_is_tx_ready())
+[e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2343  ]
 "117
-[; ;pololu_robot.c: 117:             i++;
-[e ++ _i -> -> 1 `i `uc ]
+[; ;pololu_robot.c: 117:         {
+{
 "118
-[; ;pololu_robot.c: 118:         }
+[; ;pololu_robot.c: 118:             UART1_Write(str[i]);
+[e ( _UART1_Write (1 -> *U + _str * -> _i `ux -> -> # *U _str `ui `ux `uc ]
+"119
+[; ;pololu_robot.c: 119:             i++;
+[e ++ _i -> -> 1 `i `uc ]
+"120
+[; ;pololu_robot.c: 120:         }
 }
 [e :U 2343 ]
-"119
-[; ;pololu_robot.c: 119:     }
+"121
+[; ;pololu_robot.c: 121:     }
 }
 [e :U 2340 ]
-"112
-[; ;pololu_robot.c: 112:     while (i<length)
+"114
+[; ;pololu_robot.c: 114:     while (i<length)
 [e $ < -> _i `i -> _length `i 2341  ]
 [e :U 2342 ]
-"120
-[; ;pololu_robot.c: 120: }
+"122
+[; ;pololu_robot.c: 122: }
 [e :UE 2333 ]
 }
-"122
-[; ;pololu_robot.c: 122: void LCD_PrintCharacter(char byte)
+"124
+[; ;pololu_robot.c: 124: void LCD_PrintCharacter(char byte)
 [v _LCD_PrintCharacter `(v ~T0 @X0 1 ef1`uc ]
-"123
-[; ;pololu_robot.c: 123: {
+"125
+[; ;pololu_robot.c: 125: {
 {
 [e :U _LCD_PrintCharacter ]
-"122
-[; ;pololu_robot.c: 122: void LCD_PrintCharacter(char byte)
-[v _byte `uc ~T0 @X0 1 r1 ]
-"123
-[; ;pololu_robot.c: 123: {
-[f ]
 "124
-[; ;pololu_robot.c: 124:     while(!UART1_is_tx_ready()) continue;
+[; ;pololu_robot.c: 124: void LCD_PrintCharacter(char byte)
+[v _byte `uc ~T0 @X0 1 r1 ]
+"125
+[; ;pololu_robot.c: 125: {
+[f ]
+"126
+[; ;pololu_robot.c: 126:     while(!UART1_is_tx_ready()) continue;
 [e $U 2345  ]
 [e :U 2346 ]
 [e $U 2345  ]
 [e :U 2345 ]
 [e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2346  ]
 [e :U 2347 ]
-"125
-[; ;pololu_robot.c: 125:     UART1_Write(0xB8);
+"127
+[; ;pololu_robot.c: 127:     UART1_Write(0xB8);
 [e ( _UART1_Write (1 -> -> 184 `i `uc ]
-"126
-[; ;pololu_robot.c: 126:     while(!UART1_is_tx_ready()) continue;
+"128
+[; ;pololu_robot.c: 128:     while(!UART1_is_tx_ready()) continue;
 [e $U 2348  ]
 [e :U 2349 ]
 [e $U 2348  ]
 [e :U 2348 ]
 [e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2349  ]
 [e :U 2350 ]
-"127
-[; ;pololu_robot.c: 127:     UART1_Write(1);
+"129
+[; ;pololu_robot.c: 129:     UART1_Write(1);
 [e ( _UART1_Write (1 -> -> 1 `i `uc ]
-"128
-[; ;pololu_robot.c: 128:     while(!UART1_is_tx_ready()) continue;
+"130
+[; ;pololu_robot.c: 130:     while(!UART1_is_tx_ready()) continue;
 [e $U 2351  ]
 [e :U 2352 ]
 [e $U 2351  ]
 [e :U 2351 ]
 [e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2352  ]
 [e :U 2353 ]
-"129
-[; ;pololu_robot.c: 129:     UART1_Write(byte);
+"131
+[; ;pololu_robot.c: 131:     UART1_Write(byte);
 [e ( _UART1_Write (1 -> _byte `uc ]
-"130
-[; ;pololu_robot.c: 130: }
+"132
+[; ;pololu_robot.c: 132: }
 [e :UE 2344 ]
 }
-"132
-[; ;pololu_robot.c: 132: void LCD_Position(char x, char y)
+"134
+[; ;pololu_robot.c: 134: void LCD_Position(char x, char y)
 [v _LCD_Position `(v ~T0 @X0 1 ef2`uc`uc ]
-"133
-[; ;pololu_robot.c: 133: {
+"135
+[; ;pololu_robot.c: 135: {
 {
 [e :U _LCD_Position ]
-"132
-[; ;pololu_robot.c: 132: void LCD_Position(char x, char y)
+"134
+[; ;pololu_robot.c: 134: void LCD_Position(char x, char y)
 [v _x `uc ~T0 @X0 1 r1 ]
 [v _y `uc ~T0 @X0 1 r2 ]
-"133
-[; ;pololu_robot.c: 133: {
+"135
+[; ;pololu_robot.c: 135: {
 [f ]
-"134
-[; ;pololu_robot.c: 134:     while(!UART1_is_tx_ready()) continue;
+"136
+[; ;pololu_robot.c: 136:     while(!UART1_is_tx_ready()) continue;
 [e $U 2355  ]
 [e :U 2356 ]
 [e $U 2355  ]
 [e :U 2355 ]
 [e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2356  ]
 [e :U 2357 ]
-"135
-[; ;pololu_robot.c: 135:     UART1_Write(0xB9);
+"137
+[; ;pololu_robot.c: 137:     UART1_Write(0xB9);
 [e ( _UART1_Write (1 -> -> 185 `i `uc ]
-"136
-[; ;pololu_robot.c: 136:     while(!UART1_is_tx_ready()) continue;
+"138
+[; ;pololu_robot.c: 138:     while(!UART1_is_tx_ready()) continue;
 [e $U 2358  ]
 [e :U 2359 ]
 [e $U 2358  ]
 [e :U 2358 ]
 [e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2359  ]
 [e :U 2360 ]
-"137
-[; ;pololu_robot.c: 137:     UART1_Write(x);
+"139
+[; ;pololu_robot.c: 139:     UART1_Write(x);
 [e ( _UART1_Write (1 -> _x `uc ]
-"138
-[; ;pololu_robot.c: 138:     while(!UART1_is_tx_ready()) continue;
+"140
+[; ;pololu_robot.c: 140:     while(!UART1_is_tx_ready()) continue;
 [e $U 2361  ]
 [e :U 2362 ]
 [e $U 2361  ]
 [e :U 2361 ]
 [e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2362  ]
 [e :U 2363 ]
-"139
-[; ;pololu_robot.c: 139:     UART1_Write(y);
+"141
+[; ;pololu_robot.c: 141:     UART1_Write(y);
 [e ( _UART1_Write (1 -> _y `uc ]
-"140
-[; ;pololu_robot.c: 140: }
+"142
+[; ;pololu_robot.c: 142: }
 [e :UE 2354 ]
 }
-"141
-[; ;pololu_robot.c: 141: void robot_8cm (char speed)
+"143
+[; ;pololu_robot.c: 143: void robot_8cm (char speed)
 [v _robot_8cm `(v ~T0 @X0 1 ef1`uc ]
-"142
-[; ;pololu_robot.c: 142: {
+"144
+[; ;pololu_robot.c: 144: {
 {
 [e :U _robot_8cm ]
-"141
-[; ;pololu_robot.c: 141: void robot_8cm (char speed)
+"143
+[; ;pololu_robot.c: 143: void robot_8cm (char speed)
 [v _speed `uc ~T0 @X0 1 r1 ]
-"142
-[; ;pololu_robot.c: 142: {
-[f ]
 "144
-[; ;pololu_robot.c: 144:     TMR0_StopTimer();
-[e ( _TMR0_StopTimer ..  ]
-"145
-[; ;pololu_robot.c: 145:     TMR0_Initialize(0x9F & 0x90, 0x5F & 0xEF & 0xF7);
-[e ( _TMR0_Initialize (2 , -> & -> 159 `i -> 144 `i `uc -> & & -> 95 `i -> 239 `i -> 247 `i `uc ]
+[; ;pololu_robot.c: 144: {
+[f ]
 "146
-[; ;pololu_robot.c: 146:     TMR0_Write16BitTimer((65536-(983143/speed)));
-[e ( _TMR0_Write16BitTimer (1 -> - -> 65536 `l / -> 983143 `l -> _speed `l `us ]
+[; ;pololu_robot.c: 146:     TMR0_StopTimer();
+[e ( _TMR0_StopTimer ..  ]
 "147
-[; ;pololu_robot.c: 147:     TMR0IF=0;
-[e = _TMR0IF -> -> 0 `i `b ]
+[; ;pololu_robot.c: 147:     TMR0_Initialize(0x9F & 0x90, 0x5F & 0xEF & 0xF7);
+[e ( _TMR0_Initialize (2 , -> & -> 159 `i -> 144 `i `uc -> & & -> 95 `i -> 239 `i -> 247 `i `uc ]
 "148
-[; ;pololu_robot.c: 148:     TMR0_StartTimer();
-[e ( _TMR0_StartTimer ..  ]
+[; ;pololu_robot.c: 148:     TMR0_Write16BitTimer((65536-(983143/speed)));
+[e ( _TMR0_Write16BitTimer (1 -> - -> 65536 `l / -> 983143 `l -> _speed `l `us ]
 "149
-[; ;pololu_robot.c: 149:     Forward(speed);
-[e ( _Forward (1 _speed ]
+[; ;pololu_robot.c: 149:     TMR0IF=0;
+[e = _TMR0IF -> -> 0 `i `b ]
+"150
+[; ;pololu_robot.c: 150:     TMR0_StartTimer();
+[e ( _TMR0_StartTimer ..  ]
 "151
-[; ;pololu_robot.c: 151:     while(TMR0IF==0) continue;
+[; ;pololu_robot.c: 151:     Forward(speed);
+[e ( _Forward (1 _speed ]
+"153
+[; ;pololu_robot.c: 153:     while(TMR0IF==0) continue;
 [e $U 2365  ]
 [e :U 2366 ]
 [e $U 2365  ]
 [e :U 2365 ]
 [e $ == -> _TMR0IF `i -> 0 `i 2366  ]
 [e :U 2367 ]
-"152
-[; ;pololu_robot.c: 152:     Stop();
-[e ( _Stop ..  ]
-"153
-[; ;pololu_robot.c: 153:     TMR0_StopTimer();
-[e ( _TMR0_StopTimer ..  ]
 "154
-[; ;pololu_robot.c: 154: }
+[; ;pololu_robot.c: 154:     Stop();
+[e ( _Stop ..  ]
+"155
+[; ;pololu_robot.c: 155:     TMR0_StopTimer();
+[e ( _TMR0_StopTimer ..  ]
+"156
+[; ;pololu_robot.c: 156: }
 [e :UE 2364 ]
 }
-"155
-[; ;pololu_robot.c: 155: void Forward(char speed)
+"157
+[; ;pololu_robot.c: 157: void Forward(char speed)
 [v _Forward `(v ~T0 @X0 1 ef1`uc ]
-"156
-[; ;pololu_robot.c: 156: {
+"158
+[; ;pololu_robot.c: 158: {
 {
 [e :U _Forward ]
-"155
-[; ;pololu_robot.c: 155: void Forward(char speed)
-[v _speed `uc ~T0 @X0 1 r1 ]
-"156
-[; ;pololu_robot.c: 156: {
-[f ]
 "157
-[; ;pololu_robot.c: 157:                     while(!UART1_is_tx_ready()) continue;
+[; ;pololu_robot.c: 157: void Forward(char speed)
+[v _speed `uc ~T0 @X0 1 r1 ]
+"158
+[; ;pololu_robot.c: 158: {
+[f ]
+"159
+[; ;pololu_robot.c: 159:                     while(!UART1_is_tx_ready()) continue;
 [e $U 2369  ]
 [e :U 2370 ]
 [e $U 2369  ]
 [e :U 2369 ]
 [e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2370  ]
 [e :U 2371 ]
-"158
-[; ;pololu_robot.c: 158:                     UART1_Write(0xC1);
+"160
+[; ;pololu_robot.c: 160:                     UART1_Write(0xC1);
 [e ( _UART1_Write (1 -> -> 193 `i `uc ]
-"159
-[; ;pololu_robot.c: 159:                     while(!UART1_is_tx_ready()) continue;
+"161
+[; ;pololu_robot.c: 161:                     while(!UART1_is_tx_ready()) continue;
 [e $U 2372  ]
 [e :U 2373 ]
 [e $U 2372  ]
 [e :U 2372 ]
 [e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2373  ]
 [e :U 2374 ]
-"160
-[; ;pololu_robot.c: 160:                     UART1_Write(speed);
+"162
+[; ;pololu_robot.c: 162:                     UART1_Write(speed);
 [e ( _UART1_Write (1 -> _speed `uc ]
-"161
-[; ;pololu_robot.c: 161:                     while(!UART1_is_tx_ready()) continue;
+"163
+[; ;pololu_robot.c: 163:                     while(!UART1_is_tx_ready()) continue;
 [e $U 2375  ]
 [e :U 2376 ]
 [e $U 2375  ]
 [e :U 2375 ]
 [e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2376  ]
 [e :U 2377 ]
-"162
-[; ;pololu_robot.c: 162:                     UART1_Write(0xC5);
+"164
+[; ;pololu_robot.c: 164:                     UART1_Write(0xC5);
 [e ( _UART1_Write (1 -> -> 197 `i `uc ]
-"163
-[; ;pololu_robot.c: 163:                     while(!UART1_is_tx_ready()) continue;
+"165
+[; ;pololu_robot.c: 165:                     while(!UART1_is_tx_ready()) continue;
 [e $U 2378  ]
 [e :U 2379 ]
 [e $U 2378  ]
 [e :U 2378 ]
 [e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2379  ]
 [e :U 2380 ]
-"164
-[; ;pololu_robot.c: 164:                     UART1_Write((char) speed+1);
+"166
+[; ;pololu_robot.c: 166:                     UART1_Write((char) speed+1);
 [e ( _UART1_Write (1 -> + -> _speed `i -> 1 `i `uc ]
-"165
-[; ;pololu_robot.c: 165: }
+"167
+[; ;pololu_robot.c: 167: }
 [e :UE 2368 ]
 }
-"167
-[; ;pololu_robot.c: 167: void Backward(char speed)
+"169
+[; ;pololu_robot.c: 169: void Backward(char speed)
 [v _Backward `(v ~T0 @X0 1 ef1`uc ]
-"168
-[; ;pololu_robot.c: 168: {
+"170
+[; ;pololu_robot.c: 170: {
 {
 [e :U _Backward ]
-"167
-[; ;pololu_robot.c: 167: void Backward(char speed)
+"169
+[; ;pololu_robot.c: 169: void Backward(char speed)
 [v _speed `uc ~T0 @X0 1 r1 ]
-"168
-[; ;pololu_robot.c: 168: {
-[f ]
 "170
-[; ;pololu_robot.c: 170:                     while(!UART1_is_tx_ready()) continue;
+[; ;pololu_robot.c: 170: {
+[f ]
+"172
+[; ;pololu_robot.c: 172:                     while(!UART1_is_tx_ready()) continue;
 [e $U 2382  ]
 [e :U 2383 ]
 [e $U 2382  ]
 [e :U 2382 ]
 [e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2383  ]
 [e :U 2384 ]
-"171
-[; ;pololu_robot.c: 171:                     UART1_Write(0xC2);
+"173
+[; ;pololu_robot.c: 173:                     UART1_Write(0xC2);
 [e ( _UART1_Write (1 -> -> 194 `i `uc ]
-"172
-[; ;pololu_robot.c: 172:                     while(!UART1_is_tx_ready()) continue;
+"174
+[; ;pololu_robot.c: 174:                     while(!UART1_is_tx_ready()) continue;
 [e $U 2385  ]
 [e :U 2386 ]
 [e $U 2385  ]
 [e :U 2385 ]
 [e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2386  ]
 [e :U 2387 ]
-"173
-[; ;pololu_robot.c: 173:                     UART1_Write(speed);
+"175
+[; ;pololu_robot.c: 175:                     UART1_Write(speed);
 [e ( _UART1_Write (1 -> _speed `uc ]
-"174
-[; ;pololu_robot.c: 174:                     while(!UART1_is_tx_ready()) continue;
+"176
+[; ;pololu_robot.c: 176:                     while(!UART1_is_tx_ready()) continue;
 [e $U 2388  ]
 [e :U 2389 ]
 [e $U 2388  ]
 [e :U 2388 ]
 [e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2389  ]
 [e :U 2390 ]
-"175
-[; ;pololu_robot.c: 175:                     UART1_Write(0xC6);
+"177
+[; ;pololu_robot.c: 177:                     UART1_Write(0xC6);
 [e ( _UART1_Write (1 -> -> 198 `i `uc ]
-"176
-[; ;pololu_robot.c: 176:                     while(!UART1_is_tx_ready()) continue;
+"178
+[; ;pololu_robot.c: 178:                     while(!UART1_is_tx_ready()) continue;
 [e $U 2391  ]
 [e :U 2392 ]
 [e $U 2391  ]
 [e :U 2391 ]
 [e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2392  ]
 [e :U 2393 ]
-"177
-[; ;pololu_robot.c: 177:                     UART1_Write((char) speed+1);
+"179
+[; ;pololu_robot.c: 179:                     UART1_Write((char) speed+1);
 [e ( _UART1_Write (1 -> + -> _speed `i -> 1 `i `uc ]
-"178
-[; ;pololu_robot.c: 178: }
+"180
+[; ;pololu_robot.c: 180: }
 [e :UE 2381 ]
 }
-"180
-[; ;pololu_robot.c: 180: void Left_Turn(char speed, char differential)
+"182
+[; ;pololu_robot.c: 182: void Left_Turn(char speed, char differential)
 [v _Left_Turn `(v ~T0 @X0 1 ef2`uc`uc ]
-"181
-[; ;pololu_robot.c: 181: {
+"183
+[; ;pololu_robot.c: 183: {
 {
 [e :U _Left_Turn ]
-"180
-[; ;pololu_robot.c: 180: void Left_Turn(char speed, char differential)
+"182
+[; ;pololu_robot.c: 182: void Left_Turn(char speed, char differential)
 [v _speed `uc ~T0 @X0 1 r1 ]
 [v _differential `uc ~T0 @X0 1 r2 ]
-"181
-[; ;pololu_robot.c: 181: {
-[f ]
 "183
-[; ;pololu_robot.c: 183:                     while(!UART1_is_tx_ready()) continue;
+[; ;pololu_robot.c: 183: {
+[f ]
+"185
+[; ;pololu_robot.c: 185:                     while(!UART1_is_tx_ready()) continue;
 [e $U 2395  ]
 [e :U 2396 ]
 [e $U 2395  ]
 [e :U 2395 ]
 [e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2396  ]
 [e :U 2397 ]
-"184
-[; ;pololu_robot.c: 184:                     UART1_Write(0xC1);
+"186
+[; ;pololu_robot.c: 186:                     UART1_Write(0xC1);
 [e ( _UART1_Write (1 -> -> 193 `i `uc ]
-"185
-[; ;pololu_robot.c: 185:                     while(!UART1_is_tx_ready()) continue;
+"187
+[; ;pololu_robot.c: 187:                     while(!UART1_is_tx_ready()) continue;
 [e $U 2398  ]
 [e :U 2399 ]
 [e $U 2398  ]
 [e :U 2398 ]
 [e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2399  ]
 [e :U 2400 ]
-"186
-[; ;pololu_robot.c: 186:                     UART1_Write(speed);
+"188
+[; ;pololu_robot.c: 188:                     UART1_Write(speed);
 [e ( _UART1_Write (1 -> _speed `uc ]
-"187
-[; ;pololu_robot.c: 187:                     while(!UART1_is_tx_ready()) continue;
+"189
+[; ;pololu_robot.c: 189:                     while(!UART1_is_tx_ready()) continue;
 [e $U 2401  ]
 [e :U 2402 ]
 [e $U 2401  ]
 [e :U 2401 ]
 [e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2402  ]
 [e :U 2403 ]
-"188
-[; ;pololu_robot.c: 188:                     UART1_Write(0xC5);
+"190
+[; ;pololu_robot.c: 190:                     UART1_Write(0xC5);
 [e ( _UART1_Write (1 -> -> 197 `i `uc ]
-"189
-[; ;pololu_robot.c: 189:                     while(!UART1_is_tx_ready()) continue;
+"191
+[; ;pololu_robot.c: 191:                     while(!UART1_is_tx_ready()) continue;
 [e $U 2404  ]
 [e :U 2405 ]
 [e $U 2404  ]
 [e :U 2404 ]
 [e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2405  ]
 [e :U 2406 ]
-"190
-[; ;pololu_robot.c: 190:                     UART1_Write((char) speed+1+differential);
+"192
+[; ;pololu_robot.c: 192:                     UART1_Write((char) speed+1+differential);
 [e ( _UART1_Write (1 -> + + -> _speed `i -> 1 `i -> _differential `i `uc ]
-"191
-[; ;pololu_robot.c: 191: }
+"193
+[; ;pololu_robot.c: 193: }
 [e :UE 2394 ]
 }
-"193
-[; ;pololu_robot.c: 193: void Right_Turn(char speed, char differential)
+"195
+[; ;pololu_robot.c: 195: void Right_Turn(char speed, char differential)
 [v _Right_Turn `(v ~T0 @X0 1 ef2`uc`uc ]
-"194
-[; ;pololu_robot.c: 194: {
+"196
+[; ;pololu_robot.c: 196: {
 {
 [e :U _Right_Turn ]
-"193
-[; ;pololu_robot.c: 193: void Right_Turn(char speed, char differential)
+"195
+[; ;pololu_robot.c: 195: void Right_Turn(char speed, char differential)
 [v _speed `uc ~T0 @X0 1 r1 ]
 [v _differential `uc ~T0 @X0 1 r2 ]
-"194
-[; ;pololu_robot.c: 194: {
-[f ]
 "196
-[; ;pololu_robot.c: 196:                     while(!UART1_is_tx_ready()) continue;
+[; ;pololu_robot.c: 196: {
+[f ]
+"198
+[; ;pololu_robot.c: 198:                     while(!UART1_is_tx_ready()) continue;
 [e $U 2408  ]
 [e :U 2409 ]
 [e $U 2408  ]
 [e :U 2408 ]
 [e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2409  ]
 [e :U 2410 ]
-"197
-[; ;pololu_robot.c: 197:                     UART1_Write(0xC1);
+"199
+[; ;pololu_robot.c: 199:                     UART1_Write(0xC1);
 [e ( _UART1_Write (1 -> -> 193 `i `uc ]
-"198
-[; ;pololu_robot.c: 198:                     while(!UART1_is_tx_ready()) continue;
+"200
+[; ;pololu_robot.c: 200:                     while(!UART1_is_tx_ready()) continue;
 [e $U 2411  ]
 [e :U 2412 ]
 [e $U 2411  ]
 [e :U 2411 ]
 [e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2412  ]
 [e :U 2413 ]
-"199
-[; ;pololu_robot.c: 199:                     UART1_Write(speed+differential);
+"201
+[; ;pololu_robot.c: 201:                     UART1_Write(speed+differential);
 [e ( _UART1_Write (1 -> + -> _speed `i -> _differential `i `uc ]
-"200
-[; ;pololu_robot.c: 200:                     while(!UART1_is_tx_ready()) continue;
+"202
+[; ;pololu_robot.c: 202:                     while(!UART1_is_tx_ready()) continue;
 [e $U 2414  ]
 [e :U 2415 ]
 [e $U 2414  ]
 [e :U 2414 ]
 [e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2415  ]
 [e :U 2416 ]
-"201
-[; ;pololu_robot.c: 201:                     UART1_Write(0xC5);
+"203
+[; ;pololu_robot.c: 203:                     UART1_Write(0xC5);
 [e ( _UART1_Write (1 -> -> 197 `i `uc ]
-"202
-[; ;pololu_robot.c: 202:                     while(!UART1_is_tx_ready()) continue;
+"204
+[; ;pololu_robot.c: 204:                     while(!UART1_is_tx_ready()) continue;
 [e $U 2417  ]
 [e :U 2418 ]
 [e $U 2417  ]
 [e :U 2417 ]
 [e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2418  ]
 [e :U 2419 ]
-"203
-[; ;pololu_robot.c: 203:                     UART1_Write((char) speed+1);
+"205
+[; ;pololu_robot.c: 205:                     UART1_Write((char) speed+1);
 [e ( _UART1_Write (1 -> + -> _speed `i -> 1 `i `uc ]
-"204
-[; ;pololu_robot.c: 204: }
+"206
+[; ;pololu_robot.c: 206: }
 [e :UE 2407 ]
 }
-"206
-[; ;pololu_robot.c: 206: void Stop (void)
+"208
+[; ;pololu_robot.c: 208: void Stop (void)
 [v _Stop `(v ~T0 @X0 1 ef ]
-"207
-[; ;pololu_robot.c: 207: {
+"209
+[; ;pololu_robot.c: 209: {
 {
 [e :U _Stop ]
 [f ]
-"208
-[; ;pololu_robot.c: 208:     Forward(0);
+"210
+[; ;pololu_robot.c: 210:     Forward(0);
 [e ( _Forward (1 -> -> 0 `i `uc ]
-"209
-[; ;pololu_robot.c: 209: }
+"211
+[; ;pololu_robot.c: 211: }
 [e :UE 2420 ]
 }
-"211
-[; ;pololu_robot.c: 211: void Turn_around(char speed){
+"213
+[; ;pololu_robot.c: 213: void Turn_around(char speed){
 [v _Turn_around `(v ~T0 @X0 1 ef1`uc ]
 {
 [e :U _Turn_around ]
 [v _speed `uc ~T0 @X0 1 r1 ]
 [f ]
-"212
-[; ;pololu_robot.c: 212:                     while(!UART1_is_tx_ready()) continue;
+"214
+[; ;pololu_robot.c: 214:                     while(!UART1_is_tx_ready()) continue;
 [e $U 2422  ]
 [e :U 2423 ]
 [e $U 2422  ]
 [e :U 2422 ]
 [e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2423  ]
 [e :U 2424 ]
-"213
-[; ;pololu_robot.c: 213:                     UART1_Write(0xC1);
+"215
+[; ;pololu_robot.c: 215:                     UART1_Write(0xC1);
 [e ( _UART1_Write (1 -> -> 193 `i `uc ]
-"214
-[; ;pololu_robot.c: 214:                     while(!UART1_is_tx_ready()) continue;
+"216
+[; ;pololu_robot.c: 216:                     while(!UART1_is_tx_ready()) continue;
 [e $U 2425  ]
 [e :U 2426 ]
 [e $U 2425  ]
 [e :U 2425 ]
 [e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2426  ]
 [e :U 2427 ]
-"215
-[; ;pololu_robot.c: 215:                     UART1_Write(speed);
+"217
+[; ;pololu_robot.c: 217:                     UART1_Write(speed);
 [e ( _UART1_Write (1 -> _speed `uc ]
-"216
-[; ;pololu_robot.c: 216:                     while(!UART1_is_tx_ready()) continue;
+"218
+[; ;pololu_robot.c: 218:                     while(!UART1_is_tx_ready()) continue;
 [e $U 2428  ]
 [e :U 2429 ]
 [e $U 2428  ]
 [e :U 2428 ]
 [e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2429  ]
 [e :U 2430 ]
-"217
-[; ;pololu_robot.c: 217:                     UART1_Write(0xC6);
+"219
+[; ;pololu_robot.c: 219:                     UART1_Write(0xC6);
 [e ( _UART1_Write (1 -> -> 198 `i `uc ]
-"218
-[; ;pololu_robot.c: 218:                     while(!UART1_is_tx_ready()) continue;
+"220
+[; ;pololu_robot.c: 220:                     while(!UART1_is_tx_ready()) continue;
 [e $U 2431  ]
 [e :U 2432 ]
 [e $U 2431  ]
 [e :U 2431 ]
 [e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2432  ]
 [e :U 2433 ]
-"219
-[; ;pololu_robot.c: 219:                     UART1_Write((char) speed+1);
+"221
+[; ;pololu_robot.c: 221:                     UART1_Write((char) speed+1);
 [e ( _UART1_Write (1 -> + -> _speed `i -> 1 `i `uc ]
-"222
-[; ;pololu_robot.c: 222: }
+"224
+[; ;pololu_robot.c: 224: }
 [e :UE 2421 ]
 }
-"224
-[; ;pololu_robot.c: 224: void Hard_Right(char speed, char speed2){
+"226
+[; ;pololu_robot.c: 226: void Hard_Right(char speed, char speed2){
 [v _Hard_Right `(v ~T0 @X0 1 ef2`uc`uc ]
 {
 [e :U _Hard_Right ]
 [v _speed `uc ~T0 @X0 1 r1 ]
 [v _speed2 `uc ~T0 @X0 1 r2 ]
 [f ]
-"225
-[; ;pololu_robot.c: 225:                     while(!UART1_is_tx_ready()) continue;
+"227
+[; ;pololu_robot.c: 227:                     while(!UART1_is_tx_ready()) continue;
 [e $U 2435  ]
 [e :U 2436 ]
 [e $U 2435  ]
 [e :U 2435 ]
 [e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2436  ]
 [e :U 2437 ]
-"226
-[; ;pololu_robot.c: 226:                     UART1_Write(0xC1);
+"228
+[; ;pololu_robot.c: 228:                     UART1_Write(0xC1);
 [e ( _UART1_Write (1 -> -> 193 `i `uc ]
-"227
-[; ;pololu_robot.c: 227:                     while(!UART1_is_tx_ready()) continue;
+"229
+[; ;pololu_robot.c: 229:                     while(!UART1_is_tx_ready()) continue;
 [e $U 2438  ]
 [e :U 2439 ]
 [e $U 2438  ]
 [e :U 2438 ]
 [e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2439  ]
 [e :U 2440 ]
-"228
-[; ;pololu_robot.c: 228:                     UART1_Write(speed);
+"230
+[; ;pololu_robot.c: 230:                     UART1_Write(speed);
 [e ( _UART1_Write (1 -> _speed `uc ]
-"229
-[; ;pololu_robot.c: 229:                     while(!UART1_is_tx_ready()) continue;
+"231
+[; ;pololu_robot.c: 231:                     while(!UART1_is_tx_ready()) continue;
 [e $U 2441  ]
 [e :U 2442 ]
 [e $U 2441  ]
 [e :U 2441 ]
 [e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2442  ]
 [e :U 2443 ]
-"230
-[; ;pololu_robot.c: 230:                     UART1_Write(0xC6);
+"232
+[; ;pololu_robot.c: 232:                     UART1_Write(0xC6);
 [e ( _UART1_Write (1 -> -> 198 `i `uc ]
-"231
-[; ;pololu_robot.c: 231:                     while(!UART1_is_tx_ready()) continue;
+"233
+[; ;pololu_robot.c: 233:                     while(!UART1_is_tx_ready()) continue;
 [e $U 2444  ]
 [e :U 2445 ]
 [e $U 2444  ]
 [e :U 2444 ]
 [e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2445  ]
 [e :U 2446 ]
-"232
-[; ;pololu_robot.c: 232:                     UART1_Write((char) speed+1);
-[e ( _UART1_Write (1 -> + -> _speed `i -> 1 `i `uc ]
 "234
-[; ;pololu_robot.c: 234: }
+[; ;pololu_robot.c: 234:                     UART1_Write((char) speed+1);
+[e ( _UART1_Write (1 -> + -> _speed `i -> 1 `i `uc ]
+"236
+[; ;pololu_robot.c: 236: }
 [e :UE 2434 ]
 }
-"236
-[; ;pololu_robot.c: 236: void Hard_Left(char speed, char speed2){
+"238
+[; ;pololu_robot.c: 238: void Hard_Left(char speed, char speed2){
 [v _Hard_Left `(v ~T0 @X0 1 ef2`uc`uc ]
 {
 [e :U _Hard_Left ]
 [v _speed `uc ~T0 @X0 1 r1 ]
 [v _speed2 `uc ~T0 @X0 1 r2 ]
 [f ]
-"237
-[; ;pololu_robot.c: 237:                     while(!UART1_is_tx_ready()) continue;
+"239
+[; ;pololu_robot.c: 239:                     while(!UART1_is_tx_ready()) continue;
 [e $U 2448  ]
 [e :U 2449 ]
 [e $U 2448  ]
 [e :U 2448 ]
 [e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2449  ]
 [e :U 2450 ]
-"238
-[; ;pololu_robot.c: 238:                     UART1_Write(0xC5);
+"240
+[; ;pololu_robot.c: 240:                     UART1_Write(0xC5);
 [e ( _UART1_Write (1 -> -> 197 `i `uc ]
-"239
-[; ;pololu_robot.c: 239:                     while(!UART1_is_tx_ready()) continue;
+"241
+[; ;pololu_robot.c: 241:                     while(!UART1_is_tx_ready()) continue;
 [e $U 2451  ]
 [e :U 2452 ]
 [e $U 2451  ]
 [e :U 2451 ]
 [e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2452  ]
 [e :U 2453 ]
-"240
-[; ;pololu_robot.c: 240:                     UART1_Write(speed);
+"242
+[; ;pololu_robot.c: 242:                     UART1_Write(speed);
 [e ( _UART1_Write (1 -> _speed `uc ]
-"241
-[; ;pololu_robot.c: 241:                     while(!UART1_is_tx_ready()) continue;
+"243
+[; ;pololu_robot.c: 243:                     while(!UART1_is_tx_ready()) continue;
 [e $U 2454  ]
 [e :U 2455 ]
 [e $U 2454  ]
 [e :U 2454 ]
 [e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2455  ]
 [e :U 2456 ]
-"242
-[; ;pololu_robot.c: 242:                     UART1_Write(0xC2);
+"244
+[; ;pololu_robot.c: 244:                     UART1_Write(0xC2);
 [e ( _UART1_Write (1 -> -> 194 `i `uc ]
-"243
-[; ;pololu_robot.c: 243:                     while(!UART1_is_tx_ready()) continue;
+"245
+[; ;pololu_robot.c: 245:                     while(!UART1_is_tx_ready()) continue;
 [e $U 2457  ]
 [e :U 2458 ]
 [e $U 2457  ]
 [e :U 2457 ]
 [e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2458  ]
 [e :U 2459 ]
-"244
-[; ;pololu_robot.c: 244:                     UART1_Write((char) speed+1);
-[e ( _UART1_Write (1 -> + -> _speed `i -> 1 `i `uc ]
 "246
-[; ;pololu_robot.c: 246: }
+[; ;pololu_robot.c: 246:                     UART1_Write((char) speed+1);
+[e ( _UART1_Write (1 -> + -> _speed `i -> 1 `i `uc ]
+"248
+[; ;pololu_robot.c: 248: }
 [e :UE 2447 ]
 }
-"247
-[; ;pololu_robot.c: 247: void edgeMethod(_Bool* gig)
+"249
+[; ;pololu_robot.c: 249: void edgeMethod(_Bool* gig)
 [v _edgeMethod `(v ~T0 @X0 1 ef1`*a ]
-"248
-[; ;pololu_robot.c: 248: {
+"250
+[; ;pololu_robot.c: 250: {
 {
 [e :U _edgeMethod ]
-"247
-[; ;pololu_robot.c: 247: void edgeMethod(_Bool* gig)
-[v _gig `*a ~T0 @X0 1 r1 ]
-"248
-[; ;pololu_robot.c: 248: {
-[f ]
 "249
-[; ;pololu_robot.c: 249:     _Bool newSensor[5];
-[v _newSensor `a ~T0 @X0 -> 5 `i a ]
+[; ;pololu_robot.c: 249: void edgeMethod(_Bool* gig)
+[v _gig `*a ~T0 @X0 1 r1 ]
 "250
-[; ;pololu_robot.c: 250:     PID_Stop();
-[e ( _PID_Stop ..  ]
+[; ;pololu_robot.c: 250: {
+[f ]
 "251
-[; ;pololu_robot.c: 251:     Forward(20);
-[e ( _Forward (1 -> -> 20 `i `uc ]
+[; ;pololu_robot.c: 251:     _Bool newSensor[5];
+[v _newSensor `a ~T0 @X0 -> 5 `i a ]
 "252
-[; ;pololu_robot.c: 252:     _delay((unsigned long)((350)*(48000000/4000.0)));
-[e ( __delay (1 -> * -> -> 350 `i `d / -> -> 48000000 `l `d .4000.0 `ul ]
+[; ;pololu_robot.c: 252:     PID_Stop();
+[e ( _PID_Stop ..  ]
 "253
-[; ;pololu_robot.c: 253:     Stop();
-[e ( _Stop ..  ]
+[; ;pololu_robot.c: 253:     Forward(20);
+[e ( _Forward (1 -> -> 20 `i `uc ]
 "254
-[; ;pololu_robot.c: 254:     Read_Calibrated_Sensors(newSensor);
-[e ( _Read_Calibrated_Sensors (1 &U _newSensor ]
+[; ;pololu_robot.c: 254:     _delay((unsigned long)((350)*(48000000/4000.0)));
+[e ( __delay (1 -> * -> -> 350 `i `d / -> -> 48000000 `l `d .4000.0 `ul ]
 "255
-[; ;pololu_robot.c: 255:     if(gig[4])
-[e $ ! != -> *U + _gig * -> -> 4 `i `x -> -> # *U _gig `i `x `i -> 0 `i 2461  ]
+[; ;pololu_robot.c: 255:     Stop();
+[e ( _Stop ..  ]
 "256
-[; ;pololu_robot.c: 256:     {
-{
+[; ;pololu_robot.c: 256:     Read_Calibrated_Sensors();
+[e ( _Read_Calibrated_Sensors ..  ]
 "257
-[; ;pololu_robot.c: 257:         Hard_Right(30,30);
-[e ( _Hard_Right (2 , -> -> 30 `i `uc -> -> 30 `i `uc ]
+[; ;pololu_robot.c: 257:     if(gig[4])
+[e $ ! != -> *U + _gig * -> -> 4 `i `x -> -> # *U _gig `i `x `i -> 0 `i 2461  ]
 "258
-[; ;pololu_robot.c: 258:         do{
-[e :U 2464 ]
+[; ;pololu_robot.c: 258:     {
 {
 "259
-[; ;pololu_robot.c: 259:             Read_Calibrated_Sensors(newSensor);
-[e ( _Read_Calibrated_Sensors (1 &U _newSensor ]
+[; ;pololu_robot.c: 259:         Hard_Right(30,30);
+[e ( _Hard_Right (2 , -> -> 30 `i `uc -> -> 30 `i `uc ]
 "260
-[; ;pololu_robot.c: 260:         }while(!newSensor[2]);
+[; ;pololu_robot.c: 260:         do{
+[e :U 2464 ]
+{
+"261
+[; ;pololu_robot.c: 261:             Read_Calibrated_Sensors();
+[e ( _Read_Calibrated_Sensors ..  ]
+"262
+[; ;pololu_robot.c: 262:         }while(!newSensor[2]);
 }
 [e $ ! != -> *U + &U _newSensor * -> -> -> 2 `i `ui `ux -> -> # *U &U _newSensor `ui `ux `i -> 0 `i 2464  ]
 [e :U 2463 ]
-"261
-[; ;pololu_robot.c: 261:         Stop();
+"263
+[; ;pololu_robot.c: 263:         Stop();
 [e ( _Stop ..  ]
-"262
-[; ;pololu_robot.c: 262:     }
+"264
+[; ;pololu_robot.c: 264:     }
 }
 [e $U 2465  ]
-"263
-[; ;pololu_robot.c: 263:     else if(gig[0])
+"265
+[; ;pololu_robot.c: 265:     else if(gig[0])
 [e :U 2461 ]
 [e $ ! != -> *U + _gig * -> -> 0 `i `x -> -> # *U _gig `i `x `i -> 0 `i 2466  ]
-"264
-[; ;pololu_robot.c: 264:     {
-{
-"265
-[; ;pololu_robot.c: 265:         Hard_Left(30,30);
-[e ( _Hard_Left (2 , -> -> 30 `i `uc -> -> 30 `i `uc ]
 "266
-[; ;pololu_robot.c: 266:         do{
-[e :U 2469 ]
+[; ;pololu_robot.c: 266:     {
 {
 "267
-[; ;pololu_robot.c: 267:             Read_Calibrated_Sensors(newSensor);
-[e ( _Read_Calibrated_Sensors (1 &U _newSensor ]
+[; ;pololu_robot.c: 267:         Hard_Left(30,30);
+[e ( _Hard_Left (2 , -> -> 30 `i `uc -> -> 30 `i `uc ]
 "268
-[; ;pololu_robot.c: 268:         }while(!newSensor[2]);
+[; ;pololu_robot.c: 268:         do{
+[e :U 2469 ]
+{
+"269
+[; ;pololu_robot.c: 269:             Read_Calibrated_Sensors();
+[e ( _Read_Calibrated_Sensors ..  ]
+"270
+[; ;pololu_robot.c: 270:         }while(!newSensor[2]);
 }
 [e $ ! != -> *U + &U _newSensor * -> -> -> 2 `i `ui `ux -> -> # *U &U _newSensor `ui `ux `i -> 0 `i 2469  ]
 [e :U 2468 ]
-"269
-[; ;pololu_robot.c: 269:         Stop();
+"271
+[; ;pololu_robot.c: 271:         Stop();
 [e ( _Stop ..  ]
-"270
-[; ;pololu_robot.c: 270:     }
+"272
+[; ;pololu_robot.c: 272:     }
 }
 [e :U 2466 ]
 [e :U 2465 ]
-"271
-[; ;pololu_robot.c: 271:     PID_Start();
+"273
+[; ;pololu_robot.c: 273:     PID_Start();
 [e ( _PID_Start ..  ]
-"272
-[; ;pololu_robot.c: 272: }
+"274
+[; ;pololu_robot.c: 274: }
 [e :UE 2460 ]
 }
-"274
-[; ;pololu_robot.c: 274: void deg90(_Bool* gig)
+"276
+[; ;pololu_robot.c: 276: void deg90(_Bool* gig)
 [v _deg90 `(v ~T0 @X0 1 ef1`*a ]
-"275
-[; ;pololu_robot.c: 275: {
+"277
+[; ;pololu_robot.c: 277: {
 {
 [e :U _deg90 ]
-"274
-[; ;pololu_robot.c: 274: void deg90(_Bool* gig)
+"276
+[; ;pololu_robot.c: 276: void deg90(_Bool* gig)
 [v _gig `*a ~T0 @X0 1 r1 ]
-"275
-[; ;pololu_robot.c: 275: {
-[f ]
 "277
-[; ;pololu_robot.c: 277:     PID_Stop();
-[e ( _PID_Stop ..  ]
-"278
-[; ;pololu_robot.c: 278:     Forward(20);
-[e ( _Forward (1 -> -> 20 `i `uc ]
+[; ;pololu_robot.c: 277: {
+[f ]
 "279
-[; ;pololu_robot.c: 279:     _delay((unsigned long)((250)*(48000000/4000.0)));
-[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 48000000 `l `d .4000.0 `ul ]
+[; ;pololu_robot.c: 279:     PID_Stop();
+[e ( _PID_Stop ..  ]
 "280
-[; ;pololu_robot.c: 280:     Stop();
-[e ( _Stop ..  ]
+[; ;pololu_robot.c: 280:     Forward(20);
+[e ( _Forward (1 -> -> 20 `i `uc ]
 "281
-[; ;pololu_robot.c: 281:     if(gig[3])
-[e $ ! != -> *U + _gig * -> -> 3 `i `x -> -> # *U _gig `i `x `i -> 0 `i 2471  ]
+[; ;pololu_robot.c: 281:     _delay((unsigned long)((250)*(48000000/4000.0)));
+[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 48000000 `l `d .4000.0 `ul ]
 "282
-[; ;pololu_robot.c: 282:     {
-{
+[; ;pololu_robot.c: 282:     Stop();
+[e ( _Stop ..  ]
 "283
-[; ;pololu_robot.c: 283:         Hard_Right(20,20);
-[e ( _Hard_Right (2 , -> -> 20 `i `uc -> -> 20 `i `uc ]
+[; ;pololu_robot.c: 283:     if(gig[3])
+[e $ ! != -> *U + _gig * -> -> 3 `i `x -> -> # *U _gig `i `x `i -> 0 `i 2471  ]
 "284
-[; ;pololu_robot.c: 284:         do{
-[e :U 2474 ]
+[; ;pololu_robot.c: 284:     {
 {
 "285
-[; ;pololu_robot.c: 285:             Read_Calibrated_Sensors(gig);
-[e ( _Read_Calibrated_Sensors (1 _gig ]
+[; ;pololu_robot.c: 285:         Hard_Right(20,20);
+[e ( _Hard_Right (2 , -> -> 20 `i `uc -> -> 20 `i `uc ]
 "286
-[; ;pololu_robot.c: 286:         }while(!gig[2]);
+[; ;pololu_robot.c: 286:         do{
+[e :U 2474 ]
+{
+"287
+[; ;pololu_robot.c: 287:             Read_Calibrated_Sensors();
+[e ( _Read_Calibrated_Sensors ..  ]
+"288
+[; ;pololu_robot.c: 288:         }while(!gig[2]);
 }
 [e $ ! != -> *U + _gig * -> -> 2 `i `x -> -> # *U _gig `i `x `i -> 0 `i 2474  ]
 [e :U 2473 ]
-"287
-[; ;pololu_robot.c: 287:         Stop();
+"289
+[; ;pololu_robot.c: 289:         Stop();
 [e ( _Stop ..  ]
-"288
-[; ;pololu_robot.c: 288:     }
+"290
+[; ;pololu_robot.c: 290:     }
 }
 [e $U 2475  ]
-"289
-[; ;pololu_robot.c: 289:     else if(gig[1])
+"291
+[; ;pololu_robot.c: 291:     else if(gig[1])
 [e :U 2471 ]
 [e $ ! != -> *U + _gig * -> -> 1 `i `x -> -> # *U _gig `i `x `i -> 0 `i 2476  ]
-"290
-[; ;pololu_robot.c: 290:     {
-{
-"291
-[; ;pololu_robot.c: 291:         Hard_Left(20,20);
-[e ( _Hard_Left (2 , -> -> 20 `i `uc -> -> 20 `i `uc ]
 "292
-[; ;pololu_robot.c: 292:         do{
-[e :U 2479 ]
+[; ;pololu_robot.c: 292:     {
 {
 "293
-[; ;pololu_robot.c: 293:             Read_Calibrated_Sensors(gig);
-[e ( _Read_Calibrated_Sensors (1 _gig ]
+[; ;pololu_robot.c: 293:         Hard_Left(20,20);
+[e ( _Hard_Left (2 , -> -> 20 `i `uc -> -> 20 `i `uc ]
 "294
-[; ;pololu_robot.c: 294:         }while(!gig[2]);
+[; ;pololu_robot.c: 294:         do{
+[e :U 2479 ]
+{
+"295
+[; ;pololu_robot.c: 295:             Read_Calibrated_Sensors();
+[e ( _Read_Calibrated_Sensors ..  ]
+"296
+[; ;pololu_robot.c: 296:         }while(!gig[2]);
 }
 [e $ ! != -> *U + _gig * -> -> 2 `i `x -> -> # *U _gig `i `x `i -> 0 `i 2479  ]
 [e :U 2478 ]
-"295
-[; ;pololu_robot.c: 295:         Stop();
+"297
+[; ;pololu_robot.c: 297:         Stop();
 [e ( _Stop ..  ]
-"296
-[; ;pololu_robot.c: 296:     }
+"298
+[; ;pololu_robot.c: 298:     }
 }
 [e :U 2476 ]
 [e :U 2475 ]
-"297
-[; ;pololu_robot.c: 297:     PID_Start();
-[e ( _PID_Start ..  ]
 "299
-[; ;pololu_robot.c: 299: }
+[; ;pololu_robot.c: 299:     PID_Start();
+[e ( _PID_Start ..  ]
+"301
+[; ;pololu_robot.c: 301: }
 [e :UE 2470 ]
 }
-"301
-[; ;pololu_robot.c: 301: void PID_Start(void){
+"303
+[; ;pololu_robot.c: 303: void PID_Start(void){
 [v _PID_Start `(v ~T0 @X0 1 ef ]
 {
 [e :U _PID_Start ]
 [f ]
-"302
-[; ;pololu_robot.c: 302:                     while(!UART1_is_tx_ready()) continue;
+"304
+[; ;pololu_robot.c: 304:                     while(!UART1_is_tx_ready()) continue;
 [e $U 2481  ]
 [e :U 2482 ]
 [e $U 2481  ]
 [e :U 2481 ]
 [e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2482  ]
 [e :U 2483 ]
-"303
-[; ;pololu_robot.c: 303:                     UART1_Write(0xBB);
+"305
+[; ;pololu_robot.c: 305:                     UART1_Write(0xBB);
 [e ( _UART1_Write (1 -> -> 187 `i `uc ]
-"304
-[; ;pololu_robot.c: 304:                     while(!UART1_is_tx_ready()) continue;
+"306
+[; ;pololu_robot.c: 306:                     while(!UART1_is_tx_ready()) continue;
 [e $U 2484  ]
 [e :U 2485 ]
 [e $U 2484  ]
 [e :U 2484 ]
 [e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2485  ]
 [e :U 2486 ]
-"305
-[; ;pololu_robot.c: 305:                     UART1_Write(20);
+"307
+[; ;pololu_robot.c: 307:                     UART1_Write(20);
 [e ( _UART1_Write (1 -> -> 20 `i `uc ]
-"306
-[; ;pololu_robot.c: 306:                     while(!UART1_is_tx_ready()) continue;
+"308
+[; ;pololu_robot.c: 308:                     while(!UART1_is_tx_ready()) continue;
 [e $U 2487  ]
 [e :U 2488 ]
 [e $U 2487  ]
 [e :U 2487 ]
 [e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2488  ]
 [e :U 2489 ]
-"307
-[; ;pololu_robot.c: 307:                     UART1_Write(1);
+"309
+[; ;pololu_robot.c: 309:                     UART1_Write(1);
 [e ( _UART1_Write (1 -> -> 1 `i `uc ]
-"308
-[; ;pololu_robot.c: 308:                     while(!UART1_is_tx_ready()) continue;
+"310
+[; ;pololu_robot.c: 310:                     while(!UART1_is_tx_ready()) continue;
 [e $U 2490  ]
 [e :U 2491 ]
 [e $U 2490  ]
 [e :U 2490 ]
 [e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2491  ]
 [e :U 2492 ]
-"309
-[; ;pololu_robot.c: 309:                     UART1_Write(20);
+"311
+[; ;pololu_robot.c: 311:                     UART1_Write(20);
 [e ( _UART1_Write (1 -> -> 20 `i `uc ]
-"310
-[; ;pololu_robot.c: 310:                     while(!UART1_is_tx_ready()) continue;
+"312
+[; ;pololu_robot.c: 312:                     while(!UART1_is_tx_ready()) continue;
 [e $U 2493  ]
 [e :U 2494 ]
 [e $U 2493  ]
 [e :U 2493 ]
 [e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2494  ]
 [e :U 2495 ]
-"311
-[; ;pololu_robot.c: 311:                     UART1_Write(3);
+"313
+[; ;pololu_robot.c: 313:                     UART1_Write(3);
 [e ( _UART1_Write (1 -> -> 3 `i `uc ]
-"312
-[; ;pololu_robot.c: 312:                     while(!UART1_is_tx_ready()) continue;
+"314
+[; ;pololu_robot.c: 314:                     while(!UART1_is_tx_ready()) continue;
 [e $U 2496  ]
 [e :U 2497 ]
 [e $U 2496  ]
 [e :U 2496 ]
 [e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2497  ]
 [e :U 2498 ]
-"313
-[; ;pololu_robot.c: 313:                     UART1_Write(2);
+"315
+[; ;pololu_robot.c: 315:                     UART1_Write(2);
 [e ( _UART1_Write (1 -> -> 2 `i `uc ]
-"314
-[; ;pololu_robot.c: 314: }
+"316
+[; ;pololu_robot.c: 316: }
 [e :UE 2480 ]
 }
-"316
-[; ;pololu_robot.c: 316: void PID_Stop(void){
+"318
+[; ;pololu_robot.c: 318: void PID_Stop(void){
 [v _PID_Stop `(v ~T0 @X0 1 ef ]
 {
 [e :U _PID_Stop ]
 [f ]
-"317
-[; ;pololu_robot.c: 317:                     while(!UART1_is_tx_ready()) continue;
+"319
+[; ;pololu_robot.c: 319:                     while(!UART1_is_tx_ready()) continue;
 [e $U 2500  ]
 [e :U 2501 ]
 [e $U 2500  ]
 [e :U 2500 ]
 [e $ ! != -> ( _UART1_is_tx_ready ..  `i -> 0 `i 2501  ]
 [e :U 2502 ]
-"318
-[; ;pololu_robot.c: 318:                     UART1_Write(0xBC);
+"320
+[; ;pololu_robot.c: 320:                     UART1_Write(0xBC);
 [e ( _UART1_Write (1 -> -> 188 `i `uc ]
-"319
-[; ;pololu_robot.c: 319: }
+"321
+[; ;pololu_robot.c: 321: }
 [e :UE 2499 ]
 }

@@ -35,7 +35,7 @@ void Auto_Calibrate(void);
 
 //  Reads each of the sensor values and returns a 2-byte value for each of the 
 //  five sensors - total of 10 bytes are returned.
-void Read_Calibrated_Sensors(bool* giggity);
+int Read_Calibrated_Sensors(void);
 
 
 //  Returns battery voltage in mV
