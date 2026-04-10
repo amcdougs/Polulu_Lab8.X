@@ -99,7 +99,7 @@ void Hard_Right(char speed, char speed2);
 void edgeMethod(uint16_t sens);
 void deg90(uint16_t sens);
 void Gap();
-
+void PlusOrEnd();
 
 void PID_Start(void);
 

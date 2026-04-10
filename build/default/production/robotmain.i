@@ -27922,7 +27922,7 @@ void Hard_Right(char speed, char speed2);
 void edgeMethod(uint16_t sens);
 void deg90(uint16_t sens);
 void Gap();
-
+void PlusOrEnd();
 
 void PID_Start(void);
 
@@ -28271,11 +28271,32 @@ void main(void)
             {
                 edgeMethod(sWeight);
             }
-            else if(!sensGlobal[2])
+            else if(!sensGlobal[2]||sWeight==3000)
             {
                 Gap();
             }
-# 386 "robotmain.c"
+            else if(sensGlobal[0] == 1 && sensGlobal[1] == 1 && sensGlobal[2] == 1 && sensGlobal[3] == 1 && sensGlobal[4] == 1){
+                                PID_Stop();
+                robot_8cm(10);
+                robot_8cm(10);
+                robot_8cm(10);
+                robot_8cm(10);
+                UpdateGlobal();
+                if(sensGlobal[0] == 1 && sensGlobal[1] == 1 && sensGlobal[2] == 1 && sensGlobal[3] == 1 && sensGlobal[4] == 1){
+                    robot_8cm(10);
+                    robot_8cm(10);
+                    robot_8cm(10);
+                    robot_8cm(10);
+                    robot_8cm(10);
+                    robot_8cm(10);
+                    while(1);
+                }
+                else
+                {
+                    PID_Start();
+                }
+            }
+# 409 "robotmain.c"
         }
 
     }

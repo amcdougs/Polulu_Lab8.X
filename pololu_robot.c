@@ -292,30 +292,9 @@ void edgeMethod(uint16_t sens)
     PID_Start();
 }
 
-void deg90(uint16_t sens)
+void PlusOrEnd()
 {
-    
-    PID_Stop();
-    Forward(20);
-    __delay_ms(250);//needs to be tested but should be a few CMs
-    Stop();
-    if(sens>3000)//far right edge
-    {
-        Hard_Right(30,30);
-        do{
-            UpdateGlobal();
-        }while(!sensGlobal[2]);
-        Stop();
-    }
-    else if(sens<3000)//far left edge
-    {
-        Hard_Left(30,30);
-        do{
-            UpdateGlobal();
-        }while(!sensGlobal[2]);
-        Stop();
-    }
-    PID_Start();
+
 
 }
 
@@ -343,25 +322,26 @@ void Gap(){
     //forward 8 cm
     PID_Stop();
     for(int i = 0; i<8; i++){
-        robot_8cm(20);
+        robot_8cm(10);
         UpdateGlobal();
-        if(sensGlobal[2] == 1){
+        if(sensGlobal[0] == 1||sensGlobal[1] == 1||sensGlobal[2] == 1||sensGlobal[3] == 1||sensGlobal[4] == 1){
             PID_Start();
             return;
         }
     }
     //turn around
-    Hard_Left(90,90);
-    __delay_ms(100);
-    Stop();
-    Hard_Right(90,90);
+    /*
+    Hard_Left(60,60);
     __delay_ms(200);
+    Stop(); */
+    Hard_Right(60,60);
+    __delay_ms(250);
     Stop();
     
     for(int i = 0; i<8; i++){
-        robot_8cm(20);
+        robot_8cm(10);
         UpdateGlobal();
-        if(sensGlobal[2] == 1){
+        if(sensGlobal[0] == 1||sensGlobal[1] == 1||sensGlobal[2] == 1||sensGlobal[3] == 1||sensGlobal[4] == 1){
             PID_Start();
             return;
         }

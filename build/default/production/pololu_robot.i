@@ -27590,7 +27590,7 @@ void Hard_Right(char speed, char speed2);
 void edgeMethod(uint16_t sens);
 void deg90(uint16_t sens);
 void Gap();
-
+void PlusOrEnd();
 
 void PID_Start(void);
 
@@ -27882,30 +27882,9 @@ void edgeMethod(uint16_t sens)
     PID_Start();
 }
 
-void deg90(uint16_t sens)
+void PlusOrEnd()
 {
 
-    PID_Stop();
-    Forward(20);
-    _delay((unsigned long)((250)*(48000000/4000.0)));
-    Stop();
-    if(sens>3000)
-    {
-        Hard_Right(30,30);
-        do{
-            UpdateGlobal();
-        }while(!sensGlobal[2]);
-        Stop();
-    }
-    else if(sens<3000)
-    {
-        Hard_Left(30,30);
-        do{
-            UpdateGlobal();
-        }while(!sensGlobal[2]);
-        Stop();
-    }
-    PID_Start();
 
 }
 
@@ -27933,25 +27912,26 @@ void Gap(){
 
     PID_Stop();
     for(int i = 0; i<8; i++){
-        robot_8cm(20);
+        robot_8cm(10);
         UpdateGlobal();
-        if(sensGlobal[2] == 1){
+        if(sensGlobal[0] == 1||sensGlobal[1] == 1||sensGlobal[2] == 1||sensGlobal[3] == 1||sensGlobal[4] == 1){
             PID_Start();
             return;
         }
     }
 
-    Hard_Left(90,90);
-    _delay((unsigned long)((100)*(48000000/4000.0)));
-    Stop();
-    Hard_Right(90,90);
-    _delay((unsigned long)((200)*(48000000/4000.0)));
+
+
+
+
+    Hard_Right(60,60);
+    _delay((unsigned long)((250)*(48000000/4000.0)));
     Stop();
 
     for(int i = 0; i<8; i++){
-        robot_8cm(20);
+        robot_8cm(10);
         UpdateGlobal();
-        if(sensGlobal[2] == 1){
+        if(sensGlobal[0] == 1||sensGlobal[1] == 1||sensGlobal[2] == 1||sensGlobal[3] == 1||sensGlobal[4] == 1){
             PID_Start();
             return;
         }

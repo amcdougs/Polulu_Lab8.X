@@ -1,7 +1,7 @@
 ### HEXMate logfile and output summary ###
 
 ### Command-line arguments ###
- C:\Users\aiden\AppData\Local\Temp\xcCsgt4.2\driver_tmp_3.o
+ C:\Users\aiden\AppData\Local\Temp\xcAs4zg.0\driver_tmp_3.o
  -Odist/default/production\Polulu_Lab8.X.production.hex
  -logfile=dist/default/production\Polulu_Lab8.X.production.hxl
  -addressing=1
@@ -9,23 +9,45 @@
 
 ### Memory Usage ###
  Input file ranges:
-  0h - 3h		(C:\Users\aiden\AppData\Local\Temp\xcCsgt4.2\driver_tmp_3.o)
-  D358h - FFFFh		(C:\Users\aiden\AppData\Local\Temp\xcCsgt4.2\driver_tmp_3.o)
-  300000h - 300009h		(C:\Users\aiden\AppData\Local\Temp\xcCsgt4.2\driver_tmp_3.o)
+  0h - 3h		(C:\Users\aiden\AppData\Local\Temp\xcAs4zg.0\driver_tmp_3.o)
+  D1FCh - FFFFh		(C:\Users\aiden\AppData\Local\Temp\xcAs4zg.0\driver_tmp_3.o)
+  300000h - 300009h		(C:\Users\aiden\AppData\Local\Temp\xcAs4zg.0\driver_tmp_3.o)
  Unused ranges:
-  4h - D357h
+  4h - D1FBh
   10000h - 2FFFFFh
 
 ### Hex Memory Map ###
  Legend:
   -- = Unused memory
-  H1 = Input file             (C:\Users\aiden\AppData\Local\Temp\xcCsgt4.2\driver_tmp_3.o)
+  H1 = Input file             (C:\Users\aiden\AppData\Local\Temp\xcAs4zg.0\driver_tmp_3.o)
 ----------------------------------------------------------
          | 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
 ----------------------------------------------------------
 00000000 | H1 H1 H1 H1 -- -- -- -- -- -- -- -- -- -- -- --
 ----------------------------------------------------------
-0000D350 | -- -- -- -- -- -- -- -- H1 H1 H1 H1 H1 H1 H1 H1
+0000D1F0 | -- -- -- -- -- -- -- -- -- -- -- -- H1 H1 H1 H1
+0000D200 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+0000D210 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+0000D220 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+0000D230 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+0000D240 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+0000D250 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+0000D260 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+0000D270 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+0000D280 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+0000D290 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+0000D2A0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+0000D2B0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+0000D2C0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+0000D2D0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+0000D2E0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+0000D2F0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+0000D300 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+0000D310 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+0000D320 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+0000D330 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+0000D340 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+0000D350 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 0000D360 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 0000D370 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 0000D380 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
